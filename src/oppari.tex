@@ -1,0 +1,263 @@
+
+
+\documentclass[11pt,a4paper,titlepage,oneside]{article}
+
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{hyperref} %links
+\usepackage[document]{ragged2e} %floating text
+\usepackage{helvet} %font
+\usepackage{tocloft} % dots in table of contents sections
+
+
+
+
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+
+
+
+
+
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{same}
+
+
+
+\geometry{
+    a4paper,
+    left=3cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=2.5cm
+}
+
+%remove random margin on side ? idk what happend
+%\setlength{\oddsidemargin}{0pt}
+
+
+
+%custom reusable colorbox rules
+\newtcolorbox{simplebox}{colback=white, sharp corners, boxrule=1pt }
+
+
+\renewcommand{\contentsname}{Sisällys} % override Contents => Sisallys on table of contents
+
+\renewcommand{\familydefault}{\sfdefault} % set font
+
+
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % dots for sections
+
+
+
+
+% ------------------------------ BEGIN DOCUMENT ------------------------------ %
+\begin{document}
+
+\pagestyle{empty}
+
+
+%------------------------------ COVER PAGE ------------------------------ %
+
+\includegraphics[width=5cm,height=1cm]{./src/labimg.jpg}
+
+\vspace{86mm}
+\huge
+\textbf{Ammattilaisena kehittyminen}
+\newline
+
+\large
+
+\vspace{5mm}
+\textbf{Oppimispäiväkirja}
+\normalsize
+
+\vspace{90mm}
+
+LAB-ammattikorkeakoulu \newline
+\vspace{2mm}
+Tieto-ja tietolikenadsfklj, Insinööri (AMK) \newline
+\vspace{2mm}
+2024 \newline
+\vspace{2mm}
+Kimi Malkamäki
+
+\newpage
+
+
+
+
+%------------------------------ FIRST PAGE OF ABSTRACT ------------------------------ %
+\begin{tabular}{ | l | }
+
+    %hack for the tiivistelmä line
+    \multicolumn{1}{l}{
+        \begin{minipage}{6cm}
+            \hspace{1mm}
+            
+        \end{minipage}
+        \begin{minipage}{4.25cm}
+            \hspace{1mm}
+        \end{minipage}
+        \begin{minipage}[t][1.95cm][t]{3.62cm}
+            \large
+            \textbf{ Tiivistelmä }
+        \end{minipage}
+    }\\
+
+    \hline
+    \begin{minipage}[b]{6cm}
+        tekijä(t)
+        \newline
+        kimi malkamäki 
+    \end{minipage}%
+    % 2x2
+    \begin{minipage}{8.5cm}
+        \begin{tabular}{ | l | c | }
+            \begin{minipage}[t][1cm][t]{4.25cm}
+                julkaisun laji
+                \newline
+                Opinnäytetyö, AMK
+            \end{minipage} & %
+            %
+            \begin{minipage}{3.62cm}
+                valmistusaika
+                \newline
+                2024
+            \end{minipage} \\ \hline%
+            %
+            \begin{minipage}[t][1cm][t]{4.25cm}
+                sivumäärä
+                \newline 
+                xx+xx
+            \end{minipage}
+            &  \\ \hline
+        \end{tabular}
+    \end{minipage}%
+    % end of 2x2
+      \\ \hline
+
+    \begin{minipage}[t][2cm][t]{8cm}
+    työn nimi 
+        \newline 
+    ammatissa kasvaminen 
+        \newline 
+    oppimispäiväkirja  
+    \end{minipage}\\ \hline
+
+    \begin{minipage}[t][1.5cm][t]{10cm}
+    tutkinto ja koulutusala.\newline  tietoviestintätekniikka insinööri amk  
+
+    \end{minipage}\\ \hline
+
+    \begin{minipage}[t][7cm][t]{5cm}
+    tiivistelmä: \newline lorem ipsim
+    \end{minipage}\\ \hline
+
+    \begin{minipage}[t][2cm][t]{5cm}
+    avain sanat
+    \end{minipage}\\ \hline
+
+\end{tabular}
+
+\newpage
+
+
+
+% ------------------------------ SECOND PAGE OF ABSTRACT ------------------------------ %
+
+tiivistelmä
+
+
+
+
+
+
+
+
+\newpage
+
+
+% ------------------------------ TABLE OF CONTENTS ------------------------------ %
+
+%keep page numbers off
+\setcounter{page}{0}
+\pagestyle{empty}
+\pagenumbering{gobble}
+
+\tableofcontents
+
+
+
+
+
+\newpage
+
+% ------------------------------- CONTENT ------------------------------- %
+
+
+%enable page counting
+\pagenumbering{arabic}
+\clearpage
+\setcounter{page}{1}
+
+%set heaader and footer
+\pagestyle{fancy}
+%%
+\lfoot{}
+\cfoot{}
+\rfoot{}
+%%
+\lhead{}
+\chead{}
+\rhead{\thepage}
+%%
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\section{Johdanto}% ------------------------------- JOHDANTO ------------------------------- %
+
+\lipsum[1-2]
+
+
+
+
+
+
+
+
+
+
+\section{teoria}% ------------------------------- TEORIA ------------------------------- %
+
+\subsection{React}
+thing inside the thing
+
+\subsection{jotain}
+thing inside the thing
+
+
+
+
+
+\section{Toteutus}% ------------------------------- TOTEUTUS ------------------------------- %
+
+\subsection{jotain toteutuksesta}
+jotain infoa
+
+
+
+
+\end{document}
+
+
+
