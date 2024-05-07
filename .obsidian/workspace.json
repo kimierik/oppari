@@ -1,0 +1,170 @@
+{
+  "main": {
+    "id": "1cdeb7ddc317c482",
+    "type": "split",
+    "children": [
+      {
+        "id": "a069e4bb488fecc1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15958dd1a60dc287",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eb9ff09be59ef389",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d1feb1f05653897",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "521119a84d4ef051",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "04b0a02ec560fd8f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ad5a4e54adbc6515",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200.5
+  },
+  "right": {
+    "id": "6c4a7ac6b2d3d47c",
+    "type": "split",
+    "children": [
+      {
+        "id": "d85b175d406d0f45",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09b37f4a6659c373",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2255093156c857f0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "06594bb474aa1df7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "50c615841ffd5f64",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "graph:Open graph view": false,
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "15958dd1a60dc287",
+  "lastOpenFiles": [
+    "customLanguages/Custom Languages.md",
+    "customLanguages/C superset.md",
+    "C_Program/cisms.md",
+    "customLanguages/crp.md",
+    "customLanguages/c.org",
+    "C_Program/cisms.org",
+    "obsidianMeta/templates",
+    "obsidianMeta",
+    "templates",
+    "Untitled.canvas",
+    "MAIN.md",
+    "tex/LATEK.md",
+    "tex/opparilatexnotes.md",
+    "orgbackups/opparilatexnotes.org",
+    "customLanguages/typescript.md",
+    "customLanguages/goint.md",
+    "dailynotes",
+    "javascript/objpooltest.md",
+    "orgbackups/crp.org",
+    "orgbackups/goint.org",
+    "customLanguages/goint.org",
+    "customLanguages.md",
+    "Welcome.md",
+    "univesr/abstraction thinking.png",
+    "create a link.md",
+    "Untitled.md"
+  ]
+}

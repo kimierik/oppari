@@ -10,14 +10,8 @@
 \usepackage{tocloft} % dots in table of contents sections
 
 
-
-
 \usepackage{lipsum}
 \usepackage{fancyhdr}
-
-
-
-
 
 
 \hypersetup{
@@ -146,7 +140,7 @@ Kimi Malkamäki
       \\ \hline
 
     \begin{minipage}[t][2cm][t]{8cm}
-    työn nimi 
+    Työn nimi 
         \newline 
     ammatissa kasvaminen 
         \newline 
@@ -201,9 +195,31 @@ tiivistelmä
 
 \newpage
 
-% ------------------------------- CONTENT ------------------------------- %
 
 
+% ------------------------------- TERMISTÖ ------------------------------- %
+
+
+TERMISTÖ
+
+mitä termejä käytetään
+
+%multiline comment
+\iffalse
+
+
+
+
+\fi
+
+
+\newpage
+
+
+
+
+
+% ------------------------------- CONTENT PRELUDE COMMANDS ------------------------------- %
 %enable page counting
 \pagenumbering{arabic}
 \clearpage
@@ -222,9 +238,10 @@ tiivistelmä
 %%
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+%\newcommand{\n}{\newline\vspace{20mm}}
 
 
-\section{Johdanto}% ------------------------------- JOHDANTO ------------------------------- %
+\section{Johdanto}              % ------------------------------- JOHDANTO ------------------------------- %
 
 \lipsum[1-2]
 
@@ -233,28 +250,100 @@ tiivistelmä
 
 
 
-
-
-
-
-\section{teoria}% ------------------------------- TEORIA ------------------------------- %
-
-\subsection{React}
-thing inside the thing
-
-\subsection{jotain}
-thing inside the thing
+\newpage
+\section{Lähtötilanne}         % ------------------------------- LÄHTÖTILANNE ------------------------------- %
+tässä kerrotaan siitä mitä osasin ennen oppoarin kirjoittamista jne jne
+\newline
+neljännen vuoden opiskelia. ohjelmointiin suuntautunut. harrastus ohjelmointia joten on muuta taustatietoa.
 
 
 
 
 
-\section{Toteutus}% ------------------------------- TOTEUTUS ------------------------------- %
-
-\subsection{jotain toteutuksesta}
-jotain infoa
+\newpage
+\section{teoria}                % ------------------------------- TEORIA ------------------------------- %
 
 
+
+\subsection{kehitys ympäristö}
+localhost kehitys lorem ipsum
+
+kehitys ympäristön pystytys projektin ehdoin
+    johdanto teknologiaan
+
+kehitys mite teknologiaa stackissä on
+
+\subsubsection{Meteor}
+tähän jotain meteorsita lorem ipsum
+
+\subsubsection{React}
+ei varmaan tähän valiin.
+
+Meteoriin voi valita minkä tahansa frontendin haluaa. käytämme reaktia projektissa
+
+\subsubsection{mongodb}
+ehkä ei tähän väliin
+
+
+
+
+
+
+\subsection{responsiivinen käyttöliittymä}
+responsiivinen käyttöliittymän kehitys lorem ipsum
+
+
+
+
+
+
+\subsection{Localisaatio yleisesti ja i18n}
+jotain localisaatiosta lorem ipsum
+
+\subsubsection{i18n}
+i18n lorem ipsum
+
+
+
+
+
+\subsection{meteor syvennys} 
+meteor lorem ipsum
+
+
+\subsection{React syvennys}
+react lorem ipsum 
+
+
+
+
+\subsection{nosql tietokannat}
+mongodb lorem ipsum
+
+
+
+
+
+
+
+
+\newpage
+\section{Toteutus}              % ------------------------------- TOTEUTUS ------------------------------- %
+
+
+\subsection{Localisaatio}
+localisaatio riippuen 
+
+
+\subsection{Uuden ominaisuuden lisäys}
+ipsum feature lisäys
+
+
+
+\newpage
+\section{Lähteet}               % ------------------------------- LÄHTEET ------------------------------- %
+
+miten laitan liitteen päiväkirjasta ja millainen se pitäisi olla
 
 
 \end{document}

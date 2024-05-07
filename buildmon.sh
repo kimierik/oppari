@@ -1,4 +1,13 @@
 
+case "$1" in 
+    -pv)
+        echo "buildmon set on päiväkirja"
+        while inotifywait -e close_write ./src/paivakirja.tex; do ./build.sh -pv; done
+        ;;
+    -op)
+        echo "buildmon set on oppari"
+        while inotifywait -e close_write ./src/oppari.tex; do ./build.sh -op; done
+        ;;
 
-while inotifywait -e close_write ./src/oppari.tex; do ./build.sh; done
+esac
 
