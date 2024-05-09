@@ -1,0 +1,40 @@
+
+mitä tehtiin viikolla?
+miksi käytettiin 2 viikkoa tähän.
+%admin kk translate roolitus
+%8vk  tehtiin rooleja mutta se ei ole oikein mongo hommaa
+%niin tässä ei oikein kerrota mittään siitä mitä tehdiin viikonaikana vaan kirjoitetaan suoraan tietokannoista i quess
+
+
+
+\subsection*{nosql}
+mikä on nosql kanta
+toisin kun relatiiviset joilla on teitty row ja collumni määrä non sql voi olla esim. avain-arvo dockumentti graafi jne
+sql schma on rigid toisin kun nosql jossa se voi vahdella
+
+relatiivinen välttää usein kalliita join operaatioita
+%selitä kirjakielellä ei puhekielellä
+% huono esimerri muutenkin
+esim jos olisi sql tietokanta olisi, pöytä asiakkaille jossa on asiakas id, ja pöytä ostoksille jossa olisi kanssa asiakas id
+jos halutaan kaikki asiakkaan ostokset nimellä niin ekaksi pitää etsiä asiakas id asiakas pöydästä sitten asiakas idnkanssa etsiä ostokset ostos pöydästä.
+% hmmmmm
+toisin kun esim dokumentti tietokannassa asiakas tiedossa voi olla monta muuta juttua. esim natiiveja+* tyyppejä kuten string, int float tai array.
+
+
+\subsection*{mongodb}
+
+%suomenna
+mongodb on proprietary? nosql tietokanta, joka tallentaaa sen tiedostot BSON muodossa dokumentteihin. BSON on binääri representaatio json formaatista .
+mongodbseen ei tarvitse määrittää millainen schema datalla on
+mongo myös tukee sharding eli voi jakaa databasen tiedon clusterille joka antaa mahdollisuuden vaakatsuuntaisselle skaalaavuuldelle
+
+
+mongo projektissa\\
+mongoDBtä käytetään käyttäjätietojen, treenitietojen, seurantatietojen jne kanssa
+periaatteessa kaikkien muiden kanssa paitsi tiedostojen kanssa jotka on aws bucketissa
+koska mongogodb ei kiinnosta missä schemassa data on. ennen mongo api kutsuja meillä on itse tyyppi varmistelu ettei mitään ylimääräistä mene tietokantaan vahingossakaan.
+
+
+
+\subsection*{yhteenveto}
+jotain tekstiä

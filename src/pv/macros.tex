@@ -1,0 +1,35 @@
+
+
+\newcommand\wordcount{
+    \immediate\write18{texcount -sub=section \filename{} -inc  | grep Section | sed -e 's/+.*//' | sed -n \thesection p > 'count.txt'}
+(\input{count.txt}words)}
+
+
+\newcommand{\inputf}[1]{\def\filename{#1}\input{#1}}
+
+
+\newcommand\filewcount{
+    \immediate\write18{texcount -1 -sum \filename{} > count.txt }
+    \input{count.txt} words }
+
+
+% jos on testi definetty niin tee 
+\newcommand{\istest}[2]{\ifx\testmode\undefined #2 \else #1 \fi}
+
+
+% testi section näyttää word countin siltä sectionilta jos ei testi niin sitten näytä vain normaali section
+\newcommand{\tsection}[2]{\istest{#1{#2\\} \wordcount \\ \medskip }{#1*{#2}}}
+
+
+\newcommand{\pagesection}[1]{\istest{\section{#1}  }{\section*{#1}}}
+
+
+% adds page with everything
+\newcommand{\addPage}[2]{
+    \def\filename{#1}
+    \pagesection{#2}
+    \istest{ \filewcount \medskip }{}
+    \input{#1}
+    }
+
+

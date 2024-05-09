@@ -1,0 +1,38 @@
+
+progressio multi multi input
+
+\subsection*{selitys featuresta}
+kaikilla käyttäjillä on seurattava arvo (measurableThing) käyttäjä voi välisivulta antaa mittauksia päivien tai viikkojen ajoilta. ja nähdä edistymistä graafilta
+nyt on vain yksi measurableThing ja halutaan että on monta
+measurableThing pitää muuttaa measurableThings listaksi ja muuttaa kaikkii mitä se nyt vaatiikaan muutettavaksi
+graafi pitää kanssa muuttaa siten että voidaan nähdä kaikki edistymiset kaikilta mitattavilta.
+pitää myös muokata userschemaa.
+
+
+
+
+
+\subsection*{user schema päivitys}
+schema päivitys. measurableThing > measurableThings.  
+rajapinnat on tyypitetty joten pitää niitä muuttaa että voi toimia.
+pitää muuttaa miten käyttöjiä luodaan. ja miten niitä päivitetään
+pitää lisätä joku tapa millä lisätä useampia measurableThing eikä vain yhtä
+\medskip
+
+user migration. pitää migratoida kaikki aktiiviset asiakkaat measurableThings muotoon.
+migraatio funktiot on sinänsä aika pelottavia sillä muutetaan kaikkien käyttäjien schemaa samaan aikaan. jos scheman muutoksessa tulee virhe meidän kaikki käyttäjät ovat scuffed.
+funktion pitää olla luotettava ja sellainen että se toimii ekalla kerralla.
+\medskip
+
+\subsection*{toteutus}
+react apex charts mitä käytettään graafin luomiseen tukee montaa linjaa. tähän pitää vain pystyä lisätä kaikki uudet mitattavat arvot ja niiden nimet että niitä voi katsoa kunnolla.
+react apex charts pystyi lisäämään vaan toisen seriessin. ja toimi melkein samantien
+käyttöliuittymään pitää lisätä mahdollisuus siihen että valitaan mikä seurattavaa katsotaan
+tähän taas laskuvalikko mihin vaan laitetaan kaikki jutut
+
+
+
+
+\subsection*{yhteenveto}
+miten meni ja miten onnistuin.
+meni hyvin ominaisuus on nyt paikalla jne toimii jee.

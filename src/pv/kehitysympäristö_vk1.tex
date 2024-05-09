@@ -1,0 +1,61 @@
+
+Ennen ensimmäisen viikon aloittamista keskustelimme projektin seniori-insinöörin kanssa miten aloittaisin tutustumisen koodipohjaan.
+Projekti käytti MeteorJS frameworkkia, jota en ole ennen käyttänyt, joten päädyimme aloittamaan yksinkertaisesti MeteorJS Tutorialeista ja projektin käynnistämisestä paikalliseen kehitysympäristöön.\medskip
+
+\subsection*{Meteor}
+% this is garbage rewrite everything or atleast moset
+
+MeteorJS:ssän kotisivuilla on helposti seurattava opetusohjelma, joka käy läpi sen pääpiirteet ja ominaisuudet harjoitusprojektien parissa. 
+Meteor ei määritä käyttöliittymässä käytettäviä teknologioita. Ja, koska Starttaamo käyttää ReactJs:ssää käyttöliittymässään tein opetusohjelmat Reactia käyttäen.
+Meteorin opetusohjelmat kävivät yksitellen läpi eri meteorin ominaisuuksia käytännön esimerkkien parissa, joka teki niiden oppimisesta nopeaa.\medskip
+
+
+
+% tässä voisi myös selittää miten meteor käyttäytyy projektissa mutta todennäköissesti se on vasta tulevaisuudessa
+
+\subsection*{Kehitysympäristön käynnistäminen}
+
+Seuraavaksi aloitin projektin käynnistämisen paikalliseen kehitysympäristöön.
+Tavallisissa node projekteissa kirjastojen versiotiedot sijaitsevat package.json tiedostossa ja ne voidaan ladata 'npm install' komennolla.
+MeteorJS käyttää nodeJs:ssää pohjalla mutta vaatii, että suoritetaan 'meteor npm install' komento, joka hoitaa MeteorJS:n omat riippuvuudet muiden kirjastojen kansa.
+Repositorion Cloonaaminen GitHubista meni helposti, sillä minulla on jo kokemusta Git:istä. Mutta törmäsin jo ensimmäiseen ongelmaani, kun suoritin seuraavan komennon:
+
+\begin{tcolorbox}
+meteor npm install
+\end{tcolorbox}
+\medskip
+% meteor npm install highligh paremmin. ei ollut 
+
+
+
+%error notes tiedostossa on joku ramble kun olin ratkaisemassa tätä
+Sain seuraavan virheviestin:
+
+
+\begin{tcolorbox}
+ValueError: invalid mode: 'rU' while trying to load binding.gyp
+\end{tcolorbox}\medskip
+
+
+%this is fine. pitäisi olla teksti pitäisi olla tylsää ja asiallista pitää vielä korjata mutta asia on oikea 
+Node-gyp on kääntäjä natiiveille paketeille ja se käyttää Pythonia.
+Python 3.11 on esitellyt ongelman node-gyp:in kanssa sillä Python 3.11 on poistanut "-U" flagin tiedoston avaamisessa.
+"-U", "universal newline" moodi on poistettu käytöstä Python 3.3 versiossa, mutta node-gyp versio mitä projekti käyttää vaatii sen.\medskip
+
+% https://docs.python.org/3/whatsnew/3.11.html#porting-to-python-3-11 
+
+% anaconda ei ole versionhallinta työkalu. tein virtuaali ympäristön jolla sitten suoritin komennon uudelleen
+
+Pythonin version alentaminen python 3.10 versioon anacondan virtuaaliympäristöä käyttäen ja 'meteor npm install' komennon uudelleen suorittaminen latasi kaikki projektin riippuvuudet huoletta.
+Node-gyp on vain kääntäjä, joka suoriutuu, kun riippuvuuksia ladataan. Ainoastaan tällöin natiivipaketteja käännetään, joten python 3.10 versiota tarvitaan vain ensimmäisen käynnistyksen ohessa.
+\medskip
+
+
+\subsection*{Viikon Yhteenveto}
+Viikon tavoitteena oli tutustua MeteorJS teknologiaan ja käynnistää projekti paikalliseen kehitysympäristöön.
+Meteoriin tutustuminen meni helposti ja opin sen periaatteet nopeasti. Meteorin sivuilla oli nopeasti ymmärrettävä ja helposti seurattava opetusohjelma, jossa tehtiin sovellus Meteoria käyttäen.
+Meteorin sivuilla on myös hyvä dokumentaatio ja huomasin, että luin sitä useasti työharjoituksen aikana. \medskip
+
+Projektin käynnistäminen ei mennytkään niin helposti. Taistelin useamman tunnin riippuvuuksien lataamisen kanssa, ennen kun kokeilin alentaa python versiota anacondalla. Minulla ei ollut aiempaa kokemusta anacondasta, joten sen käyttöönotossa meni myös oma aikansa.
+Projektin riippuvuuksien asentamisen jälkeen projekti käynnistyi moitteetta ja pystyin helposti alkaa tutkimaan projektin rakennetta ja kartoittamaan React komponentteja tiedostorakenteesta. Repositoriossa ei ollut "README" tiedostoa, joten lisäsin sen ja kirjoitin ohjeet projektin käynnistämiseen.
+

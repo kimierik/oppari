@@ -1,0 +1,87 @@
+
+Kuudennella viikolla sain tykösi tehdä käyttäjien antamasta datasta raportti.
+käyttäjät antavat sivuston kautta tietoja treeneistään ja muista seurattavista jne. sitten jossain vaiheessa tehdään raportti käyttäjien toiminnasta.
+tämä raportti pitäisi nyt implementoida
+%jotain lisää metatekstiä tästä  tai tästä viikosta
+
+
+\subsection*{meteor}
+
+%suomenna ja kirjota paremmin. meteor on osittain avoimeen lähdekoodiin perustuve framework
+% paitsi mongodb jonka meteor paketoi mukaan
+% pitää mainita miksi mongo sanotaan tässä ennen kun se sanotaan
+% eli meteor tuo mukanaan mongon by default, joka on ainoa ei avoimeen lähdekoodiin perustuva
+Meteor on, mongoDB tietokantaa lukuunottamatta, avoimeen lähdekoodiin perustuva "full stack" web-framework. Meteorilla on integraatio moneen yleiseen frontend frameworkkiin kuten vue, react, svelte tai angular.
+%jotenkin paremmin liima aijempaan lauseeseen
+meteoria voi käyttää monella eri frontend frameworkilla.
+% suomenna
+Meteor käyttää publisher-subscriber mallia clientin ja serverin välillä, joka antaa mahdollisuuden fronend päivitykselle kun tietokannassa tapahtuu muutos.
+%jotain lisää ja meteorista ehkä?
+
+%kuitenkin samaa tulee olemaan itse opparissa niin  emt pitääkö kirjoittaa tähän enemmän textiä
+
+% tai toinen kappale
+
+\medskip
+
+
+\subsection*{subscriber publisher}
+
+% täydellä lauseella ei aloiteta näin
+Meteorin ratkaisu databasejen kanssa tekemiselle ei tarvitse erillistä sockettia tai uudelleen kutsua palvelimen ja käyttäjän välillä kun data päivittyy
+% esim react ei varmaan ole hyvä voidaan laittaa vain että client saa tiedon
+esim react komponentit voivat päivittyä automaattisesti jos ne ovet kuuntelemassa samaa tietolähdettä.
+tekee devaamistesta helppoa.
+
+miten projekti hyötyää tästä. ei paljoa sillä meidän ei tarvitse käyttää tätä
+% aina kun data päivittyy servulla niin tarvittavat komponentit päivittyy automaattisesti
+% yksinkertaiset db queryt ei tarvitse erillistä methodia vaan toimii vain publisher subscribe mallilla meteorissa
+% vähentää methodien määrää ja kasvattaa koodin luettavuuttaa
+\medskip
+
+
+
+\subsection*{methodit}
+mikä on method ja miski se on olemassa
+
+% meteorin ratkaisu ei ole hyvä 
+Meteor methodit on meteorin ratkaisu client-server rajapinnalle. \\
+%
+meteor ei käytä RESTful rajapintaa vaan meteor methodeja.
+%  jotenkin vähän paremmin mutta asia on hyvä. pitää sanoa että ne suoriutuu palvelimella.
+methodit suoritetaan ja määritetään itse palvelin puolella mutta niitä voi kutsua clientistä tai palvelimesta.
+Methodeista voi helposti katsoa onko kutsuja kirjautunut sisään ja mitä oikeuksia käyttäjällä on. tämä tuo lisä turvallisuutta "out of the box", toisin kun RESTful apilla jossa se pitäisi itse implementoida
+\medskip
+
+miten methodeja käytetään projektissa\\
+%sano suoraan Projektissa käytettään methodeja kun a b c ei kun d e f
+methodeja ei käytetä kun halutaan tietokannasta, jotain yksinkertaista dataa, sillä publisher-subscriber malli hoitaa tämän
+vaan methodeja käytetään silloin kun pitää tehdä jotain jota voi tehdä vain palvelimella. esim lähettää sähköposteja+*? ja tiedostojen lataaminen pilveen 
+\medskip
+
+
+
+\subsection*{Raportin luonti}
+
+%selostus raportin specista ja mitä sen pitää tehdä
+raportti jossa on. käyttäjän nimi, monta treenikertaa heillä on, seurattavan jutun ensimmäinen va viimeinen arvo.
+raportti pitää pystyä avaamaan excelissä.
+helposti tehtävä. jotain lisää
+\medskip
+
+
+% selostus miten raportti toimii käytännössä. kirjoita kirjakielellä
+client kutsuu methodia ja antaa sille options objektin jossa kerrotaan mitä tietoa dokumenttiin halutaan. method varmistaa että käyttäjällä on tarvittavat oikeudet suorittaa methodi.
+palvelin käy läpi asetukset mitä raporttiin halutaan ja lähettää datan takaisin clientille.
+client muodostaa datasta tiedoston (csv). tämä on tehty siksi että tiedoston tekeminen olisi yleensä blocking ja ei haluta että palvelin stallaa silloin kun joku tekee jotain isoa dokumenttia.
+kun client tekee datan muuntamisesta tiedostoon työn niin ei palvelin ota ylimääräistä stressiä.
+kun tiedosto on tehty käyttäjä voi ladata sen.
+\medskip
+
+
+\subsection*{yhteenveto}
+submary mitä tehtiin
+
+meteor on semi ok
+raportin luonti saatiin tehtyä ja se toimii miten haluttiin
+

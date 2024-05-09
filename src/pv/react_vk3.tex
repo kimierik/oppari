@@ -1,0 +1,70 @@
+
+Kolmannella viikolla olin Reactin kanssa töissä. Tein pieniä käyttöliittymän korjauksia ja yleistä ylläpitoa. Tutustuin miten projekti käyttää ReactJs kirjastoa ja miten käyttöliittymä on rakennettu.\medskip
+
+Tuli myös ilmi, että uusien sivujen lisääminen toisi vaikeuksia mobiilikäyttöliittymään. Navigaatiopalkki mobiililaitteilla on nyt jo ahdas, ja uusien sivujen lisääminen tekisi siitä käyttö-kelvottoman.
+Viikolla työnaiheena tuli myös testata navigaatiopalkkin siirtämistä sivun vasempaan reunaan, jossa sitä voisi rullata alas, jos se täyttyisi kokonaan.\medskip
+
+
+
+
+\subsection*{ Reactin käyttö projektissa }
+
+
+Starttaamon käyttöliittymä on rakennettu Reactjs kirjaston avulla. Hyödyntäen sen laajaa ekosysteemiä ja skaalautuvaa kehitysprosessia, käyttöliittymä voi mukautua startupin nopeaan kehitykseen ja yllättäviin muutoksiin nopeasti.
+% gpt promt:the project is build ontop of an older code base so older components are class components and newer components are function components
+Projekti on rakennettu olemassa olevan koodipohjan päälle, jossa vanhemmat komponentit ovat luokkakomponentteja, toisin kuin uudemmat lisäykset, jotka ovat funktiokomponentteja.
+% gpt prompt: components that require state are using either the useState hook if it is a funktion component or the this.state property if it is a class component
+Komponentit, jotka vaativat tilan käyttöä käyttävät joko useState hookkia funktiokomponentin tapauksessa tai this.state ominaisuutta luokkakomponentin tapauksessa. Projektissa ei ole erillistä tilanhallintaa.\medskip
+
+% ei puhuta projektista mutta ei varmaan väliä
+React-komponentit renderöi uudelleen, kun niiden tila muuttuu tai päivittyy. Mutta react komponentit eivät uudelleen renderöi itseään, jos tietokannassa oleva data muuttuu. 
+Yleisesti tälläisessä tapauksessa pitäisi joko ajoittain tarkastaa datan tila tietokannasta tai palvelin lähettäisi tiedon käyttäjälle tietokannan päivityksestä esimerkiksi WebSockettia käyttäen.
+Projektin käytössä oleva Meteor päivittää tarvittavat komponentit, kun se huomaa komponentin käyttämän datan muutoksen tietokannassa.\medskip
+
+Komponenttien tyylitys on sekoitus CSS-tiedostoja ja styled-components kirjaston avulla tehtyjä CSS-sääntöjä.
+Vanhempien luokkakomponenttien tyylitys on hoidettu CSS-tiedostojen avulla.
+Uudemmat funktiokomponentit käyttävät styled-components kirjastoa tyylityksessä. Kirjasto antaa CSS-luokille uniikin nimen, tämä auttaa estämään virheitä joissa kahdella komponentilla on saman niminen CSS-luokka eri CSS-säännöillä.\medskip
+
+
+
+\subsection*{ Navigaatiopalkki }
+
+Navigaatiopalkin siirtämisellä haluttiin ratkaista ongelma mobiilikäyttöliittymän ahtaudesta. Jos navigaatiopalkki olisi sivun vasemmassa reunassa siihen voisi lisätä pystysuuntaisen rullauksen, jolloin kuvien kokoa ei tarvitsisi muuttaa.
+\medskip
+
+
+
+% atleast improve the image somehow crop it or something
+\includegraphics{src/public/starttaamohomenavbar.png} \\
+kuva starttaamon käyttäjäpuolen navigaatio palkista \medskip
+
+Uudelleen käyttämisen ja helpomman ylläpidon vuoksi navigaatiopalkista tehtiin komponentti.
+% uusiks jotenkin
+Navigaatiopalkin ei tarvitse olla tilallinen komponentti, sillä se vain ohjaa käyttäjää välilehtien välillä eikä siinä ole mitään mitä pitäisi päivittää.
+Itse navigoinnin hoitaa linkit toisille sivuille, ja koska ne ovat kovakoodattuja, komponentti ei tarvitse proppeja tekien siitä on itsenäisesti toimivan. 
+\medskip
+
+
+Styled-components kirjastolla työn tekeminen on melkein sama kuin tavallisella CSS:llä. Mutta toisin kuin tavallisessa CSS-määrittelyssä, styled-components tehdään JavaScript tiedostoon, jossa annetaan CSS-määrittely tekstinä kirjastolle "tagged template literal" JavaScript syntaksilla.
+Tämä luo komponentin, jonka kaikki lapsikomponentit saa käyttöönsä annetut CSS-luokat. Luokat saavat uniikit tunnukset, joka estää ongelmia eri komponenttien saman nimisillä CSS-luokilla.
+\medskip
+
+Lisäksi komponentilla lisättiin mahdollisuus piiloutua ja tulla esille. Napista työpöytäkäyttöliittymällä tai pyyhkäisemällä mobiililaitteella, näin lisäten rajallista ruututilaa silloin kun navigaatiopalkkia ei tarvitse.\medskip
+
+
+
+
+% kuva lopullisesta navigaatio palkista?
+
+
+
+
+
+\subsection*{Viikon Yhteenveto}
+
+% passiivi?
+Viikon aikana opin miten projekti käytti ReactJs kirjastoa sen käyttöliittymän tekemiseen. 
+Loin myös itsenäisesti toimivan komponentin navigaatiopalkille, jota voi helposti uudelleen käyttää.\medskip
+
+Navigaatiopalkkia ei siirretty sivun vasempaan reunaan, sillä se olisi ollut liian sekava aktiivisille käyttäjille. 
+Komponentti on silti olemassa, joten sen voi käyttöönottaa tulevaisuudessa jos sen tarve ilmenee.\medskip
