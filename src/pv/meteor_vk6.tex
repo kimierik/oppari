@@ -25,36 +25,77 @@ Meteor käyttää publisher-subscriber mallia clientin ja serverin välillä, jo
 \medskip
 
 
+
+
+%https://www.leviathansecurity.com/blog/websockets-and-meteor-a-penetration-testers-guide-to-meteor
+
+% ddp distibuted data protocol
+
+
 \subsection*{subscriber publisher}
 
-% täydellä lauseella ei aloiteta näin
-Meteorin ratkaisu databasejen kanssa tekemiselle ei tarvitse erillistä sockettia tai uudelleen kutsua palvelimen ja käyttäjän välillä kun data päivittyy
-% esim react ei varmaan ole hyvä voidaan laittaa vain että client saa tiedon
-esim react komponentit voivat päivittyä automaattisesti jos ne ovet kuuntelemassa samaa tietolähdettä.
-tekee devaamistesta helppoa.
+%fine ? emt onko yleinen hyvä alku voisi kirjoittaa jotenkin toisin
+Yleinen ongelma Web-sovelluksissa on käyttöliittymän päivitys kun palvelimella tai tietokannassa tapahtuu muutoksia. 
+% tavallisissa nettisivuissa on tosi huono. vain getrequest.
+Tavallisissa nettisivuissa tehtäisiin vain get request palvelimelle ja palvelin antaisi pyydetyn datan. Client ei tietäisi jos data on vanhaa tai jos se on päivittynyt palvelimella.
+%Yleisesti datan saaminen palvelimenlta/tietokannalta käyttöliittymälle, käytetään Get requesteja
+normaalisti jos halutaan dataa käyttöliittymälle palvelimelta/tietokannasta, käytetään GET requesteja. mutta näin data tulee ainoastaan kun client kysyy sitä, eikä silloin kun data muuttuu
+Jos clientin yhdistää palvelimenlle web-socketilla, palvelin voi ilmoittaa clientille jos data muuttuu tietokannassa.
+% toinen ratkaisu
+%toinen ratkaisu on yhdistää client ja palvelin web-socetilla, jolloin palvelin voi ilmoittaa kun data muuttuu.
+\medskip
 
-miten projekti hyötyää tästä. ei paljoa sillä meidän ei tarvitse käyttää tätä
+%meteor käyttää websocketteja sub-publisher jutussa. 
+%Meteorin ratkaisu tähän on käyttää "publisher-subscriber" mallia.
+Meteor käyttää websocketteja sen publisher-subscriber subscriber mallin toteutuksessa.
+%
+Palvelin voi julkaista tietokannan osia meteor.publish-funktiolla, jos asiakas tilaa tämän julkaisun, se saa ilmoituksen aina, kun tiedot, jotka asiakas on tilannut, muuttuvat.
+Meteor voi tällöin päivittää käyttöliittymän osia, jotka ovat riippuvaisia kyseisistä tiedoista. 
+% kuvia vaikka publish ja subscribe kutsuista
+%
+% esimerkki kuva publishista mongodb käytössä
+%esimerkki client subscirbestä 
+%https://docs.meteor.com/api/pubsub#Meteor-subscribe
+%tästä tehdään esimerkki koodi ja siitä screenshot
+%
+%jotenkin paremmin selittää 
+Kulissien takana meteor käyttää websocketteja tämän toteuttamiseen. 
+\medskip
+
+% esim react ei varmaan ole hyvä voidaan laittaa vain että client saa tiedon
+%esim react komponentit voivat päivittyä automaattisesti jos ne ovet kuuntelemassa samaa tietolähdettä.
+
+Esimerkiksi jos Meteoria käytetään Reactin kanssa, se voi päivittää tarvittavat React komponentit tietojen muututtua tietokannassa.
+
+%miten projekti hyötyää tästä. ei paljoa sillä meidän ei tarvitse käyttää tätä
 % aina kun data päivittyy servulla niin tarvittavat komponentit päivittyy automaattisesti
 % yksinkertaiset db queryt ei tarvitse erillistä methodia vaan toimii vain publisher subscribe mallilla meteorissa
 % vähentää methodien määrää ja kasvattaa koodin luettavuuttaa
+
+
 \medskip
 
 
 
-\subsection*{methodit}
-mikä on method ja miski se on olemassa
+\subsection*{Methodit}
 
-% meteorin ratkaisu ei ole hyvä 
-Meteor methodit on meteorin ratkaisu client-server rajapinnalle. \\
-%
-meteor ei käytä RESTful rajapintaa vaan meteor methodeja.
+Meteor ei käytä RESTful rajapintaa palvelimen ja clientin välillä, vain Meteorin methodeja.
+
 %  jotenkin vähän paremmin mutta asia on hyvä. pitää sanoa että ne suoriutuu palvelimella.
-methodit suoritetaan ja määritetään itse palvelin puolella mutta niitä voi kutsua clientistä tai palvelimesta.
-Methodeista voi helposti katsoa onko kutsuja kirjautunut sisään ja mitä oikeuksia käyttäjällä on. tämä tuo lisä turvallisuutta "out of the box", toisin kun RESTful apilla jossa se pitäisi itse implementoida
+%metodi on vain funktio
+Methodit suoritetaan ja määritetään itse palvelin puolella, mutta niitä voi kutsua clientistä tai palvelimesta.
+% Methodid määriteellään palvelimen puolella funktiona. funktio saa this kontekstin mukana kirjautuneen käyttäjän userIdn, jos kutsuja on kirjautunut sisään.
+% this. method funktiossa
+%
+% method funktio saa this kontekstissa funktio saa esim tiedon jos kutsuja on kirjautunut sisään. ja sen useridn
+% pitää paremmin selittää restful apin epäturvallisuudesta  https://guide.meteor.com/methods
+Methodeista voi helposti katsoa onko kutsuja kirjautunut sisään ja mitä oikeuksia käyttäjällä on. tämä tuo lisä turvallisuutta "out of the box", toisin kun RESTful apilla, jossa turvallisuus pitäisi itse implementoida.
 \medskip
 
-miten methodeja käytetään projektissa\\
+% kuva methodi määritelmästä ja seloitus mitä tapahtuu
+
 %sano suoraan Projektissa käytettään methodeja kun a b c ei kun d e f
+%emt tarviiko ees selittää
 methodeja ei käytetä kun halutaan tietokannasta, jotain yksinkertaista dataa, sillä publisher-subscriber malli hoitaa tämän
 vaan methodeja käytetään silloin kun pitää tehdä jotain jota voi tehdä vain palvelimella. esim lähettää sähköposteja+*? ja tiedostojen lataaminen pilveen 
 \medskip
