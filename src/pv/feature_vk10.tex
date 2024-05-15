@@ -1,85 +1,106 @@
 
-%heti uusiks selitys
-sovelluksen ominausiitta haluttiin muokata
-Sovelluksessa oli ominaisuus nimeltä progressio. kun käyttäjää luodaan voidaan antaa sille seurattava arvo. tämä voi olla esim kg, unenmäärä jne
-käyttäjä voi sitten käyttöliittymästä lisätä arvoja. ja nähdä ne graafista. 
-Tällä hetkellä käyttäjällä voi olla vain yksi seurattava arvo ja ominaisuutta haluttiin jatkojalostaa lisäämällä mahdollisuus usealla seurattavalle arvolle. 
 
 
-\subsection*{selitys featuresta}
-%  en tiedä pitäisikö selitys featuresta selittää mitä pitää tehdä. tuntuu että tämä pitäisi olla metatekstissä jos jotain...
+%kerrotaan mikä on progressio ominaisuus. ja sitten kerrotaan minkälaiseksi se ominaisuus halutaan
 
-Käyttäjien schemassa on arvo measurableThing joka pitäisi muuttaa listaksi. Tämä vaatii user schaman muuttamista.
-Pitää myös lisätä mahdollisuus käyttäjien luonnissa lisätä useampi mitattava asia.
-käyttäjillä on progressio sivu, josta voidaan lisätä arvoja.
-tähän pitää lisätä mahdollisuus määritellä mitä arvoa halutaan inputtaa.
-graafia pitää muuttaa siten, että se voi näyttää usean mitattavan arvon.
-\medskip
-
-%kaikille kuville oikeet koot
-% ja medskipit kuntoon
-
-\includegraphics[width= 15cm, height=5cm]{src/public/progressiosingle.png} \\
-kuvassa starttaamo progressio sivu alussa
-\medskip
-
-jotain tekstiä kuvasta 
-eli paino tai kg ja input numerolle.
-sitten graafi missä ne näkyy
-\medskip
-
-
-\includegraphics[width= 15cm, height=5cm]{src/public/progressmulti.png} \\
-kuvassa starttaamo progressio sivu lopussa
-\medskip
-
-
-jotain tekstiä kuvasta 
-eli paino tai kg ja input numerolle sitten on dropdown millä voi valitas.
-sitten graafi missä ne kaikki näkyy
-\medskip
-
-
-\includegraphics[width= 15cm, height=5cm]{src/public/progressselect.png} \\
-progression laskuvalikko
-\medskip
-
-
-jotain lorem kuvasta.
-voi valita mitä haluaa.
-\medskip
-
-
-
-\subsection*{user schema päivitys}
-
-schema päivitys. measurableThing > measurableThings.  
-rajapinnat on tyypitetty, joten pitää niitä muuttaa että voi toimia.
-%jotain lisätekstiä rajapintojen tyypityksestä. ehkä jotain gql 
+%ominaisuus nimeltä tuntuu oudolta
+Sovelluksessa on ominaisuus nimeltä Progressio. Ominaisuus antaa käyttäjälle mahdollisuuden seurata jotain mitattavaa arvoa, ja nähdä sen seurantaa kaavasta.
+Arvoja voidaan myös käyttää raportissa.
 %
-pitää muuttaa miten käyttöjiä luodaan. ja miten niitä päivitetään
-pitää lisätä joku tapa millä lisätä useampia measurableThing eikä vain yhtä
+Tällä hetkellä ominaisuus tukee vain yhtä mitattavaa arvoa.
+Ominaisuutta haluttiim muuttaa siten että käyttäjälle voi antaa useamman mitattavan arvon. 
+Tämän tekeminen vaatii käyttäjän scheman muuntamista ja progressio sivun käyttöliittymän muuntamista.
 \medskip
 
-user migration. pitää migratoida kaikki aktiiviset asiakkaat measurableThings muotoon.
-migraatio funktiot on sinänsä aika pelottavia sillä muutetaan kaikkien käyttäjien schemaa samaan aikaan. jos scheman muutoksessa tulee virhe meidän kaikki käyttäjät ovat scuffed.
-funktion pitää olla luotettava ja sellainen että se toimii ekalla kerralla.
+
+
+
+
+
+\subsection*{User schema päivitys}
+
+%schema skeema?=?
+
+käyttäjän schemassa on kenttä measurableThing joka on merkkijono mitattavan asian nimestä.
+Tämän muuntaminen listaksi, johon voidaan lisätä useampi mitattava arvoja tuo ongelmia, sillä aktiiviset käyttäjät pitää migratoida käyttämään uutta käyttäjä schemaa. 
+Lisäksi pitää muokata rajapintoja ja käyttäjien muokkaamis ja luomis työkaluja.
 \medskip
 
-\subsection*{toteutus}
-%loppu kusee
-graafin näyttämiseen käytetään reat apex charts kirjastoa. Kirjasto tukee useamman eroavan datan näyttämisen, joten uuden datan näyttäminen ei vaatinut muuta kun sen lisäämista graafiin.
-react apex charts pystyi lisäämään vaan toisen seriessin. ja toimi melkein samantien
-käyttöliuittymään pitää lisätä mahdollisuus siihen että valitaan mikä seurattavaa katsotaan
-tähän taas laskuvalikko mihin vaan laitetaan kaikki jutut
+
+% jotain enemmän schemasta
+
+Käyttäjän scheman päivitys yksittäisestä measurableThing merkkijonosta measurableThings listaan vaatii töitä.
+Käyttäjä mutaatio funktioiden toimintaa pitää muokata, sillä luodaan uusi kenttä ja poistetaan vanha.
+Pitää myös etsiä kaikki kohdat jossa measurableThing kenttää käytetään, ettei johda "cannot read properties of undefined"{} virheisiin.
+käyttäjien muokkausta ja luontia pitää muokata siten että voimme listätä ja poistaa mitattavia arvoja measurableThings listasta.
+Rajapinnat ovat myös tyypitetty, joten niiden muuntaminen yhteensopivaksi on oleellista.
+\medskip
+
+% vähän jotain user migraatio funktiosta
+
+Kaikki aktiiviset käyttäjät pitää myös muuttaa käyttämään uutta käyttäjä schemaa.
+Tämän voi toteuttaa funktiolla, joka käy kaikki käyttäjät läpi, luo niille measurableThings kentän ja siirtää alkuperäisen "measurableThing"{} mitattavan arvon listaan.
+Tälläiset "migraatio funktiot"{} tuovat omat ongelmansa, sillä muokkaamme jokaista käyttäjää, ja jos muokkaaminen ei onnistu kaikilla aktiivisilla käyttäjille voi ilmeentyä ongelmia.
+Funktion pitää olla luotettava ja sellainen että se toimii ensimmäisellä kerralla.
+\medskip
+
+
+
+
+\subsection*{Käyttöliittymä}
+
+%pitäskö olla tekstiä ennen kuvaa. ainakaan opparissa näin ei saa olla.
+
+%mahdollisesti ota pienemmästä browser ikkunasta kun nyt on liian scuffed
+
+\includegraphics[width= 15cm]{src/public/progressiosingle.png} \\
+starttaamo progressio sivu alussa
+\medskip
+
+%jotain tekstiä kuvasta 
+Kuvassa näkyy nykyinen progressio ominaisuus. Käyttäjä voi valita päivän ja tallentaa arvon sille päivälle
+vasemmassa reunassa näkyy "kehitys:paino(kg)"{} tämä on seuranta arvo, joka on annettu käyttäjälle kun se on luotu.
+Alempana on kaavio, josta käyttäjä voi nähdä seurattavan arvon kehittymistä. 
+\medskip
+
+
+% uusiks
+Liittymästä käyttäjä voi tallentaa vain yhden seurattavan arvon. 
+Kaavaa pitää muokata siten, että siitä voi nähdä kaikki seurattavat arvot.
+Kaava käyttää react-apex-charts kirjastoa, joka tukee useamman viivan kaavion lisäämisen.
+\medskip
+
+
+
+\includegraphics[width= 15cm]{src/public/progressmulti.png} \\
+starttaamo progressio sivu ominaisuuden lisättyä
+\medskip
+
+
+Lisäsin myös laskuvalikon syöttökentän oikealle puolelle josta käyttäjä voi valita mitä mitattavaa hän haluaa tallentaa.
+
+\iffalse
+
+\includegraphics[width= 8cm]{src/public/progressselect.png} \\
+mitattavien progressio arvojen laskuvalikko.
+\medskip
+
+laskuvalikon avautua käyttäjä voi valita mitä mitattavaa hän haluaa päivittää
+\medskip
+
+\fi
 
 
 
 
 \subsection*{yhteenveto}
-miten meni ja miten onnistuin.
-meni hyvin ominaisuus on nyt paikalla jne toimii jee.
+%lisää jotain tekstiä
 
+React-apex-charts kirjastolla oli helpot työkalut kaavan muokkaamiseen, joten uuden datan lisääminen kaavioon oli helppoa.
+User migraatio funktio oli toiminut oikein ja kaikki käyttäjät olivat saaneet ominaisuuden käyttöön sen deployaamisen jälkeen.
+Emme varmuuskopioinut käyttäjä tietoja ennen migraatiota vaikka se olisi pitänyt tehdä. Näin ei olisi tullut ongelmaa jos migraatio funktio ei olisi toiminut.
+Scheman päivitys oli kaikista työläisin osa sillä rajapintojen vaihtaminen vaati paljon manuaalista työtä.
+Muokkasin myös raprtin luontia että se olisi yhteensopiva uuden ominaisuuden kanssa.
 
 
 
