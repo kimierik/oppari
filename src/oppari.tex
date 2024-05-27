@@ -14,6 +14,11 @@
 \usepackage{fancyhdr}
 
 
+% hypthenationrules
+\usepackage[T1]{fontenc}
+
+
+
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -51,6 +56,26 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % dots for sections
 
 
+\def\filename{src/oppari.tex}
+
+
+\input{./src/pv/macros.tex}
+
+\usepackage[finnish]{babel}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 % ------------------------------ BEGIN DOCUMENT ------------------------------ %
@@ -65,7 +90,7 @@
 
 \vspace{86mm}
 \huge
-\textbf{Ammattilaisena kehittyminen}
+\textbf{Kehityksen seuranta}
 \newline
 
 \large
@@ -204,13 +229,8 @@ TERMISTÖ
 
 mitä termejä käytetään
 
-%multiline comment
-\iffalse
 
-
-
-
-\fi
+ECMAscript                  skriptaus-kieli standardi 
 
 
 \newpage
@@ -243,7 +263,17 @@ mitä termejä käytetään
 
 \section{Johdanto}              % ------------------------------- JOHDANTO ------------------------------- %
 
-\lipsum[1-2]
+
+Opinnäytetyön tavoitteena on seurata kehittymistä 13 viikon seurantajakson aikana työharjoittelussa.
+\medskip
+
+jotain siitä että tämä on päiväkirja opinnäytetyö
+ja seurantajaksolla on seurattu juttuja jne
+\medskip
+
+%shit
+starttaamo on suomalainen startup, joka yrittää ratjoa ongelmia työ ergonomiaan, ja vähentää sairas loma päiviä, saamalla työntekijöitä liikkumaan.
+\medskip
 
 
 
@@ -252,9 +282,22 @@ mitä termejä käytetään
 
 \newpage
 \section{Lähtötilanne}         % ------------------------------- LÄHTÖTILANNE ------------------------------- %
-tässä kerrotaan siitä mitä osasin ennen oppoarin kirjoittamista jne jne
-\newline
-neljännen vuoden opiskelia. ohjelmointiin suuntautunut. harrastus ohjelmointia joten on muuta taustatietoa.
+
+
+ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista. 
+
+neljännen vuoden opiskelia
+
+harrastuksena myös ohjelmointi
+
+ei muuta työkokemusta alasta
+\medskip
+
+harjoitus jakson aikana opin juttuja ja sitä miten tehdä töitä työympäristössä
+
+
+
+
 
 
 
@@ -265,31 +308,171 @@ neljännen vuoden opiskelia. ohjelmointiin suuntautunut. harrastus ohjelmointia 
 
 
 
-\subsection{kehitys ympäristö}
-localhost kehitys lorem ipsum
+\subsection{kehitys ympäristö / teknologia pino}
 
-kehitys ympäristön pystytys projektin ehdoin
-    johdanto teknologiaan
+starttaamon käyttämä teknologia pino käyttää meteor, react, mongodb
+näitä käyttämällä koko homma toimii
 
-kehitys mite teknologiaa stackissä on
 
-\subsubsection{Meteor}
+
+
+
+\subsection{Meteor}
 tähän jotain meteorsita lorem ipsum
 
-\subsubsection{React}
-ei varmaan tähän valiin.
-
-Meteoriin voi valita minkä tahansa frontendin haluaa. käytämme reaktia projektissa
-
-\subsubsection{mongodb}
-ehkä ei tähän väliin
+\subsubsection{Meteor metodit}
 
 
 
 
 
+\newpage
+\subsection{React}                % ------------------------------- REACT ------------------------------- %
+\wordcount
 
-\subsection{Responsiivinen käyttöliittymä}
+
+\subsubsection{mikä on React}
+
+%ei saa olla metatekstiä
+%https://github.com/facebook/react/blob/main/README.md
+%https://www.infoq.com/news/2013/06/facebook-react/
+% molemmat siteerattu 27.5.24
+
+
+% ei ole metan kehittämä vaan se on vaan ylläpitämä. facebookin työntekijä teki sen
+React on metan kehittämä ja ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto, joka on suunniteltu reaktiivisien käyttöliittyjien kehittämiseen.
+%more text
+
+%rnative selitys paremmin
+reaktia voi käyttää web ja mobiili käyttöliittymien tekemiseen react nativella
+%vitusti lisää tekstiä
+\medskip
+
+
+
+
+
+
+
+
+\subsubsection{jsx}
+
+%https://react.dev/learn/writing-markup-with-jsx
+%https://facebook.github.io/jsx/ 
+
+% jsx = js xml
+% https://medium.com/@sjarancio/what-is-jsx-e3dda0af3490
+
+%transpilation
+%https://www.scholarhat.com/tutorial/react/getting-started-with-jsx
+% https://www.typescriptlang.org/docs/handbook/jsx.html
+
+% kaikki viitattu 27.5
+
+%html koodia uusiks
+JSX (javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa html tyylistä koodia javascriptin sekaan
+% asiakielellä
+selain ei itse osaa lukea jsx koodia joten se pitää transpiloida javascriptiksi ennen kun sen voi deploy
+
+
+
+% suora sitaatti https://facebook.github.io/jsx/ 
+JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle
+\medskip
+
+\bigskip
+\includegraphics[width=10cm]{src/public/oppar/pure_jsx_example.png}
+
+Kuva 1. kuvankaappaus JSX syntaxista.
+\medskip
+
+Kuvassa luodaan elementti helloWorld, jolle annetaan arvoksi paragraafi, jossa teksti "Hello, World!"{}.
+% loppu pitää kirjottaa jotenkin paremmin ja pitää yhistää paremmin 
+Elementtien arvot voidaan kirjoittaa html tyylillä, joka tekee jutuista kivaa.
+\medskip
+
+
+
+\bigskip
+\includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}
+
+Kuva 2. Kuvankaappaus helloWorld elementistä, joka on käännetty javascriptiin. 
+\medskip
+
+%vähän toistoa muttei väliä sillä pitää siteerata tämä
+
+%https://babeljs.io/repl 
+kuvassa on helloworld elementti, joka on käännetty natiiviksi javascriptiksi babel kääntäjää käyttäen.
+Tämä antaa selaimille mahdollisuuden tulkita JSX koodia.
+%jotain lisää
+\medskip
+
+% https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
+%pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
+
+
+\subsubsection{Komponentit}
+
+
+%https://react.dev/learn/your-first-component
+
+Oma tekemä komponentti. se voi sisältää tilaa ja kutsuja muihin komponentteihin jne
+komponentteihin voi lisätä interaktiivisuutta jne
+
+
+
+komponentit on vähän niinkuin oma elementti jonkqa voi kirjoittaa jsx koodiin siististi
+
+\medskip
+
+\subsubsection{Reaktin struktuuri}
+index.js lähtien
+reactdom createroot
+root.render
+käy läpi kaikki lapset mitkä kaikilla componenteilla on ja tekee niistä natiivi html elementtejä jotka sitten selain renderöi. 
+
+koko react läpi jsx kooditsta htmllään
+\medskip
+
+
+
+\subsubsection{VDOM}
+
+
+%jotain domista, mikä se on ja miten se liittyy käyttöliittymiin ja sitten mikä on vdom
+% vai pitäisikö samantien aloittaa että meillä on vdom, ja sittem selittää mikä dom on..... kuulostaa väärältä
+
+virtuaali dom (document object model) on virtuaali representaatio oikeasta domista, 
+dom on puu mainen struktuuri koko dokumentista
+
+
+%https://medium.com/@BharathkumarV/reacts-virtual-dom-17fdcb290a10
+% siteerattu 27.5
+
+%selittää vähän paremmin ja tuntuu että puu struktuurinen ei ole oikein hyvä tapa kuvata domia
+DOM (eng Document object model) on puu-struktuurinen representaatio koko käyttöliittymästä.
+Tätä struktuuria käytetään rajapintana javascriptin ja html:län välillä. jotain jotain hidas.
+%
+VDOM (eng Virtual Dom) on virtuaalinen esitys domista jonka react pitää musitissaan koko suorituksen ajan.
+vdomia käyttäen react voi nopeasti päätellä mitkä osat käyttöliittymästä pitää päivittää.
+kun jonkun komponentin tila päivittyy react voi päivittää 
+
+
+
+
+
+
+\newpage
+\subsection{Mongodb}
+
+jotain nosql mutta suurimmaksi osaksi mongodb tietokannasta
+
+
+
+
+
+
+\subsection{Responsiiviset käyttöliittymät}
 responsiivinen käyttöliittymän kehitys lorem ipsum
 
 
@@ -298,25 +481,14 @@ responsiivinen käyttöliittymän kehitys lorem ipsum
 
 
 \subsection{Localisaatio}
-jotain localisaatiosta lorem ipsum
+lorem
 
 \subsubsection{i18n}
-i18n lorem ipsum
+en tiedä saanko hirveesti kirjotatteu
+jos en niin kaada tämä ylempään
+tai jos ei tule toista subsub sectionia
 
 
-
-\subsection{meteor syvennys} 
-meteor lorem ipsum
-
-
-\subsection{React syvennys}
-react lorem ipsum 
-
-
-
-\subsection{nosql tietokannat}
-
-mongodb lorem ipsum
 
 
 
@@ -338,10 +510,21 @@ ipsum feature lisäys
 
 
 
+\section{Yhteenveto}
+
+
+sehän meni ihan hyvin 
+
+
+
+
 \newpage
 \section{Lähteet}               % ------------------------------- LÄHTEET ------------------------------- %
 
 miten laitan liitteen päiväkirjasta ja millainen se pitäisi olla
+
+
+
 
 
 \end{document}
