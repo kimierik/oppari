@@ -1,40 +1,82 @@
 
-mitä tehtiin viikolla?
-miksi käytettiin 2 viikkoa tähän.
-%admin kk translate roolitus
-%8vk  tehtiin rooleja mutta se ei ole oikein mongo hommaa
-%niin tässä ei oikein kerrota mittään siitä mitä tehdiin viikonaikana vaan kirjoitetaan suoraan tietokannoista i quess
+
+tietokannat niiden eri tyypit ja käytetty mongodb tietokanta ja miten projekti käyttää sitä.
 
 
 
-\subsection*{nosql}
-mikä on nosql kanta
-toisin kun relatiiviset joilla on teitty row ja collumni määrä non sql voi olla esim. avain-arvo dockumentti graafi jne
-sql schma on rigid toisin kun nosql jossa se voi vahdella
 
-relatiivinen välttää usein kalliita join operaatioita
-%selitä kirjakielellä ei puhekielellä
-% huono esimerri muutenkin
-esim jos olisi sql tietokanta olisi, pöytä asiakkaille jossa on asiakas id, ja pöytä ostoksille jossa olisi kanssa asiakas id
-jos halutaan kaikki asiakkaan ostokset nimellä niin ekaksi pitää etsiä asiakas id asiakas pöydästä sitten asiakas idnkanssa etsiä ostokset ostos pöydästä.
-% hmmmmm
-toisin kun esim dokumentti tietokannassa asiakas tiedossa voi olla monta muuta juttua. esim natiiveja+* tyyppejä kuten string, int float tai array.
+\subsection*{Relaationainen tietokanta}
 
+%https://www.ibm.com/topics/relational-databases
 
-\subsection*{mongodb}
+Relationaalinen tietokanta on tietokanta malli, joka organisoi tiedot riveihin ja sarakkeisiin, jotka muodostavat pöydän. 
+Pöydän sarakkeet määrittävät sen skeeman ja rivit jokaisen tietueen.
+Jokaisella rivillä on joku uniikki tunniste millä sen voi löytää. Tätä kutsutaan primääri avaimeksi.
+\medskip
 
-%suomenna
-mongodb on proprietary? nosql tietokanta, joka tallentaaa sen tiedostot BSON muodossa dokumentteihin. BSON on binääri representaatio json formaatista .
-mongodbseen ei tarvitse määrittää millainen schema datalla on
-mongo myös tukee sharding eli voi jakaa databasen tiedon clusterille joka antaa mahdollisuuden vaakatsuuntaisselle skaalaavuuldelle
+Ulkoinen avain (eng foreign key) on sarake tai sarakkeet, jotka viittaa toisen pöydän primääri avainta, muodostaen linkin pöytien välillä.
+Ulkoisia avaimia voi näin käyttää taulukkojen ristivuuttaukseen, joka antaa mahdollisuuden yhdistää pöytiä, joilla on eri skeema, esim. asiakastiedot ja ostostiedot. 
+\medskip
 
 
-mongo projektissa\\
-mongoDBtä käytetään käyttäjätietojen, treenitietojen, seurantatietojen jne kanssa
-periaatteessa kaikkien muiden kanssa paitsi tiedostojen kanssa jotka on aws bucketissa
-koska mongogodb ei kiinnosta missä schemassa data on. ennen mongo api kutsuja meillä on itse tyyppi varmistelu ettei mitään ylimääräistä mene tietokantaan vahingossakaan.
+\medskip
+
+\subsection*{Nosql tietokanta}
+
+
+Nosql (not only sql tai non sql) on ei relationaalinen tietokanta.
+Toisin kun relationaaliset tietokannat, ei relationaalinen tietokanta ei käytä tarkkaa skeemaa eikä välttämättä sarake - rivi mallia, eli datan skeema voi olla dynaaminen ja vaihteleva.
+Ei relationaaliset tietokannat voivat käyttää erilaisia tiedon haku ja tallennus järjestelmiä, yleisimmät ovat graph, document ja key-value.
+\medskip
+
+
+
+Graafin tietokannan tiedot on organisoitu solmuihin (eng node) ja suhteisiin (eng relation).
+Solmu on tietopiste, johon voi tallettaa dataa skeematta. 
+%https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/
+Suhde on yhteys kahden solmun välillä. Suhteissa voi myös olla tallennettuna ominaisuuksia, joiden avulla voi etsiä solmuja,
+esimerkiksi jos solmut:t esittävät ihmisiä, niissä voisi olla ominaisuudet, jotka kuvaavat heidän nimeänsä ja syntymäaikaa.
+Suhteet olisivat yhteyksiä ihmisten välillä, ja ne voivat kuvata henkilöiden suhteita.
+\medskip
+
+Dokumentti pohjainen relationaalinen kanta, jota projekti käyttää, voi tallentaa datan eri tiedostomuodoissa esim. JSON tai YAML
+Joka dokumentilla on uniikki tunniste, joka erottaa sen muista. 
+Dokumentteja voi noutaa tietokannasta uniikin tunnisteen tai ominaisuuksien arvojen avulla.
+\medskip
+
+Avain-arvo (eng key-value) tietokanta on käytännössä hajautustaulu (eng hash table).
+Jokaisella tietopisteellä on uniikki avain, joka viittaa johonkin arvoon. 
+Avaimesta lasketaan arvon osoite hajautusfunktiota käyttäen, joten etsinnän nopeus ei riipu datan kokonaismäärästä.
+\medskip
+
+
+
+
+\subsection*{Mongodb}
+
+Mongodb on nosql tietokanta, joka käyttää dokumenttimaista tietomallia, johon data on tallennettuna BSON muotoon, joka on binaari representaatio JSON formaatista.
+\medskip
+
+Projektissa mongodb:tä käytetään kaiken muun kuin tiedostojen tallentamiseen. Tiedostot projektissa on AWS S3 ämpärissä
+Koska relatiivinen dokumenttimalli ei määritä tarkkaa skeemaa, mongodb antaisi mahdollisuuden tallentaa mitä tahansa dataa tietokantaa.
+%suomenna wrapper... do we need to?
+Turvallisuus syistä projektin käyttöliittymä ja palvelin koodissa ei kutsuta suoraan mongodb rapapinta funktioita vaan niille on tehty omat "wrapper"{} funktiot.
+Funktiot katsovat ja varmistavat datan mitä yritetään kysyä tai tallentaa tietokantaan, ettei sieltä saa tai sinne voi tallentaa mitään ylimääräistä.
+Näin voimme luoda lisä turvallisuutta tietojenhallinnassa.
+\medskip
 
 
 
 \subsection*{yhteenveto}
-jotain tekstiä
+
+%Projekti ei vaadi käyttää relatiivistä tietokantaa mutta se tekee joistakin operaatioista helpompia, sillä skeema on dynaamisempi ja voimme tallentaa listoja dokumentteihin.
+
+Projekti ei itsessään vaadi ei relationaalista tietokantaa vaan sen pystyisi yhtä hyvin toteuttamaan relationaalisella tietokannalla, 
+mutta ei relationaalinen kanta auttaa joissakin operaatioissa.
+Esimerkiksi seuraavan viikon projektissa. Sillä siellä mainittujen mitattavien arvojen lisäämisen ja etsimisen on helpompaa.
+Relationaalisessa tietokannassa meillä olisi oma pöytä, jossa mitattavat arvot tallennettaisiin.
+Jos haluttaisi tietää käyttäjän mitatut arvot nämä pöydät pitäisi yhdistää.
+Toisin kun ei relationaalisessa, jossa voimme vain hakea käyttäjän tiedot ja siinä mukana on lista mitatuista arvoista.
+
+
+

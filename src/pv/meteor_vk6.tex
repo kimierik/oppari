@@ -11,15 +11,15 @@ Tämä vaatii kommunikaatiota clientin, palvelimen ja tietokannan välillä.
 
 
 %Meteor on, mongoDB tietokantaa lukuunottamatta, avoimeen lähdekoodiin perustuva full-stack web-framework. 
-Meteor on avoimeen lähdekoodiin perustuva full-stack web-framwork, mongodb tietokantaa lukuunottamatta, jonka meteor paketoi mukanaan.
-Meteorilla on integraatio moneen yleiseen frontend-framework:kiin, kuten vue, react, svelte tai angular.
+Meteor on avoimeen lähdekoodiin perustuva full-stack web-framework, mongodb tietokantaa lukuun ottamatta, jonka meteor paketoi mukanaan.
+Meteorilla on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular.
 \medskip
 
 
 
 
 Meteor antaa monta työkalua clientin, palvelimen ja tietokannan väliselle kommunikaatiolle, kuten metodit ja subscriber-publisher malli.
-Meteor methodit antaa mahdollisuuden luoda rajapinnan palvelimen ja clientin väliselle kommunikaatiolle ja 
+Meteor metodit antaa mahdollisuuden luoda rajapinnan palvelimen ja clientin väliselle kommunikaatiolle ja 
 subscriber-publisher auttaa käyttöliittymän päivittämisessä tietokannan muututtua.
 
 
@@ -38,15 +38,15 @@ subscriber-publisher auttaa käyttöliittymän päivittämisessä tietokannan mu
 \subsection*{Subscriber publisher}
 
 Yleinen ongelma Web-sovelluksissa on käyttöliittymän päivitys, kun palvelimella tai tietokannassa tapahtuu muutoksia. 
-Nettisivuilla, jotka käyttävät RESTful rajapintoja, lähetettäisi get request palvelimelle, kun halutaan pyytää tietokannasta dataa. Client ei tietäisi jos data on vanhaa tai jos se on päivittynyt palvelimella.
-Restful rajapinnallisissa sivustoissa pitäisi yhdistää palvelin ja client esimerkiksi web-socketilla, jolloin palvelin voi ilmoittaa että on tullut muutos dataan.
+Nettisivuilla, jotka käyttävät RESTful rajapintoja, lähetettäisi get request palvelimelle, kun halutaan pyytää tietokannasta dataa. Client ei tietäisi, jos data on vanhaa tai jos se on päivittynyt palvelimella.
+Restful rajapinnallisissa sivustoissa pitäisi yhdistää palvelin ja client esimerkiksi web-socketilla, jolloin palvelin voi ilmoittaa, että on tullut muutos dataan.
 
 \medskip
 
 Meteor käyttää subscriber-publisher mallia, jossa client on yhdistetty palvelimeen web-socketin kautta. 
 %
 Palvelin voi julkaista osia tietokannasta meteor.publish-funktiolla ja asiakas voi tilata ne. Jos asiakas tilaa tämän julkaisun, se saa ilmoituksen aina, kun tiedot, jotka asiakas on tilannut, muuttuvat.
-Tällä tavalla tiedetään mitä tietoa client haluaa ja mitkä osat päivittyy, joten palvelimen ei tarvitse lähettää kaikkea tietokanta muutoksia clientille, vaan ne mitkä client on tilannut.
+Tällä tavalla tiedetään mitä tietoa client haluaa ja mitkä osat päivittyvät, joten palvelimen ei tarvitse lähettää kaikkea tietokanta muutoksia clientille, vaan ne mitkä client on tilannut.
 Meteor voi sitten päivittää käyttöliittymän osia, jotka ovat riippuvaisia kyseisistä tiedoista. 
 
 % kuvia vaikka publish ja subscribe kutsuista
@@ -59,7 +59,7 @@ Meteor voi sitten päivittää käyttöliittymän osia, jotka ovat riippuvaisia 
 
 \medskip
 
-Meteor päivittää komponentit mitkä ovat riippuvaisia halutusta datasta automaattisesti. Tekien käyttöliittymä koodista puhtampaa.
+Meteor päivittää komponentit mitkä ovat riippuvaisia halutusta datasta automaattisesti. Tekien käyttöliittymä koodista puhtaampaa.
 
 
 \medskip
@@ -68,9 +68,9 @@ Meteor päivittää komponentit mitkä ovat riippuvaisia halutusta datasta autom
 
 \subsection*{Methodit}
 
-Meteor ei käytä RESTful rajapintaa palvelimen ja clientin välillä, vain Meteorin methodeja.
+Meteor ei käytä RESTful rajapintaa palvelimen ja clientin välillä, vain Meteorin metodeja.
 Methodit suoritetaan ja määritetään funktioina palvelimen puolella, ja niitä voi kutsua clientistä tai palvelimelta.
-Metodit antavat kutsujasta tietoa, esim onko kutsuja kirjautunut sisään ja jos on niin mikä on hänen käyttäjätunnus. 
+Metodit antavat kutsujasta tietoa, esim. onko kutsuja kirjautunut sisään ja jos on niin mikä on hänen käyttäjätunnuksensa. 
 Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin kutsumiseen.
 \medskip
 
@@ -78,10 +78,10 @@ Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin 
 % kuva methodi määritelmästä ja seloitus mitä tapahtuu
 
 \includegraphics[width=15cm]{src/public/methodexample.png}\\
-Meteor methodin määritelmä
+Meteor metodin määritelmä
 \medskip
 
-Muvassa on meteor methodin määritelmä. "exampleMethod"{} methodi katsoo onko kutsuja kirjautunut sisään, jos käyttäjä ei ole kirjautunut niin heitetään error.
+Kuvassa on meteor metodin määritelmä. "exampleMethod"{} metodi katsoo, onko kutsuja kirjautunut sisään, jos käyttäjä ei ole kirjautunut niin heitetään error.
 Jos käyttäjä on kirjautunut sisään tulostetaan argumentit. Argumentit tulostetaan palvelimelle.  
 
 
@@ -92,7 +92,7 @@ Jos käyttäjä on kirjautunut sisään tulostetaan argumentit. Argumentit tulos
 
 %selostus raportin specista ja mitä sen pitää tehdä
 
-Raporttiluonti ominausuuden määritelmänä oli, saada ulos exelissä avattava tiedosto, jossa näkyisi käyttäjän nimi, treenikertojen määrä ja progressio ominaisuuden ensimmäinen ja viimeinen arvo.
+Raporttiluonti ominaisuuden määritelmänä oli, saada ulos exelissä avattava tiedosto, jossa näkyisi käyttäjän nimi, treenikertojen määrä ja progressio ominaisuuden ensimmäinen ja viimeinen arvo.
 Raportin luonti pitää olla laajennettava. Raportissa olevan datan formaatti ja ulostulevan tiedosto formaatin pitää olla muutettavissa.
 \medskip
 
@@ -100,8 +100,8 @@ Raportin luonti pitää olla laajennettava. Raportissa olevan datan formaatti ja
 % selostus miten raportti toimii käytännössä. kirjoita kirjakielellä
 
 Raportin luonti toimii käytännössä näin.
-Client kutsuu getReportData methodia ja antaa sille objektin argumenttina, jossa on tietoa mitä dataa halutaan lisätä raporttiin ja missä muodossa.
-Methodi varmistaa onko kutsuja kirjautunut sisään, ja onko hänellä tarvittavat oikeudet suorittaa methodi.
+Client kutsuu getReportData metodia ja antaa sille objektin argumenttina, jossa on tietoa mitä dataa halutaan lisätä raporttiin ja missä muodossa.
+Metodi varmistaa onko kutsuja kirjautunut sisään, ja onko hänellä tarvittavat oikeudet suorittaa metodi.
 Palvelin käy läpi asetukset mitä raporttiin halutaan ja lähettää datan takaisin clientille, josta client muodostaa tiedoston.
 \medskip
 
@@ -109,7 +109,7 @@ Palvelin käy läpi asetukset mitä raporttiin halutaan ja lähettää datan tak
 
 Tiedosto luodaan clientillä eikä palvelimella, koska jos sen tekisi normaalisti palvelimella se on estävä funktio,
 jolloin palvelin voisi jäätyä silloin kun tehdään isoa dokumentti, ja 
-vaikka tiedoston tekemisen voi tehdä asynkrooniseksi se silti hidastaisi palvelinta. 
+vaikka tiedoston tekemisen voi tehdä asynkroniseksi se silti hidastaisi palvelinta. 
 %teknisesti väärää tietoa ei tule ylimääräisiä kustannuksia sillä heroku veroittaa tunnilta. 
 Kun client tekee tiedostoon työn niin vältetään ylimääräisiltä palvelin kustannuksilla.
 Tiedoston valmistuttua käyttäjä voi ladata sen.
@@ -118,9 +118,9 @@ Tiedoston valmistuttua käyttäjä voi ladata sen.
 
 \subsection*{Yhteenveto}
 
-Meteor on suunniteltu nopeaan kehitykseen ja se näkyy sub-pub mallissa ja metodeissa.
-Kun käyttää sub-pub niin kehittäjän ei tarvitse kirjoittaa käyttöliittymä koodiin logiikkaa sen päivittämiselle, vaan meteor hoitaa sen automaattisesti.
-Methodit on nopea tapa tehdä rajapinta ja se on helposti yksikkö testattavissa. metodit myös luo helpon tavan tietää onko kutsujalla oikeuksia metodiin, joka luo lisä turvallisuutta.
+Meteor on suunniteltu nopeaan kehitykseen ja se näkyy subscriber-publisher mallissa ja metodeissa.
+Kun käyttää subscriber-publisher niin kehittäjän ei tarvitse kirjoittaa käyttöliittymä koodiin logiikkaa sen päivittämiselle, vaan meteor hoitaa sen automaattisesti.
+Methodit on nopea tapa tehdä rajapinta ja se on helposti yksikkö testattavissa. metodit myös luovat helpon tavan tietää onko kutsujalla oikeuksia metodiin, joka luo lisä turvallisuutta.
 \medskip
 
 % kirjota hyvin
@@ -130,7 +130,7 @@ Uusien tiedosto -formaattien tai -ulkoasujen lisääminen on helppoa.
 Tiedoston luonti tehdään clientillä, joten uuden tiedostoformaatin lisääminen edeltää funktion lisäämistä, 
 joka ottaa argumenttina datan ja palauttaa halutun tiedoston blob:ina (binary large object).
 %
-Metodille annetaan objekti jossa kerrotaan mitä dataa halutaan, joten eri datan saanti palvelimelta edeltää vain objektin muuttamista.
+Metodille annetaan objektim, jossa kerrotaan mitä dataa halutaan, joten eri datan saanti palvelimelta edeltää vain objektin muuttamista.
 
 
 

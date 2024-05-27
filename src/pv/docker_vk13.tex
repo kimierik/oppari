@@ -20,16 +20,16 @@ Testailussa ja kehittämisessä tormäsin ongelmiin, kun en ollut yhdistänyt ha
 % enemmän sanoja
 
 Kontti on kevyt, itsenäinen ja eristetty ympäristö, joka on suuntautunut sovelluksien suorittamiseen.
-Toisin kun virtuaalikoneissa, kontin mukana ei tule käyttöjärjestelmää vaan se käyttää isäntäkonetta hyödyksi tekien siitä kevyemmän.
+Toisin kun virtuaalikoneissa, kontin mukana ei tule käyttöjärjestelmää vaan se käyttää isäntäkonetta hyödyksi, joka tekee siitä kevyemmän.
 Kontti suoritetaan eristettynä prosessina ja kehittäjä voi määritellä miten kontti voi kommunikoida ulkomaailman kanssa.
 \medskip
 
 Kontit tehdään kontti kuvasta.
-Kuva on binääri tilannekuva sovelluksesta, sen käytetystä softasta ja sen riippuvuuksista.
-se on vahvasti määritelty ympäristö ja se ei tee oletuksia suoritus ympäristöstään tekien siitä helposti siirrettävän ja skaalautuvan.
+Kuva on binaari tilannekuva sovelluksesta, sen käytetystä softasta ja sen riippuvuuksista.
+se on vahvasti määritelty ympäristö ja se ei tee oletuksia suoritus ympäristöstään, jota tekee siitä helposti siirrettävän ja skaalautuvan.
 \medskip
 
-Kontin kuvan voi tehdä Dockerfilen kautta. Dockerfile on lista ohjeta ja komentoja jotka määrittävät mitä riippuvaisuuksia, ja sovelluksia konttiin tulee.
+Kontin kuvan voi tehdä Dockerfilen kautta. Dockerfile on lista ohjeita ja komentoja jotka määrittävät mitä riippuvaisuuksia, ja sovelluksia konttiin tulee.
 Dockerfile on vain tekstitiedosto, joka tekee siitä myös helposti muokattavan ja jaettavan.
 
 \medskip
@@ -43,9 +43,9 @@ Dockerfile on vain tekstitiedosto, joka tekee siitä myös helposti muokattavan 
 
 
 %stack suomeksi ehk,
-Docker-compose on työkalu moni kontti sovelluksille, joka mahdollistaa kontti verkon käynnistämisen, se yksinkertaistaa koko sovellus stackin käynnistämistä ja halinttaa.
+Docker-compose on työkalu moni kontti sovelluksille, joka mahdollistaa kontti verkon käynnistämisen, se yksinkertaistaa koko ohjelmistopinon käynnistämistä ja hallinttaa.
 Docker-compose lukee docker-compose.yaml tiedostosta, miten konttia pitäisi kohdella.
-Tiedostosta voi määritellä ympäristä muuttujia ja volyymejä, jolla voi maarättää voiko kontti tallentaa isäntäkoneelle tietoja.
+Tiedostosta voi määritellä ympäristö muuttujia ja volyymejä, jolla voi määrittää voiko kontti tallentaa isäntäkoneelle tietoja.
 Koko kontti verkoston voi käynnistää yhdellä "docker-compose up"{} komennolla.
 
 
@@ -55,8 +55,8 @@ Koko kontti verkoston voi käynnistää yhdellä "docker-compose up"{} komennoll
 \subsection*{Testiympäristö}
 
 
-Hallinta ja käyttäjä kontit saavat \verb"MONGO_URL" ympäristömuuttujan, joka on mongodb konttin osoite. Näin hallinta ja käyttäjäpoli jakaa saman tietokannan.
-Molemmille on annettu volyyminä niiden lähdekoodi, joka mahdollistaa kontin päivityksen kun teem muutosta koodipohjaan.
+Hallinta ja käyttäjä kontit saavat \verb"MONGO_URL" ympäristömuuttujan, joka on mongodb kontin osoite. Näin hallinta ja käyttäjäpoli jakaa saman tietokannan.
+Molemmille on annettu volyyminä niiden lähdekoodi, joka mahdollistaa kontin päivityksen, kun teen muutosta koodipohjaan.
 \medbreak
 
 \medskip
@@ -65,7 +65,7 @@ Molemmille on annettu volyyminä niiden lähdekoodi, joka mahdollistaa kontin p�
 Hallinta puolen dockerfile.
 \medskip
 
-Hallinta ja käyttäjä puolen docker kuvat ovat pohjautuvat molemmat ubuntu lts ja ovat muuten identtisiä porttia lukuunottamatta.
+Hallinta ja käyttäjä puolen Docker kuvat ovat pohjautuvat molemmat ubuntu lts ja ovat muuten identtisiä porttia lukuun ottamatta.
 Kuvassa ensimmäiseksi ladataan uudet päivitykset, jonka jälkeen ladataan nodejs ja siitä 14.21.3 versio, jota projekti käyttää.
 Sitten ladataan meteor, jonka jälkeen käynnistetään "startcontainer"{} scripti.
 \medskip
