@@ -264,15 +264,24 @@ ECMAscript                  skriptaus-kieli standardi
 \section{Johdanto}              % ------------------------------- JOHDANTO ------------------------------- %
 
 
-Opinnäytetyön tavoitteena on seurata kehittymistä 13 viikon seurantajakson aikana työharjoittelussa.
+%tuleeko tähän oikeasti preamble itse tekniikan alasta 
+
+Opinnäytetyön tavoitteena on seurata kehittymistä 13 viikon seurantajakson aikana työharjoittelussa 
+ja tutkia henkilökohtaista kehitystä harjoituksen aikana.
 \medskip
 
-jotain siitä että tämä on päiväkirja opinnäytetyö
-ja seurantajaksolla on seurattu juttuja jne
+
+opinnäite työ on päiväkirjamallinen ja liitteenä on päiväkirja dokumentti, 
+johon olen kirjannut mitä olen tehnyt, mitä olen oppinut ja minkälaisten teknologioiden kanssa olen ollut tekemisissä.
 \medskip
 
-%shit
-starttaamo on suomalainen startup, joka yrittää ratjoa ongelmia työ ergonomiaan, ja vähentää sairas loma päiviä, saamalla työntekijöitä liikkumaan.
+
+työ toteutettiin Starttaamo Oy:ssä, suomalaisessa startup yrityksessä, joka pyrkii ratkomaan ongelmia työergonomian kanssa.
+Pää tavoitteena on vähentää sairaslomia saamalla työntekijät noudattamaan, alojen ammattilaisten suunnittelemien liikunta- ja ruokavalio-ohjelmia. 
+% jotain selitystä itse alustasta jonka kanssa tulen tekemiseen
+Yrityksen pää myyntituote on alusta, jonka kanssa tulen tekemään töitä.
+
+
 \medskip
 
 
@@ -286,14 +295,39 @@ starttaamo on suomalainen startup, joka yrittää ratjoa ongelmia työ ergonomia
 
 ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista. 
 
-neljännen vuoden opiskelia
-
-harrastuksena myös ohjelmointi
-
-ei muuta työkokemusta alasta
+% kauan olen ollut opiskelija
+Olen opiskellut LAB ammattikorkeakoulussa XX lukukautta ja olen kirjoitusen aikana neljännen vuoden tieto- ja tietoviestintätekniikkan opiskelia.
+% jotain lorem siitä että olen oppinut koulusssa jotain
+%
+% jotain siitä että ei ole oikeaa työ kokemusta vaikka on vahva koodauspohja
+Minulla ei ennen harjoitusta ollut aijempaa työkokemusta alalta. 
+% selitä paremmin.. mitä kaikkea itse projektissa tullaan tekemään ja miten voin oppia asioista
+projektissa käytettään monta teknologiaa jonka kanss en ole ollut tekemisessä joten niiden oppiminen tulee uutena
 \medskip
 
-harjoitus jakson aikana opin juttuja ja sitä miten tehdä töitä työympäristössä
+
+
+
+
+
+
+\newpage
+\section{Teoria}                % ------------------------------- TEORIA ------------------------------- %
+
+
+
+\subsection{Kehitys ympäristö / Teknologia pino}
+
+Startupit haluaa nopeaa liikkumista ja kehittymistä ja se näkyy teknologia valinnoissa.
+projekti käyttää fullstack frameworkkia meteor joka on suunniteltu nopeaan kehittelyyn ja käyttöönottoon.
+\medskip
+
+käyttöliittymä on toteutettu käyttämällä reactjs kirjastoa
+\medskip
+
+projektin tietokanta on mongodb, joka tekee uusien collectioneiden tekemisestä helppoa sillä nosql kantoihin ei travitse määritellä skeemaa.
+\medskip
+
 
 
 
@@ -304,23 +338,86 @@ harjoitus jakson aikana opin juttuja ja sitä miten tehdä töitä työympärist
 
 
 \newpage
-\section{teoria}                % ------------------------------- TEORIA ------------------------------- %
+\subsection{Meteor}                % ------------------------------- Meteor ------------------------------- %
 
 
 
-\subsection{kehitys ympäristö / teknologia pino}
-
-starttaamon käyttämä teknologia pino käyttää meteor, react, mongodb
-näitä käyttämällä koko homma toimii
+\subsubsection{Mikä on meteor}
 
 
+%https://github.com/mongodb/mongo?tab=License-1-ov-file
+% mongo licence 
+
+% https://github.com/meteor/meteor?tab=License-1-ov-file
+% meteor lisence
+
+% https://guide.meteor.com/collections.html#mongo-collections
+% meteor uses mongo. but it is not manditory
 
 
 
-\subsection{Meteor}
-tähän jotain meteorsita lorem ipsum
+%tässä blokissa on tarpeeks tekstiä kuhan sen kirjottaa kunnoll
+
+
+%src meteor homepagef
+Meteor on full-stack JavaScript web-framework ja on itsessään avoimeen lähdekkoodiin perustuva, 
+poislukien meteorin mukaan paketoimaa mongodb tietokantaa, joka toimii Server Side Public Lisenssillä.
+Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyttöönottoon.
+%
+% https://www.meteor.com/
+% viitattu 28.5 ...
+% pakota ... frontend teknologiaa ... kehittäjää? mahdollisesti ei tätä edes kun mmeillä on alempana toi featuret
+%Meteor ei pakota kehittäjää käyttämään tiettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular.
+\medskip
+
+
+    
+% https://www.meteor.com/
+% viitattu 28.5
+
+Meteor tukee monta ominaisuutta kuten.
+\begin{itemize}
+    \item tukee monta Front-end kirjastoa ja frameworkkkia
+    \item tukee typescriptiä
+    \item sisään rakennettu käyttäjä systeemi
+    \item toimii monella laitteellqa
+    \item helppo ja nopea käyttöönottaa 
+\end{itemize}
+
+
+
 
 \subsubsection{Meteor metodit}
+
+% kirjoita tämä oikeella oppari tyylillä. idk tuntuu vähän väärältä tässä
+
+
+
+% kappale rpc. mikä on ja miten eroaa restful
+
+%enemmän yleis selostusta rps ja restful mikä on ero hyvät ja huonot puolet
+
+Meteor ei käytä RESTful rajapintaa vain RPC (eng Remote procedure call) rajapintaa. 
+%uusiks
+Tarkoittaa että client kutsuu funktioita palvelimella meteorin kautta.
+%uusiks jotenkin huono 
+Palvelimelle määritetään metodit, joita voidaan kutsua palvelimelta tai clientiltä.
+
+
+
+
+\medskip
+
+
+% ehk uusiks
+Methodit suoritetaan ja määritetään funktioina palvelimen puolella, ja niitä voi kutsua clientistä tai palvelimelta.
+% uusiks ainakin alku. 
+Metodit antavat kutsujasta tietoa, esim. onko kutsuja kirjautunut sisään ja jos on niin mikä on hänen käyttäjätunnuksensa. 
+%uusiks
+Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin kutsumiseen.
+
+
+
 
 
 
@@ -331,7 +428,8 @@ tähän jotain meteorsita lorem ipsum
 \wordcount
 
 
-\subsubsection{mikä on React}
+%ei varmaan saa olla kysymy
+\subsubsection{Mikä on React}
 
 %ei saa olla metatekstiä
 %https://github.com/facebook/react/blob/main/README.md
@@ -465,8 +563,24 @@ kun jonkun komponentin tila päivittyy react voi päivittää
 \newpage
 \subsection{Mongodb}
 
-jotain nosql mutta suurimmaksi osaksi mongodb tietokannasta
+%src mongo lisence.
 
+
+% https://www.techtarget.com/searchdatamanagement/definition/MongoDB
+% jotain täältä. tämä tosin sanoo että on open source joka ei oo sinänsä totta
+% sitaatti 28.5
+
+
+mongodb on Server Side Public Lisenssillä toimiva NoSql dokumentti pohjainen tietokanta.% datambase management program? 
+%en tiedä onko edes järkee mainita
+mongo tukee ajureita monelle suositulle kielelle
+
+mongodb collection
+
+"horisonttaali" skaalautuminen
+
+helppo third party support
+aka helposti integroitava
 
 
 
@@ -480,7 +594,7 @@ responsiivinen käyttöliittymän kehitys lorem ipsum
 
 
 
-\subsection{Localisaatio}
+\subsection{Lokalisaatio}
 lorem
 
 \subsubsection{i18n}
@@ -501,19 +615,22 @@ tai jos ei tule toista subsub sectionia
 \section{Toteutus}              % ------------------------------- TOTEUTUS ------------------------------- %
 
 
-\subsection{Localisaatio}
-localisaatio riippuen 
+\subsection{Lokalisaatio}
+käännös ja lokalisaatio
 
 
 \subsection{Uuden ominaisuuden lisäys}
-ipsum feature lisäys
+ipsum progressio multiseuranta feature lisäys
 
 
 
 \section{Yhteenveto}
 
-
 sehän meni ihan hyvin 
+
+opin käyttämään projektissa käytettyjä teknologioita
+
+opin tekemään töitä ammatillisessa työympäristössä
 
 
 
