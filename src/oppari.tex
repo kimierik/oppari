@@ -10,8 +10,9 @@
 \usepackage{tocloft} % dots in table of contents sections
 
 
-\usepackage{lipsum}
+\usepackage{lipsum, multicol}
 \usepackage{fancyhdr}
+\usepackage{listings}
 
 
 % hypthenationrules
@@ -57,6 +58,12 @@
 
 
 \def\filename{src/oppari.tex}
+
+
+
+\def\testmode{1}
+
+
 
 
 \input{./src/pv/macros.tex}
@@ -226,11 +233,14 @@ tiivistelmä
 
 
 TERMISTÖ
+\bigskip
 
-mitä termejä käytetään
+ 
+%this needs to be aligned cannot be like this make minipage maybe
+ECMAscript  \hspace{4cm} skriptaus-kieli standardi 
+\bigskip
 
-
-ECMAscript                  skriptaus-kieli standardi 
+VDOM \hspace{4cm} virtual dom
 
 
 \newpage
@@ -266,22 +276,26 @@ ECMAscript                  skriptaus-kieli standardi
 
 %tuleeko tähän oikeasti preamble itse tekniikan alasta 
 
+% jos tulee niin sitten jotain siitä että web suunnittelu liikkuu nopeaseti ja siellä on kokoajan uusia teknologioita
+%mutta pohjalta ne perustuu samoihin periaatteisiin.
+
+
 Opinnäytetyön tavoitteena on seurata kehittymistä 13 viikon seurantajakson aikana työharjoittelussa 
 ja tutkia henkilökohtaista kehitystä harjoituksen aikana.
+%more text
 \medskip
 
 
 opinnäite työ on päiväkirjamallinen ja liitteenä on päiväkirja dokumentti, 
 johon olen kirjannut mitä olen tehnyt, mitä olen oppinut ja minkälaisten teknologioiden kanssa olen ollut tekemisissä.
+%more text
 \medskip
 
 
-työ toteutettiin Starttaamo Oy:ssä, suomalaisessa startup yrityksessä, joka pyrkii ratkomaan ongelmia työergonomian kanssa.
-Pää tavoitteena on vähentää sairaslomia saamalla työntekijät noudattamaan, alojen ammattilaisten suunnittelemien liikunta- ja ruokavalio-ohjelmia. 
-% jotain selitystä itse alustasta jonka kanssa tulen tekemiseen
-Yrityksen pää myyntituote on alusta, jonka kanssa tulen tekemään töitä.
-
-
+Työ toteutettiin Starttaamo Oy:ssä. Starttaamo on suomalainen startup yritys, joka pyrkii ratkomaan ongelmia työergonomian kanssa.
+startupin pää tavoitteena on vähentää sairaslomia saamalla työntekijät noudattamaan, alojen ammattilaisten suunnittelemien liikunta- ja ruokavalio-ohjelmia. 
+Yrityksen pää myyntituote on web-alusta. (jotain lisäää tekstiä)
+%more text
 \medskip
 
 
@@ -293,16 +307,13 @@ Yrityksen pää myyntituote on alusta, jonka kanssa tulen tekemään töitä.
 \section{Lähtötilanne}         % ------------------------------- LÄHTÖTILANNE ------------------------------- %
 
 
-ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista. 
-
+Ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista. 
 % kauan olen ollut opiskelija
-Olen opiskellut LAB ammattikorkeakoulussa XX lukukautta ja olen kirjoitusen aikana neljännen vuoden tieto- ja tietoviestintätekniikkan opiskelia.
+Olin opiskellut LAB ammattikorkeakoulussa XX lukukautta ja olen opinnäytetyön kirjoituksen aikana neljännen vuoden tieto- ja tietoviestintätekniikkan opiskelia.
 % jotain lorem siitä että olen oppinut koulusssa jotain
 %
 % jotain siitä että ei ole oikeaa työ kokemusta vaikka on vahva koodauspohja
-Minulla ei ennen harjoitusta ollut aijempaa työkokemusta alalta. 
-% selitä paremmin.. mitä kaikkea itse projektissa tullaan tekemään ja miten voin oppia asioista
-projektissa käytettään monta teknologiaa jonka kanss en ole ollut tekemisessä joten niiden oppiminen tulee uutena
+Minulla ei ennen harjoitusta ollut aijempaa työkokemusta alalta, (joten jotain jotain jotain).
 \medskip
 
 
@@ -318,11 +329,13 @@ projektissa käytettään monta teknologiaa jonka kanss en ole ollut tekemisess�
 
 \subsection{Kehitys ympäristö / Teknologia pino}
 
-Startupit haluaa nopeaa liikkumista ja kehittymistä ja se näkyy teknologia valinnoissa.
-projekti käyttää fullstack frameworkkia meteor joka on suunniteltu nopeaan kehittelyyn ja käyttöönottoon.
+% tässä voisi yleisesti kertoa miksi nämä teknologiat on valittu tai on käytössä.. alempana kuitenkin kerrotaan mitä ne on ja miten toimmii
+
+Startupit haluaa nopeaa liikkumista ja kehittymistä ja se näkyy teknologioiden valinnassa.
+Projekti käyttää Meteor fullstack frameworkkia, joka on suunniteltu nopeaan kehittämiseen ja käyttöönottoon.
 \medskip
 
-käyttöliittymä on toteutettu käyttämällä reactjs kirjastoa
+Käyttöliittymä on toteutettu käyttämällä reactjs kirjastoa
 \medskip
 
 projektin tietokanta on mongodb, joka tekee uusien collectioneiden tekemisestä helppoa sillä nosql kantoihin ei travitse määritellä skeemaa.
@@ -424,136 +437,14 @@ Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin 
 
 
 \newpage
-\subsection{React}                % ------------------------------- REACT ------------------------------- %
-\wordcount
+%\subsection{React}                % ------------------------------- REACT ------------------------------- %
 
-
-%ei varmaan saa olla kysymy
-\subsubsection{Mikä on React}
-
-%ei saa olla metatekstiä
-%https://github.com/facebook/react/blob/main/README.md
-%https://www.infoq.com/news/2013/06/facebook-react/
-% molemmat siteerattu 27.5.24
-
-
-% ei ole metan kehittämä vaan se on vaan ylläpitämä. facebookin työntekijä teki sen
-React on metan kehittämä ja ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto, joka on suunniteltu reaktiivisien käyttöliittyjien kehittämiseen.
-%more text
-
-%rnative selitys paremmin
-reaktia voi käyttää web ja mobiili käyttöliittymien tekemiseen react nativella
-%vitusti lisää tekstiä
-\medskip
+\addPageOp{./src/op/react.tex}{React}
 
 
 
 
 
-
-
-
-\subsubsection{jsx}
-
-%https://react.dev/learn/writing-markup-with-jsx
-%https://facebook.github.io/jsx/ 
-
-% jsx = js xml
-% https://medium.com/@sjarancio/what-is-jsx-e3dda0af3490
-
-%transpilation
-%https://www.scholarhat.com/tutorial/react/getting-started-with-jsx
-% https://www.typescriptlang.org/docs/handbook/jsx.html
-
-% kaikki viitattu 27.5
-
-%html koodia uusiks
-JSX (javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa html tyylistä koodia javascriptin sekaan
-% asiakielellä
-selain ei itse osaa lukea jsx koodia joten se pitää transpiloida javascriptiksi ennen kun sen voi deploy
-
-
-
-% suora sitaatti https://facebook.github.io/jsx/ 
-JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle
-\medskip
-
-\bigskip
-\includegraphics[width=10cm]{src/public/oppar/pure_jsx_example.png}
-
-Kuva 1. kuvankaappaus JSX syntaxista.
-\medskip
-
-Kuvassa luodaan elementti helloWorld, jolle annetaan arvoksi paragraafi, jossa teksti "Hello, World!"{}.
-% loppu pitää kirjottaa jotenkin paremmin ja pitää yhistää paremmin 
-Elementtien arvot voidaan kirjoittaa html tyylillä, joka tekee jutuista kivaa.
-\medskip
-
-
-
-\bigskip
-\includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}
-
-Kuva 2. Kuvankaappaus helloWorld elementistä, joka on käännetty javascriptiin. 
-\medskip
-
-%vähän toistoa muttei väliä sillä pitää siteerata tämä
-
-%https://babeljs.io/repl 
-kuvassa on helloworld elementti, joka on käännetty natiiviksi javascriptiksi babel kääntäjää käyttäen.
-Tämä antaa selaimille mahdollisuuden tulkita JSX koodia.
-%jotain lisää
-\medskip
-
-% https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
-%pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
-
-
-\subsubsection{Komponentit}
-
-
-%https://react.dev/learn/your-first-component
-
-Oma tekemä komponentti. se voi sisältää tilaa ja kutsuja muihin komponentteihin jne
-komponentteihin voi lisätä interaktiivisuutta jne
-
-
-
-komponentit on vähän niinkuin oma elementti jonkqa voi kirjoittaa jsx koodiin siististi
-
-\medskip
-
-\subsubsection{Reaktin struktuuri}
-index.js lähtien
-reactdom createroot
-root.render
-käy läpi kaikki lapset mitkä kaikilla componenteilla on ja tekee niistä natiivi html elementtejä jotka sitten selain renderöi. 
-
-koko react läpi jsx kooditsta htmllään
-\medskip
-
-
-
-\subsubsection{VDOM}
-
-
-%jotain domista, mikä se on ja miten se liittyy käyttöliittymiin ja sitten mikä on vdom
-% vai pitäisikö samantien aloittaa että meillä on vdom, ja sittem selittää mikä dom on..... kuulostaa väärältä
-
-virtuaali dom (document object model) on virtuaali representaatio oikeasta domista, 
-dom on puu mainen struktuuri koko dokumentista
-
-
-%https://medium.com/@BharathkumarV/reacts-virtual-dom-17fdcb290a10
-% siteerattu 27.5
-
-%selittää vähän paremmin ja tuntuu että puu struktuurinen ei ole oikein hyvä tapa kuvata domia
-DOM (eng Document object model) on puu-struktuurinen representaatio koko käyttöliittymästä.
-Tätä struktuuria käytetään rajapintana javascriptin ja html:län välillä. jotain jotain hidas.
-%
-VDOM (eng Virtual Dom) on virtuaalinen esitys domista jonka react pitää musitissaan koko suorituksen ajan.
-vdomia käyttäen react voi nopeasti päätellä mitkä osat käyttöliittymästä pitää päivittää.
-kun jonkun komponentin tila päivittyy react voi päivittää 
 
 
 
@@ -587,7 +478,26 @@ aka helposti integroitava
 
 
 \subsection{Responsiiviset käyttöliittymät}
-responsiivinen käyttöliittymän kehitys lorem ipsum
+
+
+WORK IN PROGRESS LOREM FOR RESPONSIIVINEN
+\medskip
+
+
+% kirjoita eritavalla ettei oo copypasta
+Responsiivinen verkkosuunnittelu on lähestymistapa verkkosivustojen rakentamiseen, jolla varmistetaan niiden optimaalinen ulkoasu ja toimivuus eri laitteilla ja näytön koossa.
+Käyttämällä responsiivisia verkkosuunnittelua verkkosivustot voivat tarjota yhdenmukaisen käyttökokemuksen eri laitteilla.
+\medskip
+
+
+% uudelleen kirjoita jotankin että sama asia mutta ei copypasta kuitenkaan päiväkirjasta
+Web-käyttöliittymissä elementtien koot voivat olla absoluuttiset tai suhteelliset niiden ylempään elementtiin verrattuna. Absoluuttiset arvot tarkoittavat, että elementti olisi aina tietyn kokoinen pikseleissä. 
+Tämä voi luoda tilanteita, jossa pienempikokoisemman näytöllä joku elementti on liian iso, tai ei sovi enää käyttöliittymään, joten absoluuttisia ei voi käyttää responsiivisessa käyttöliitymässä.
+% asiakielellä. eivät kuitenkaan ei kuulosta oikeelta jutulta
+Relatiiviset elementtikoot eivät kuitenkaan ratkaise kaikkia ongelmia. Mobiili- ja työpöytälaitteiden kuvasuhteet eroavat. Käyttöliittymän pitää olla erilainen jos pituutta on enemmän, kun leveyttä. 
+Ja, koska työpöytälaitteita käytetään hiirellä, joka antaa tarkan osoittimen käyttäjälle, toisin kuin mobiilissa, jota käytetään sormilla. 
+Pitää ottaa huomioon linkkien, nappien ja kuvakkeiden koko, jotta itse sovelluksen käyttäminen olisi huoletonta.\medskip
+\medskip
 
 
 
@@ -595,13 +505,31 @@ responsiivinen käyttöliittymän kehitys lorem ipsum
 
 
 \subsection{Lokalisaatio}
-lorem
 
-\subsubsection{i18n}
-en tiedä saanko hirveesti kirjotatteu
-jos en niin kaada tämä ylempään
-tai jos ei tule toista subsub sectionia
+web sovelluksien kääntäminen useaan kieleen
 
+ero i10n ja i18n jne
+\medskip
+
+käännös web sovelluksissa yleisesti
+
+Kovakoodatut tekstit sivuilta vaihdetaan käännösfunktiokutsuihin.
+Funktio etsii käännöstiedostosta oikeat sanat tai lauseet ja asettaa ne alkuperäisen tekstin tilalle. 
+Käännöstiedost on avain-arvo. %jotain tähän vielä
+% asiakielellä uusiks
+avain on valmiiksi päätelty merkkijono ja arvo on itse käännös. 
+kun haluttu kieli vaihdetaan kirjasto vaihtaa käännöstiedoston toiseen jolla on samat avaimet. 
+Arvot nain vaihtuvat uuden kielen tekstiksi.
+
+\medskip
+
+kuva i18n kutsu funktiosta
+
+selitys kuvasta
+
+kuva käännöstiedostosta
+
+selitys kuvasta
 
 
 
@@ -612,18 +540,80 @@ tai jos ei tule toista subsub sectionia
 
 
 \newpage
-\section{Toteutus}              % ------------------------------- TOTEUTUS ------------------------------- %
+% mahdollissesti toteutus title pois että saa yhden lisää subsectiionin muuten tää on vähän liikaa alalukuja
 
 
-\subsection{Lokalisaatio}
-käännös ja lokalisaatio
+\section{Lokalisaation toteutus}
+
+sivu toimii vain yhdellä kielellä ja sen pitää toimia monella
+\medskip
 
 
-\subsection{Uuden ominaisuuden lisäys}
-ipsum progressio multiseuranta feature lisäys
+meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
+%periaate on selitetty teoriassa jotan pelkää toteutusta
 
 
 
+
+
+
+miten käännpös tiedostot tulee auttamaan projektia tulevaisuudessa. uusien kielien lisääminen.
+
+Projektin kaikkia ulkoisesti näkyvä teksti on siirretty käännöstiedostoihin. 
+
+Tämä luo projektille keskitetyn sijainnin kaikelle projektin ulkoisesti näkyvälle tekstille.
+
+
+
+
+
+
+
+
+
+
+\section{Uuden ominaisuuden lisäys}
+
+\subsection{alkuperäinen ominaisuus ja parannus kohteet}
+progressio sivy ja measurable thing joka on user skeemassa vain yksi juttu
+tämä pitää tehdä jotain että kaiikki on hybää
+\medskip
+
+kuva sivulta
+
+selitys mitä sivulla tapahtuu
+\medskip
+
+kuva nykyisestä skeemasta
+
+selitys skeemasta ja miten se liittyy sivuun
+\medskip
+
+
+
+\subsection{ominaisuuden totetus}
+
+skeeman muutos ja migraatio
+
+
+tarvittavat muutokset skeeman muutoksen jälkeen
+
+
+käyttäjän luonti
+mittatuloksien laittamimnen api
+
+
+käyttöjän datan laittamis userinterface
+toinen kuva uudesta käyttöliittymästä
+
+
+
+
+
+
+
+
+\newpage
 \section{Yhteenveto}
 
 sehän meni ihan hyvin 

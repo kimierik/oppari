@@ -6,7 +6,7 @@ case "$1" in
         ;;
     -op)
         echo "buildmon set on oppari"
-        while inotifywait -e close_write ./src/oppari.tex; do ./build.sh -op; done
+        while inotifywait -r -e close_write ./src/oppari.tex ./src/op/; do ./build.sh -op; done
         ;;
 
 esac
