@@ -1,21 +1,37 @@
 
 
-%ei varmaan saa olla kysymy
+%ei varmaan saa olla kymy
 \subsubsection{Mikä on React}
 
-%ei saa olla metatekstiä
-%https://github.com/facebook/react/blob/main/README.md
-%https://www.infoq.com/news/2013/06/facebook-react/
+% https://github.com/facebook/react/blob/main/README.md
+% https://www.infoq.com/news/2013/06/facebook-react/
 % molemmat siteerattu 27.5.24
 
 
-% ei ole metan kehittämä vaan se on vaan ylläpitämä. facebookin työntekijä teki sen
-React on metan kehittämä ja ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto, joka on suunniteltu reaktiivisien käyttöliittyjien kehittämiseen.
+React on metan ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto, joka on suunniteltu reaktiivisien käyttöliittyjien kehittämiseen.
 %more text
+%
+Reaktia voi käyttää mobiili ja työpöytä sovelluksien käyttöliittymien kehittämiseen. 
+\medskip
 
-%rnative selitys paremmin
-reaktia voi käyttää web ja mobiili käyttöliittymien tekemiseen react nativella
-%vitusti lisää tekstiä
+
+
+
+% https://react.dev/
+% 30.5
+
+
+%https://www.statista.com/statistics/1124699/worldwide-developer-survey-most-used-frameworks-web/
+%yksi käytetyimmistä työkaluista 
+% 30.5
+
+%
+
+React kannustaa kehittäjiä rakentamaan sovelluksia uudelleenkäytettävien komponenttien avulla.
+Jokainen komponentti sisältää oman rakenteensa, tyylinsä ja käyttäytymisensä, joka tekee niistä helposti siirrettävän ja uudelleenkäytettävän.
+Komponenteista voidaan sitten koota monimutkaisia käyttöliittymimä. 
+Komponentit voidaan kirjoitetaa JSX syntaksilla, joka mahdollistaa HTML tyylisen kirjoituksen JavaScriptin sekaan.
+Tämä tekee React:ista helppo ja luettavan, ymmärrettävän ja opittavan, joka on auttanut nostamaan reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.
 \medskip
 
 
@@ -40,14 +56,9 @@ reaktia voi käyttää web ja mobiili käyttöliittymien tekemiseen react native
 % kaikki viitattu 27.5
 
 %html koodia uusiks
-JSX (javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa html tyylistä koodia javascriptin sekaan
-% asiakielellä
-selain ei itse osaa lukea jsx koodia joten se pitää transpiloida javascriptiksi ennen kun sen voi deploy
-
-
-
+JSX (javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä koodia javascriptin sekaan, tekien koodista yksinkertaisempaa ja helpompaa ymmärtää.
 % suora sitaatti https://facebook.github.io/jsx/ 
-JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle
+JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle.
 \medskip
 
 \bigskip
@@ -56,9 +67,10 @@ JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, va
 Kuva\getImgCount .{} kuvankaappaus JSX syntaxista.
 \medskip
 
-Kuvassa luodaan elementti helloWorld, jolle annetaan arvoksi paragraafi, jossa teksti "Hello, World!"{}.
-% loppu pitää kirjottaa jotenkin paremmin ja pitää yhistää paremmin 
-Elementtien arvot voidaan kirjoittaa html tyylillä, joka tekee jutuista kivaa.
+%muuttuja vois vaihtaa. johonkin toiseen suomalaiseen sanaan
+Kuvassa luodaan muuttuja helloWorld, jolle annetaan arvoksi HTML "p"{} elementti, jossa teksti "Hello, World!"{}.
+% koko juttu uusiks ja paremmin kirjoitettua
+Muuttujien arvot voidaan kirjoittaa HTML tyylillä, tekien monimutkaisten elementtien rakentamisesta yksinkertaista.
 \medskip
 
 
@@ -66,37 +78,75 @@ Elementtien arvot voidaan kirjoittaa html tyylillä, joka tekee jutuista kivaa.
 \bigskip
 \includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}
 
-Kuva\getImgCount .{} Kuvankaappaus helloWorld elementistä, joka on käännetty javascriptiin. 
+Kuva\getImgCount .{} Kuvankaappaus helloWorld muuttujasta, joka on transpiloitu javascriptiin. 
 \medskip
 
 %vähän toistoa muttei väliä sillä pitää siteerata tämä
 
 %https://babeljs.io/repl 
-kuvassa on helloworld elementti, joka on käännetty natiiviksi javascriptiksi babel kääntäjää käyttäen.
-Tämä antaa selaimille mahdollisuuden tulkita JSX koodia.
+Kuvassa on helloworld muuttuja, joka on käännetty natiiviksi javascriptiksi babel kääntäjää käyttäen.
+Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjoitettu käyttämällä JSX syntaxia.
 %jotain lisää
 \medskip
 
-% https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
-%pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
 
 
 \subsubsection{Komponentit}
 
 
+% komponentti joka voi renderöidä toisen komponentin. tämä jatkuu siihen asti että päästään natiiveihin html elementteihin jotka selain osaa tulkita
 %https://react.dev/learn/your-first-component
 
-Oma tekemä komponentti. se voi sisältää tilaa ja kutsuja muihin komponentteihin jne
-komponentteihin voi lisätä interaktiivisuutta jne
+React komponentti on oma kokoomus joka sisältää oman tilan, käyttäytymisen ja tyylin.
+
+komponentti on oma pieni kokoompano joka sisältää sen ulkonäön ja käyttäytymisen. componentteja voidaan
+\medskip
+\bigskip
+
+Kuva \getImgCount{}. kuvakaappaus React komponentista
+\medskip
+
+kuvaassa teemmme funktio komponentin laskija joka seuraa kuinka monta kertaa nappia on painettu.
+funktio palauttaa komponentin ulkonäön, joka on määritetty JSX syntaxilla.
+komponentissa on myös useState "hook"{}, joka kuvaistaa komponentin tilan, tätä käytten komponentti pystyy säilyttämään dataa ja päivittämään itsensä kun sen sisäinen tila muuttuu.
+\medskip
+
+Komponentit voivat myös määrittää luokkakomponentti tyylillä. Mutta React on kehottaa käyttää funktio komponentteja tulevaisuudessa.
+Kuva {\the\numexpr \theimgCounter + 1}{} on sama laskukomponentti kuin kuva \theimgCounter{} mutta kirjoitettu luokkakomponentti tyylillä. 
+\medskip
+\bigskip
+
+
+Kuva \getImgCount{}. kuvakaappaus React luokkakomponentista
+\medskip
 
 
 
-komponentit on vähän niinkuin oma elementti jonkqa voi kirjoittaa jsx koodiin siististi
+
+
+\subsubsection{React Hookit}
+
+lorem ipsum react hook
+
+hookit lisätty react 16.8(src?), antavat funktiokomponenteille mahdollisuuden käyttää tilaa
+
+tarviiko mainita hookeista mitään vai sanotaanko vain tämä jossain vaiheessa??
+
+%mainitaanko class ennen funktiota niin voidaan luonnollisesti mainita mikä on hook.
+
+
+
+
+
+
+
 
 \medskip
 
 \subsubsection{Reaktin struktuuri ja toiminta}
 
+% https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
+%pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
 
 index.js lähtien
 
