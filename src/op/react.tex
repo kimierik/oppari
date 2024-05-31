@@ -97,11 +97,17 @@ Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjo
 % komponentti joka voi renderöidä toisen komponentin. tämä jatkuu siihen asti että päästään natiiveihin html elementteihin jotka selain osaa tulkita
 %https://react.dev/learn/your-first-component
 
+% mahdollisesti näytä ekaksi class componentti sitten funkitio komponentti.
+% näin voi sitten jälkeempäin selittää mikä usestate hook on paremmin
+
+
 React komponentti on oma kokoomus joka sisältää oman tilan, käyttäytymisen ja tyylin.
 
 komponentti on oma pieni kokoompano joka sisältää sen ulkonäön ja käyttäytymisen. componentteja voidaan
 \medskip
 \bigskip
+
+\includegraphics[width=15cm]{src/public/oppar/function_component.png}
 
 Kuva \getImgCount{}. kuvakaappaus React komponentista
 \medskip
@@ -117,23 +123,27 @@ Kuva {\the\numexpr \theimgCounter + 1}{} on sama laskukomponentti kuin kuva \the
 \bigskip
 
 
+\includegraphics[width=15cm]{src/public/oppar/class_.png}
+
 Kuva \getImgCount{}. kuvakaappaus React luokkakomponentista
 \medskip
 
+% get some src for this
+% we can prob link the docs if we find the right page
 
+Luokkakomponentissa komponentin tilaa säilytetään this.state ominaisuudessa, ja sitä voi muuttaa käyttämällä this.setState funktiolla. 
+%ainakintoinen lauseke
+\medskip
 
+%https://react.dev/reference/react/hooks
+% 31.5
 
-
-\subsubsection{React Hookit}
-
-lorem ipsum react hook
-
-hookit lisätty react 16.8(src?), antavat funktiokomponenteille mahdollisuuden käyttää tilaa
-
-tarviiko mainita hookeista mitään vai sanotaanko vain tämä jossain vaiheessa??
-
-%mainitaanko class ennen funktiota niin voidaan luonnollisesti mainita mikä on hook.
-
+Funktio componentissa tila hallinnoidaan "React hookeilla"{}. 
+"Hookit"{} antavat funktio komponenteille mahdollisuuden käyttää Reactin ominaisuuksia, 
+jotka luokkakomponentit saavat kun ne jatkavat React.Component luokkaa.
+%
+React kehottaa käyttämään funktiokomponentteja. ja niissä on myös vähemmän koodia kun luokka komponentissa vaikka lopputulos on sama.
+Molemmat komponentit tehty react 18.3.1 versiolla.
 
 
 
@@ -148,7 +158,6 @@ tarviiko mainita hookeista mitään vai sanotaanko vain tämä jossain vaiheessa
 % https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
 %pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
 
-index.js lähtien
 
 %https://react.dev/reference/react-dom/client/createRoot
 % viittaus 29.5
@@ -156,8 +165,14 @@ index.js lähtien
 %laitetaanko kuva jostain indexistä
 %vaikka joku joka on tehty create react app jutulla
 
+jotain tekstiä reaktin toiminnasta 
+\bigskip
 
-reactdom createroot
+
+
+Kuva \getImgCount{}. kuvankaappaus create-react-app komennon tekemästä index.js tiedostosta
+\medskip
+
 react tekee funktiolle antamasta elementistä Root elementin, ja se alkaa hallinnoimaan domia sen alla
 \medskip
 
