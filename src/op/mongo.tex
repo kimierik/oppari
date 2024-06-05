@@ -1,0 +1,155 @@
+
+
+%src mongo lisence.
+
+
+% https://www.techtarget.com/searchdatamanagement/definition/MongoDB
+% jotain täältä. tämä tosin sanoo että on open source joka ei oo sinänsä totta
+% sitaatti 28.5
+
+
+
+\subsubsection{MongoDB yleisesti}
+
+
+%MongoDB on mongoDB inc:in valmistama ja ylläpitämä, Server Side Public Lisenssillä toimiva NoSql (eng "non sql"{} tai "not only sql"{}) dokumentti pohjainen tietokanta hallinta ohjelma.
+
+% this is from gpt with above prompt
+%MongoDB is a NoSQL document-based database management program produced and maintained by MongoDB Inc.
+%It is designed to handle large volumes of unstructured data and offers high performance, high availability, and easy scalability.
+%MongoDB stores data in flexible, JSON-like documents, which means fields can vary from document to document and data structure can be changed over time.
+%This database system is widely used for modern applications due to its ability to manage data of diverse types without requiring a fixed schema.
+
+%mongo website and repo
+% 5.6
+
+%https://www.mongodb.com/docs/manual/core/document/
+%json bson, document format
+% 5.6
+
+%https://www.techtarget.com/searchdatamanagement/definition/MongoDB
+% performance and availability
+% 5.6
+
+%https://www.mongodb.com/resources/products/fundamentals/why-use-mongodb
+%used alot
+% 5.6
+
+
+%sources are cited above
+MongoDB on NoSQL(eng "non sql"{} tai "not only sql"{}) dokumenttipohjainen tietokannan hallintaohjelma, joka on MongoDB Inc:in valmistama ja ylläpitämä.
+Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa, ja se tarjoaa suuren suorituskyvyn, korkean käytettävyyden ja helpon skaalautuvuuden.
+\medskip
+
+MongoDB tallentaa tiedot joustaviin, JSON-tyyppisiin dokumentteihin, mikä tarkoittaa, että kentät voivat vaihdella dokumentista toiseen ja tietorakennetta voidaan muuttaa ajan myötä.
+Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksissa, koska se pystyy hallitsemaan erityyppisiä tietoja ilman kiinteää skeemaa.
+\medskip
+
+
+
+\subsubsection{Skaalautuminen}
+
+
+% https://www.mongodb.com/resources/products/capabilities/sharding
+%5.6
+
+Horisonttaalisella skaalautumisella tarkoitetaan sitä että lisätään koneita jotka pystyy jakaa datasetin tai loadin.
+\medskip
+
+% voi lisätä ylempään
+mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuskiin
+\medskip
+
+
+%https://www.mongodb.com/resources/products/capabilities/replication
+%5.6
+
+replikointi antaa mahdollisuuden pitää monta db instannssia, jolloin jos pää db kaatuu voidaan käyttöönottaa kopio
+kun primääri db saa kirjoitus operaation se jakaa sen secondäärien kanssa jolloin ne pysyvät ajan tasalla.
+\medskip
+
+
+%periaattees voi kirjoittaa verbatin suomeksi toi what is database sharding osa
+%https://kinsta.com/blog/mongodb-sharding/
+%5.6
+
+% official 
+% https://www.mongodb.com/resources/products/capabilities/sharding
+%5.6
+
+
+sharding antaa mahdollisuuden jakaa tietokanta moneen pienempään tietokantaan ja jakaa ne eri koneille. nämä pienemmät palat ovat shardeja.
+%selitys miten toimii
+\medskip
+
+%koko sharn network hommassa on router ja config server ja shardit
+%näistä selitys
+
+shardissa on itse data ja se voi olla replikoituna
+
+config server on lähde shardien metadatasta.
+
+router. client interactaa tämän kanssa. router kommunikoi config serverin ja shardien välipllä että voi toimia
+\bigskip
+
+
+
+
+%täältä kuva
+%https://www.mongodb.com/docs/manual/sharding/
+
+% onko tämä kaavio vai kuva ja mitä väliä tai eroa
+
+\includesvg{./src/public/oppar/mongosharding.svg}
+Kuva\getImgCount{}. kaavio sharding mallista (mnongo source)
+\medskip
+
+
+
+\subsubsection{Nosql Dokumentti}
+
+% selitä dokumentista. dokumenteista on jotenkin mainittu ylhäällä mutta tässä voi jatkojalostaa tai toistaa uusilla sanoissa 
+% selitetäänkö miten se vertaa pöytään
+% joku esimerkki kuva dokumentista
+
+
+dokumentti struktuuri nosql kannassa on jollain tiedosto muodossa oleva dokumentti josta jonka voi tallentaa ilman skeemaa jne.
+mongodb tallentaa dokumenttinsa bson muodossa
+tietokannasta dokumentteja voi hakea niiden uniikkien tunnisteiden tai sisällön arvojen perusteella
+\medskip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% if we want to add stuff about finding document 
+% though it seemed kinda difficult to find anything usefull 
+%so probably not gonna write about this unless we need more content in here
+    
+%https://www.mongodb.com/docs/manual/indexes/
+%https://www.mongodb.com/docs/v5.3/indexes/
+
+% all sitated at 31.5
+
+%incase i cannot read
+%https://www.youtube.com/watch?v=nkSjhL40CTs
+%https://www.youtube.com/watch?v=D14wWW9EEx8
+
+% all sitated at 31.5
+
+%https://www.mongodb.com/docs/manual/reference/method/cursor.explain/#mongodb-method-cursor.explain
+% sitated at 5.6
+

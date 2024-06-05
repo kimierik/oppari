@@ -4,11 +4,12 @@
 
 \usepackage[most]{tcolorbox}
 \usepackage{geometry}
+\usepackage{svg}
+
 \usepackage{hyperref} %links
 \usepackage[document]{ragged2e} %floating text
 \usepackage{helvet} %font
 \usepackage{tocloft} % dots in table of contents sections
-
 
 \usepackage{lipsum, multicol}
 \usepackage{fancyhdr}
@@ -362,7 +363,7 @@ projektin tietokanta on mongodb, joka tekee uusien collectioneiden tekemisestä 
 
 
 
-\subsubsection{Mikä on meteor}
+\subsubsection{meteor yleisesti}
 
 
 %https://github.com/mongodb/mongo?tab=License-1-ov-file
@@ -444,9 +445,15 @@ Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin 
 
 
 \newpage
-%\subsection{React}                % ------------------------------- REACT ------------------------------- %
+\addPageOp{./src/op/react.tex}{React}% ------------------------------- REACT ------------------------------- %
 
-\addPageOp{./src/op/react.tex}{React}
+
+
+
+
+
+\newpage
+\addPageOp{./src/op/mongo.tex}{Mongodb}        % ------------------------------- MONGODB ------------------------------- %
 
 
 
@@ -459,63 +466,6 @@ Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin 
 
 
 \newpage
-\subsection{Mongodb}
-
-%src mongo lisence.
-
-
-% https://www.techtarget.com/searchdatamanagement/definition/MongoDB
-% jotain täältä. tämä tosin sanoo että on open source joka ei oo sinänsä totta
-% sitaatti 28.5
-
-\subsubsection{mikä on mognondgb}
-mango mogno
-
-
-mongoDB on mongoDB inc:in valmistama ja ylläpitämä Server Side Public Lisenssillä toimiva NoSql (eng "non sql"{} tai "not only sql"{} dokumentti pohjainen tietokanta hallinta ohjelma.
-
-src = mongodb nettisivut
-
-
-%en tiedä onko edes järkee mainita
-mongo tukee ajureita monelle suositulle kielelle
-
-mongodb collection
-
-"horisonttaali"{} skaalautuminen
-
-
-
-
-\subsubsection{nosql dokumentti}
-
-
-
-dokumentti struktuuri nosql kannassa on jollain tiedosto muodossa oleva dokumentti josta jonka voi tallentaa ilman skeemaa jne.
-mongodb tallentaa dokumenttinsa bson muodossa
-\medskip
-
-
-%https://www.mongodb.com/docs/manual/indexes/
-%https://www.mongodb.com/docs/v5.3/indexes/
-
-%incase i cannot read
-%https://www.youtube.com/watch?v=nkSjhL40CTs
-%https://www.youtube.com/watch?v=D14wWW9EEx8
-
-% all sitated at 31.5
-
-mogno etsii dokumentteja käyttäen salattuja loitsuja.
-
-
-
-
-
-
-
-
-
-
 \subsection{Responsiiviset käyttöliittymät}
 
 \subsubsection{Responsiivisten käyttöliittymien suunnittelun periaatteet}
@@ -527,6 +477,8 @@ WORK IN PROGRESS LOREM FOR RESPONSIIVINEN
 % kirjoita eritavalla ettei oo copypasta
 Responsiivinen verkkosuunnittelu on lähestymistapa verkkosivustojen rakentamiseen, jolla varmistetaan niiden optimaalinen ulkoasu ja toimivuus eri laitteilla ja näytön koossa.
 Käyttämällä responsiivisia verkkosuunnittelua verkkosivustot voivat tarjota yhdenmukaisen käyttökokemuksen eri laitteilla.
+
+idea on tehdä verkkosivu jota voi käyttää eri laitteilla, jolla on eri näytönkoot
 \medskip
 
 
@@ -549,6 +501,11 @@ lorem ipsum
 lorem ipsum
 
 
+
+
+
+
+\newpage
 \subsection{Lokalisaatio}
 
 web sovelluksien kääntäminen useaan kieleen
@@ -562,9 +519,9 @@ Kovakoodatut tekstit sivuilta vaihdetaan käännösfunktiokutsuihin.
 Funktio etsii käännöstiedostosta oikeat sanat tai lauseet ja asettaa ne alkuperäisen tekstin tilalle. 
 Käännöstiedost on avain-arvo. %jotain tähän vielä
 % asiakielellä uusiks
-avain on valmiiksi päätelty merkkijono ja arvo on itse käännös. 
-kun haluttu kieli vaihdetaan kirjasto vaihtaa käännöstiedoston toiseen jolla on samat avaimet. 
-Arvot nain vaihtuvat uuden kielen tekstiksi.
+Avain on valmiiksi päätelty merkkijono ja arvo on itse käännös. 
+Kun haluttu kieli vaihdetaan kirjasto vaihtaa käännöstiedoston toiseen tiedostoon jolla on samat avaimet. 
+Arvot vain vaihtuvat uuden kielen tekstiksi.
 
 \medskip
 
@@ -617,9 +574,10 @@ Tämä luo projektille keskitetyn sijainnin kaikelle projektin ulkoisesti näkyv
 
 
 
+\newpage
 \section{Uuden ominaisuuden lisäys}
 
-\subsection{alkuperäinen ominaisuus ja parannus kohteet}
+\subsection{Alkuperäinen ominaisuus ja parannus kohteet}
 progressio sivy ja measurable thing joka on user skeemassa vain yksi juttu
 tämä pitää tehdä jotain että kaiikki on hybää
 \medskip
@@ -636,7 +594,7 @@ selitys skeemasta ja miten se liittyy sivuun
 
 
 
-\subsection{ominaisuuden totetus}
+\subsection{Ominaisuuden totetus}
 
 skeeman muutos ja migraatio
 
@@ -652,7 +610,7 @@ käyttöjän datan laittamis userinterface
 toinen kuva uudesta käyttöliittymästä
 
 
-\subsection{ominaisuuden lopputulos ja käyttöönotto}
+\subsection{Ominaisuuden lopputulos ja käyttöönotto}
 migrate meni hyvin. tosin jos olisi ottanut backupin databasesta niin ei olisi ollut riskiä hajottaa kaikkea.
 \medskip
 
@@ -661,6 +619,16 @@ itse feature toimi hyvin käyttöön oton jälkeen ja kaikki käyttäjät saivat
 
 käyttöliittymästän toiminnasta tai sen ulkonäöstä ei tullut palautetta senjälkeen kun se oltiin käyttöön otettu joten sekin meni hyvin.
 \medskip
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage
