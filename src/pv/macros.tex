@@ -33,6 +33,10 @@
     \input{#1}
 }
 
+
+
+% OPPARI SPESIFIC
+
 \newcommand{\addPageOp}[2]{
     \def\filename{#1}
     \pagesubsection{#2}
@@ -40,7 +44,18 @@
     \input{#1}
 }
 
+%lab citation style
+\newcommand{\labcite}[1]{\setcitestyle{aysep={},open={(},close={.)}}\citep{#1}{}}
 
+%lab citation style
+\newcommand{\labciteend}[1]{\setcitestyle{aysep={},open={(},close={).}}\citep{#1}{}}
+
+\newcommand{\labimgcite}[1]{\setcitestyle{aysep={},open={(},close={)}}\citep{#1}{}}
+
+\newcommand{\hurl}[1]{\href{#1}{{\underline{\textcolor{blue}{#1}}}}}
+
+
+% counter kuville
 \newcounter{imgCounter}
 \setcounter{imgCounter}{0}
 
@@ -50,4 +65,12 @@
 }
 
 
+% counter kaavioille
+\newcounter{chartCounter}
+\setcounter{chartCounter}{0}
+
+\newcommand{\getChartCount}{
+\addtocounter{chartCounter}{1}
+\thechartCounter
+}
 

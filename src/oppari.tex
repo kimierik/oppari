@@ -15,9 +15,43 @@
 \usepackage{fancyhdr}
 \usepackage{listings}
 
+% citaitons
+\usepackage{natbib}
 
 % hypthenationrules
 \usepackage[T1]{fontenc}
+
+
+
+%redefine the entire fucking bib environment so we dont have the horisontal spacing
+% this was generated entirely by chatgpt
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+  {\section{Lähteet}%
+   \@mkboth{\MakeUppercase{\refname}}{\MakeUppercase{\refname}}%
+   \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\settowidth\labelwidth{\@biblabel{#1}}%
+         \leftmargin\labelwidth
+         \advance\leftmargin\labelsep
+         \setlength\itemindent{-\labelwidth}
+         \setlength\itemsep{10pt} % Change this value to adjust the space between items
+         \@openbib@code
+         \usecounter{enumiv}%
+         \let\p@enumiv\@empty
+         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+   \sloppy
+   \clubpenalty4000
+   \@clubpenalty \clubpenalty
+   \widowpenalty4000%
+   \sfcode`\.\@m}
+  {\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+   \endlist}
+\makeatother
+
+
+
 
 
 
@@ -26,7 +60,7 @@
     citecolor=black,
     filecolor=black,
     linkcolor=black,
-    urlcolor=black
+    urlcolor=blue
 }
 \urlstyle{same}
 
@@ -53,9 +87,10 @@
 
 \renewcommand{\familydefault}{\sfdefault} % set font
 
-
-
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % dots for sections
+
+\renewcommand{\bibsection}{\section{Lähteet}}
+
 
 
 \def\filename{src/oppari.tex}
@@ -653,14 +688,21 @@ uusi ominaisuus toimii ja siitä ei tullut ognemlia sen käyttöönotossa
 
 
 \newpage
-\section{Lähteet}               % ------------------------------- LÄHTEET ------------------------------- %
+
+% we need some way to manually override an item when it looks like shit
+
+% i thin we need to make our own @ thing then use that for htings that look like shit
+% though i dont thik we need the hfill thing in the first place but whattever that is problem for another day
+
+
+\bibliographystyle{labCitations} % ------------------------------- LÄHTEET ------------------------------- %
+\bibliography{./src/op/citations}
+
 
 %https://libguides.eur.nl/overleaf/bibliographies-and-citing
 %https://tex.stackexchange.com/questions/51434/biblatex-citation-order
 % i want to do citations like this but if there is problem with the format then must do manually or... write own system
 
-
-kaikki linkit lähteistä
 
 
 
@@ -668,6 +710,7 @@ kaikki linkit lähteistä
 \section{Liitteet}               % ------------------------------- Liitteet ------------------------------- %
 
 miten laitan liitteen päiväkirjasta ja millainen se pitäisi olla
+
 
 
 
