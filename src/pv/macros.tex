@@ -52,6 +52,8 @@
 
 \newcommand{\labimgcite}[1]{\setcitestyle{aysep={},open={(},close={)}}\citep{#1}{}}
 
+\newcommand{\citemissing}{\textbf{( SRC ? )}}
+
 \newcommand{\hurl}[1]{\href{#1}{{\underline{\textcolor{blue}{#1}}}}}
 
 
@@ -64,6 +66,7 @@
 \theimgCounter
 }
 
+\newcommand{\nextImageCount}{\the\numexpr \theimgCounter + 1 }
 
 % counter kaavioille
 \newcounter{chartCounter}

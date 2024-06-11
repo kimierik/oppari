@@ -322,6 +322,8 @@ Transpilaatio = ohjelmointi keilen kääntäminen toiseen ohjelmointikieleen
 % jos tulee niin sitten jotain siitä että web suunnittelu liikkuu nopeaseti ja siellä on kokoajan uusia teknologioita
 %mutta pohjalta ne perustuu samoihin periaatteisiin.
 
+% tullaanko tekemään seuranta vai jos tulee tarpeeksi tekstiä niin onko ok vaan tehdä normi oppari tästä
+% jos tavoitteena olisis se uuden featuren lisääminen
 
 Opinnäytetyön tavoitteena on seurata kehittymistä 13 viikon seurantajakson aikana työharjoittelussa 
 ja tutkia henkilökohtaista kehitystä harjoituksen aikana.
@@ -376,14 +378,21 @@ Minulla ei ennen harjoitusta ollut aijempaa työkokemusta alalta, (joten jotain 
 
 Startupit haluaa nopeaa liikkumista ja kehittymistä ja se näkyy teknologioiden valinnassa.
 Projekti käyttää Meteor fullstack frameworkkia, joka on suunniteltu nopeaan kehittämiseen ja käyttöönottoon.
+%more text
 \medskip
 
-Käyttöliittymä on toteutettu käyttämällä reactjs kirjastoa
+Käyttöliittymä on toteutettu käyttämällä reactjs kirjastoa.
+%more text
 \medskip
 
 projektin tietokanta on mongodb, joka tekee uusien collectioneiden tekemisestä helppoa sillä nosql kantoihin ei travitse määritellä skeemaa.
+%more text
 \medskip
 
+meteor mongo ja react on core teknologiat jota projekti käyttää mutta mukana on myös pienempiä teknologioita joita opinnäytetyö käy läpi.
+yhdessä näitä kolmea teknologiaa käytten voi luoda monenlaisia nopeuta ja skaalautuvia nettisivuja pienistä projekteista suuriin.
+%more text
+\medskip
 
 
 
@@ -426,6 +435,9 @@ Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyt
 %Meteor ei pakota kehittäjää käyttämään tiettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular.
 \medskip
 
+jotain siitä että meteori käynnistää oman backendin ja se käyttää ihan samallaista koodia kun client.
+tää tekee clientin ja backendin koodista samanlaisen joka helpottaa käyttöönottoa ja devaamista.
+\medskip
 
     
 % https://www.meteor.com/
@@ -433,12 +445,13 @@ Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyt
 
 Meteor tukee monta ominaisuutta kuten.
 \begin{itemize}
-    \item tukee monta Front-end kirjastoa ja frameworkkkia
-    \item tukee typescriptiä
-    \item sisään rakennettu käyttäjä systeemi
-    \item toimii monella laitteellqa
-    \item helppo ja nopea käyttöönottaa 
+    \item Tukee monta Front-end kirjastoa ja frameworkkkia
+    \item Tukee Typescriptiä
+    \item Sisään rakennettu käyttäjä systeemi
+    \item Toimii monella laitteella
+    \item Helppo ja nopea käyttöönottaa 
 \end{itemize}
+
 
 
 
@@ -446,7 +459,6 @@ Meteor tukee monta ominaisuutta kuten.
 \subsubsection{Meteor metodit}
 
 % kirjoita tämä oikeella oppari tyylillä. idk tuntuu vähän väärältä tässä
-
 
 
 % kappale rpc. mikä on ja miten eroaa restful
@@ -458,10 +470,6 @@ Meteor ei käytä RESTful rajapintaa vain RPC (eng Remote procedure call) rajapi
 Tarkoittaa että client kutsuu funktioita palvelimella meteorin kautta.
 %uusiks jotenkin huono 
 Palvelimelle määritetään metodit, joita voidaan kutsua palvelimelta tai clientiltä.
-
-
-
-
 \medskip
 
 
@@ -471,6 +479,13 @@ Methodit suoritetaan ja määritetään funktioina palvelimen puolella, ja niit�
 Metodit antavat kutsujasta tietoa, esim. onko kutsuja kirjautunut sisään ja jos on niin mikä on hänen käyttäjätunnuksensa. 
 %uusiks
 Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin kutsumiseen.
+\medskip
+
+
+
+
+\subsubsection{Meteor ecosysteemi}
+meteor package management system ja meteorin deploy systeemit (galaxy etc)
 
 
 
@@ -541,32 +556,76 @@ lorem ipsum
 
 
 \newpage
-\subsection{Lokalisaatio}
+\subsection{Web sivustojen kääntäminen}
 
-web sovelluksien kääntäminen useaan kieleen
+% sana lokalisaatio pitäisi vaihtaa translaatioksi
+% sillä me emme tehnyt mitään oikeaa lokalisaatiota
 
-ero i10n ja i18n jne % jos mainitaan edes
+
+%link tree
+% https://www.linkedin.com/pulse/website-translation-how-to-guide-louise-souter
+
+
+% people prefer content in their lenguage
+%https://csa-research.com/Featured-Content/For-Global-Enterprises/Global-Growth/CRWB-Series/CRWB-B2C#10Facts
+% 11.6
+
+
+%kääntäminen yleisesti ja miksi sen tekisi. ja jotain itse lokalisaatiosta
+
+Kielimuuri on iso ongelma tuotteiden ja nettisivujen laajentamisessa uusille markkinoille.
+% uusiks
+csa rechearching väittää että 65\% käyttäjistä suosisi sisältöä heidän kielellä.
 \medskip
 
-käännös web sovelluksissa yleisesti
 
+
+
+
+%https://www.transifex.com/blog/2024/website-translation-methods/
+%11.6 
+
+On monta eri menetelmää sivustojen kääntämiseen, 
+ja koska monet kielet on hyvin erillaisia voi konteksti ja nuanssi hävitä jos kääntää vain sana sana sanaan.
+Monet lausahdukset ja sanonnat ei voi kääntää suoraan kielestä toiseen ilman että menettää sen alkuperäisen tarkoituksen.
+esimerkiksi (joku esimerkki sanonnasta joka ei toimi jos sen kääntää englanniksi).
+\medskip
+
+
+%add more words to this
+Käännös teksin luonnin voi yleisesti tehdä kahdellla tavalla. Ihmis käännös tai tekoälykäännös.
+Ihmis käännöksellä voi olla hyvä tarkkuus ja lopputulos tulee kuulostamaan luonnolliselta.
+tekoaly käännös on tosi nopea, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.
+\medskip
+
+
+
+
+%https://www.motionpoint.com/platform/what-are-the-best-technologies-for-website-translation/
+% 11.6
+
+
+On eritapoja toteuttaa käännösten tekeminen web alustoilla. Monet suuret sivustot kutem amazon \citemissing{} 
+hostaa monta eri versiota niiden nettisivuista.
+legit hard kopio nettisivusta joka on kirjoitettu eri kielellä. Tämä on hyvin kallis ja aikaavievä.
+
+Tekstin Hot swappaaminen. Käytetään yhtä sivua mutta teksti vaihtuu alta kun vahdetaan kieli. \citemissing{}
+käytetään jotain keskitettyä kielipankkia johon kaikki käännökset on tallennettuna.
+\medskip
+
+
+Hot swappaamisessa...\\
 Kovakoodatut tekstit sivuilta vaihdetaan käännösfunktiokutsuihin.
 Funktio etsii käännöstiedostosta oikeat sanat tai lauseet ja asettaa ne alkuperäisen tekstin tilalle. 
 Käännöstiedost on avain-arvo. %jotain tähän vielä
 % asiakielellä uusiks
 Avain on valmiiksi päätelty merkkijono ja arvo on itse käännös. 
 Kun haluttu kieli vaihdetaan kirjasto vaihtaa käännöstiedoston toiseen tiedostoon jolla on samat avaimet. 
-Arvot vain vaihtuvat uuden kielen tekstiksi.
-
+Arvot vain vaihtuvat uuden kielen tekstiksi.\citemissing
 \medskip
 
-kuva i18n kutsu funktiosta
 
-selitys kuvasta
 
-kuva käännöstiedostosta
-
-selitys kuvasta
 
 
 
@@ -579,26 +638,59 @@ selitys kuvasta
 \newpage
 % mahdollissesti toteutus title pois että saa yhden lisää subsectiionin muuten tää on vähän liikaa alalukuja
 
+\section{Käännösten toteutus}
 
-\section{Lokalisaation toteutus}
-
-sivu toimii vain yhdellä kielellä ja sen pitää toimia monella
+\subsection{wip title tehtävä}
+Sovelluksen sivut on kovakoodattu suomeksi. ja ne pitäisi pitäisi pystyä kääntämään.
 \medskip
 
 
-meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
-%periaate on selitetty teoriassa jotan pelkää toteutusta
+\subsection{Käytetty teknologia}
+Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
+Kaikkien julkisesti olevien teksien etsiminen ja vaihtaminen i18n käännös funktio kutsuihin.
+Käännös tiedoston luominen ja käännöksien laittaminen.
+\medskip
+\bigskip
+
+
+\includegraphics[width = 15cm]{src/public/oppar/translationcall.png}\\
+Kuva \getImgCount. {} i18n käännösfunktiokutsu (ehkä uusi kuva)
+\medskip
+
+kuvassa luodaan HTML paragraafi elementti jossa kutsutaan käännösfunktiota. funktio hakee käännöstiedoston progress sivulta progress arvon.
+\bigskip
+
+
+\includegraphics[width = 15cm]{src/public/oppar/translationfile.png}\\
+Kuva \getImgCount. {} progressiosivun käännökset suomenkieliseltä käännöstiedostosta(ehkä uusi kuva)
+\medskip
+
+kuvassa progressio sivun käännökset. käännös tiedoston on json formaatissa joten sivut ovat omia objekteja. 
+niiden ominaisuudet ovat avaimia mitä käytetään kun haetaan käännöksiä ja arvot ovat julkinen teksi.
+Kuvassa \nextImageCount {} On Sama kohta käännöstiedostosta mutta englannin kielisestä
+\medskip
+\bigskip
+
+
+\includegraphics[width = 15cm]{src/public/oppar/translationfileEng.png}\\
+Kuva \getImgCount. {} progressiosivun käännökset englanninkielisestä käännöstiedostosta(ehkä uusi kuva)
+\medskip
+
+\subsection{käyttöliittymä kielenvaihamiselle}
+
+laskuvalikko kun vaihdetaan kieli
+
+
+\subsection{wip title kaksi}
+Sovelluksen kaikki julkisesti oleva teksi on siirretty käännös tiedostoihin. 
+Tämä luo keskitetyn sijainnin josta voi helposti etsiä ja korjata kirjoitus virheitä ja lisäämään uusia lauseita ja sanoja.
+uuden kielen lisääminen vaatii uuden käännöstiedoston luomisen ja käännös arvojen asettelun tiedostoon.
+\medskip
+
+% saadaanko jotain lisää kirjoitettua ns "yhteenvetoon"
 
 
 
-
-
-
-miten käännpös tiedostot tulee auttamaan projektia tulevaisuudessa. uusien kielien lisääminen.
-
-Projektin kaikkia ulkoisesti näkyvä teksti on siirretty käännöstiedostoihin. 
-
-Tämä luo projektille keskitetyn sijainnin kaikelle projektin ulkoisesti näkyvälle tekstille.
 
 
 
@@ -625,20 +717,26 @@ selitys mitä sivulla tapahtuu
 kuva nykyisestä skeemasta
 
 selitys skeemasta ja miten se liittyy sivuun
+käyttäjän profiilissa on ominaisuus measurableThing. tätä käyttäen sovellus tietää mitä arvoa mitataan.
+Yksittäinen measurableThing ei riitä jos halutaan mitata useampaa arvoa.
+itse tietokannassa on oma mongo collection progressio arvoille jossa mitattava arvo on nimetty merkkijonona.
+tätä ei tarvitse muokata sillä voimme vain etsiä mitä tietoja halutaan mongo queryillä.
 \medskip
 
 
 
 \subsection{Ominaisuuden totetus}
 
-skeeman muutos ja migraatio
+user skeeman muutos ja migraatio
 
 
-tarvittavat muutokset skeeman muutoksen jälkeen
+tarvittavat muutokset skeeman muutoksen jälkeen. rajapinta muutokset jne (ei olla selitetty gql joten siitä ei paljoa)
 
 
-käyttäjän luonti
+käyttäjän luonti ja käyttäjän päivittämis apin muokkaaminen.
 mittatuloksien laittamimnen api
+
+kuva käyttäjä luomis interface before and after
 
 
 käyttöjän datan laittamis userinterface
@@ -695,6 +793,7 @@ uusi ominaisuus toimii ja siitä ei tullut ognemlia sen käyttöönotossa
 % though i dont thik we need the hfill thing in the first place but whattever that is problem for another day
 
 
+(korjaa outo spacing)
 \bibliographystyle{labCitations} % ------------------------------- LÄHTEET ------------------------------- %
 \bibliography{./src/op/citations}
 

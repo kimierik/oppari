@@ -4,17 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "a069e4bb488fecc1",
+        "id": "d194b917b7c37151",
         "type": "tabs",
         "children": [
           {
-            "id": "15958dd1a60dc287",
+            "id": "98085a3115472f4d",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "recources/Anttila_Christian.pdf"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -94,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "recources/Anttila_Christian.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +108,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "recources/Anttila_Christian.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -122,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "recources/Anttila_Christian.pdf"
-              }
+              "state": {}
             }
           }
         ]
@@ -144,15 +138,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "15958dd1a60dc287",
+  "active": "98085a3115472f4d",
   "lastOpenFiles": [
+    "notes/notes.md",
+    "notes/Home Note.md",
+    "notes/theseusnotes.md",
+    "notes/weeks.md",
+    "recources/oppari_kirjoitusohje_zoom_notes.md",
+    "recources/Anttila_Christian.pdf",
     "recources/Opinnäytetyön (YAMK) ohje 082020.pdf",
     "notes/starttaamo.org",
-    "notes/notes.md",
-    "notes/weeks.md",
     "notes/aiheEhdotukset.md",
-    "notes/Home Note.md",
-    "recources/Anttila_Christian.pdf",
     "customLanguages/Custom Languages.md",
     "customLanguages/C superset.md",
     "C_Program/cisms.md",
@@ -171,7 +167,6 @@
     "customLanguages/goint.md",
     "dailynotes",
     "javascript/objpooltest.md",
-    "orgbackups/crp.org",
     "customLanguages.md",
     "Welcome.md",
     "univesr/abstraction thinking.png",

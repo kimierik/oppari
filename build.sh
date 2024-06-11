@@ -8,7 +8,7 @@ case "$1" in
         pdflatex --shell-escape -output-directory=output src/paivakirja.tex 
         ;;
     -op)
-        bibtex output/oppari.aux ;pdflatex --shell-escape -output-directory=output src/oppari.tex
+        bibtex output/oppari.aux ;pdflatex -halt-on-error --shell-escape -output-directory=output src/oppari.tex
         ;;
 esac
 

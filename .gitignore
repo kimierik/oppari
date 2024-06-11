@@ -1,8 +1,8 @@
 output/*
 notes/*
-svg*
+svg-inkscape/*
 examplecode/*
-*.pdf
 recources/*
+*.pdf
 *.png
 *.jpg
