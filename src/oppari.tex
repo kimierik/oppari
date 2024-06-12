@@ -7,6 +7,8 @@
 \usepackage{svg}
 
 \usepackage{hyperref} %links
+\usepackage{xurl}
+
 \usepackage[document]{ragged2e} %floating text
 \usepackage{helvet} %font
 \usepackage{tocloft} % dots in table of contents sections
@@ -14,6 +16,7 @@
 \usepackage{lipsum, multicol}
 \usepackage{fancyhdr}
 \usepackage{listings}
+
 
 % citaitons
 \usepackage{natbib}
@@ -54,12 +57,17 @@
 
 
 
+%this is such a shitshow lmao
 
 \hypersetup{
-    colorlinks,
+    colorlinks=false,
     citecolor=black,
     filecolor=black,
     linkcolor=black,
+    linkbordercolor=1 1 1,
+    citebordercolor=1 1 1,
+    pdfborderstyle={/S/U/W 1},
+    urlbordercolor=0 0 1,
     urlcolor=blue
 }
 \urlstyle{same}

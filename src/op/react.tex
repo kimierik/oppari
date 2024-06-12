@@ -4,11 +4,14 @@
 \subsubsection{Mikä on React}
 
 % https://github.com/facebook/react/blob/main/README.md
+% https://github.com/facebook/react/blob/f74c5ccf9469d3389ce3a1ee3b54988049e235f7/README.md
 % https://www.infoq.com/news/2013/06/facebook-react/
 % molemmat siteerattu 27.5.24
 
+%https://opensource.fb.com/projects/react/
+% 12.6
 
-React on metan ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto, joka on suunniteltu reaktiivisien käyttöliittyjien kehittämiseen.
+React on Metan ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto, joka on suunniteltu reaktiivisien käyttöliittymien kehittämiseen.\citemissing
 %more text
 %
 Reaktia voi käyttää mobiili ja työpöytä sovelluksien käyttöliittymien kehittämiseen. 
@@ -28,10 +31,11 @@ Reaktia voi käyttää mobiili ja työpöytä sovelluksien käyttöliittymien ke
 %
 
 React kannustaa kehittäjiä rakentamaan sovelluksia uudelleenkäytettävien komponenttien avulla.
-Jokainen komponentti sisältää oman rakenteensa, tyylinsä ja käyttäytymisensä, joka tekee niistä helposti siirrettävän ja uudelleenkäytettävän.
+Jokainen komponentti sisältää oman rakenteensa, tyylinsä ja käyttäytymisensä, joka tekee niistä helposti siirrettävän ja uudelleenkäytettävän.\labcite{react24a}
 Komponenteista voidaan sitten koota monimutkaisia käyttöliittymimä. 
+%
 Komponentit voidaan kirjoitetaa JSX syntaksilla, joka mahdollistaa HTML tyylisen kirjoituksen JavaScriptin sekaan.
-Tämä tekee React:ista helppo ja luettavan, ymmärrettävän ja opittavan, joka on auttanut nostamaan reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.
+Tämä tekee React:ista helppo ja luettavan, ymmärrettävän ja opittavan, joka on auttanut nostamaan reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.\labcite{statista23}
 \medskip
 
 
@@ -51,20 +55,19 @@ Tämä tekee React:ista helppo ja luettavan, ymmärrettävän ja opittavan, joka
 % https://medium.com/@sjarancio/what-is-jsx-e3dda0af3490
 
 %transpilation
-%https://www.scholarhat.com/tutorial/react/getting-started-with-jsx
+% https://www.scholarhat.com/tutorial/react/getting-started-with-jsx
 % https://www.typescriptlang.org/docs/handbook/jsx.html
 
 % kaikki viitattu 27.5
 
 %html koodia uusiks
-JSX (javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä koodia javascriptin sekaan, tekien koodista yksinkertaisempaa ja helpompaa ymmärtää.
+JSX (javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä koodia javascriptin sekaan, tekien koodista yksinkertaisempaa ja helpompaa ymmärtää. \labcite{Stephen21}
 % suora sitaatti https://facebook.github.io/jsx/ 
-JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle.
+JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle.\labcite{Facebook22}
 \medskip
 
 \bigskip
-\includegraphics[width=10cm]{src/public/oppar/pure_jsx_example.png}
-
+\includegraphics[width=10cm]{src/public/oppar/pure_jsx_example.png}\\
 Kuva\getImgCount .{} esimerki JSX syntaxista
 \medskip
 
@@ -77,18 +80,14 @@ Muuttujien arvot voidaan kirjoittaa HTML tyylillä, tekien monimutkaisten elemen
 
 
 \bigskip
-\includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}
-
-% selitys kuvasta voidaan siirtää siihen kun kuvaa viitataan
-Kuva\getImgCount .{} Kuvankaappaus helloWorld muuttujasta, joka on transpiloitu javascriptiin. 
+\includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}\\
+Kuva\getImgCount .{} Kuvan \prevImageCount{} koodi, joka on transpiloitu javascriptiin
 \medskip
 
-%vähän toistoa muttei väliä sillä pitää siteerata tämä
 
-%https://babeljs.io/repl 
-Kuvassa on helloworld muuttuja, joka on käännetty natiiviksi javascriptiksi babel kääntäjää käyttäen.
+Kuvassa on helloworld muuttuja, joka on käännetty natiiviksi javascriptiksi babel kääntäjää käyttäen. \labcite{babel24}
 Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjoitettu käyttämällä JSX syntaxia.
-%jotain lisää
+%jotain lisää tekstiä
 \medskip
 
 
@@ -99,42 +98,65 @@ Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjo
 % komponentti joka voi renderöidä toisen komponentin. tämä jatkuu siihen asti että päästään natiiveihin html elementteihin jotka selain osaa tulkita
 %https://react.dev/learn/your-first-component
 
-% mahdollisesti näytä ekaksi class componentti sitten funkitio komponentti.
-% näin voi sitten jälkeempäin selittää mikä usestate hook on paremmin
 
-
-React komponentti on oma kokoomus joka sisältää oman tilan, käyttäytymisen ja tyylin.
-
-komponentti on oma pieni kokoompano joka sisältää sen ulkonäön ja käyttäytymisen. componentteja voidaan
+Komponentti on oma pieni kokoonpano, joka sisältää sen ulkonäön ja käyttäytymisen.
+fundimental building block of react applications.
 \medskip
+
+
+% tarvii vähän lisää tekstiä tähän lauseeseen. 
+%jotain lisää looremia siitä että tilalliset ja tilattomat on olemassa
+
+Komponentit voivat olla tilallisia tai tilattomia. 
+%
+Tilaton komponentti ei sisällä omaa tilaa. 
+niiden pää tarkoitus on renderöidä käyttöliittymää niille annettujen propertyjen perusteella.
+Tilattomat komponentit on helpompi kirjoittaa ja testata verrattuna tilalliseen komponenttiin, 
+sillä niissä ei ole sivu efektejä eikä niiden käyttäntö tai ulkonäkö vaihdu sisäisen tilan takia.\labcite{Phuoc23}
+%
+%asiakieli joikeat sanat
+Tilallinen komponentti tarkoittaa jotakin komponenttia, joka sisältää oman tilan ja on vastuussa sen hallinnoinnista ja päivittämisestä.
+Tilalliset komponentit ovat hyvä silloin kun pitää säilyttää käyttöliittymässä dataa ajanmyötä kuten form inputs tai datan hakua.\labcite{Phuoc23}
+% voisi jotain lisää kirjoittaa tilallisista ja tilattomista
+\medskip
+
+
+%tarvitsee ainakin yhden lausekkeen lisää
+React tukee kahta tapaa luoda komponentteja. Luokkakomponentti ja funktiokomponentti.\citemissing
+Kuvassa \nextImageCount {} on esimerkki tilallisesta funktiokomponentista.
 \bigskip
 
-\includegraphics[width=15cm]{src/public/oppar/function_component.png}
 
+\includegraphics[width=15cm]{src/public/oppar/function_component.png}\\
 Kuva \getImgCount{}. kuvakaappaus React komponentista
 \medskip
 
-kuvaassa teemmme funktio komponentin laskija joka seuraa kuinka monta kertaa nappia on painettu.
-funktio palauttaa komponentin ulkonäön, joka on määritetty JSX syntaxilla.
-komponentissa on myös useState "hook"{}, joka kuvaistaa komponentin tilan, tätä käytten komponentti pystyy säilyttämään dataa ja päivittämään itsensä kun sen sisäinen tila muuttuu.
+Kuvaassa teemmme funktio komponentin laskija, joka seuraa kuinka monta kertaa nappia on painettu.
+Kunktio palauttaa komponentin ulkonäön, joka on määritetty JSX syntaxilla.
+Komponentissa on myös useState "hook"{}, joka kuvaistaa komponentin tilan, tätä käytten komponentti pystyy säilyttämään dataa ja päivittämään itsensä kun sen sisäinen tila muuttuu.
 \medskip
 
-Komponentit voivat myös määrittää luokkakomponentti tyylillä. Mutta React on kehottaa käyttää funktio komponentteja tulevaisuudessa.
-Kuva {\the\numexpr \theimgCounter + 1}{} on sama laskukomponentti kuin kuva \theimgCounter{} mutta kirjoitettu luokkakomponentti tyylillä. 
+%kirjoita uusiks
+Komponentteja voidaan myös määrittää luokkakomponentti tyylillä. Mutta React on kehottaa käyttää funktiokomponentteja tulevaisuudessa. \labcite{react24c}
+Kuva \nextImageCount {} on sama laskukomponentti kuin kuva \theimgCounter{} mutta kirjoitettu luokkakomponentti tyylillä. 
 \medskip
 \bigskip
 
 
-\includegraphics[width=15cm]{src/public/oppar/class_.png}
-
+\includegraphics[width=15cm]{src/public/oppar/class_.png}\\
 Kuva \getImgCount{}. kuvakaappaus React luokkakomponentista
 \medskip
 
 % get some src for this
 % we can prob link the docs if we find the right page
 
-Luokkakomponentissa komponentin tilaa säilytetään this.state ominaisuudessa, ja sitä voi muuttaa käyttämällä this.setState funktiolla. 
-%ainakintoinen lauseke
+% In the class component of a React application, the state is stored in the this.state property.
+% This state can be dynamically modified and updated by using the this.setState function,
+% which allows for re-rendering of the component to reflect the changes in the state and ensures that the user interface stays in sync with the underlying data.
+
+% in the class component state is stored in the this.state property and it can be modified by using the this.setState function
+Luokkakomponentissa komponentin tilaa säilytetään this.state ominaisuudessa, ja sitä voi muuttaa tai päivittää käyttämällä this.setState funktiolla. 
+Funktio uudelleen renderöi osat komponentista jotka ovat riippuvaisia kyseisestä tilasta.
 \medskip
 
 %https://react.dev/reference/react/hooks
@@ -142,9 +164,11 @@ Luokkakomponentissa komponentin tilaa säilytetään this.state ominaisuudessa, 
 
 Funktio componentissa tila hallinnoidaan "React hookeilla"{}. 
 "Hookit"{} antavat funktio komponenteille mahdollisuuden käyttää Reactin ominaisuuksia, 
-jotka luokkakomponentit saavat kun ne jatkavat React.Component luokkaa.
+jotka luokkakomponentit saavat kun ne jatkavat React.Component luokkaa.\labcite{react24b}
 %
-React kehottaa käyttämään funktiokomponentteja. ja niissä on myös vähemmän koodia kun luokka komponentissa vaikka lopputulos on sama.
+React kehottaa käyttämään funktiokomponentteja. 
+%jotenkin paremmin yhdistää nämä
+ja niissä on myös vähemmän koodia kun luokka komponentissa vaikka lopputulos on sama\labciteend{react24c}
 Molemmat komponentit tehty react 18.3.1 versiolla.
 
 
@@ -156,6 +180,7 @@ Molemmat komponentit tehty react 18.3.1 versiolla.
 \medskip
 
 \subsubsection{Reaktin struktuuri ja toiminta}
+%mahdollisesti poistetaan jos ei lähde tekstiä
 
 % https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
 %pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
@@ -204,7 +229,7 @@ joten komponentin lapsikomponentit voidaan suorittaa samalla. Lopputuloksena saa
 DOM (eng Document object model) on puu-struktuurinen representaatio HTML dokumentista.
 Tätä struktuuria käytetään rajapintana JavaScriptin ja HTML:län välillä. 
 Struktuurissa jokainen solmu on objekti, joka esittää osaa dokumentista. 
-Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa muihin solmuihin.
+Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa muihin solmuihin.\labcite{w3org}
 
 
 
@@ -242,7 +267,7 @@ Joka riviin tulee kaksi "table data"{} elementtiä, jotka sisältää datan teks
 %kuva html domista
 \includegraphics{./src/public/oppar/dom.png}
 
-Kuva\getImgCount .{} DOM puu esimerkki HTML koodista. Jonathan Robie, Texcel Research 
+Kuva\getImgCount .{} DOM puu esimerkki HTML koodista. \labcite{w3org}
 \medskip
 
 Kuvassa on esimerkki HTML koodista tehty DOM puu struktuuri.
