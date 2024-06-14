@@ -1,7 +1,7 @@
 
 
 %ei varmaan saa olla kymy
-\subsubsection{Mikä on React}
+\subsubsection{React Yleisesti}
 
 % https://github.com/facebook/react/blob/main/README.md
 % https://github.com/facebook/react/blob/f74c5ccf9469d3389ce3a1ee3b54988049e235f7/README.md
@@ -10,15 +10,6 @@
 
 %https://opensource.fb.com/projects/react/
 % 12.6
-
-React on Metan ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto, joka on suunniteltu reaktiivisien käyttöliittymien kehittämiseen.\citemissing
-%more text
-%
-Reaktia voi käyttää mobiili ja työpöytä sovelluksien käyttöliittymien kehittämiseen. 
-\medskip
-
-
-
 
 % https://react.dev/
 % 30.5
@@ -30,6 +21,11 @@ Reaktia voi käyttää mobiili ja työpöytä sovelluksien käyttöliittymien ke
 
 %
 
+
+
+
+React on Metan ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto,
+joka on suunniteltu reaktiivisien käyttöliittymien kehittämiseen.\citemissing
 React kannustaa kehittäjiä rakentamaan sovelluksia uudelleenkäytettävien komponenttien avulla.
 Jokainen komponentti sisältää oman rakenteensa, tyylinsä ja käyttäytymisensä, joka tekee niistä helposti siirrettävän ja uudelleenkäytettävän.\labcite{react24a}
 Komponenteista voidaan sitten koota monimutkaisia käyttöliittymimä. 
@@ -144,7 +140,7 @@ Kuva \nextImageCount {} on sama laskukomponentti kuin kuva \theimgCounter{} mutt
 
 
 \includegraphics[width=15cm]{src/public/oppar/class_.png}\\
-Kuva \getImgCount{}. kuvakaappaus React luokkakomponentista
+Kuva \getImgCount{}. kuvakaappaus React luokkakomponentista(POISTA CURSOR KUVASTA)
 \medskip
 
 % get some src for this
@@ -180,7 +176,7 @@ Molemmat komponentit tehty react 18.3.1 versiolla.
 \medskip
 
 \subsubsection{Reaktin struktuuri ja toiminta}
-%mahdollisesti poistetaan jos ei lähde tekstiä
+mahdollisesti poistetaan  tämä kappale
 
 % https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
 %pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
@@ -270,7 +266,7 @@ Joka riviin tulee kaksi "table data"{} elementtiä, jotka sisältää datan teks
 Kuva\getImgCount .{} DOM puu esimerkki HTML koodista. \labcite{w3org}
 \medskip
 
-Kuvassa on esimerkki HTML koodista tehty DOM puu struktuuri.
+Kuvassa \theimgCounter {} on esimerkki HTML koodista tehty DOM puu struktuuri.
 tätä käyttämällä, 
 
 jotain rajapinta interaktiivisuus helppokäyttöisyys javascript jne lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum
@@ -281,6 +277,10 @@ jotain rajapinta interaktiivisuus helppokäyttöisyys javascript jne lorem ipsum
 
 %https://medium.com/@BharathkumarV/reacts-virtual-dom-17fdcb290a10
 % siteerattu 27.5
+
+%https://refine.dev/blog/react-virtual-dom/#components-of-the-virtual-dom
+%13.6
+%
 
 VDOM (eng Virtual Dom) on virtuaalinen esitys DOM:ista, jonka react pitää musitissaan koko suorituksen ajan.
 VDOM:ia käyttäen react voi nopeasti päätellä mitkä osat käyttöliittymästä pitää päivittää, kun jonkun komponentin tila päivittyy. 
