@@ -286,6 +286,12 @@ TERMISTÖ
 ECMAscript = skriptaus-kieli standardi 
 \bigskip
 
+DOM = Document Object Model 
+\bigskip
+
+puu = datastruktuuri(selitä paremmin)
+\bigskip
+
 VDOM = virtual DOM
 \bigskip
 
@@ -723,7 +729,7 @@ Kuvassa \nextImageCount {} On Sama kohta käännöstiedostosta mutta englannin k
 
 
 \includegraphics[width = 15cm]{src/public/oppar/translationfileEng.png}\\
-Kuva \getImgCount. {} progressiosivun käännökset englanninkielisestä käännöstiedostosta(ehkä uusi kuva)
+Kuva \getImgCount {}. progressiosivun käännökset englanninkielisestä käännöstiedostosta(ehkä uusi kuva)
 \medskip
 
 \subsection{käyttöliittymä kielenvaihamiselle}
@@ -755,45 +761,109 @@ uuden kielen lisääminen vaatii uuden käännöstiedoston luomisen ja käännö
 \section{Uuden ominaisuuden lisäys}
 
 \subsection{Alkuperäinen ominaisuus ja parannus kohteet}
-progressio sivy ja measurable thing joka on user skeemassa vain yksi juttu
-tämä pitää tehdä jotain että kaiikki on hybää
+%selitys mykyisestä sivusta ja featuresta. ja mihin se pitää muokata
+
+
+Sovelluksessa on "Progressio"{} niminen ominaisuus. 
+Ominaisuus antaa mahdollisuuden määrittää käyttäjälle, jokin "mitattava"{} arvo.
+Kuvassa \nextImageCount {} näkyy on progressio sivu täältä käyttäjä voi merkata ja seurata kyseistä mitattavaa arvoa.
+\medskip
+\bigskip
+
+
+\includegraphics[width =15cm]{src/public/progressiosingle.png}\\
+Kuva \getImgCount {}. Progressio sivu (tarvitsee paremman kuvan)
 \medskip
 
-kuva sivulta
-
-selitys mitä sivulla tapahtuu
+Kuvassa \theimgCounter {} mitataan painoa kg:na. Käyttäjä pystyy valitsemaan miltä päivältä arvo on otettu ja mikä itse arvo on.
+% asiakieli työnanataja haluaa
+Työnanataja haluaa, että käyttäjälle voisi määritellä useamman mitattavan arvon ja, 
+että Progressio sivulta käyttäjä pystyisi seuraamaan ja tallentamaan useampia eri mittausarvoja.
 \medskip
 
-kuva nykyisestä skeemasta
 
-selitys skeemasta ja miten se liittyy sivuun
-käyttäjän profiilissa on ominaisuus measurableThing. tätä käyttäen sovellus tietää mitä arvoa mitataan.
-Yksittäinen measurableThing ei riitä jos halutaan mitata useampaa arvoa.
-itse tietokannassa on oma mongo collection progressio arvoille jossa mitattava arvo on nimetty merkkijonona.
-tätä ei tarvitse muokata sillä voimme vain etsiä mitä tietoja halutaan mongo queryillä.
+Käyttäjän mitattavan arvon suure säilytetään käyttäjän profiilissa merkkijonona. 
+Kuvassa \nextImageCount {} on esimerkki käyttäjä profiilin skeemasta JSON muodossa.
+Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattavan arvon seurantaan, joten se pitäisi vaihtaa.
+%mainitse paremmin mongo nosql dokumentti
+Koska käytössä on nosql dokumentti voimme vaihtaa "measurableThing"{} merkkijonon, "measurableThings"{} merkkijono listaan.
+\bigskip
+
+
+
+kuva \getImgCount {}. Käyttäjä profiilin skeema
 \medskip
 
 
 
 \subsection{Ominaisuuden totetus}
 
-user skeeman muutos ja migraatio
+
+\subsubsection{Käyttäjä profiili skeeman migraatio}
+
+% tiukka skaama
+MongoDB:n NoSql dokumentti ei määritä tiukkaa skeemaa joten käyttäjien skeemat voivat olla eriävät.
+Skeeman muutos vaatii jokaisen käyttäjän profiilin muokkaamista haluttuun muotoon.
+Käyttäjä profiilin skeeman muutos pitää tehdä kaikille aktiivisille käyttäjille, käyttäjän luonnissa pitää myös muokata siten, 
+että uudet käyttäjän alkaisivat käyttämään uutta skeemaa.
+%selitä paremmin
+Projektissa on myös käytössä ominaisuus tarkastus rajapinnoissa ettei mongodb kantaan voida tallettaa tietoa jota sinne ei haluta.
+%api muutos
+\medskip
+
+selitys migraatio prosessista. teoriaa migraatiosta myös.
+migraatio tehdään migraatio kuvan \nextImageCount {} migraatio funktiolla. 
+Funktio käy läpi kaikki käyttäjät jolla measurableThing ominaisuus on olemassa ja päivittää sen measurableThings listaan.
+%mnnm
+Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkroonisesti palvelimella. 
+Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen sen ajaksi kun käyttäjä profiileja päivitettäisiin.
+Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkroonisesti, 
+jolloin käyttäjiä migraoitaisiin pikkuhiljaa.
 
 
-tarvittavat muutokset skeeman muutoksen jälkeen. rajapinta muutokset jne (ei olla selitetty gql joten siitä ei paljoa)
+\bigskip
+
+kuva migraatio funktiosta
+\medskip
+
+\bigskip
 
 
-käyttäjän luonti ja käyttäjän päivittämis apin muokkaaminen.
-mittatuloksien laittamimnen api
-
-kuva käyttäjä luomis interface before and after
+kuva uudesta skeemasta
+\medskip
 
 
-käyttöjän datan laittamis userinterface
-toinen kuva uudesta käyttöliittymästä
+\subsubsection{Käyttöliittymä}
+
+käyttöliittymää pitää muokata siten, että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mihin mitattavaan arvoon hän haluaa tallentaa lukemia.
+%more words
+\bigskip
+
+
+\includegraphics[width = 15cm]{src/public/progressmulti.png}\\
+kuva \getImgCount {}. user interface muutoksien jälkeen
+\medskip
+
+kuvassa käyttäjällä on mahdollisuus valita mihin mitattavaan suurteeseen hän haluaa tallettaa arvoja kuvan \nextImageCount{} laskuvalikolla.
+%more words
+\bigskip
+
+\includegraphics{src/public/progressselect.png}\\
+kuva \getImgCount {}. käyttöliittymän laskkuvalikosta
+\medskip
+
+sanoja kaaviosta jos pitää
+\bigskip
+
+kuva käyttäjä luomis interface before n after
+\medskip
+
+
 
 
 \subsection{Ominaisuuden lopputulos ja käyttöönotto}
+
+
 migrate meni hyvin. tosin jos olisi ottanut backupin databasesta niin ei olisi ollut riskiä hajottaa kaikkea.
 \medskip
 

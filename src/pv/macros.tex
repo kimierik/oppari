@@ -65,10 +65,7 @@
 \newcounter{imgCounter}
 \setcounter{imgCounter}{0}
 
-\newcommand{\getImgCount}{
-\addtocounter{imgCounter}{1}
-\theimgCounter
-}
+\newcommand{\getImgCount}{\addtocounter{imgCounter}{1}\theimgCounter}
 
 \newcommand{\nextImageCount}{\the\numexpr \theimgCounter + 1 }
 \newcommand{\prevImageCount}{\the\numexpr \theimgCounter - 1 }

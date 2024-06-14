@@ -210,18 +210,11 @@ joten komponentin lapsikomponentit voidaan suorittaa samalla. Lopputuloksena saa
 
 
 
-%joku maininta vdomista jossain vaiheessqa enne ntätä ja sitten siirrä oikeaan paikkaan
 \subsubsection{DOM ja VDOM}
 
 
-%jotain domista, mikä se on ja miten se liittyy käyttöliittymiin ja sitten mikä on vdom
-% vai pitäisikö samantien aloittaa että meillä on vdom, ja sittem selittää mikä dom on..... kuulostaa väärältä
-
-% https://www.w3.org/TR/WD-DOM/introduction.html
-% 29.5
-
-
 %psychotic
+% dom ei ole pakko olla puu formaatti se pitää mainita
 DOM (eng Document object model) on puu-struktuurinen representaatio HTML dokumentista.
 Tätä struktuuria käytetään rajapintana JavaScriptin ja HTML:län välillä. 
 Struktuurissa jokainen solmu on objekti, joka esittää osaa dokumentista. 
@@ -256,6 +249,8 @@ esimerkiksi dom representaatio seuraavasta html koodista
 Esimerkki HTML koodissa luomme pöydän, jossa tehdään kaksi riviä ROWS elementin alle. 
 %sisältää väärä sana
 Joka riviin tulee kaksi "table data"{} elementtiä, jotka sisältää datan tekstinä.
+% mainitse allaoleva kuva tässä
+kuvassa \nextImageCount {} HTML on muotoiltu DOM puuhun.
 \bigskip
 
 
@@ -266,24 +261,27 @@ Joka riviin tulee kaksi "table data"{} elementtiä, jotka sisältää datan teks
 Kuva\getImgCount .{} DOM puu esimerkki HTML koodista. \labcite{w3org}
 \medskip
 
-Kuvassa \theimgCounter {} on esimerkki HTML koodista tehty DOM puu struktuuri.
-tätä käyttämällä, 
 
-jotain rajapinta interaktiivisuus helppokäyttöisyys javascript jne lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum
+% en tiedä puuttuuko jotain kappaleesta
+
+DOM toimii rajapintana HTML ja XML dokumentteihin.\labcite{w3org}
+Päivityksien tekeminen DOM rajapintaa käyttäen on helppoa, mutta se tulee suorituskyvyn hinnalla.
+Elementin päivittäminen DOM:issa päivittää kyseisen elementin kaikki lapsi elementit. 
+Tästä päivityksestä voi tulla hyvin kallis, jos elementtejä on paljon.\labcite{refine23}
 
 \bigskip
 
 
 
-%https://medium.com/@BharathkumarV/reacts-virtual-dom-17fdcb290a10
-% siteerattu 27.5
 
-%https://refine.dev/blog/react-virtual-dom/#components-of-the-virtual-dom
-%13.6
-%
-
-VDOM (eng Virtual Dom) on virtuaalinen esitys DOM:ista, jonka react pitää musitissaan koko suorituksen ajan.
-VDOM:ia käyttäen react voi nopeasti päätellä mitkä osat käyttöliittymästä pitää päivittää, kun jonkun komponentin tila päivittyy. 
+Käyttöliittymä päivityksien nopeuttamiseksi React on ottanut käyttöön VDOM:in (eng virtual DOM).
+VDOM on virtuaalinen esitys DOM:ista, jonka react pitää musitissaan koko suorituksen ajan\labciteend{refine23}
+% tekee, se tekee uusiks
+Kaikki käyttöliittymä päivitykset mitkä React tekee, se tekee ne VDOM:iin.
+Kun muutoksia tapahtuu VDOM:issa niin uusi VDOM puu luodaan. React sitten määrittää mitkä komponentit ovat muuttuneet, erottelu prosessilla (eng diffing).
+Erottelu prosessin ansiosta React tietää mikä on pienin määrä muutoksia mitä pitää tehdä oikeaan DOM:iin että käyttöliittymä pysyisi ajan tasalla.\labcite{bharathkumar23}
+Elementtien päivittely yksi kerrallaan jokaisen päivityksen ohessa olisi hidasta,
+joten react tekee ensiksi kaikki päivitykset VDOM:iin, jonka jälkeen päivittää oikean DOM:in yhdellä kerralla.\citemissing
 \medskip
 
 
