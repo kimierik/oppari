@@ -11,8 +11,12 @@
             "id": "98085a3115472f4d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "recources/oppari_kirjoitusohje_zoom_notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -92,6 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "recources/oppari_kirjoitusohje_zoom_notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "recources/oppari_kirjoitusohje_zoom_notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "recources/oppari_kirjoitusohje_zoom_notes.md"
+              }
             }
           }
         ]
@@ -140,6 +148,8 @@
   },
   "active": "98085a3115472f4d",
   "lastOpenFiles": [
+    "oppari.w18",
+    "notes/citations.md",
     "notes/notes.md",
     "notes/Home Note.md",
     "notes/theseusnotes.md",

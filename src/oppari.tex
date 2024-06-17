@@ -393,6 +393,9 @@ Koulutuksen aikana olen oppinut jotain
 
 % jotain siitä että ei ole oikeaa työ kokemusta vaikka on vahva koodauspohja
 Ennen harjoituksen alkamista minulla ei ollut aijempaa työkokemusta tieto- ja tietoviestintätekniikkan alalta.
+% tiedän ohjelmoinnista mutta prod on eri ympäristö
+Ja vaikka minulla oli vahva teoria pohja ohjelmoinnista, jonka olin saanut opinnoistani, 
+käytössä olevan tuotteen kanssa työskentely on erillaista.
 \medskip
 
 
@@ -694,6 +697,12 @@ Arvot vain vaihtuvat uuden kielen tekstiksi.\citemissing
 \newpage
 % mahdollissesti toteutus title pois että saa yhden lisää subsectiionin muuten tää on vähän liikaa alalukuja
 
+
+
+% mahdollissesti toinen sectio missä puhun starttaamolla työskentelystä
+
+
+
 \section{Käännösten toteutus}
 
 \subsection{wip title tehtävä}
@@ -732,9 +741,24 @@ Kuvassa \nextImageCount {} On Sama kohta käännöstiedostosta mutta englannin k
 Kuva \getImgCount {}. progressiosivun käännökset englanninkielisestä käännöstiedostosta(ehkä uusi kuva)
 \medskip
 
+
+
+
+% tämän kappaleen voisi poistaa. 
+% lisätä tää toiseen kappaleeseen tai sitten poistaa kokonaan
 \subsection{käyttöliittymä kielenvaihamiselle}
 
-laskuvalikko kun vaihdetaan kieli
+%lisäsin sivulle, tosin kun sivulle on lisätty
+Sivulle on myös lisätty laskuvalikko kielen vaihtamiselle. 
+Kielet kuvataan lippuina laskuvalikossa.
+Liput toimivat nopeina visuaalisina vihjeinä, jotka auttavat käyttäjiä tunnistamaan haluamansa kielen.
+kuvassa \nextImageCount.
+
+
+
+\bigskip
+\includegraphics[]{src/public/locale_laskuvalikko.png}\\
+Kuva \getImgCount {}. Kielen vaihto laskuvalikko
 
 
 \subsection{wip title kaksi}
@@ -754,126 +778,8 @@ uuden kielen lisääminen vaatii uuden käännöstiedoston luomisen ja käännö
 
 
 
-
-
-
 \newpage
-\section{Uuden ominaisuuden lisäys}
-
-\subsection{Alkuperäinen ominaisuus ja parannus kohteet}
-%selitys mykyisestä sivusta ja featuresta. ja mihin se pitää muokata
-
-
-Sovelluksessa on "Progressio"{} niminen ominaisuus. 
-Ominaisuus antaa mahdollisuuden määrittää käyttäjälle, jokin "mitattava"{} arvo.
-Kuvassa \nextImageCount {} näkyy on progressio sivu täältä käyttäjä voi merkata ja seurata kyseistä mitattavaa arvoa.
-\medskip
-\bigskip
-
-
-\includegraphics[width =15cm]{src/public/progressiosingle.png}\\
-Kuva \getImgCount {}. Progressio sivu (tarvitsee paremman kuvan)
-\medskip
-
-Kuvassa \theimgCounter {} mitataan painoa kg:na. Käyttäjä pystyy valitsemaan miltä päivältä arvo on otettu ja mikä itse arvo on.
-% asiakieli työnanataja haluaa
-Työnanataja haluaa, että käyttäjälle voisi määritellä useamman mitattavan arvon ja, 
-että Progressio sivulta käyttäjä pystyisi seuraamaan ja tallentamaan useampia eri mittausarvoja.
-\medskip
-
-
-Käyttäjän mitattavan arvon suure säilytetään käyttäjän profiilissa merkkijonona. 
-Kuvassa \nextImageCount {} on esimerkki käyttäjä profiilin skeemasta JSON muodossa.
-Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattavan arvon seurantaan, joten se pitäisi vaihtaa.
-%mainitse paremmin mongo nosql dokumentti
-Koska käytössä on nosql dokumentti voimme vaihtaa "measurableThing"{} merkkijonon, "measurableThings"{} merkkijono listaan.
-\bigskip
-
-
-
-kuva \getImgCount {}. Käyttäjä profiilin skeema
-\medskip
-
-
-
-\subsection{Ominaisuuden totetus}
-
-
-\subsubsection{Käyttäjä profiili skeeman migraatio}
-
-% tiukka skaama
-MongoDB:n NoSql dokumentti ei määritä tiukkaa skeemaa joten käyttäjien skeemat voivat olla eriävät.
-Skeeman muutos vaatii jokaisen käyttäjän profiilin muokkaamista haluttuun muotoon.
-Käyttäjä profiilin skeeman muutos pitää tehdä kaikille aktiivisille käyttäjille, käyttäjän luonnissa pitää myös muokata siten, 
-että uudet käyttäjän alkaisivat käyttämään uutta skeemaa.
-%selitä paremmin
-Projektissa on myös käytössä ominaisuus tarkastus rajapinnoissa ettei mongodb kantaan voida tallettaa tietoa jota sinne ei haluta.
-%api muutos
-\medskip
-
-selitys migraatio prosessista. teoriaa migraatiosta myös.
-migraatio tehdään migraatio kuvan \nextImageCount {} migraatio funktiolla. 
-Funktio käy läpi kaikki käyttäjät jolla measurableThing ominaisuus on olemassa ja päivittää sen measurableThings listaan.
-%mnnm
-Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkroonisesti palvelimella. 
-Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen sen ajaksi kun käyttäjä profiileja päivitettäisiin.
-Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkroonisesti, 
-jolloin käyttäjiä migraoitaisiin pikkuhiljaa.
-
-
-\bigskip
-
-kuva migraatio funktiosta
-\medskip
-
-\bigskip
-
-
-kuva uudesta skeemasta
-\medskip
-
-
-\subsubsection{Käyttöliittymä}
-
-käyttöliittymää pitää muokata siten, että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mihin mitattavaan arvoon hän haluaa tallentaa lukemia.
-%more words
-\bigskip
-
-
-\includegraphics[width = 15cm]{src/public/progressmulti.png}\\
-kuva \getImgCount {}. user interface muutoksien jälkeen
-\medskip
-
-kuvassa käyttäjällä on mahdollisuus valita mihin mitattavaan suurteeseen hän haluaa tallettaa arvoja kuvan \nextImageCount{} laskuvalikolla.
-%more words
-\bigskip
-
-\includegraphics{src/public/progressselect.png}\\
-kuva \getImgCount {}. käyttöliittymän laskkuvalikosta
-\medskip
-
-sanoja kaaviosta jos pitää
-\bigskip
-
-kuva käyttäjä luomis interface before n after
-\medskip
-
-
-
-
-\subsection{Ominaisuuden lopputulos ja käyttöönotto}
-
-
-migrate meni hyvin. tosin jos olisi ottanut backupin databasesta niin ei olisi ollut riskiä hajottaa kaikkea.
-\medskip
-
-itse feature toimi hyvin käyttöön oton jälkeen ja kaikki käyttäjät saivat ominaisuuden käyttöön
-\medskip
-
-käyttöliittymästän toiminnasta tai sen ulkonäöstä ei tullut palautetta senjälkeen kun se oltiin käyttöön otettu joten sekin meni hyvin.
-\medskip
-
-
+\addPage{src/op/feature.tex}{Uuden ominaisuuden lisäys} % ------------------------------- FEATURE ------------------------------- %
 
 
 
@@ -885,7 +791,7 @@ käyttöliittymästän toiminnasta tai sen ulkonäöstä ei tullut palautetta se
 
 
 \newpage
-\section{Yhteenveto}
+\section{Yhteenveto}             % ------------------------------- YHTEENVETO ------------------------------- %
 
 sehän meni ihan hyvin 
 
