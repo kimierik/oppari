@@ -461,6 +461,7 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 
 
 
+%sitatatti order kussee
 \newpage
 \subsection{Meteor}                % ------------------------------- Meteor ------------------------------- %
 
@@ -469,40 +470,42 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 \subsubsection{meteor yleisesti}
 
 
-%https://github.com/mongodb/mongo?tab=License-1-ov-file
-% mongo licence 
-
-% https://github.com/meteor/meteor?tab=License-1-ov-file
-% meteor lisence
 
 % https://guide.meteor.com/collections.html#mongo-collections
 % meteor uses mongo. but it is not manditory
 
 
 
-%tässä blokissa on tarpeeks tekstiä kuhan sen kirjottaa kunnoll
 
 
-%src meteor homepagef
-Meteor on full-stack JavaScript web-framework ja on itsessään avoimeen lähdekkoodiin perustuva, 
-poislukien meteorin mukaan paketoimaa mongodb tietokantaa, joka toimii Server Side Public Lisenssillä.
-Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyttöönottoon.
-%
-% https://www.meteor.com/
-% viitattu 28.5 ...
-% pakota ... frontend teknologiaa ... kehittäjää? mahdollisesti ei tätä edes kun mmeillä on alempana toi featuret
-%Meteor ei pakota kehittäjää käyttämään tiettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular.
+Meteor on full-stack JavaScript web-framework ja on itsessään avoimeen lähdekkoodiin perustuva, \labcite{meteor24b}
+poislukien meteorin mukaan paketoimaa mongodb tietokantaa, joka toimii Server Side Public Lisenssillä.\labcite{mongodb24i}
+Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyttöönottoon ja se keskittyy isomorphiseen koodiin, 
+eli koodiin joka on samanlaista palvelimella kuten clientillä.\citemissing
+Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular.\labcite{meteor24a}
+Tämä antaa lisä joustoa Meteorille sillä se antaa mahdollisuuden monelle sovelluskehittäjälle joilla ei ole kokemusta tietystä front-end teknologiasta.
+
+
+
 \medskip
 
-jotain siitä että meteori käynnistää oman backendin ja se käyttää ihan samallaista koodia kun client.
-tää tekee clientin ja backendin koodista samanlaisen joka helpottaa käyttöönottoa ja devaamista.
+% asio ok mut kirjota paremmin ja uusiks varm gpt on ok täs vaihees
+%paremmin alku 
+Meteor on fullstack, joten kun sen käynnistää se käynnistää samalla palvelimen ja clientin.
+Tiedostorakenteessa on erityks kansioita kuten server ja client jota käyttäen Meteor tietää mitä koodia pitää ladata clientille ja mitä palvelimelle.
+%more text
+
+
+
+
 \medskip
 
     
 % https://www.meteor.com/
 % viitattu 28.5
 
-Meteor tukee monta ominaisuutta kuten.
+% tukee sana pitää vaihtaa sillä me käytetään sitä itemeissä
+Lisäksi Meteor tukee monta ominaisuutta kuten. \labcite{meteor24a}
 \begin{itemize}
     \item Tukee monta Front-end kirjastoa ja frameworkkkia
     \item Tukee Typescriptiä
@@ -510,8 +513,13 @@ Meteor tukee monta ominaisuutta kuten.
     \item Toimii monella laitteella
     \item Helppo ja nopea käyttöönottaa 
 \end{itemize}
+\medskip
 
 
+Meteor paketoi mukaansa käyttäjä paketin jota käyttäen kehitäjä voi nopeasti luoda authentikaatio järjestelmän.
+Käyttäjä paketti antaa helpon integraation muiden kirjautumis palvelujen kanssa kuten facebook, github, google ym. \labcite{meteor24c}
+Käyttäjä paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten metodeihin.
+%maby more txt
 
 
 
@@ -524,28 +532,67 @@ Meteor tukee monta ominaisuutta kuten.
 
 %enemmän yleis selostusta rps ja restful mikä on ero hyvät ja huonot puolet
 
-Meteor ei käytä RESTful rajapintaa vain RPC (eng Remote procedure call) rajapintaa. 
-%uusiks
-Tarkoittaa että client kutsuu funktioita palvelimella meteorin kautta.
-%uusiks jotenkin huono 
-Palvelimelle määritetään metodit, joita voidaan kutsua palvelimelta tai clientiltä.
+Meteor käyttää RPC (eng Remote procedure call) rajapintaa \labcite{meteor24a} perinteisen RESTful rajapinnan sijasta. % ne on asynkroonisia callback funktiolla
+Tämä antaa mahdollisuuden clientille kutsua funktioita palvelimella Meteorin kautta.
+% joku selitys että metodi on rpc
+Meteorin RPC rajapinnat ovat Meteor metodit.
+%jotain muuta loremia ennen ku mennään metodit käytännössä vaiheeseen
 \medskip
 
 
-% ehk uusiks
-Methodit suoritetaan ja määritetään funktioina palvelimen puolella, ja niitä voi kutsua clientistä tai palvelimelta.
-% uusiks ainakin alku. 
-Metodit antavat kutsujasta tietoa, esim. onko kutsuja kirjautunut sisään ja jos on niin mikä on hänen käyttäjätunnuksensa. 
-%uusiks
-Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin kutsumiseen.
+Metodit määritetään ja suoritetaan palvelimella kuten kuvassa \nextImageCount.
+%selitä isomorpinen paremmin tässä kontekstissa
+%koodi on metodi kutsu on samaa clientillä ja palvelimella joten metodeja voi helpommin uudelleen käyttää 
+Metodit tekee myös koodista yksinkertaisemman sillä clientin ei tarvitse tehdä GET tai POST requesteja palvelimelle, kun halutaan palvelimen tehdä jotain. 
+Ja koska metodi kutsu on myös isomorphinen, metodeja on helppo uudelleen käyttää palvelimella.
+% tutki onko tämä oikea selitys
+Metodi funktion "this"{} ominaisuus saa kutsujan kontekstin. 
+Tässä kontekstissa voi nähdä esimerkiksi onko kutsuja kirjautunut sisään, tai onko kutsujalla oikeat oikeudet kutsua metodia, 
+helpottaen turvallisuuden lisäämista rajapintaan.
+\bigskip
+
+% jos tarvitaan lisää niin kuva metodista ja sen kutsumisesta
+\includegraphics[width=15cm]{src/public/methodexample.png}\\
+Kuva \getImgCount {}. Meteor metodin määritelmä
+\medskip
+
+% tutki onko tämä accurate selitys asiasta
+Kuvassa on meteor metodin määritelmä. "exampleMethod"{} metodi katsoo, onko kutsujalla käyttäjä tunnusta, näin voimme tietää onko kutsuja kirjautunut sisään,
+jos käyttäjä ei ole kirjautunut sisään heitämme error viestin, joka välitetään kutsujalle.
+Jos käyttäjä on kirjautunut sisään tulostetaan argumentit. 
+
 \medskip
 
 
 
 
 \subsubsection{Meteor ecosysteemi}
-meteor package management system ja meteorin deploy systeemit (galaxy etc)
 
+% jotain package management
+%https://www.linkedin.com/pulse/build-apps-isomorphic-ecosystem-meteorjs-pranav-shah
+% 18.6 
+
+%more about athmosphere
+%https://guide.meteor.com/using-atmosphere-packages
+% 18.6 
+
+
+% yhdistä lauseet paremmin, elä aloita jokainen lause Meteor sanalla
+Meteor ylläpitää omaa paketointi ecosysteemiään.
+Meteor paketit ovat isomorphisia, eli ne toimivat palvelimella ja clientillä.\labcite{pranav17}{}
+Meteorilla on ensimmäisen osapuolen paketteja, joita itse meteor tiimi ylläpitää ja kolmannen osapuolen paketteja,
+% selitä athmosphere paremmin
+joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin paketti palvelimelle Athmosphere:lle.
+%more text
+
+
+
+\medskip
+
+%ihansama miten tämä kirjoitetaan se kuulostaa mainostuksetla 
+% mutta kyllä tästä pitäisi jokunen lauseke saada ulos
+
+Galaxy on meteorin deploy service millä voi helposti deploy meteor sovelluksen pilveen.
 
 
 
@@ -562,7 +609,7 @@ meteor package management system ja meteorin deploy systeemit (galaxy etc)
 
 
 \newpage
-\addPageOp{./src/op/mongo.tex}{Mongodb}        % ------------------------------- MONGODB ------------------------------- %
+\addPageOp{./src/op/mongo.tex}{MongoDB}        % ------------------------------- MONGODB ------------------------------- %
 
 
 
