@@ -99,6 +99,7 @@
 
 \renewcommand{\bibsection}{\section{Lähteet}}
 
+\setlength{\headheight}{13.6pt}
 
 
 \def\filename{src/oppari.tex}
@@ -621,40 +622,75 @@ Galaxy on meteorin deploy service millä voi helposti deploy meteor sovelluksen 
 
 
 
+
+
 \newpage
-\subsection{Responsiiviset käyttöliittymät}
+\subsection{Responsiiviset käyttöliittymät}        % ------------------------------- Responsive ------------------------------- %
 
 \subsubsection{Responsiivisten käyttöliittymien suunnittelun periaatteet}
 
-WORK IN PROGRESS LOREM FOR RESPONSIIVINEN
+
+
+%https://alistapart.com/article/responsive-web-design/
+% viitattu 19.6
+
+
+
+
+% selitä enemmillä sanoilla ja paremmin eri laitteiden käyttö
+Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän eroavia laitteita verkkosivujen selaamiseen.\citemissing
+Kehittäjien pitää ottaa huomioon eri erilaitteiden muuttujat kuten, näytönkoot, kuvasuhde, näytön resoluutio ja käytössä oleva HID.\citemissing
+Uusien verkkosivujen luominen ei ole käytännöllistä, sillä niiden niitä pitäisi ylläpitää erikseen työpöytäsivuista.
+Saman verkkosivun käytön toiminta useammalla eri laitteella vaatii eri lähestymistapaa verkkosuunnitteluun. 
+% layout sana vaihtoon
+Sivuston layout pitää pystyä muuttumaan sopivaksi laitteelle.
+Verkkosivujen suunnittelua tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi. \citemissing
 \medskip
 
 
-% kirjoita eritavalla ettei oo copypasta
-Responsiivinen verkkosuunnittelu on lähestymistapa verkkosivustojen rakentamiseen, jolla varmistetaan niiden optimaalinen ulkoasu ja toimivuus eri laitteilla ja näytön koossa.
-Käyttämällä responsiivisia verkkosuunnittelua verkkosivustot voivat tarjota yhdenmukaisen käyttökokemuksen eri laitteilla.
 
-idea on tehdä verkkosivu jota voi käyttää eri laitteilla, jolla on eri näytönkoot
-\medskip
-
-
-% uudelleen kirjoita jotankin että sama asia mutta ei copypasta kuitenkaan päiväkirjasta
-Web-käyttöliittymissä elementtien koot voivat olla absoluuttiset tai suhteelliset niiden ylempään elementtiin verrattuna. Absoluuttiset arvot tarkoittavat, että elementti olisi aina tietyn kokoinen pikseleissä. 
-Tämä voi luoda tilanteita, jossa pienempikokoisemman näytöllä joku elementti on liian iso, tai ei sovi enää käyttöliittymään, joten absoluuttisia ei voi käyttää responsiivisessa käyttöliitymässä.
-% asiakielellä. eivät kuitenkaan ei kuulosta oikeelta jutulta
-Relatiiviset elementtikoot eivät kuitenkaan ratkaise kaikkia ongelmia. Mobiili- ja työpöytälaitteiden kuvasuhteet eroavat. Käyttöliittymän pitää olla erilainen jos pituutta on enemmän, kun leveyttä. 
-Ja, koska työpöytälaitteita käytetään hiirellä, joka antaa tarkan osoittimen käyttäjälle, toisin kuin mobiilissa, jota käytetään sormilla. 
-Pitää ottaa huomioon linkkien, nappien ja kuvakkeiden koko, jotta itse sovelluksen käyttäminen olisi huoletonta.\medskip
+Responsiivinen verkkosuunnittelu on lähestymistapa verkkosivustojen rakentamiseen,
+jolla varmistetaan niiden optimaalinen ulkoasu ja toimivuus eri laitteilla näytön koosta huolimatta.\citemissing
+Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne voisi tarjota yhdenmukaisen käyttökokemuksen käyttölaitteesta riippumatta.
 \medskip
 
 
 
 
-\subsubsection{Css Mediaquery}
 
-lorem ipsum
+\subsubsection{CSS Media query}
 
-lorem ipsum
+%https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries
+
+CSS (eng Cascading Style Sheets) antaa työkaluja millä kehittäjä voi tietää käytetystä laitteesta.
+Näitä kutsutaan Media queryiksi.
+Mediaqueryt mahdollistaa selain tai käyttölaite arvojen kyselyn ja testailun, ja mahdollistaa ehdollisen CSS tyylien asettelun.
+
+\medskip
+
+
+
+% %https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
+
+%yritä kirjoittaa tää tohon ylempään 
+% asiakieli ja uusiks kirjoitus 
+CSS Media Query antaa mahdollisuuden CSS-säännöksen asettamiselle vain silloin kun selain- ja laiteympäristö vastaa määritettyjä sääntöjä. 
+%tämä ainakin uusiks
+Säännökset voivat olla esimerkiksi "jos näytön koko on pienempi kuin X".
+%tämä kanssqa jotenkin paremmin
+Media Queryt ovat tärkeä osa repsonsiivista suunittelua ja se antaa mahdollisuuden luoda erilaisia layouttteja riippuen käyttölaitteesta,
+sen näytön koosta tai kuvasuhteesta.
+
+
+
+%toinen kappale ehkä esimerkkejä mediaqueryista tai jotain vastaavaa
+
+
+
+
+
+
+
 
 
 
@@ -753,7 +789,17 @@ Arvot vain vaihtuvat uuden kielen tekstiksi.\citemissing
 \section{Käännösten toteutus}
 
 \subsection{wip title tehtävä}
-Sovelluksen sivut on kovakoodattu suomeksi. ja ne pitäisi pitäisi pystyä kääntämään.
+
+
+koska haluttiin kehitysnopeutta sovellus on kokonaan kovakoodattu suomeksi.
+Tarkoittaa että komponenteissa on elementtejä jossa on suoraa tekstiä suomeksi kirjoitettuna.
+Tuli tarve saada käännettyä sivusto useammalle kielellä.
+Käännös järjestelmmän pitäisi olla laajennettavissa siten että sivustojen päivittäminen ja uusien kielien lisääminen olisi 
+olisi mahdollisimman nopeaa ja helppoa.
+
+% toinen kappale tarvitaan
+
+
 \medskip
 
 
@@ -761,9 +807,7 @@ Sovelluksen sivut on kovakoodattu suomeksi. ja ne pitäisi pitäisi pystyä kä�
 Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
 Kaikkien julkisesti olevien teksien etsiminen ja vaihtaminen i18n käännös funktio kutsuihin.
 Käännös tiedoston luominen ja käännöksien laittaminen.
-\medskip
 \bigskip
-
 
 \includegraphics[width = 15cm]{src/public/oppar/translationcall.png}\\
 Kuva \getImgCount. {} i18n käännösfunktiokutsu (ehkä uusi kuva)
@@ -772,15 +816,13 @@ Kuva \getImgCount. {} i18n käännösfunktiokutsu (ehkä uusi kuva)
 kuvassa luodaan HTML paragraafi elementti jossa kutsutaan käännösfunktiota. funktio hakee käännöstiedoston progress sivulta progress arvon.
 \bigskip
 
-
 \includegraphics[width = 15cm]{src/public/oppar/translationfile.png}\\
-Kuva \getImgCount. {} progressiosivun käännökset suomenkieliseltä käännöstiedostosta(ehkä uusi kuva)
+Kuva \getImgCount. {} progressiosivun käännökset suomenkieliseltä käännöstiedostosta
 \medskip
 
 kuvassa progressio sivun käännökset. käännös tiedoston on json formaatissa joten sivut ovat omia objekteja. 
 niiden ominaisuudet ovat avaimia mitä käytetään kun haetaan käännöksiä ja arvot ovat julkinen teksi.
-Kuvassa \nextImageCount {} On Sama kohta käännöstiedostosta mutta englannin kielisestä
-\medskip
+Kuvassa \nextImageCount {} On Sama kohta käännöstiedostosta mutta englannin kielisestä.
 \bigskip
 
 

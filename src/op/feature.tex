@@ -61,8 +61,8 @@ Projektissa on myös käytössä ominaisuus tarkastus rajapinnoissa ettei mongod
 %api muutos
 \medskip
 
-selitys migraatio prosessista. teoriaa migraatiosta myös.
-migraatio tehdään migraatio kuvan \nextImageCount {} migraatio funktiolla. 
+%selitys migraatio prosessista. teoriaa migraatiosta myös.
+Migraatio tehdään migraatio kuvan \nextImageCount {} migraatio funktiolla. 
 Funktio käy läpi kaikki käyttäjät jolla measurableThing ominaisuus on olemassa ja päivittää sen measurableThings listaan.
 %mnnm
 Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkroonisesti palvelimella. 
@@ -139,7 +139,8 @@ Poinsto funktiota kutsutaan kun painetaan punaista X nappia ja se poistaa mitatt
 \medskip
 
 
-Entisessä käyttöliittymässä kuvassa \nextImageCount {} on vain yksi teksti kenttä, josta pystyi muuttamaan measurableThing ominaisuutta.
+Entisessä käyttöliittymässä kuvassa \nextImageCount {} on vain yksi teksti kenttä, josta pystyi muuttamaan measurableThing ominaisuuden nimeä.
+
 %toinen paragraafi
 \bigskip
 
@@ -160,12 +161,14 @@ Kuva \getImgCount {}. Käyttäjän luomis käyttöliittymä ennen muutoksia (cen
 \subsection{Ominaisuuden lopputulos ja käyttöönotto}
 
 
-migrate meni hyvin. tosin jos olisi ottanut backupin databasesta niin ei olisi ollut riskiä hajottaa kaikkea.
+Käyttäjä profiilin skeeman migratointi meni onglemitta.
+Riskit käyttäjien migraatiossa olisi voinut välttää ottamalla varmuuskopio tietokannasta ennen migraatiota.
+%more ab migraion
 \medskip
 
-itse feature toimi hyvin käyttöön oton jälkeen ja kaikki käyttäjät saivat ominaisuuden käyttöön.
-\medskip
-
-käyttöliittymästän toiminnasta tai sen ulkonäöstä ei tullut palautetta sen jälkeen kun se oltiin käyttöön otettu joten sekin meni hyvin.
+Ominaisuus toimi käyttöönoton jälkeen ja kaikki käyttäjät saivat ominaisuuden käyttöön.
+Käyttäjät pystyi tallentamaan useamman mitattavan arvon ja näkemään tulokset kaaviossa.
+Viikko ominaisuuden käyttöönoton jälkeen testiryhmältä ei tullut palautetta, että ominaisuus ei olisi toiminut.
+käyttöliittymästän toiminnasta tai sen ulkonäöstä ei myöskään tullut palautetta sen jälkeen kun se oltiin käyttöönotettu. 
 \medskip
 
