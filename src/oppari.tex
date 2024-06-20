@@ -299,6 +299,9 @@ VDOM = virtual DOM
 Transpilaatio = ohjelmointi keilen kääntäminen toiseen ohjelmointikieleen
 \bigskip
 
+CSS = Cascading Style Sheets
+\bigskip
+
 
 
 \newpage
@@ -384,9 +387,10 @@ Olin mukana suunnittelussa ja ominaisuuksien ohjelmoinnissa. sain myös kokemust
 \section{Lähtötilanne}         % ------------------------------- LÄHTÖTILANNE ------------------------------- %
 
 
-Ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista olin opiskellut LAB ammattikorkeakoulussa XX lukukautta ja olin opinnäytetyön kirjoituksen aikana neljännen vuoden tieto- ja tietoviestintätekniikkan opiskelia.
+Ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista olin opiskellut LAB ammattikorkeakoulussa XX lukukautta ja
+olin opinnäytetyön kirjoituksen aikana neljännen vuoden tieto- ja tietoviestintätekniikkan opiskelia.
 Koulutuksen aikana olen oppinut jotain 
-% jotain lorem siitä että olen oppinut koulusssa jotain
+Opintojeni aikana olen saanut (adjektiivi) pohjan ohjelmoinnista, sen perusteista ja muista tieto- viestintätekniikan alan taidoista.
 
 \medskip
 
@@ -396,11 +400,21 @@ Koulutuksen aikana olen oppinut jotain
 Ennen harjoituksen alkamista minulla ei ollut aijempaa työkokemusta tieto- ja tietoviestintätekniikkan alalta.
 % tiedän ohjelmoinnista mutta prod on eri ympäristö
 Ja vaikka minulla oli vahva teoria pohja ohjelmoinnista, jonka olin saanut opinnoistani, 
-käytössä olevan tuotteen kanssa työskentely on erillaista.
+tuotteen kanssa työskentely on erillaista kun teoria.
 \medskip
 
 
 
+% pitäisikö mainita lähtötilanteessa käytetyistä teknologioista ja ettei minulla ole kokemusta niistä
+
+Minulla ei ollut erikoista kokemusta web alustojen kanssa työskentelystä ennen harjoitusken alkamista, tai 
+projektissa käytetyistä teknologioista. 
+Opintojen aikana olin kuitenkin oppinut perusteet web suunnittelusta ja web alustojen ylläpidosta, 
+% uusiks
+joten Tiesin mistä aloittaa.
+
+
+% onko järkevää lähtötilanteessa kirjoittaa mitään harrastuksista
 
 
 
@@ -468,7 +482,7 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 
 
 
-\subsubsection{meteor yleisesti}
+\subsubsection{Meteor yleisesti}
 
 
 
@@ -585,16 +599,18 @@ Meteorilla on ensimmäisen osapuolen paketteja, joita itse meteor tiimi ylläpit
 % selitä athmosphere paremmin
 joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin paketti palvelimelle Athmosphere:lle.
 %more text
-
-
-
 \medskip
 
-%ihansama miten tämä kirjoitetaan se kuulostaa mainostuksetla 
-% mutta kyllä tästä pitäisi jokunen lauseke saada ulos
+%https://guide.meteor.com/atmosphere-vs-npm
 
-Galaxy on meteorin deploy service millä voi helposti deploy meteor sovelluksen pilveen.
+Athmosphere on Meteorin ylläpitämä paketti palvelin, johon käyttäjät voivat ladata paketteja tai kirjastoja jotka ovat suunnattu toimimaan MeteorJs:ssän kanssa.
+NPM paketit (eng Node package manager) ovat suunnattu toimimaan Node ympäristössä, ja vaikka ratkaisuja on käyttää NPM paketteja selaimella, 
+Athmosphere paketit voi hyötykäyttää Meteorin build systeemiä, jonka avulla paketin kehittäjä voi määritellä mitkä osat ladataan selain puolelle ja mitkä palvelimelle.\citemissing
 
+
+
+% toinen kappale niin sen pitää olla athmospheresta vissiinkin
+% mitä lisää athospheresta
 
 
 
@@ -626,6 +642,8 @@ Galaxy on meteorin deploy service millä voi helposti deploy meteor sovelluksen 
 
 \newpage
 \subsection{Responsiiviset käyttöliittymät}        % ------------------------------- Responsive ------------------------------- %
+
+% layout => asettelu
 
 \subsubsection{Responsiivisten käyttöliittymien suunnittelun periaatteet}
 
@@ -688,6 +706,77 @@ sen näytön koosta tai kuvasuhteesta.
 
 
 
+%toinen subsection jossa puhutaan jotain muuta responsiivisesta
+% vaikka jotain layout suunnittelusta tai vastaava
+
+\subsubsection{Asettelu vaihtoehdot}
+%https://www.theseus.fi/bitstream/handle/10024/94414/Thesis%20Rogatnev%20Nikita.pdf?sequence=1&isAllowed=y
+%https://www.theseus.fi/handle/10024/94414
+%reading from this idk if we should cite this. it is a real thing so we could. i would want to read from another source
+% cite is 20.6
+
+
+% this is scetch but accurate. also calls it elastic
+%https://www.smashingmagazine.com/2009/06/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/
+%
+
+% medium looks good
+%https://bootcamp.uxdesign.cc/fixed-width-responsive-and-adaptive-layout-what-to-chose-a29c4f93537b
+
+%
+%https://learn.onemonth.com/responsive-vs-adaptive-vs-fluid-design/
+
+%https://www.acil.in/between-fixed-fluid-adaptive-and-responsive-layout/
+
+%there is some reading on layouts
+% all cited 20.6
+
+
+%mikä on layout ja miten se näyttää itse sivulla.
+% on eri layoutteja ja niille sopivia suunnittelu tapoja jne 
+
+%complete rewrite
+On eri tapoja suunnitella sivu elementtien asetteluja jne. kolme näistä on fixed, fluid ja adaptiivinen.\citemissing
+\medskip
+
+
+
+Kiinteä asettelussa elementit pysyvät samana näyttökoosta huolimatta. 
+Kiinteässä asettelussa tulee ongelmia jos näytön koko on pienempi kun sivustolle suunniteltu asettelu, 
+sillä joitain elementtejä jäisi näytöstä ulkopuolelle tai saatavissa sivu scrollaamisella.\citemissing
+\medskip
+
+
+Nestämmäisessä asettelussa elementtien koot vaihtuu näytön koon mukaan. 
+Verrattuna kiinteään asetteluun elementit eivät jää näytöstä ulkopuolelle sillä elementit skaalautuvat näytönkoon mukaan.
+%selitä vähän paremmin
+Nestemmäisessä asettelussa tulee silti ongelmia sillä jos elementti on liian pieni sille annetulle tekstille.\citemissing
+\medskip
+
+
+Adaptiivisessä asettelussa elementtien koot ja sijainnit muuttuvat riippuen näytönkoosta.
+% parempi aloitus ei aloiiteta adaptiivisella
+Adaptiivisen asettelun ideana on mukauttaa sivuston elementtien asettelu sopivaksi käytetylle laitteelle.
+%more
+\medskip
+
+%kuva adaptiivisesta jotain
+
+
+%ei selitystä kuvasta. selitys ennen kuvaa
+
+% responsiivinen ei ole adaptiivinen tai vaihtoehto juttu 
+%eli toinen seliyts tähän responsiivisesta ?¿
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -699,6 +788,17 @@ sen näytön koosta tai kuvasuhteesta.
 
 \newpage
 \subsection{Web sivustojen kääntäminen}
+
+% jotain tekstiä siitä miksi kääntää sivustot
+
+% jotain teoriaa käännöksistä yleisesti? what does this mean
+
+% miten käännökset tehdään nettisivuille teknisesti
+% jotain vaihtoehtoja ja eri tapoja tehdä käännöksiä
+
+
+
+
 
 % sana lokalisaatio pitäisi vaihtaa translaatioksi
 % sillä me emme tehnyt mitään oikeaa lokalisaatiota
@@ -713,11 +813,15 @@ sen näytön koosta tai kuvasuhteesta.
 % 11.6
 
 
-%kääntäminen yleisesti ja miksi sen tekisi. ja jotain itse lokalisaatiosta
 
+%jotenkin niin vähän tietoa joka ei ole mainos tai jotain liian broad ettei siitä ole hyötyä
+
+
+%kääntäminen yleisesti ja miksi sen tekisi. ja jotain itse lokalisaatiosta
 Kielimuuri on iso ongelma tuotteiden ja nettisivujen laajentamisessa uusille markkinoille.
 % uusiks
 csa rechearching väittää että 65\% käyttäjistä suosisi sisältöä heidän kielellä.
+%more
 \medskip
 
 
@@ -747,15 +851,19 @@ tekoaly käännös on tosi nopea, mutta ei vielä ole tarpeeksi tarkka kaikkiin 
 % 11.6
 
 
-On eritapoja toteuttaa käännösten tekeminen web alustoilla. Monet suuret sivustot kutem amazon \citemissing{} 
+%käännösten tekeminen
+On eri tapoja toteuttaa käännösten tekeminen web alustoilla. Monet suuret sivustot kuten amazon \citemissing{} 
 hostaa monta eri versiota niiden nettisivuista.
-legit hard kopio nettisivusta joka on kirjoitettu eri kielellä. Tämä on hyvin kallis ja aikaavievä.
+legit hard kopio nettisivusta, joka on kirjoitettu eri kielellä. Tämä on hyvin kallis ja aikaavievä.
 
+%hotswap sana pitää vaihtaa
 Tekstin Hot swappaaminen. Käytetään yhtä sivua mutta teksti vaihtuu alta kun vahdetaan kieli. \citemissing{}
-käytetään jotain keskitettyä kielipankkia johon kaikki käännökset on tallennettuna.
+käytetään jotain keskitettyä kcks will look on all user devices, because the disielipankkia johon kaikki käännökset on tallennettuna.
 \medskip
 
 
+%pitäiskö tää enemmän olla toteutuksessa
+%
 Hot swappaamisessa...\\
 Kovakoodatut tekstit sivuilta vaihdetaan käännösfunktiokutsuihin.
 Funktio etsii käännöstiedostosta oikeat sanat tai lauseet ja asettaa ne alkuperäisen tekstin tilalle. 
@@ -765,6 +873,25 @@ Avain on valmiiksi päätelty merkkijono ja arvo on itse käännös.
 Kun haluttu kieli vaihdetaan kirjasto vaihtaa käännöstiedoston toiseen tiedostoon jolla on samat avaimet. 
 Arvot vain vaihtuvat uuden kielen tekstiksi.\citemissing
 \medskip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -791,16 +918,22 @@ Arvot vain vaihtuvat uuden kielen tekstiksi.\citemissing
 \subsection{wip title tehtävä}
 
 
-koska haluttiin kehitysnopeutta sovellus on kokonaan kovakoodattu suomeksi.
+Startup yritykset hakevat nopeaa kehitystä ja sen ohella sovelluksen sivustot on kokonaan kovakoodattu suomeksi.
 Tarkoittaa että komponenteissa on elementtejä jossa on suoraa tekstiä suomeksi kirjoitettuna.
 Tuli tarve saada käännettyä sivusto useammalle kielellä.
 Käännös järjestelmmän pitäisi olla laajennettavissa siten että sivustojen päivittäminen ja uusien kielien lisääminen olisi 
 olisi mahdollisimman nopeaa ja helppoa.
 
-% toinen kappale tarvitaan
-
-
 \medskip
+
+
+Sivustojen kääntäminen vaatii jokaisen julkisesti näkyvän tekstin etsimisen koodipohjasta, 
+joka ei normaalisti ole yksinkertaista projektissa, jossa komponentit on hajoitettu eri tiedostoihin.
+Mutta nykyisillä teksti muokkaustyökaluilla on ominaisuuksia joita käyttäen voi etsiä merkkijonoja projektista.
+%more?
+
+
+
 
 
 \subsection{Käytetty teknologia}
