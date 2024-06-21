@@ -387,6 +387,30 @@ Olin mukana suunnittelussa ja ominaisuuksien ohjelmoinnissa. sain myös kokemust
 \section{Lähtötilanne}         % ------------------------------- LÄHTÖTILANNE ------------------------------- %
 
 
+
+% nykyisen työtehtävän analyysi
+% eli mainitaan jotain työtehtävästä ja mitä siellä on
+% voi mainita käytetyistä teknologoiista
+
+% kehittämis tarve
+% ei oikeaa kokemusta
+% heikko web kehitys kookemus
+% oikean alustan kanssa kokemusta on vähän
+
+
+
+%ehkä rewrite kokonaan
+%struktuurilla
+
+%mikä on tietotaito ennen alkamista
+
+% mitä mikä oli alustan tilanne ennen alkamista ja mitä minulle annettiin tehtäväksi
+% osallistua alustan kehittämiseen ja kehitykseen
+% palavereissa oleminen tekeleiden näyttäminen/esittely jne
+
+% mitä kehitystarpeita
+% analyysi nopeasti jutuista minkä kanssa tulen tekemään ja mitä haluan oppia
+
 Ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista olin opiskellut LAB ammattikorkeakoulussa XX lukukautta ja
 olin opinnäytetyön kirjoituksen aikana neljännen vuoden tieto- ja tietoviestintätekniikkan opiskelia.
 Koulutuksen aikana olen oppinut jotain 
@@ -406,15 +430,36 @@ tuotteen kanssa työskentely on erillaista kun teoria.
 
 
 % pitäisikö mainita lähtötilanteessa käytetyistä teknologioista ja ettei minulla ole kokemusta niistä
+% kyllä
 
+%minulla pitäis varmaan vaihtaa passiiviin. mutta tuntuu että se kusee tän alkutilanteen kanssa
 Minulla ei ollut erikoista kokemusta web alustojen kanssa työskentelystä ennen harjoitusken alkamista, tai 
 projektissa käytetyistä teknologioista. 
 Opintojen aikana olin kuitenkin oppinut perusteet web suunnittelusta ja web alustojen ylläpidosta, 
 % uusiks
 joten Tiesin mistä aloittaa.
+Minulla ei myöskään ollut kokemusta MeteorJs kehyksestä mitä projekti käyttää, mutta olin opintojeni aikana opiskellut ReactJs kirjastoa
+Käytännön projektien ohessa.
+
 
 
 % onko järkevää lähtötilanteessa kirjoittaa mitään harrastuksista
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -701,13 +746,16 @@ sen näytön koosta tai kuvasuhteesta.
 
 
 
-%toinen kappale ehkä esimerkkejä mediaqueryista tai jotain vastaavaa
+%esimerkkejä mediaqueryista tai jotain vastaavaa
+
+%jotain vähän lisää mediaqueryistä
 
 
 
 
-%toinen subsection jossa puhutaan jotain muuta responsiivisesta
-% vaikka jotain layout suunnittelusta tai vastaava
+
+
+
 
 \subsubsection{Asettelu vaihtoehdot}
 %https://www.theseus.fi/bitstream/handle/10024/94414/Thesis%20Rogatnev%20Nikita.pdf?sequence=1&isAllowed=y
@@ -754,19 +802,27 @@ Nestemmäisessä asettelussa tulee silti ongelmia sillä jos elementti on liian 
 \medskip
 
 
-Adaptiivisessä asettelussa elementtien koot ja sijainnit muuttuvat riippuen näytönkoosta.
+Adaptiivisessä asettelussa elementtien koot ja sijainnit muuttuvat riippuen näytönkoosta.\citemissing
 % parempi aloitus ei aloiiteta adaptiivisella
 Adaptiivisen asettelun ideana on mukauttaa sivuston elementtien asettelu sopivaksi käytetylle laitteelle.
+Kuvassa \nextImageCount {} on esimerrki sivuston asettelustosta, kuvassa {\the\numexpr \theimgCounter + 2 } on esimerkki miltä sivusto voisi näyttää jos käytössä olisi adaptiivinen asettelu.
+% sopimaan uusiks
+Käyttöliittymän elementit ovat siirtyneet vierekkäisestä asettelusta päällekkäiseen sopimaan pienempään näytönkokoon
 %more
 \medskip
 
+\bigskip
 %kuva adaptiivisesta jotain
 
+%kuvat medium artikkelin giffistä
+\includegraphics[width = 15cm]{src/public/oppar/adaptiveBig.png}\\
+Kuva \getImgCount {}. f adaptiivinen iso\citemissing
+ 
+\bigskip
 
-%ei selitystä kuvasta. selitys ennen kuvaa
+\includegraphics[width = 15cm]{src/public/oppar/adaptivesmall.png}\\
+Kuva \getImgCount {}. f adaptiivinen pieni\citemissing
 
-% responsiivinen ei ole adaptiivinen tai vaihtoehto juttu 
-%eli toinen seliyts tähän responsiivisesta ?¿
 
 
 
@@ -817,14 +873,22 @@ Adaptiivisen asettelun ideana on mukauttaa sivuston elementtien asettelu sopivak
 %jotenkin niin vähän tietoa joka ei ole mainos tai jotain liian broad ettei siitä ole hyötyä
 
 
-%kääntäminen yleisesti ja miksi sen tekisi. ja jotain itse lokalisaatiosta
+
+
+
+
+
+%miksi kääntää sivustot------------------------------------
 Kielimuuri on iso ongelma tuotteiden ja nettisivujen laajentamisessa uusille markkinoille.
 % uusiks
-csa rechearching väittää että 65\% käyttäjistä suosisi sisältöä heidän kielellä.
+CSA rechearching väittää että 65\% verkko käyttäjistä suosisi sisältöä heidän kielellä.
+Jos käännökset jättää huomioimatta, suuri osa mahdollisista käyttäjistä eivät voi käyttää tuotetta.
 %more
 \medskip
 
 
+
+% jotain teoriaa käännöksistä yleisesti? what does this mean------------------------------------
 
 
 
@@ -832,17 +896,23 @@ csa rechearching väittää että 65\% käyttäjistä suosisi sisältöä heidä
 %11.6 
 
 On monta eri menetelmää sivustojen kääntämiseen, 
-ja koska monet kielet on hyvin erillaisia voi konteksti ja nuanssi hävitä jos kääntää vain sana sana sanaan.
-Monet lausahdukset ja sanonnat ei voi kääntää suoraan kielestä toiseen ilman että menettää sen alkuperäisen tarkoituksen.
-esimerkiksi (joku esimerkki sanonnasta joka ei toimi jos sen kääntää englanniksi).
+ja koska monet kielet on hyvin erillaisia voi konteksti ja nuanssi voi hävitä jos kääntää vain sana sana sanaan.
+Monia lausahdukset ja sanonnat ei voi kääntää suoraan kielestä toiseen ilman että menettää sen alkuperäisen tarkoituksen. \citemissing
+esimerkiksi (joku esimerkki sanonnasta joka ei toimi jos sen kääntää englanniksi).%esimerkki tai sitaatti
 \medskip
 
 
 %add more words to this
 Käännös teksin luonnin voi yleisesti tehdä kahdellla tavalla. Ihmis käännös tai tekoälykäännös.
 Ihmis käännöksellä voi olla hyvä tarkkuus ja lopputulos tulee kuulostamaan luonnolliselta.
-tekoaly käännös on tosi nopea, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.
+tekoaly käännös on tosi nopea, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.\citemissing
 \medskip
+
+
+
+
+% miten käännökset tehdään nettisivuille teknisesti ------------------------------------
+% jotain vaihtoehtoja ja eri tapoja tehdä käännöksiä
 
 
 
@@ -851,28 +921,21 @@ tekoaly käännös on tosi nopea, mutta ei vielä ole tarpeeksi tarkka kaikkiin 
 % 11.6
 
 
-%käännösten tekeminen
-On eri tapoja toteuttaa käännösten tekeminen web alustoilla. Monet suuret sivustot kuten amazon \citemissing{} 
+
+%en halua namedroppaa mitään. pitää vain sanoa että josksus on tehty omat sivustot eri kielisille sivuille. ja siihen joku sitaatti
+On eri tapoja toteuttaa käännösten tekeminen web alustoilla. Monet suuret sivustot kuten amazon \citemissing{}  
 hostaa monta eri versiota niiden nettisivuista.
 legit hard kopio nettisivusta, joka on kirjoitettu eri kielellä. Tämä on hyvin kallis ja aikaavievä.
 
+%sama sivusto vaihda tekstit alta
 %hotswap sana pitää vaihtaa
 Tekstin Hot swappaaminen. Käytetään yhtä sivua mutta teksti vaihtuu alta kun vahdetaan kieli. \citemissing{}
+%what ??
 käytetään jotain keskitettyä kcks will look on all user devices, because the disielipankkia johon kaikki käännökset on tallennettuna.
+%more tesxt
 \medskip
 
 
-%pitäiskö tää enemmän olla toteutuksessa
-%
-Hot swappaamisessa...\\
-Kovakoodatut tekstit sivuilta vaihdetaan käännösfunktiokutsuihin.
-Funktio etsii käännöstiedostosta oikeat sanat tai lauseet ja asettaa ne alkuperäisen tekstin tilalle. 
-Käännöstiedost on avain-arvo. %jotain tähän vielä
-% asiakielellä uusiks
-Avain on valmiiksi päätelty merkkijono ja arvo on itse käännös. 
-Kun haluttu kieli vaihdetaan kirjasto vaihtaa käännöstiedoston toiseen tiedostoon jolla on samat avaimet. 
-Arvot vain vaihtuvat uuden kielen tekstiksi.\citemissing
-\medskip
 
 
 
