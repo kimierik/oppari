@@ -3,6 +3,11 @@
 %ei varmaan saa olla kymy
 \subsubsection{React Yleisesti}
 
+
+
+
+
+
 % https://github.com/facebook/react/blob/main/README.md
 % https://github.com/facebook/react/blob/f74c5ccf9469d3389ce3a1ee3b54988049e235f7/README.md
 % https://www.infoq.com/news/2013/06/facebook-react/
@@ -19,19 +24,20 @@
 %yksi käytetyimmistä työkaluista 
 % 30.5
 
-%
 
 
 
 
 React on Metan ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto,
-joka on suunniteltu reaktiivisien käyttöliittymien kehittämiseen.\citemissing
+joka on suunniteltu reaktiivisien käyttöliittymien kehittämiseen\labcite{react24a}
 React kannustaa kehittäjiä rakentamaan sovelluksia uudelleenkäytettävien komponenttien avulla.
 Jokainen komponentti sisältää oman rakenteensa, tyylinsä ja käyttäytymisensä, joka tekee niistä helposti siirrettävän ja uudelleenkäytettävän.\labcite{react24a}
 Komponenteista voidaan sitten koota monimutkaisia käyttöliittymimä. 
-%
+\medskip
+
+
 Komponentit voidaan kirjoitetaa JSX syntaksilla, joka mahdollistaa HTML tyylisen kirjoituksen JavaScriptin sekaan.
-Tämä tekee React:ista helppo ja luettavan, ymmärrettävän ja opittavan, joka on auttanut nostamaan reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.\labcite{statista23}
+Tämä tekee React:ista helppo luettavan, ymmärrettävän ja opittavan, joka on auttanut nostamaan reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.\labcite{statista23}
 \medskip
 
 
@@ -43,6 +49,10 @@ Tämä tekee React:ista helppo ja luettavan, ymmärrettävän ja opittavan, joka
 
 
 \subsubsection{JSX}
+
+
+
+
 
 %https://react.dev/learn/writing-markup-with-jsx
 %https://facebook.github.io/jsx/ 
@@ -56,39 +66,52 @@ Tämä tekee React:ista helppo ja luettavan, ymmärrettävän ja opittavan, joka
 
 % kaikki viitattu 27.5
 
-%html koodia uusiks
-JSX (javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä koodia javascriptin sekaan, tekien koodista yksinkertaisempaa ja helpompaa ymmärtää. \labcite{Stephen21}
+
+
+
+
+
+
+%html koodia uusiks syntaxia?
+JSX (eng javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä syntaksia javascriptin sekaan, tekien koodista yksinkertaisempaa ja helpompaa ymmärtää. \labcite{Stephen21}
 % suora sitaatti https://facebook.github.io/jsx/ 
 JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle.\labcite{Facebook22}
 \medskip
 
-\bigskip
-\includegraphics[width=10cm]{src/public/oppar/pure_jsx_example.png}\\
-Kuva\getImgCount .{} esimerki JSX syntaxista
-\medskip
-
 %muuttuja vois vaihtaa. johonkin toiseen suomalaiseen sanaan
-Kuvassa luodaan muuttuja helloWorld, jolle annetaan arvoksi HTML "p"{} elementti, jossa teksti "Hello, World!"{}.
+Kuvassa \nextImageCount{} luodaan muuttuja helloWorld, jolle annetaan arvoksi HTML "p"{} elementti, jossa teksti "Hello, World!"{}.
 % koko juttu uusiks ja paremmin kirjoitettua
 Muuttujien arvot voidaan kirjoittaa HTML tyylillä, tekien monimutkaisten elementtien rakentamisesta yksinkertaista.
 \medskip
 
-
-
 \bigskip
-\includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}\\
-Kuva\getImgCount .{} Kuvan \prevImageCount{} koodi, joka on transpiloitu javascriptiin
+\includegraphics[width=10cm]{src/public/oppar/pure_jsx_example.png}\\
+Kuva \getImgCount {}. esimerki JSX syntaxista
 \medskip
 
 
-Kuvassa on helloworld muuttuja, joka on käännetty natiiviksi javascriptiksi babel kääntäjää käyttäen. \labcite{babel24}
-Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjoitettu käyttämällä JSX syntaxia.
+Kuvassa \nextImageCount{} on kuvan \theimgCounter{} helloworld muuttuja, joka on käännetty natiiviksi JavaScriptiksi babel kääntäjää käyttäen. \labcite{babel24}
+Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjoitettu JSX syntaksilla.
 %jotain lisää tekstiä
 \medskip
 
 
+\bigskip
+\includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}\\
+Kuva \getImgCount {}. Kuvan \prevImageCount{} JSX transpiloitu JavaScriptiin
+\medskip
+
+
+
+
 
 \subsubsection{Komponentit}
+
+
+
+
+% kolmas kappale pitää korjata 
+% kapale ennen kuvaa tarvitsee lisää sanaa
 
 
 % komponentti joka voi renderöidä toisen komponentin. tämä jatkuu siihen asti että päästään natiiveihin html elementteihin jotka selain osaa tulkita
@@ -96,33 +119,31 @@ Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjo
 
 
 Komponentti on oma pieni kokoonpano, joka sisältää sen ulkonäön ja käyttäytymisen.
-fundimental building block of react applications.
+Komponentit ovat olennainen rakennusosa React sovelluksissa. Reactissa Komponentit voivat olla tilallisia tai tilattomia. 
 \medskip
 
-
-% tarvii vähän lisää tekstiä tähän lauseeseen. 
-%jotain lisää looremia siitä että tilalliset ja tilattomat on olemassa
-
-Komponentit voivat olla tilallisia tai tilattomia. 
 %
 Tilaton komponentti ei sisällä omaa tilaa. 
 niiden pää tarkoitus on renderöidä käyttöliittymää niille annettujen propertyjen perusteella.
 Tilattomat komponentit on helpompi kirjoittaa ja testata verrattuna tilalliseen komponenttiin, 
 sillä niissä ei ole sivu efektejä eikä niiden käyttäntö tai ulkonäkö vaihdu sisäisen tilan takia.\labcite{Phuoc23}
-%
-%asiakieli joikeat sanat
-Tilallinen komponentti tarkoittaa jotakin komponenttia, joka sisältää oman tilan ja on vastuussa sen hallinnoinnista ja päivittämisestä.
-Tilalliset komponentit ovat hyvä silloin kun pitää säilyttää käyttöliittymässä dataa ajanmyötä kuten form inputs tai datan hakua.\labcite{Phuoc23}
-% voisi jotain lisää kirjoittaa tilallisista ja tilattomista
+\medskip
+
+
+Tilallinen komponentti tarkoittaa komponenttia, joka sisältää oman tilan ja on vastuussa sen hallinnoinnista ja päivittämisestä.
+%melkein kokonaan vaihtoon
+Tilalliset komponentit ovat hyvä silloin kun pitää säilyttää käyttöliittymässä dataa ajanmyötä kuten form inputs tai datan hakua.\labcite{Phuoc23}\\
 \medskip
 
 
 %tarvitsee ainakin yhden lausekkeen lisää
 React tukee kahta tapaa luoda komponentteja. Luokkakomponentti ja funktiokomponentti.\citemissing
 Kuvassa \nextImageCount {} on esimerkki tilallisesta funktiokomponentista.
+%molemmat toimii jotain lorem
+\medskip
+
+
 \bigskip
-
-
 \includegraphics[width=15cm]{src/public/oppar/function_component.png}\\
 Kuva \getImgCount{}. kuvakaappaus React komponentista
 \medskip
@@ -160,14 +181,12 @@ Funktio uudelleen renderöi osat komponentista jotka ovat riippuvaisia kyseisest
 
 Funktio componentissa tila hallinnoidaan "React hookeilla"{}. 
 "Hookit"{} antavat funktio komponenteille mahdollisuuden käyttää Reactin ominaisuuksia, 
-jotka luokkakomponentit saavat kun ne jatkavat React.Component luokkaa.\labcite{react24b}
+jotka luokkakomponentit saavat kun ne jatkavat Reactin "Component"{} luokkaa.\labcite{react24b}
 %
 React kehottaa käyttämään funktiokomponentteja. 
 %jotenkin paremmin yhdistää nämä
-ja niissä on myös vähemmän koodia kun luokka komponentissa vaikka lopputulos on sama\labciteend{react24c}
-Molemmat komponentit tehty react 18.3.1 versiolla.
-
-
+Funktiokomponenteissa on myös vähemmän koodia kun luokka komponentissa vaikka lopputulos on sama\labciteend{react24c}
+Kuvan \prevImageCount{} ja {\the\numexpr \theimgCounter - 2}{} komponentit ovat tehty React 18.3.1 versiolla.
 
 
 
@@ -175,44 +194,14 @@ Molemmat komponentit tehty react 18.3.1 versiolla.
 
 \medskip
 
-\iffalse
-\subsubsection{Reaktin struktuuri ja toiminta}
-mahdollisesti poistetaan  tämä kappale
-
-% https://github.com/facebook/react/blob/a4195750779dbd9a13e1615fbbd493bf2c5768ca/packages/react/src/ReactElement.js#L362
-%pitää vissii kysyy voiko lähdekoodia käyttää lähteenä..
-
-
-%https://react.dev/reference/react-dom/client/createRoot
-% viittaus 29.5
-
-%laitetaanko kuva jostain indexistä
-%vaikka joku joka on tehty create react app jutulla
-
-jotain tekstiä reaktin toiminnasta 
-\bigskip
-
-
-
-Kuva \getImgCount{}. kuvankaappaus create-react-app komennon tekemästä index.js tiedostosta
-\medskip
-
-react tekee funktiolle antamasta elementistä Root elementin, ja se alkaa hallinnoimaan domia sen alla
-\medskip
-
-%jos nämä yhdistää tarvitaan toinen kappale. voitaisiin tosin kirjoittaa muutenkin toinen kappale toiminnasta. tai koko lifecyclestä
-% ainakin jos mainitaan vdomista joitan
-
-root.render
-render funktio suorittaa komponentin funktiona. komponentti on jo tässä vaiheessa käännettu natiiviksi javascriptiksi, 
-joten komponentin lapsikomponentit voidaan suorittaa samalla. Lopputuloksena saadaan natiivi html elementtejä jotka selain voi renderöidä.
-
-\medskip
-
-\fi
 
 
 \subsubsection{DOM ja VDOM}
+
+% ekassa kappaleessa on tosi lyhyitä lauseita joita ei ole yhdistetty
+% vikassa kappaleessa on jotain sus
+
+%html esimerkin alla oleva kappale voidaan siirtää sen päälle
 
 
 %psychotic

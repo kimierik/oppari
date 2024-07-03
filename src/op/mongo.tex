@@ -14,14 +14,6 @@
 \subsubsection{MongoDB yleisesti}
 
 
-%MongoDB on mongoDB inc:in valmistama ja ylläpitämä, Server Side Public Lisenssillä toimiva NoSql (eng "non sql"{} tai "not only sql"{}) dokumentti pohjainen tietokanta hallinta ohjelma.
-
-% this is from gpt with above prompt
-%MongoDB is a NoSQL document-based database management program produced and maintained by MongoDB Inc.
-%It is designed to handle large volumes of unstructured data and offers high performance, high availability, and easy scalability.
-%MongoDB stores data in flexible, JSON-like documents, which means fields can vary from document to document and data structure can be changed over time.
-%This database system is widely used for modern applications due to its ability to manage data of diverse types without requiring a fixed schema.
-
 %mongo website and repo
 % 5.6
 
@@ -40,7 +32,7 @@
 
 %sources are cited above
 MongoDB on NoSQL(eng "non sql"{} tai "not only sql"{}) dokumenttipohjainen tietokannan hallintaohjelma, joka on MongoDB Inc:in valmistama ja ylläpitämä.
-Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa, ja se tarjoaa suuren suorituskyvyn, korkean käytettävyyden ja helpon skaalautuvuuden. 
+Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa, ja se tarjoaa suuren suorituskyvyn, korkean käytettävyyden ja helpon skaalautuvuuden. \citemissing
 \medskip
 
 MongoDB tallentaa tiedot joustaviin, JSON-tyyppisiin dokumentteihin, mikä tarkoittaa, että kentät voivat vaihdella dokumentista toiseen ja tietorakennetta voidaan muuttaa ajan myötä. \labcite{mongodb24a}
@@ -49,8 +41,12 @@ Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksi
 
 
 
+
+
+
 \subsubsection{Skaalautuminen}
 
+%lenove sitaatit on fine paitsi ensimmäisessä lukee jotain outoo
 
 
 %https://www.lenovo.com/us/en/glossary/scalling/
@@ -59,6 +55,7 @@ Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksi
 Skaalautumisella tarkoitetaan sovelluksen, järjestelmän tai infrastruktuurin
 mahdollisuutta hallita kasvavaa määrää dataa, käyttäjiä tai stressiä ilman että se kompormisoisi suorituskykyä tai vakautta.
 Skaalautuminen on tärkeää sillä kuin sovellus kasvaa sen pitää pystyä käsittelemään kasvavaa kuormaa.
+%joku on off
 Ilman skaalautumista järjestelmästä voi tulla hidas tai se voi johtaa seisokkiaikaan.\labcite{lenovo}
 \medskip
 
@@ -66,25 +63,14 @@ Vertikaalisella skaalautumisella tarkoitetaan yksittäisen palvelimen tai järje
 kuten keskusmuistin tai prosessorin päivitystä, kasvataen järjestelmän kuorman hallintaa.\labcite{lenovo}
 \medskip
 
-Horisonttaali skaalaus käsittää koneiden ja järjestelmien lisäämistä, jotka pystyy jakamaan tai kuorman usean palvelimen välillä.
+Horisonttaali skaalaus käsittää koneiden ja järjestelmien lisäämistä, jotka pystyy jakamaan kuorman usean palvelimen välillä.
 Tämä tuo myös lisä turvaa sillä jos järjestelmä tai sovellus kaatuaa palvelinvian takia, 
-toinen palvelin voi tuurata sitä.
-Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuskiin, jotka toimivat horisonttaalisella skaalautumisella. \labcite{lenovo}
+toinen palvelin voi tuurata sitä. \labcite{lenovo}
+Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuskiin, jotka toimivat horisonttaalisella skaalautumisella. \citemissing
 \medskip
 
-%https://www.lenovo.com/us/en/glossary/scalling/
-% kaikki sitatoitu tästä
-%6.6
 
 
-
-
-
-% https://www.mongodb.com/resources/products/capabilities/sharding
-%5.6
-
-%https://www.mongodb.com/resources/products/capabilities/replication
-%5.6
 
 
 
@@ -100,36 +86,21 @@ Tämä kasvattaa luotettavuutta sillä jos olisi vain yksi tietokanta, sen kaatu
 \medskip
 \bigskip
 
-%https://www.mongodb.com/resources/products/capabilities/replication
-%6.6
 \includesvg[width = 10cm]{./src/public/oppar/mongoreplication.svg}\\
 Kaavio\getChartCount{}. Kaavio replikointi mallista \labimgcite{mongodb24c}
 \medskip
 
 
-%periaattees voi kirjoittaa verbatin suomeksi toi what is database sharding osa
-%https://kinsta.com/blog/mongodb-sharding/
-%5.6
 
-% official 
-% https://www.mongodb.com/resources/products/capabilities/sharding
-%https://www.mongodb.com/docs/manual/sharding/
-%5.6
-
-%(https://kinsta.com/blog/mongodb-sharding/)
 MongoDB sharding antaa mahdollisuuden jakaa itse tietokanta useaan palaan ja jakaa jokainen palanen erikseen eri palvelimellle.
 nämä pienemmät palat ovat "shardeja"{} ja ovat itsenäisiä osia kokonaisesta tietokannasta.\labcite{kinsta23}
 %
-%(capabilities sharding)
 Tämä on hyödyllinen kun yhdellä palvelimella tulee ongelmia suuren tiedon käsittelyn kanssa.
-Kaaviossa 2 näkyy sharkd klusterin toimintaperiaate ja siihen kuuluvat komponentit. \labcite{mongodb24d}
+Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponentit. \labcite{mongodb24d}
 \medskip
 \bigskip
 
 
-%täältä kuva
-%https://www.mongodb.com/docs/manual/sharding/
-%5.6
 
 % onko tämä kaavio vai kuva ja mitä väliä tai eroa
 
@@ -137,25 +108,26 @@ Kaaviossa 2 näkyy sharkd klusterin toimintaperiaate ja siihen kuuluvat komponen
 Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24e}
 \medskip
 
-%https://www.mongodb.com/docs/manual/core/sharded-cluster-query-router/
+
+%mongos tai reitittimen pitää vaihtaa sillä se ei ole mongos tai se on sama asia
+
+
 %operaatiot parempi selitys
 Kaavion 2 Mongos tai reitittimen pää funktio on reitiittää tietokanta operaatiot oikeille shardeille käyttäen configuraatio palvelimelta saatua metadataa.
 Asiakassovellus on yhteydessä mongos:siin ja se toimii rapapintaja käyttäjän ja shardien välillä. 
-%asiakieli
-Kun asiakassovellus lähettää kyselyn tietokantaan, reititin kysyy konfigurointipalvelimelta (eng congig server) millä shardeilla on kyseinen data. 
+%
+Kun asiakassovellus lähettää kyselyn tietokantaan, reititin kysyy konfigurointipalvelimelta (eng config server) millä shardeilla on kyseinen data. 
 Jonka jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen asiakassovellukselle.\labcite{mongodb24f}
 \medskip
 
-%https://www.mongodb.com/docs/manual/core/sharded-cluster-shards/ 
-%6.6 
 %asiakieli
 Shard on tietokanta palvelin, joka sisältää osan klusterin koko tietokannasta.
 Itse shardejen pitää olla replika settejä, 
 tämä tuo lisä turvaa datan hakuun sillä jos shardin pää kanta kaatuaa voi toissijainen kopio ottaa sen paikan. \labcite{mongodb24g}
 \medskip
-%do we cite ourselves here?
 
-%(https://www.mongodb.com/docs/manual/reference/config-database/) 6.6
+
+
 Konfigurointipalvelin sisältää asetuksia ja metadataa klusterista, 
 kuten tietoja mitkä shardit ovat olemassa, mikä on shardin tila,
 yksityiskohtia siitä mitkä osat tietokannasta on tallennettu mihinkin shardeihin
@@ -165,6 +137,7 @@ ja tietoja osien tasapainottamisesta shardien välillä tietojen tasaisen jakaut
 
 
 \subsubsection{Nosql Dokumentti}
+%tätä ei olla kirjoitettu melkein yhtään eteempoäin ja se vaatii lisää tekstiä jos siitä kirjoitetaan
 
 
 % tämä saatetaan poistaa ehkä

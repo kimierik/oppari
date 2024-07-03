@@ -86,6 +86,7 @@
 %\setlength{\oddsidemargin}{0pt}
 
 
+%these need to be overridden in coverpage
 \renewcommand{\baselinestretch}{1.5} 
 \setlength{\parskip}{0.1cm}
 
@@ -121,8 +122,22 @@
 
 
 
+\iffalse
+
+random shit that we need to do
+
+change words
+
+Client => asiakasohjelma
+    jotenkin tuntuu oudolta sanoo frontendiä asiakasohjelmaksi
+    vissii selainohjelma??
+
+Server => palvelinohjelma
 
 
+
+
+\fi
 
 
 
@@ -143,16 +158,21 @@
 
 \includegraphics[width=5cm,height=1cm]{./src/labimg.jpg}
 
+%override baselinestretch thing in this area
+\renewcommand{\baselinestretch}{1} 
+\setlength{\parskip}{0cm}
+
 \vspace{86mm}
-\huge
+{\huge
 \textbf{Kehityksen seuranta}
+}
 \newline
 
-\large
+{\large
 
 \vspace{5mm}
 \textbf{Oppimispäiväkirja}
-\normalsize
+}
 
 \vspace{90mm}
 
@@ -166,6 +186,9 @@ Kimi Malkamäki
 
 \newpage
 
+%reset thing
+\renewcommand{\baselinestretch}{1.5} 
+\setlength{\parskip}{0.1cm}
 
 
 
@@ -262,6 +285,7 @@ tiivistelmä
 
 % ------------------------------ TABLE OF CONTENTS ------------------------------ %
 
+
 %keep page numbers off
 \setcounter{page}{0}
 \pagestyle{empty}
@@ -332,12 +356,15 @@ CSS = Cascading Style Sheets
 %%
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+
+
 %\newcommand{\n}{\newline\vspace{20mm}}
 
 
 
 
 
+    
 
 
 
@@ -562,135 +589,7 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 
 
 \newpage
-\subsection{Meteor}                % ------------------------------- Meteor ------------------------------- %
-
-
-
-\subsubsection{Meteor yleisesti}
-% sitatatti order kussee.. tässä sitatoidaan meteor b sitatoidaan ekaks ja tässä sitatoidaan mongo i kun senkin pitäisi olla mongo a
-% eli kaikki pitää siirtää vähän
-% nämä muutokset pitäisi tehdä kun kaikki sitaatit on lisätty missing sitateista
-
-%iso morphic src jos ei käy niin käytä tätä
-%https://web.archive.org/web/20221206181248/https://old.gigaom.com/2014/12/27/meteor-wants-to-be-the-warp-drive-for-building-real-time-apps/
-% Jonathan Vanian
-
-%
-
-
-
-Meteor on full-stack JavaScript web-framework ja on itsessään avoimeen lähdekkoodiin perustuva \labciteend{meteor24b}{}
-% poislukien on vähän scuffed imo
-Poislukien meteorin mukaan paketoimaa mongodb tietokantaa, joka toimii Server Side Public Lisenssillä.\labciteend{mongodb24i}
-Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyttöönottoon ja se mahdollistaa isomorphiseen koodin kirjoittamisen, 
-eli koodiin joka on samanlaista palvelimella kuten clientillä.\labcite{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
-Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular \labciteend{meteor24a}{}
-Tämä antaa lisä joustoa Meteorille sillä se antaa mahdollisuuden monelle sovelluskehittäjälle joilla ei ole kokemusta tietystä front-end teknologiasta.
-\medskip
-
-% asio ok mut kirjota paremmin ja uusiks varm gpt on ok täs vaihees
-% asia ei ole ok tässä pitää selittää enemmän isomorphisesta jos selitäteään mitään. tosin voi poistaa jos halutaan
-% paremmin alku. plus se että se on fullstack ei tarkoita sitä että sen mukana aina tulee palvelin. meteor päätti laittaa palvelimen samalla käynnistymää. plus se että se on fullstack ei tarkoita sitä että sen mukana aina tulee palvelin. meteor päätti laittaa palvelimen samalla käynnistymään
-Meteor on fullstack, joten kun sen käynnistää se käynnistää samalla palvelimen ja clientin.
-Tiedostorakenteessa on erityks kansioita kuten server ja client jota käyttäen Meteor tietää mitä koodia pitää ladata clientille ja mitä palvelimelle.
-%more text
-\medskip
-
-
-
-    
-% https://www.meteor.com/
-% viitattu 28.5
-
-% tukee sana pitää vaihtaa sillä me käytetään sitä itemeissä
-Lisäksi Meteor tukee monta ominaisuutta \labcite{meteor24a}:
-\begin{itemize}
-    \item Tukee monta Front-end kirjastoa ja frameworkkkia
-    \item Tukee Typescriptiä
-    \item Sisään rakennettu käyttäjä systeemi
-    \item Toimii monella laitteella
-    \item Helppo ja nopea käyttöönottaa 
-\end{itemize}
-\medskip
-
-
-Meteor paketoi mukaansa käyttäjä paketin jota käyttäen kehitäjä voi nopeasti luoda authentikaatio järjestelmän.
-Käyttäjä paketti antaa helpon integraation muiden kirjautumis palvelujen kanssa kuten facebook, github, google ym.
-Käyttäjä paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten metodeihin. \labcite{meteor24c}
-%maby more txt
-
-
-
-\subsubsection{Meteor metodit}
-
-%ensimmäinen kappale pitää kirjoittaa uusiks. siinä ei ole tarpeeksi tekstiä eikä siinä selitetä kaikkea mitä siinä pitää selittää
-
-% https://www.ibm.com/docs/en/aix/7.2?topic=call-rpc-model
-% 2.7 
-% tätä voi sitatoida rpc hommissa
-
-% toinen kappale
-% metodi tekee koodista yksinkertaisemman. metodi tekee rajapinnasta helpomman lukea sillä
-
-% mahdollinen kappale rike kolmannessa kappaleessa
-
-
-
-
-Meteor käyttää Etäkäsittelykutsu (eng Remote procedure call) rajapintaa perinteisen RESTful rajapinnan sijasta \labciteend{meteor24a}
-% vähän laajentaa tätä
-% pitää muutenkin kirjoittaa uudelleen vissiinkin. tää selitys on tosi clunk
-Etäkäsittelykutsussa client lähettää palvelimelle kutsuviestin, 
-palvelin sitten suorittaa tarvittavan fuinktion ja antaa suorituksen takaisin kutsujalle.\citemissing % ibm cite
-% end of bad
-Meteorin metodit ominaisuus toimii Etäkäsittelykutsu rajapintana clientin ja palvelimen välillä. 
-Tämä antaa clientille mahdollisuuden kutsua palvelimelta funktioita Meteorin kautta.
-\medskip
-
-
-
-Metodit määritetään ja suoritetaan palvelimella kuten kuvassa \nextImageCount.
-%selitä yksinkertaisemman eri tavalla
-Metodit tekee myös koodista yksinkertaisemman sillä clientin ei tarvitse tehdä GET tai POST requesteja palvelimelle, kun halutaan palvelimen tehdä jotain. 
-Ja koska metodi kutsu on myös isomorphinen, metodeja on helppo uudelleen käyttää palvelimella.
-Metodi funktio käyttää JavaScriptin "this"{} ominaisuutta. 
-Sitä käyttäen metodiin voidaan antaa kontekstia kutsujasta.
-Tässä kontekstissa voi nähdä esimerkiksi onko kutsuja kirjautunut sisään, tai onko kutsujalla oikeat oikeudet kutsua metodia, 
-helpottaen turvallisuuden lisäämista rajapintaan.
-\bigskip
-
-\includegraphics[width=15cm]{src/public/methodexample.png}\\
-Kuva \getImgCount {}. Meteor metodin määritelmä
-\medskip
-
-% onko tässä passiivi rike jossain
-Kuvassa on meteor metodin määritelmä. "exampleMethod"{} metodi katsoo, onko "this"{} ominaisuudessa käyttäjä tunnusta, näin voimme tietää onko kutsuja kirjautunut sisään,
-jos käyttäjä ei ole kirjautunut sisään heitetään error viesti, joka välitetään kutsujalle.
-Jos käyttäjä on kirjautunut sisään tulostetaan argumentit. 
-\medskip
-
-
-
-
-\subsubsection{Meteor ecosysteemi}
-
-
-% eka kappale pitää vain kirjoittaa vähän paremmin muuten ok
-%
-
-
-% yhdistä lauseet paremmin, elä aloita jokainen lause Meteor sanalla
-Meteor ylläpitää omaa paketointi ecosysteemiään.
-Meteor paketit ovat isomorphisia, eli ne toimivat palvelimella ja clientillä \labciteend{pranav17}{}
-Meteorilla on ensimmäisen osapuolen paketteja, joita itse meteor tiimi ylläpitää ja kolmannen osapuolen paketteja,
-joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin paketti palvelimelle Athmosphere:lle. \labcite{sanders15}
-\medskip
-
-
-Athmosphere on Meteorin ylläpitämä paketti palvelin, johon käyttäjät voivat ladata paketteja tai kirjastoja jotka ovat suunnattu toimimaan MeteorJs:ssän kanssa.
-NPM paketit (eng Node package manager) ovat suunnattu toimimaan Node ympäristössä, ja vaikka ratkaisuja on käyttää NPM paketteja selaimella, 
-Athmosphere paketit voi hyötykäyttää Meteorin build systeemiä, jonka avulla paketin kehittäjä voi määritellä mitkä osat ladataan selain puolelle ja mitkä palvelimelle.\labcite{meteor24d}
-
+\addPageOp{src/op/meteor.tex}{Meteor}                % ------------------------------- Meteor ------------------------------- %
 
 
 
@@ -721,10 +620,14 @@ Athmosphere paketit voi hyötykäyttää Meteorin build systeemiä, jonka avulla
 \newpage
 \subsection{Responsiiviset käyttöliittymät}        % ------------------------------- Responsive ------------------------------- %
 
+% etsi sitaatit kaikkiin missing src kohtiin
+% joku lähde ja laita se biblioon 
+
 % layout => asettelu
 
 \subsubsection{Responsiivisten käyttöliittymien suunnittelun periaatteet}
 
+% ekassa kappaleessa on jotenkin outoo selitystä siitä että eri laitteita on olemassa
 
 
 %https://alistapart.com/article/responsive-web-design/
@@ -738,9 +641,8 @@ Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttä
 Kehittäjien pitää ottaa huomioon eri erilaitteiden muuttujat kuten, näytönkoot, kuvasuhde, näytön resoluutio ja käytössä oleva HID.\citemissing
 Uusien verkkosivujen luominen ei ole käytännöllistä, sillä niiden niitä pitäisi ylläpitää erikseen työpöytäsivuista.
 Saman verkkosivun käytön toiminta useammalla eri laitteella vaatii eri lähestymistapaa verkkosuunnitteluun. 
-% layout sana vaihtoon
-Sivuston layout pitää pystyä muuttumaan sopivaksi laitteelle.
-Verkkosivujen suunnittelua tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi. \citemissing
+Sivuston asettelu pitää pystyä muuttumaan sopivaksi laitteelle.
+Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi. \citemissing
 \medskip
 
 
@@ -755,6 +657,18 @@ Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne voisi 
 
 
 \subsubsection{CSS Media query}
+
+%sitaatit puuttuu kokonaan
+
+% eka kappale ei selitä kunnolla mikä on media query imo
+% toinen kappale jos näytönkoko on pienempi kuin x on huono ja ko
+%   vissii toinen kappale kokonaan uusiks
+
+
+
+
+
+
 
 %https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries
 
@@ -772,10 +686,10 @@ Mediaqueryt mahdollistaa selain tai käyttölaite arvojen kyselyn ja testailun, 
 % asiakieli ja uusiks kirjoitus 
 CSS Media Query antaa mahdollisuuden CSS-säännöksen asettamiselle vain silloin kun selain- ja laiteympäristö vastaa määritettyjä sääntöjä. 
 %tämä ainakin uusiks
-Säännökset voivat olla esimerkiksi "jos näytön koko on pienempi kuin X".
+Säännökset voivat olla esimerkiksi "jos näytön koko on pienempi kuin X".\citemissing
 %tämä kanssqa jotenkin paremmin
 Media Queryt ovat tärkeä osa repsonsiivista suunittelua ja se antaa mahdollisuuden luoda erilaisia layouttteja riippuen käyttölaitteesta,
-sen näytön koosta tai kuvasuhteesta.
+sen näytön koosta tai kuvasuhteesta.\citemissing
 
 
 
@@ -791,51 +705,38 @@ sen näytön koosta tai kuvasuhteesta.
 
 
 \subsubsection{Asettelu vaihtoehdot}
-%https://www.theseus.fi/bitstream/handle/10024/94414/Thesis%20Rogatnev%20Nikita.pdf?sequence=1&isAllowed=y
-%https://www.theseus.fi/handle/10024/94414
-%reading from this idk if we should cite this. it is a real thing so we could. i would want to read from another source
-% cite is 20.6
+
+% eka kappale liian vähän tekstiä ja pitäis selittää juttuja paremmin
 
 
-% this is scetch but accurate. also calls it elastic
-%https://www.smashingmagazine.com/2009/06/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/
-%
-
-% medium looks good
-%https://bootcamp.uxdesign.cc/fixed-width-responsive-and-adaptive-layout-what-to-chose-a29c4f93537b
-
-%
-%https://learn.onemonth.com/responsive-vs-adaptive-vs-fluid-design/
-
-%https://www.acil.in/between-fixed-fluid-adaptive-and-responsive-layout/
-
-%there is some reading on layouts
-% all cited 20.6
 
 
-%mikä on layout ja miten se näyttää itse sivulla.
-% on eri layoutteja ja niille sopivia suunnittelu tapoja jne 
+
+
+
+
+
 
 %complete rewrite
-On eri tapoja suunnitella sivu elementtien asetteluja jne. kolme näistä on fixed, fluid ja adaptiivinen.\citemissing
+On eri tapoja suunnitella sivu elementtien asetteluja jne. kolme näistä on fixed, fluid ja adaptiivinen.\labcite{ksenia23}
 \medskip
 
 
 
 Kiinteä asettelussa elementit pysyvät samana näyttökoosta huolimatta. 
 Kiinteässä asettelussa tulee ongelmia jos näytön koko on pienempi kun sivustolle suunniteltu asettelu, 
-sillä joitain elementtejä jäisi näytöstä ulkopuolelle tai saatavissa sivu scrollaamisella.\citemissing
+sillä joitain elementtejä jäisi näytöstä ulkopuolelle tai saatavissa sivu scrollaamisella.\labcite{ksenia23}
 \medskip
 
 
 Nestämmäisessä asettelussa elementtien koot vaihtuu näytön koon mukaan. 
 Verrattuna kiinteään asetteluun elementit eivät jää näytöstä ulkopuolelle sillä elementit skaalautuvat näytönkoon mukaan.
 %selitä vähän paremmin
-Nestemmäisessä asettelussa tulee silti ongelmia sillä jos elementti on liian pieni sille annetulle tekstille.\citemissing
+Nestemmäisessä asettelussa tulee silti ongelmia sillä jos elementti on liian pieni sille annetulle tekstille.\labcite{ksenia23}
 \medskip
 
 
-Adaptiivisessä asettelussa elementtien koot ja sijainnit muuttuvat riippuen näytönkoosta.\citemissing
+Adaptiivisessä asettelussa elementtien koot ja sijainnit muuttuvat riippuen näytönkoosta.\labcite{ksenia23}
 % parempi aloitus ei aloiiteta adaptiivisella
 Adaptiivisen asettelun ideana on mukauttaa sivuston elementtien asettelu sopivaksi käytetylle laitteelle.
 Kuvassa \nextImageCount {} on esimerrki sivuston asettelustosta, kuvassa {\the\numexpr \theimgCounter + 2 } on esimerkki miltä sivusto voisi näyttää jos käytössä olisi adaptiivinen asettelu.
@@ -849,12 +750,12 @@ Käyttöliittymän elementit ovat siirtyneet vierekkäisestä asettelusta pääl
 
 %kuvat medium artikkelin giffistä
 \includegraphics[width = 15cm]{src/public/oppar/adaptiveBig.png}\\
-Kuva \getImgCount {}. f adaptiivinen iso\citemissing
+Kuva \getImgCount {}. esimerkki adaptiivisesta asettelusta isommalla näytöllä \labimgcite{ksenia23}
  
 \bigskip
 
 \includegraphics[width = 15cm]{src/public/oppar/adaptivesmall.png}\\
-Kuva \getImgCount {}. f adaptiivinen pieni\citemissing
+Kuva \getImgCount {}. esimerkki adaptiivisesta asettelusta pienemmällä näytöllä\labimgcite{ksenia23}
 
 
 
