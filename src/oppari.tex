@@ -620,8 +620,9 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 \newpage
 \subsection{Responsiiviset käyttöliittymät}        % ------------------------------- Responsive ------------------------------- %
 
-% etsi sitaatit kaikkiin missing src kohtiin
-% joku lähde ja laita se biblioon 
+% css media query osuus vaatii isompaa uudelleen kirjoittelua
+% asettelu vaihtoehdot eka kappale vaatii lisää tekstiä
+
 
 % layout => asettelu
 
@@ -630,26 +631,21 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 % ekassa kappaleessa on jotenkin outoo selitystä siitä että eri laitteita on olemassa
 
 
-%https://alistapart.com/article/responsive-web-design/
-% viitattu 19.6
-
-
-
 
 % selitä enemmillä sanoilla ja paremmin eri laitteiden käyttö
-Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän eroavia laitteita verkkosivujen selaamiseen.\citemissing
-Kehittäjien pitää ottaa huomioon eri erilaitteiden muuttujat kuten, näytönkoot, kuvasuhde, näytön resoluutio ja käytössä oleva HID.\citemissing
-Uusien verkkosivujen luominen ei ole käytännöllistä, sillä niiden niitä pitäisi ylläpitää erikseen työpöytäsivuista.
+Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän mobiili laitteita verkkosivujen selaamiseen \labcite{statista23b}
+Kehittäjien pitää ottaa huomioon eri laitteiden muuttujat kuten, näytönkoot, kuvasuhde ja näytön resoluutio.
+Uusien verkkosivujen luominen mobiili selaimille ei ole aina käytännöllistä, sillä niitä pitäisi ylläpitää erikseen työpöytäsivuista.
 Saman verkkosivun käytön toiminta useammalla eri laitteella vaatii eri lähestymistapaa verkkosuunnitteluun. 
 Sivuston asettelu pitää pystyä muuttumaan sopivaksi laitteelle.
-Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi. \citemissing
+Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi. \labciteend{marcotte10}
 \medskip
 
 
 
 Responsiivinen verkkosuunnittelu on lähestymistapa verkkosivustojen rakentamiseen,
-jolla varmistetaan niiden optimaalinen ulkoasu ja toimivuus eri laitteilla näytön koosta huolimatta.\citemissing
-Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne voisi tarjota yhdenmukaisen käyttökokemuksen käyttölaitteesta riippumatta.
+jolla varmistetaan niiden optimaalinen ulkoasu ja toimivuus eri laitteilla näytön koosta huolimatta. 
+Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne voisi tarjota yhdenmukaisen käyttökokemuksen käyttölaitteesta riippumatta.\labcite{mozilla24a}
 \medskip
 
 
@@ -658,7 +654,6 @@ Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne voisi 
 
 \subsubsection{CSS Media query}
 
-%sitaatit puuttuu kokonaan
 
 % eka kappale ei selitä kunnolla mikä on media query imo
 % toinen kappale jos näytönkoko on pienempi kuin x on huono ja ko
@@ -670,26 +665,24 @@ Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne voisi 
 
 
 
-%https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries
 
 CSS (eng Cascading Style Sheets) antaa työkaluja millä kehittäjä voi tietää käytetystä laitteesta.
 Näitä kutsutaan Media queryiksi.
-Mediaqueryt mahdollistaa selain tai käyttölaite arvojen kyselyn ja testailun, ja mahdollistaa ehdollisen CSS tyylien asettelun.
+Mediaqueryt mahdollistaa selain tai käyttölaite arvojen kyselyn ja testailun, ja mahdollistaa ehdollisen CSS tyylien asettelun.\labcite{mozilla24b}
 
 \medskip
 
 
 
-% %https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
 
 %yritä kirjoittaa tää tohon ylempään 
 % asiakieli ja uusiks kirjoitus 
 CSS Media Query antaa mahdollisuuden CSS-säännöksen asettamiselle vain silloin kun selain- ja laiteympäristö vastaa määritettyjä sääntöjä. 
 %tämä ainakin uusiks
-Säännökset voivat olla esimerkiksi "jos näytön koko on pienempi kuin X".\citemissing
+Säännökset voivat olla esimerkiksi "jos näytön koko on pienempi kuin X".\labcite{mozilla24b}
 %tämä kanssqa jotenkin paremmin
 Media Queryt ovat tärkeä osa repsonsiivista suunittelua ja se antaa mahdollisuuden luoda erilaisia layouttteja riippuen käyttölaitteesta,
-sen näytön koosta tai kuvasuhteesta.\citemissing
+sen näytön koosta tai kuvasuhteesta.\labcite{mozilla24b}
 
 
 
@@ -707,10 +700,6 @@ sen näytön koosta tai kuvasuhteesta.\citemissing
 \subsubsection{Asettelu vaihtoehdot}
 
 % eka kappale liian vähän tekstiä ja pitäis selittää juttuja paremmin
-
-
-
-
 
 
 
@@ -779,30 +768,20 @@ Kuva \getImgCount {}. esimerkki adaptiivisesta asettelusta pienemmällä näytö
 \newpage
 \subsection{Web sivustojen kääntäminen}
 
-%tämän jos jakaa subsektioneihin niin se veisi enemmän tilaa
 
-
-% jotain tekstiä siitä miksi kääntää sivustot
-
-% jotain teoriaa käännöksistä yleisesti? what does this mean
-
-% miten käännökset tehdään nettisivuille teknisesti
-% jotain vaihtoehtoja ja eri tapoja tehdä käännöksiä
 
 
 %link tree
 % https://www.linkedin.com/pulse/website-translation-how-to-guide-louise-souter
 
 
-
-
-
-%jotenkin niin vähän tietoa joka ei ole mainos tai jotain liian broad ettei siitä ole hyötyä
-
-
 \subsubsection{motivaatio verkkosivustojen kääntämiseen}
 
 %miksi kääntää sivustot------------------------------------
+
+
+%väärä sitaatti
+
 
 % people prefer content in their lenguage
 %https://csa-research.com/Featured-Content/For-Global-Enterprises/Global-Growth/CRWB-Series/CRWB-B2C#10Facts
@@ -816,21 +795,22 @@ Kuva \getImgCount {}. esimerkki adaptiivisesta asettelusta pienemmällä näytö
 
 
 Kielimuuri on merkittävä haaste, kun tuotteita ja verkkosivustoja laajennetaan uusille markkinoille.
-CSA Rechearching mukaan 65\% verkkokäyttäjistä suosii sisällön esittämistä omalla äidinkielellään.\labcite{csa20}
+%tämä citaatti on väärä ja pitää korjata
+CSA Rechearching mukaan 65\% verkkokäyttäjistä suosii sisällön esittämistä omalla äidinkielellään \labciteend{csa20}
 Sisällön tarjoaminen useilla kielellä on loistava tapa kasvaa eri markkinoille. 
-Kun ihmiset voivat lukea sivustoasi omalla äidinkielellään, heillä on todennäköisemmin miellyttävä käyttökokemus.\labcite{austin18} 
+Kun ihmiset voivat lukea sivustoasi omalla äidinkielellään, heillä on todennäköisemmin miellyttävä käyttökokemus.
 Tutkimukset myös osoittavat, että tuotteiden lokalisointi on hyvä sijoitus kohde.\labcite{austin18}
 \medskip
 
-% tämä pitää kirjoittaa siten että se on jotenkin mun kirjoittama
-Tämä mieltymys korostaa tarkkojen käännösten tarjoamisen ratkaisevaa merkitystä.
+
+
+Käyttäjien suosimus omakieliselle sisällölle korostaa tarkkojen käännösten tarjoamisen ratkaisevaa merkitystä.
 Jos käännökset laiminlyödään, huomattava osa potentiaalisista käyttäjistä ei välttämättä pysty käyttämään tuotetta tehokkaasti.
-Näin ollen yritykset ovat vaarassa vieraannuttaa suuren osan yleisöstään, 
-% mmm
-mikä voi johtaa käyttäjien sitoutumisen ja konversiolukujen alenemiseen.
+Näin ollen yritykset ovat vaarassa vieraannuttaa suuren osan mahdollisista käyttäjistä.
+% 
 Siksi laadukkaisiin käännöksiin ja lokalisointeihin investoiminen on olennaisen tärkeää yrityksille,
 jotka pyrkivät saavuttamaan maailmanlaajuista menestystä ja maksimoimaan tavoittavuutensa erilaisilla kielimarkkinoilla.
-\medskip
+\medskip % tarvitseekö tämä sitaatiota...
 
 
 
@@ -840,42 +820,34 @@ jotka pyrkivät saavuttamaan maailmanlaajuista menestystä ja maksimoimaan tavoi
 
 
 
-\subsubsection{käännös tavat ja haasteet}
-% jotain teoriaa käännöksistä yleisesti? what does this mean------------------------------------
-% tarpeeksi tekstiä mutta pitää citatoida
-% teksti on gpt niin sitä voisi muokata jotenkin omammaiseksi
+\subsubsection{Käännös tavat ja haasteet}
 
 
 %https://www.transifex.com/blog/2024/website-translation-methods/
 %11.6 
+
+
+% sitaatti sille että eri kielissä on eri kontextia eri sanoille jne
+%jos nykyinen on huono käytä tätä
+%https://www.smartling.com/resources/101/context-better-translations/
+
+% sitaatti ai käännös vs ihmis käännös
+
 
 On useita eri tapoja web sivustojen kääntämiselle.
 Mutta, koska monet kielet ovat hyvin erillaisia konteksti ja nuanssit voivat hävitä jos käännetään sana sanaan.
 Monia lauseita ja ilmaisuja ei voi kääntää suoraan kielestä toiseen menettämättä niiden alkuperäistä merkitystä.
 Esimerkiksi idiomit, metaforat ja puhekieliset ilmaisut edellyttävät usein luovaa mukauttamista eikä niinkään kirjaimellista kääntämistä. 
 Lisäksi tietyt termit ja käsitteet voivat olla olemassa yhdessä kulttuurissa, 
-mutta eivät toisessa, jolloin tarvitaan harkittuja selityksiä tai korvauksia, jotta sama viesti voidaan välittää tehokkaasti.\citemissing
+mutta eivät toisessa, jolloin tarvitaan harkittuja selityksiä tai korvauksia, jotta sama viesti voidaan välittää tehokkaasti.\labcite{interpservices22}
 \medskip
 
-% gpt extensions for the above kappale
-%this is accurate but still we need to find citations for these
-
-% gpt
-%Monia lauseita ja ilmaisuja ei voi kääntää suoraan kielestä toiseen menettämättä niiden alkuperäistä merkitystä.
-%Esimerkiksi idiomit, metaforat ja puhekieliset ilmaisut edellyttävät usein luovaa mukauttamista eikä niinkään kirjaimellista kääntämistä. 
-%Lisäksi tietyt termit ja käsitteet voivat olla olemassa yhdessä kulttuurissa, 
-%mutta eivät toisessa, jolloin tarvitaan harkittuja selityksiä tai korvauksia, jotta sama viesti voidaan välittää tehokkaasti.
-
-%gpt
-%There are many different methods for translating websites
-%However, because many languages are very different, context and nuance can be lost if you translate only word for word
 
 
-
-Käännös teksin luonnin voi yleisesti tehdä kahdellla tavalla. henkilökäännös tai tekoälykäännös.
+Käännös tekstin luonnin voi yleisesti tehdä kahdellla tavalla. henkilökäännös tai tekoälykäännös.
 Henkilökäännöksellä voi olla hyvä tarkkuus ja lopputulos tulee kuulostamaan luonnolliselta.
 Tämä ratkaisu tulee olemaan kalliimpi tekoälykäännökseen verrattuna sillä oikea kääntäjä pitää palkata.
-tekoaly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.\citemissing
+tekoaly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.\labcite{Habash23}
 \medskip
 
 
@@ -888,17 +860,35 @@ tekoaly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikk
 
 % miten käännökset tehdään nettisivuille teknisesti ------------------------------------
 % jotain vaihtoehtoja ja eri tapoja tehdä käännöksiä
-\subsubsection{käännökset teknisesti}
+\subsubsection{Käännökset teknisesti}
+
+% eka kappale pitää uudelleen kirjoittaa
+% toinenkin kappale pitää siirtää
+
+
+% vaihda sanan valinta siihen että joskus ollaan tehty uusia kopioita joka käännetylle sivulle
+% pitää vain uudelleen kirjoittaa
+
+%sitaatti on olemassa siihen että on kopioitu joskus
+%
+
+% jos ei löydy mitään tähän niin on mahdollisuuis että pitää uudelleen kirjoittaa koko käänn sectio
+% ellei sitä poisteta
+
+
 %https://www.motionpoint.com/platform/what-are-the-best-technologies-for-website-translation/
 % 11.6
 
+%idk this sorce is so scuffed imo
 %https://travod.com/blog/5-methods-translate-website
 % 26.6
 % tuossa on jotain mainintaa siitä että verkkosivun kopioinnista on oikea tapa 
+% how can i not find a better src that mentions that this is used
 
 
 
-%en halua namedroppaa mitään. pitää vain sanoa että josksus on tehty omat sivustot eri kielisille sivuille. ja siihen joku sitaatti
+
+
 On eri tapoja toteuttaa käännösten tekeminen web alustoilla. 
 % tämä uusiks
 Suora kopio verrkosivuista, johon tekstit on käännetty oli vaihtoehto alkuajoilla
@@ -967,16 +957,26 @@ josta käyttöliittymä etsii halutut käännökset.\citemissing
 
 \subsection{wip title tehtävä}
 
+% pitää mainita että starttaamo on hakenut nopeaa kehitystä
 
-Startup yritykset hakevat nopeaa kehitystä ja sen ohella sovelluksen sivustot on kokonaan kovakoodattu suomeksi.
-Tarkoittaa että komponenteissa on elementtejä jossa on suoraa tekstiä suomeksi kirjoitettuna.
-Tuli tarve saada käännettyä sivusto useammalle kielellä.
+Starttaamo on hakenut nopeaa kehitystä web alustalle, joten kehityksen alkuvaiheessa 
+ei olla huomioitu mahdollista tarvetta käännöksille. 
+Tämä tarkoittaa sitä, että kaikki sivuston tekstit ovat kovakoodattu suomeksi.
+Sivustojen julkisesti näkyvällä tekstillä ei ollut keskitettyä arkistoa vaan tekstit olivat sijoitettu komponentteihin.
+\medskip
+
+Sain työnaiheeksi rakentaa käännös järjestelmä, jonka avulla sivustot voitaisiin kääntää useammalle kielelle.
 Käännös järjestelmmän pitäisi olla laajennettavissa siten että sivustojen päivittäminen ja uusien kielien lisääminen olisi 
-olisi mahdollisimman nopeaa ja helppoa.
-
+olisi mahdollisimman nopeaa ja helppoa.\\
 \medskip
 
 
+% siirto keskitettyyn sijaintiin on tarepeellinen
+% vaatii että etsitään komponenteista tekstiä
+% ja siirretään tiedostoon josta etsitään jne
+
+
+% ?¿?¿?
 Sivustojen kääntäminen vaatii jokaisen julkisesti näkyvän tekstin etsimisen koodipohjasta, 
 joka ei normaalisti ole yksinkertaista projektissa, jossa komponentit on hajoitettu eri tiedostoihin.
 Mutta nykyisillä teksti muokkaustyökaluilla on ominaisuuksia joita käyttäen voi etsiä merkkijonoja projektista.
@@ -1016,9 +1016,10 @@ Kuva \getImgCount {}. progressiosivun käännökset englanninkielisestä käänn
 
 
 
+\subsection{käyttöliittymä kielenvaihamiselle}
 % tämän kappaleen voisi poistaa. 
 % lisätä tää toiseen kappaleeseen tai sitten poistaa kokonaan
-\subsection{käyttöliittymä kielenvaihamiselle}
+
 
 %lisäsin sivulle, tosin kun sivulle on lisätty
 Sivulle on myös lisätty laskuvalikko kielen vaihtamiselle. 
