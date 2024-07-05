@@ -955,9 +955,13 @@ josta käyttöliittymä etsii halutut käännökset.\citemissing
 
 \section{Käännösten toteutus}
 
+
+% vaihda wip title title
+% käyttöliitymä kohtaan tarvii pari tai yksi lause lisää 
+
+
 \subsection{wip title tehtävä}
 
-% pitää mainita että starttaamo on hakenut nopeaa kehitystä
 
 Starttaamo on hakenut nopeaa kehitystä web alustalle, joten kehityksen alkuvaiheessa 
 ei olla huomioitu mahdollista tarvetta käännöksille. 
@@ -970,63 +974,84 @@ Käännös järjestelmmän pitäisi olla laajennettavissa siten että sivustojen
 olisi mahdollisimman nopeaa ja helppoa.\\
 \medskip
 
+Keskitetty arkisto missä kaikki sivuston julkinen teksti auttaisi käännösten tekemistä tulevaisuudessa,
+sillä uusien kielien lisääminen ei vaatisi käyttöliittymä koodin muokkaamista.
+Tekstin etsiminen koodipohjasta ei ollut monimutkaista nykyisien tekstimuokkaustyökalujen haku ominaisuuksilla.
 
-% siirto keskitettyyn sijaintiin on tarepeellinen
-% vaatii että etsitään komponenteista tekstiä
-% ja siirretään tiedostoon josta etsitään jne
 
-
-% ?¿?¿?
-Sivustojen kääntäminen vaatii jokaisen julkisesti näkyvän tekstin etsimisen koodipohjasta, 
-joka ei normaalisti ole yksinkertaista projektissa, jossa komponentit on hajoitettu eri tiedostoihin.
-Mutta nykyisillä teksti muokkaustyökaluilla on ominaisuuksia joita käyttäen voi etsiä merkkijonoja projektista.
-%more?
 
 
 
 
 
 \subsection{Käytetty teknologia}
-Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
-Kaikkien julkisesti olevien teksien etsiminen ja vaihtaminen i18n käännös funktio kutsuihin.
-Käännös tiedoston luominen ja käännöksien laittaminen.
-\bigskip
 
+% vaatii tekemistä
+% eka kappale on kokonaan wip tekstiä
+% kuviin pitää referoida ennen niitä joten tekstin sijaintia pitää siirtää
+% muuten fine ehkä
+
+% pitää testata
+% kuulostaako tuo yksi kappale järkevältä
+
+
+% uusiks melkein kokonaan
+
+Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
+Kirjasto hakee käännökset käännöstiedostosta käännös funktion avulla.
+Kuvassa \nextImageCount{} on esimerkki käännös funktiosta.
+Kuvassa luodaan HTML paragraafi elementti, jossa kutsutaan käännösfunktiota. 
+funktio hakee käännöstiedoston progress sivulta progress arvon.\\
+\medskip
+
+\bigskip
 \includegraphics[width = 15cm]{src/public/oppar/translationcall.png}\\
 Kuva \getImgCount. {} i18n käännösfunktiokutsu (ehkä uusi kuva)
 \medskip
 
-kuvassa luodaan HTML paragraafi elementti jossa kutsutaan käännösfunktiota. funktio hakee käännöstiedoston progress sivulta progress arvon.
-\bigskip
 
-\includegraphics[width = 15cm]{src/public/oppar/translationfile.png}\\
-Kuva \getImgCount. {} progressiosivun käännökset suomenkieliseltä käännöstiedostosta
+% emt onko incoherent
+
+I18n kirjasto tukee montaa käännöstiedosto formaattia mutta päätin kirjoittaa ne JSON muotoon.
+Kuvassa \nextImageCount{} on progressio sivun suomenkieliset käännökset ja kuvassa {\the\numexpr \theimgCounter + 2 } on saman sivun englannin kieliset käännökset.
+Jokaisella sovelluksen sivulla on oma objekti, joka sisältää sen sivun julkisen tekstin. 
+% en tiedä onko järkevän kuuloista
+Avaimet tekstille on valmiiksi päätetyt muuttuja nimet, jotka kuvaavat käännöksen tarkoitusta.
+Kun käyttäjä vaihtaa halutun kielen i18n osoittaa toiseen käännös tiedostoon, 
+jossa on samat avaimet käännöksille mutta arvot ovat vaihtuneet kyseisen kielen käännöksiin.
 \medskip
 
-kuvassa progressio sivun käännökset. käännös tiedoston on json formaatissa joten sivut ovat omia objekteja. 
-niiden ominaisuudet ovat avaimia mitä käytetään kun haetaan käännöksiä ja arvot ovat julkinen teksi.
-Kuvassa \nextImageCount {} On Sama kohta käännöstiedostosta mutta englannin kielisestä.
+
 \bigskip
+\includegraphics[width = 15cm]{src/public/oppar/translationfile.png}\\
+Kuva \getImgCount. {} Progressiosivun suomenkielinen käännöstiedosto 
+\medskip
 
 
+\bigskip
 \includegraphics[width = 15cm]{src/public/oppar/translationfileEng.png}\\
-Kuva \getImgCount {}. progressiosivun käännökset englanninkielisestä käännöstiedostosta(ehkä uusi kuva)
+Kuva \getImgCount {}. Progressiosivun englanninkielinen käännöstiedostosta
 \medskip
 
 
 
 
 \subsection{käyttöliittymä kielenvaihamiselle}
-% tämän kappaleen voisi poistaa. 
-% lisätä tää toiseen kappaleeseen tai sitten poistaa kokonaan
-
 
 %lisäsin sivulle, tosin kun sivulle on lisätty
-Sivulle on myös lisätty laskuvalikko kielen vaihtamiselle. 
-Kielet kuvataan lippuina laskuvalikossa.
-Liput toimivat nopeina visuaalisina vihjeinä, jotka auttavat käyttäjiä tunnistamaan haluamansa kielen.
-kuvassa \nextImageCount.
 
+Sovellukseen on myös lisätty kuvan \nextImageCount{} laskuvalikko kielen vaihtamiselle. 
+Kielet kuvataan lippuina laskuvalikossa,
+sillä ne toimivat nopeina visuaalisina vihjeinä, jotka auttavat käyttäjiä tunnistamaan haluamansa kielen.
+Laskuvalikko on näkyvissä sovelluksen kaikilla sivuilla, joten se on aina saatavilla.
+\medskip
+
+
+
+Laskuvalikon komponentti päivittää sovelluksen korkeamman React root komponentin kun käyttäjä on vaihtanut kielen.
+Tällöin varmistetaan että kaikki sivuilla oleva teksti vaihtuu oikeaan kieleen.
+%jotain pikkusen lisää
+\medskip
 
 
 \bigskip
@@ -1034,13 +1059,7 @@ kuvassa \nextImageCount.
 Kuva \getImgCount {}. Kielen vaihto laskuvalikko
 
 
-\subsection{wip title kaksi}
-Sovelluksen kaikki julkisesti oleva teksi on siirretty käännös tiedostoihin. 
-Tämä luo keskitetyn sijainnin josta voi helposti etsiä ja korjata kirjoitus virheitä ja lisäämään uusia lauseita ja sanoja.
-uuden kielen lisääminen vaatii uuden käännöstiedoston luomisen ja käännös arvojen asettelun tiedostoon.
-\medskip
 
-% saadaanko jotain lisää kirjoitettua ns "yhteenvetoon"
 
 
 

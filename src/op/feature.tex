@@ -1,24 +1,31 @@
 
 
 \subsection{Alkuperäinen ominaisuus ja parannus kohteet}
-%selitys mykyisestä sivusta ja featuresta. ja mihin se pitää muokata
+
+%toinen kappale pitää muokata
+
+% ominaisuuden yhteenveto pitää lisätä tekstiä ellei se siirretä kokonaan koko yhteenvetoon
 
 
-Sovelluksessa on "Progressio"{} niminen ominaisuus. 
-Ominaisuus antaa mahdollisuuden määrittää käyttäjälle, jokin "mitattava"{} arvo.
-Kuvassa \nextImageCount {} näkyy on progressio sivu, täältä käyttäjä voi merkata ja seurata kyseistä mitattavaa arvoa.
+
+Sovelluksen  "Progressio"{} sivulla om ominaisuus, 
+joka antaa mahdollisuuden käyttäjälle seurata ja tellettaa hänelle annettua "mitattavaa"{} arvoa.
+Kuvassa \nextImageCount {} näkyy on progressio sivu, 
+ja siitä Käyttäjä pystyy valitsemaan miltä päivältä arvo on otettu ja mikä itse arvo on.
+\medskip
 
 \bigskip
-
-
 \includegraphics[width =15cm]{src/public/progressiosingle.png}\\
 Kuva \getImgCount {}. Progressio sivu (tarvitsee paremman kuvan)
 \medskip
 
-Kuvassa \theimgCounter {} mitataan painoa kg:na. Käyttäjä pystyy valitsemaan miltä päivältä arvo on otettu ja mikä itse arvo on.
-% asiakieli työnanataja haluaa
-Työnanataja haluaa, että käyttäjälle voisi määritellä useamman mitattavan arvon ja, 
-että Progressio sivulta käyttäjä pystyisi seuraamaan ja tallentamaan useampia eri mittausarvoja.
+
+% pitää muokata sanoitusta että se olisi järkevä
+
+Kuvassa \theimgCounter {} mitattava arvo on paino. 
+% 
+Tällä hetkellä käyttäjälle voi määrittää vain yhden mitattavan arvon, jota seurata.
+Sain tehtäväksi laajentaa ominaisuutta siten että käyttäjälle voi määrittää useamman mitattavan arvon.
 \medskip
 
 
@@ -27,10 +34,11 @@ Kuvassa \nextImageCount {} on esimerkki käyttäjä profiilin skeemasta JSON muo
 Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattavan arvon seurantaan, joten se pitäisi vaihtaa.
 %mainitse paremmin mongo nosql dokumentti
 Koska käytössä on nosql dokumentti voimme vaihtaa "measurableThing"{} merkkijonon, "measurableThings"{} merkkijono listaan.
+\medskip
+
+
 \bigskip
-
-
-
+imageofthething\\
 Kuva \getImgCount {}. Käyttäjä profiilin skeema
 \medskip
 
@@ -51,35 +59,39 @@ Kuva \getImgCount {}. Käyttäjä profiilin skeema
 
 \subsubsection{Käyttäjä profiili skeeman migraatio}
 
-% tiukka skaama
-MongoDB:n NoSql dokumentti ei määritä tiukkaa skeemaa joten käyttäjien skeemat voivat olla eriävät.
+
+
+Käyttänän mitattavan arvon vaihtaminen listaan vaatii käyttäjän skeeman muutoksen.
+MongoDB:n NoSql dokumentti ei määritä tiukkaa skeemaa, joten käyttäjien skeemat voivat olla eriävät.
 Skeeman muutos vaatii jokaisen käyttäjän profiilin muokkaamista haluttuun muotoon.
-Käyttäjä profiilin skeeman muutos pitää tehdä kaikille aktiivisille käyttäjille, käyttäjän luonnissa pitää myös muokata siten, 
+Käyttäjä profiilin skeeman muutos pitää tehdä kaikille aktiivisille käyttäjille, käyttäjän luontia pitää myös muokata siten, 
 että uudet käyttäjän alkaisivat käyttämään uutta skeemaa.
-%selitä paremmin
-Projektissa on myös käytössä ominaisuus tarkastus rajapinnoissa ettei mongodb kantaan voida tallettaa tietoa jota sinne ei haluta.
-%api muutos
 \medskip
 
-%selitys migraatio prosessista. teoriaa migraatiosta myös.
-Migraatio tehdään migraatio kuvan \nextImageCount {} migraatio funktiolla. 
+MongoDB antaa tallettaa mitä tahansa sen tietokantaan, joten projektissa on omat tyyppitarkastukset MongoDB rajapinnoissa, 
+ettei virheelliset kirjoitus ohjeet talleta mitään tietokantaa.
+%api muutos 
+Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeemaan.
+\medskip
+
+Migraatio tehdään kuvan \nextImageCount {} migraatio funktiolla. 
 Funktio käy läpi kaikki käyttäjät jolla measurableThing ominaisuus on olemassa ja päivittää sen measurableThings listaan.
 %mnnm
 Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkroonisesti palvelimella. 
 Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen sen ajaksi kun käyttäjä profiileja päivitettäisiin.
 Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkroonisesti, 
 jolloin käyttäjiä migraoitaisiin pikkuhiljaa.
-
-
-\bigskip
-
-kuva migraatio funktiosta
 \medskip
 
+
 \bigskip
+Kuva \getImgCount{}. Migraatio funktio
+\medskip
 
 
-kuva uudesta skeemasta
+% en tiedä tarvitaanko tätä kuvaa. siihen pitäisi refrensoida ennen
+\bigskip
+Kuva \getImgCount{}. Uusi käyttäjä skeema
 \medskip
 
 
@@ -92,35 +104,41 @@ kuva uudesta skeemasta
 
 \subsubsection{Käyttöliittymä}
 
-Käyttöliittymää pitää muokata siten,
+%kappaleisiin voisi lisätä pari lausetta lisää
+
+
+
+
+Käyttöliittymiä pitää muokata tukemaan ominaisuutta.
+Käyttäjän luonti ja päivitys sivua pitää muokata siten, että käyttäjille voidaan antaa useita mitattavia arvoja.
+Käyttäjän käyttöliittymää pitää muokata siten,
 että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mihin mitattavaan arvoon hän haluaa tallentaa lukemia.
+%more
+\medskip
 
-Käyttöliittymä pitää muokata sopivaksi skeema muutoksien kanssa. 
-%more words
+Kuvassa \nextImageCount{} on käyttäjäpuolen käyttöliittymä muutoksien jälkeen.
+Käyttöliittymässä käyttäjällä on mahdollisuus valita mihin mitattavaan suurteeseen hän haluaa tallettaa arvoja kuvan {\the\numexpr \theimgCounter + 2 } laskuvalikolla.
+% more words or fix something
+Sivun kaavioon on myös lisätty mahdollisuus seurata monta mitattavaa arvoa.
+\medskip
+
 \bigskip
-
-
 \includegraphics[width = 15cm]{src/public/progressmulti.png}\\
 Kuva \getImgCount {}. Käyttäjän käyttöliittymä, muutoksien jälkeen 
 \medskip
 
-Käyttöliittymässä käyttäjällä on mahdollisuus valita mihin mitattavaan suurteeseen hän haluaa tallettaa arvoja kuvan \nextImageCount{} laskuvalikolla.
-Kaavioon on lisätty uudet mitattavat arvot. 
-%jotain kaaviosta ja siihen datan lisäämisestä
-%more words
 \bigskip
-
 \includegraphics{src/public/progressselect.png}\\
 Kuva \getImgCount {}. käyttöliittymän laskkuvalikosta
 \medskip
 
 
 
-Kuvassa \nextImageCount {} on päivitetty käyttäjän luomis käyttöliittymä.
+Kuvassa \nextImageCount {} on päivitetty käyttäjän luomis ja päivitys käyttöliittymä.
 Käyttöliittymään on lisätty nappi, josta voi lisätä, nimetä ja poistaa mitattavia suureita käyttäjälle.
 %selitä paremmin että voi uudelleen käyttää komponenttia. tarviin jonkun sanan tolle yhdistelmälle
-Tekstikenttä ja poisto nappi on sisällytetty React komponenttiin "MeasurableThingElement". 
-Tämä antaa mahdollisuuden lisätä uusia kenttiä napista, tekemällä uuden instanssin komponentista.
+Tekstikenttä ja poisto nappi on sisällytetty kuvan {\the\numexpr \theimgCounter + 2 } React komponenttiin "MeasurableThingElement". 
+Tämä antaa mahdollisuuden lisätä uusia kenttiä, tekemällä uuden instanssin komponentista.
 %
 
 \bigskip
@@ -139,6 +157,8 @@ Poinsto funktiota kutsutaan kun painetaan punaista X nappia ja se poistaa mitatt
 \medskip
 
 
+\iffalse
+% tämä on väärässä paikassa.  tai poistetaan kokonaan
 Entisessä käyttöliittymässä kuvassa \nextImageCount {} on vain yksi teksti kenttä, josta pystyi muuttamaan measurableThing ominaisuuden nimeä.
 
 %toinen paragraafi
@@ -149,6 +169,7 @@ Entisessä käyttöliittymässä kuvassa \nextImageCount {} on vain yksi teksti 
 Kuva \getImgCount {}. Käyttäjän luomis käyttöliittymä ennen muutoksia (cencor roles?)
 \medskip
 
+\fi
 
 
 
@@ -160,15 +181,17 @@ Kuva \getImgCount {}. Käyttäjän luomis käyttöliittymä ennen muutoksia (cen
 
 \subsection{Ominaisuuden lopputulos ja käyttöönotto}
 
+% vaatii vähän lisää tekstiä
+
 
 Käyttäjä profiilin skeeman migratointi meni onglemitta.
-Riskit käyttäjien migraatiossa olisi voinut välttää ottamalla varmuuskopio tietokannasta ennen migraatiota.
-%more ab migraion
+Riskit käyttäjien skeeman migraation epäonnistummisessa olisi voinut välttää ottamalla varmuuskopio tietokannasta ennen migraatiota.
+%more 
 \medskip
 
 Ominaisuus toimi käyttöönoton jälkeen ja kaikki käyttäjät saivat ominaisuuden käyttöön.
 Käyttäjät pystyi tallentamaan useamman mitattavan arvon ja näkemään tulokset kaaviossa.
 Viikko ominaisuuden käyttöönoton jälkeen testiryhmältä ei tullut palautetta, että ominaisuus ei olisi toiminut.
-käyttöliittymästän toiminnasta tai sen ulkonäöstä ei myöskään tullut palautetta sen jälkeen kun se oltiin käyttöönotettu. 
+käyttöliittymästän toiminnasta tai sen ulkonäöstä ei myöskään tullut palautetta sen käyttöönoton jälkeen.
 \medskip
 
