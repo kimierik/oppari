@@ -31,12 +31,12 @@
 
 
 %sources are cited above
-MongoDB on NoSQL(eng "non sql"{} tai "not only sql"{}) dokumenttipohjainen tietokannan hallintaohjelma, joka on MongoDB Inc:in valmistama ja ylläpitämä.
-Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa, ja se tarjoaa suuren suorituskyvyn, korkean käytettävyyden ja helpon skaalautuvuuden. \citemissing
+MongoDB on NoSQL (eng "non sql"{} tai "not only sql"{}) dokumenttipohjainen tietokannan hallintaohjelma, joka on MongoDB Inc:in valmistama ja ylläpitämä.
+Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa, ja se tarjoaa suuren suorituskyvyn, korkean käytettävyyden ja helpon skaalautuvuuden\labciteend{alexander23}
 \medskip
 
 MongoDB tallentaa tiedot joustaviin, JSON-tyyppisiin dokumentteihin, mikä tarkoittaa, että kentät voivat vaihdella dokumentista toiseen ja tietorakennetta voidaan muuttaa ajan myötä. \labcite{mongodb24a}
-Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksissa, koska se pystyy hallitsemaan erityyppisiä tietoja ilman kiinteää skeemaa.\labcite{mongodb24b}
+Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksissa, koska se pystyy hallitsemaan erityyppisiä tietoja ilman kiinteää skeemaa\labciteend{mongodb24b}
 \medskip
 
 
@@ -66,7 +66,7 @@ kuten keskusmuistin tai prosessorin päivitystä, kasvataen järjestelmän kuorm
 Horisonttaali skaalaus käsittää koneiden ja järjestelmien lisäämistä, jotka pystyy jakamaan kuorman usean palvelimen välillä.
 Tämä tuo myös lisä turvaa sillä jos järjestelmä tai sovellus kaatuaa palvelinvian takia, 
 toinen palvelin voi tuurata sitä. \labcite{lenovo}
-Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuskiin, jotka toimivat horisonttaalisella skaalautumisella. \citemissing
+Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuskiin, jotka toimivat horisonttaalisella skaalautumisella.\labcite{mongodb24j} 
 \medskip
 
 
@@ -135,6 +135,7 @@ yksityiskohtia siitä mitkä osat tietokannasta on tallennettu mihinkin shardeih
 ja tietoja osien tasapainottamisesta shardien välillä tietojen tasaisen jakautumisen varmistamiseksi.\labcite{mongodb24h}
 
 
+\iffalse
 
 \subsubsection{Nosql Dokumentti}
 %tätä ei olla kirjoitettu melkein yhtään eteempoäin ja se vaatii lisää tekstiä jos siitä kirjoitetaan
@@ -156,6 +157,7 @@ dokumentti pohjainen tietokanta, jota mongodb käyttää, tallettaa tiedot jossa
 MongoDB tallettaa tiedont BSON muodossa, joka on binaari edustus JSON formaatista.\labcite{mongodb24a}
 tietokannasta dokumentteja voi hakea niiden uniikkien tunnisteiden tai sisällön arvojen perusteella
 \medskip
+\fi
 
 
 

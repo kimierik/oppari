@@ -1,6 +1,6 @@
 
+% osittain tarvitsee lisää tekstiä
 
-%ei varmaan saa olla kymy
 \subsubsection{React Yleisesti}
 
 
@@ -37,7 +37,9 @@ Komponenteista voidaan sitten koota monimutkaisia käyttöliittymimä.
 
 
 Komponentit voidaan kirjoitetaa JSX syntaksilla, joka mahdollistaa HTML tyylisen kirjoituksen JavaScriptin sekaan.
-Tämä tekee React:ista helppo luettavan, ymmärrettävän ja opittavan, joka on auttanut nostamaan reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.\labcite{statista23a}
+%opittavan?
+Tämä tekee React:ista helppo luettavan, ymmärrettävän ja opittavan,
+joka on auttanut nostamaan reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.\labcite{statista23a}
 \medskip
 
 
@@ -72,27 +74,44 @@ Tämä tekee React:ista helppo luettavan, ymmärrettävän ja opittavan, joka on
 
 
 
-%html koodia uusiks syntaxia?
-JSX (eng javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä syntaksia javascriptin sekaan, tekien koodista yksinkertaisempaa ja helpompaa ymmärtää. \labcite{Stephen21}
-% suora sitaatti https://facebook.github.io/jsx/ 
-JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä, vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle.\labcite{Facebook22}
+JSX (eng javascript XML) on sytaksi jatke javascriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä syntaksia javascriptin sekaan,
+tekien koodista yksinkertaisempaa ja helpompaa ymmärtää\labciteend{Stephen21}
+JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä,
+vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle\labciteend{Facebook22}
 \medskip
+
+
+
+% tämä on jotenkin scuffed. se pitäisi kirjoittaa kokonaan eri tavalla%
+% en tykkää että tehdään muuttuja. (se on muutenkin const)
+%  en kyllä tiedä mikä muu se voisi olla
+
+% muutenkin pitäisi varmaan liimata jsx paremmin tähän paragraafiin
+
 
 %muuttuja vois vaihtaa. johonkin toiseen suomalaiseen sanaan
 Kuvassa \nextImageCount{} luodaan muuttuja helloWorld, jolle annetaan arvoksi HTML "p"{} elementti, jossa teksti "Hello, World!"{}.
 % koko juttu uusiks ja paremmin kirjoitettua
-Muuttujien arvot voidaan kirjoittaa HTML tyylillä, tekien monimutkaisten elementtien rakentamisesta yksinkertaista.
+Muuttujien arvot voidaan kirjoittaa HTML tyylisellä JSX syntaksilla, tekien monimutkaisten elementtien rakentamisesta yksinkertaista.
 \medskip
+
+
 
 \bigskip
 \includegraphics[width=10cm]{src/public/oppar/pure_jsx_example.png}\\
-Kuva \getImgCount {}. esimerki JSX syntaxista
+Kuva \getImgCount {}. Esimerki JSX syntaxista
 \medskip
 
 
-Kuvassa \nextImageCount{} on kuvan \theimgCounter{} helloworld muuttuja, joka on käännetty natiiviksi JavaScriptiksi babel kääntäjää käyttäen. \labcite{babel24}
+
+% tämäkin on vähän scuffed sillä kuvan alla puhutaan jo seuraavasta kuvasta eikä mainita muuttaa
+% en tiedä onko tämä oiikeaa tyyliä
+%  voisi mainita uudelleen että selain ei voi suorittaa jsx joten asialle pitää tehdä jotain jos halutaan että toimii
+% sitten mainita seuraavasta kuvasta ja jne
+
+Sillä selaimet eivät voi tulkita JSX syntaksia, se pitää transpiloida natiiviin JavaScriptiin.
+Kuvassa \nextImageCount{} on kuvan \theimgCounter{} helloworld muuttuja, joka on transpiloitu natiiviksi JavaScriptiksi babel kääntäjää käyttäen. \labcite{babel24}
 Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjoitettu JSX syntaksilla.
-%jotain lisää tekstiä
 \medskip
 
 
@@ -118,9 +137,16 @@ Kuva \getImgCount {}. Kuvan \prevImageCount{} JSX transpiloitu JavaScriptiin
 %https://react.dev/learn/your-first-component
 
 
+
+
+%tarvitsee korjailua
+
 Komponentti on oma pieni kokoonpano, joka sisältää sen ulkonäön ja käyttäytymisen.
-Komponentit ovat olennainen rakennusosa React sovelluksissa. Reactissa Komponentit voivat olla tilallisia tai tilattomia. 
+Komponentit ovat olennainen rakennusosa React sovelluksissa.
+Reactissa Komponentit voivat olla tilallisia tai tilattomia. 
 \medskip
+
+
 
 %
 Tilaton komponentti ei sisällä omaa tilaa. 
@@ -136,8 +162,15 @@ Tilalliset komponentit ovat hyvä silloin kun pitää säilyttää käyttöliitt
 \medskip
 
 
+
+
+%tähän voisi periaatteessa liimata sen preamblen tosta luokkakomponentti kohdasta
+% sitten olisi tarpeeksi tekstiä tässä ja se voisi olla vähän tiivimmän näköinen
+
+
+
 %tarvitsee ainakin yhden lausekkeen lisää
-React tukee kahta tapaa luoda komponentteja. Luokkakomponentti ja funktiokomponentti.\citemissing
+React tukee kahta tapaa luoda komponentteja. Luokkakomponentti ja funktiokomponentti.\labciteend{react24c}
 Kuvassa \nextImageCount {} on esimerkki tilallisesta funktiokomponentista.
 %molemmat toimii jotain lorem
 \medskip
