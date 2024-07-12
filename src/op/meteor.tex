@@ -8,6 +8,7 @@
 % eli kaikki pitää siirtää vähän
 % nämä muutokset pitäisi tehdä kun kaikki sitaatit on lisätty missing sitateista
 % kappale ennen listaa pitää kirjoittaa uudelleen sillä se on huono
+% viimeinen kappale build system pitää suomentaa 
 
 
 
@@ -19,60 +20,39 @@
 
 
 
-
-
-
-Meteor on full-stack JavaScript web-framework ja on itsessään avoimeen lähdekkoodiin perustuva \labciteend{meteor24b}{}
-% poislukien on vähän scuffed imo
-Poislukien meteorin mukaan paketoimaa MongoDB tietokantaa, joka toimii Server Side Public Lisenssillä.\labciteend{mongodb24i}
-Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyttöönottoon ja se mahdollistaa isomorphiseen koodin kirjoittamisen, 
-eli koodiin, joka on samanlaista palvelimella kuten clientillä.\labcite{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
+MeteorJS on avoimeen lähdekoodiin perustuva full-stack JavaScript web-framework, joka on 
+suunniteltu nopeaan käyttöönottoon ja kehittämiseen eri laitteille \labciteend{meteor24b}
+Meteor mahdollistaa isomorphiseen koodin kirjoittamisen, eli koodiin, joka on samanlaista palvelimella kuten clientillä.\labcite{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
+% outo aloittaa taas meteorilla
 Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular \labciteend{meteor24a}{}
 Tämä antaa lisä joustoa Meteorille sillä se antaa mahdollisuuden monelle sovelluskehittäjälle joilla ei ole kokemusta tietystä front-end teknologiasta.
 \medskip
 
 
-%
-% asio ok mut kirjota paremmin ja uusiks varm gpt on ok täs vaihees
-% asia ei ole ok tässä pitää selittää enemmän isomorphisesta jos selitäteään mitään. tosin voi poistaa jos halutaan
-% paremmin alku. plus se että se on fullstack ei tarkoita sitä että sen mukana aina tulee palvelin. meteor päätti laittaa palvelimen samalla käynnistymää. plus se että se on fullstack ei tarkoita sitä että sen mukana aina tulee palvelin. meteor päätti laittaa palvelimen samalla käynnistymään
-Meteor on fullstack, joten kun sen käynnistää se käynnistää samalla palvelimen ja clientin.
-Tiedostorakenteessa on erityks kansioita kuten server ja client jota käyttäen Meteor tietää mitä koodia pitää ladata clientille ja mitä palvelimelle.
-%more text
-\medskip
-
-
 
     
-% https://www.meteor.com/
-% viitattu 28.5
 
 % tukee sana pitää vaihtaa sillä me käytetään sitä itemeissä
 Lisäksi Meteor tukee monta ominaisuutta \labcite{meteor24a}:
 \begin{itemize}
     \item Tukee monta Front-end kirjastoa ja frameworkkkia
     \item Tukee Typescriptiä
-    \item Sisään rakennettu käyttäjä systeemi
+    \item Sisään rakennettu käyttäjä paketti
     \item Toimii monella laitteella
     \item Helppo ja nopea käyttöönottaa 
 \end{itemize}
 \medskip
 
 
-Meteor paketoi mukaansa käyttäjä paketin, jota käyttäen kehitäjä voi nopeasti luoda authentikaatio järjestelmän.
-Käyttäjä paketti antaa helpon integraation muiden kirjautumis palvelujen kanssa kuten facebook, github, google ym.
+
+Meteorin nopea käyttöönotto on osa johtuen sen paketti järjestelmästä ja valmiiksi paketoiduista paketeista, kuten Meteorin käyttäjät paketti. 
+Käyttäjä paketin avusta kehitäjä voi nopeasti luoda authentikaatio järjestelmän,
+joka antaa helpon integraation muiden kirjautumis palvelujen kanssa kuten facebook, github, google ym.
 Käyttäjä paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten metodeihin. \labcite{meteor24c}
-%maby more txt
 
 
 
 \subsubsection{Meteor metodit}
-
-%ensimmäinen kappale pitää kirjoittaa uusiks. siinä ei ole tarpeeksi tekstiä eikä siinä selitetä kaikkea mitä siinä pitää selittää
-
-% https://www.ibm.com/docs/en/aix/7.2?topic=call-rpc-model
-% 2.7 
-% tätä voi sitatoida rpc hommissa
 
 % toinen kappale
 % metodi tekee koodista yksinkertaisemman. metodi tekee rajapinnasta helpomman lukea sillä
@@ -84,23 +64,18 @@ Meteor käyttää Etäkäsittelykutsu (eng Remote procedure call) rajapintaa per
 Etäkäsittelykutsussa mallissa asiakasohjelma lähettää palvelinohjelmalle kutsuviestin.
 Palvelinohjelma käsittelee kutsuviestin ja suorittaa halutun toiminnon ja palauttaa vastaviestin asiakasohjelmalle.\labcite{ibm23}
 Meteorin metodit ominaisuus toimii Etäkäsittelykutsu rajapintana clientin ja palvelimen välillä. 
-Tämä antaa clientin mahdollisuuden kutsua palvelimelta funktioita Meteorin kautta.
 \medskip
 
 
-% metodit tekee koodista yksinkertaisempaa
+% metodit tekee koodista yksinkertaisempaa... jotenkin outo
 
-
-% clunk af
-Metodit määritetään palvelimella, kuvassa \nextImageCount{} on esimerkki metodin määritelmästä.
-%
+Meteor metodit ovat palvelimella määriteltyjä funktioita, joita pystytään kutsumaan Meteorin kautta clientiltä tai palvelimelta. 
+Kuvassa \nextImageCount{} on esimerkki Meteor metodin määritelmästä.
 %
 %selitä yksinkertaisemman eri tavalla
 Metodit tekee myös käyttöliittymä koodista yksinkertaisemman, 
-sillä metodien rpc malli poistää käyttöliittymä koodista tarpeen tehdä get ja post requesteja palvelimelle. 
+sillä metodien rpc malli poistaa käyttöliittymä koodista tarpeen tehdä GET tai POST requesteja palvelimelle.
 %
-%
-Ja koska metodi kutsu on myös isomorphinen, metodeja on helppo uudelleen käyttää palvelimella.
 Metodi funktio käyttää JavaScriptin "this"{} ominaisuutta. 
 Sitä käyttäen metodiin voidaan antaa kontekstia kutsujasta.
 Tässä kontekstissa voi nähdä esimerkiksi onko kutsuja kirjautunut sisään, tai onko kutsujalla oikeat oikeudet kutsua metodia, 
@@ -111,28 +86,25 @@ helpottaen turvallisuuden lisäämista rajapintaan.
 Kuva \getImgCount {}. Meteor metodin määritelmä
 \medskip
 
-% onko tässä passiivi rike jossain
-Kuvassa on meteor metodin määritelmä. "exampleMethod"{} metodi katsoo, onko "this"{} ominaisuudessa käyttäjä tunnusta, näin voimme tietää onko kutsuja kirjautunut sisään,
-jos käyttäjä ei ole kirjautunut sisään heitetään error viesti, joka välitetään kutsujalle.
-Jos käyttäjä on kirjautunut sisään tulostetaan argumentit. 
+Kuvassa on Meteor metodin määritelmä. "exampleMethod"{} metodi katsoo, onko "this"{} ominaisuudessa käyttäjä tunnusta, 
+näin metodi voi tietää onko kutsuja kirjautunut sisään,
+jos käyttäjä ei ole kirjautunut sisään funktio heittää virheen, joka välitetään kutsujalle.
+Jos käyttäjä on kirjautunut sisään tulostetaan argumentit objekti. 
 \medskip
 
 
+%voidaan myös laittaa kuva metodi kutsusta jos halutaan
 
 
 \subsubsection{Meteor ecosysteemi}
 
-
-% eka kappale pitää vain kirjoittaa vähän paremmin muuten ok
-%
 %build system pitää vissii vähä paremmin selittää...
 % sdelitetäänkö build system vai.... vaihdetaanko sana johonkin toiseen vaa
 
 
-% yhdistä lauseet paremmin, elä aloita jokainen lause Meteor sanalla
 Meteor ylläpitää omaa paketointi ecosysteemiään, nämä
 paketit ovat isomorphisia, eli ne toimivat palvelimella ja clientillä \labciteend{pranav17}{}
-Meteorilla on ensimmäisen osapuolen paketteja, joita itse meteor tiimi ylläpitää ja kolmannen osapuolen paketteja,
+Meteorilla on ensimmäisen osapuolen paketteja, joita itse Meteor tiimi ylläpitää ja kolmannen osapuolen paketteja,
 joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin paketti palvelimelle Athmosphere:lle. \labcite{sanders15}
 \medskip
 
