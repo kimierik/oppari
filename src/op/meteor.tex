@@ -3,27 +3,36 @@
 
 
 \subsubsection{Meteor yleisesti}
+% TODO
 % sitatatti order kussee.. tässä sitatoidaan meteor b sitatoidaan ekaks ja tässä sitatoidaan mongo i kun senkin pitäisi olla mongo a
 % eli kaikki pitää siirtää vähän
 % nämä muutokset pitäisi tehdä kun kaikki sitaatit on lisätty missing sitateista
+% kappale ennen listaa pitää kirjoittaa uudelleen sillä se on huono
+
+
+
 
 %iso morphic src jos ei käy niin käytä tätä
 %https://web.archive.org/web/20221206181248/https://old.gigaom.com/2014/12/27/meteor-wants-to-be-the-warp-drive-for-building-real-time-apps/
 % Jonathan Vanian
 
-%
+
+
+
 
 
 
 Meteor on full-stack JavaScript web-framework ja on itsessään avoimeen lähdekkoodiin perustuva \labciteend{meteor24b}{}
 % poislukien on vähän scuffed imo
-Poislukien meteorin mukaan paketoimaa mongodb tietokantaa, joka toimii Server Side Public Lisenssillä.\labciteend{mongodb24i}
+Poislukien meteorin mukaan paketoimaa MongoDB tietokantaa, joka toimii Server Side Public Lisenssillä.\labciteend{mongodb24i}
 Meteor on suunniteltu nopeaan kehittämiseen monelle laitteille ja nopeaan käyttöönottoon ja se mahdollistaa isomorphiseen koodin kirjoittamisen, 
-eli koodiin joka on samanlaista palvelimella kuten clientillä.\labcite{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
+eli koodiin, joka on samanlaista palvelimella kuten clientillä.\labcite{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
 Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular \labciteend{meteor24a}{}
 Tämä antaa lisä joustoa Meteorille sillä se antaa mahdollisuuden monelle sovelluskehittäjälle joilla ei ole kokemusta tietystä front-end teknologiasta.
 \medskip
 
+
+%
 % asio ok mut kirjota paremmin ja uusiks varm gpt on ok täs vaihees
 % asia ei ole ok tässä pitää selittää enemmän isomorphisesta jos selitäteään mitään. tosin voi poistaa jos halutaan
 % paremmin alku. plus se että se on fullstack ei tarkoita sitä että sen mukana aina tulee palvelin. meteor päätti laittaa palvelimen samalla käynnistymää. plus se että se on fullstack ei tarkoita sitä että sen mukana aina tulee palvelin. meteor päätti laittaa palvelimen samalla käynnistymään
@@ -50,7 +59,7 @@ Lisäksi Meteor tukee monta ominaisuutta \labcite{meteor24a}:
 \medskip
 
 
-Meteor paketoi mukaansa käyttäjä paketin jota käyttäen kehitäjä voi nopeasti luoda authentikaatio järjestelmän.
+Meteor paketoi mukaansa käyttäjä paketin, jota käyttäen kehitäjä voi nopeasti luoda authentikaatio järjestelmän.
 Käyttäjä paketti antaa helpon integraation muiden kirjautumis palvelujen kanssa kuten facebook, github, google ym.
 Käyttäjä paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten metodeihin. \labcite{meteor24c}
 %maby more txt
@@ -81,9 +90,16 @@ Tämä antaa clientin mahdollisuuden kutsua palvelimelta funktioita Meteorin kau
 
 % metodit tekee koodista yksinkertaisempaa
 
-Metodit määritetään ja suoritetaan palvelimella kuten kuvassa \nextImageCount.
+
+% clunk af
+Metodit määritetään palvelimella, kuvassa \nextImageCount{} on esimerkki metodin määritelmästä.
+%
+%
 %selitä yksinkertaisemman eri tavalla
-Metodit tekee myös koodista yksinkertaisemman sillä clientin ei tarvitse tehdä GET tai POST requesteja palvelimelle, kun halutaan palvelimen tehdä jotain. 
+Metodit tekee myös käyttöliittymä koodista yksinkertaisemman, 
+sillä metodien rpc malli poistää käyttöliittymä koodista tarpeen tehdä get ja post requesteja palvelimelle. 
+%
+%
 Ja koska metodi kutsu on myös isomorphinen, metodeja on helppo uudelleen käyttää palvelimella.
 Metodi funktio käyttää JavaScriptin "this"{} ominaisuutta. 
 Sitä käyttäen metodiin voidaan antaa kontekstia kutsujasta.
