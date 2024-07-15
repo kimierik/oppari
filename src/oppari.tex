@@ -96,12 +96,16 @@
 
 
 \renewcommand{\contentsname}{Sisällys} % override Contents => Sisallys on table of contents
+\renewcommand{\cftsecpagefont}{\normalfont} %remove section bold font in toc
+\renewcommand{\cftsecfont}{\normalfont}% remove section bold font in toc
+\setlength{\cftbeforesecskip}{0px} % remove weird vfill between toc sections
+
 
 \renewcommand{\familydefault}{\sfdefault} % set font
 
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % dots for sections
 
-\renewcommand{\bibsection}{\section{Lähteet}}
+\renewcommand{\bibsection}{\section{Lähteet}} % bibbliio name on lähteet sectio
 
 \setlength{\headheight}{13.6pt}
 
@@ -381,22 +385,25 @@ client = asiakasohjelma
 
 
 
-Teknologia ala on nopeasti liikkuva, uusien teknologioiden kehittyessä vanhat teknologiat poistyvat käytöstä.
+Teknologia ala on nopeasti liikkuva, uusien teknologioiden kehittyessä vanhat teknologiat poistuvat käytöstä.
 Alan-ammattilaisen pitää pysyä valppaana, ja aktiivisesti opiskella uusia teknologioita, 
-että hän pystyisi pysymään ajantasalla nykyisistä industry trendeistä.
+että hän pystyisi pysymään ajantasalla nykyisistä alan suuntauksista.
+Uudet työkalut ohjelmointikiele 
 %needs more
 \medskip
 
 
 
 % ei mainita liitettä tässä. sanotaan vaan että on päiväkirja mainen ja että on seurantajakso 
+
 %eli kokonaan alusta ja uusiks
-Opinnäitetyö on kirjoitettu päiväkirja mallisesti
-ja ennen opinnäytettyön kirjoittamista suoritettiin 13 viikon seurantajakso, jossa
-% mitä tehtiin uusiks
-kirjattiin ja (jotain) mitä tehtiin ja mitä opittiin viikoittan.
+Opinnäitetyö on kirjoitettu päiväkirja mallilla
+ja ennen opinnäytettyön kirjoittamista suoritettiin 13 viikon seurantajakso, jolloin
+kirjasin minkä teknologian kanssa työskentelin ja mitä tein ja opin viikon aikana.
 % selitys siitä miksi tämä on hyvä ja miten se liittyy ylempääänn kappaleeseen
-Tämä antaa hyvän silmäyksen työskentelemisestä ohjelmistokehittäjänä ja haasteista mitkä ilmeentyvät päivittäin.
+Päiväkirja antaa hyvän silmäyksen työskentelemisestä ohjelmistokehittäjänä tieto- viestintätekniikan alalla, 
+ja haasteista mitkä ilmeentyvät päivittäin.% tähän voi lisätä vielä yhden jos keksii
+%
 % jotain lisää siitä että pvkirja antaa silmäyksen elämään itse ammattilaisena,
 % jolla on juuri ongelmia mitkä kuvattiin  ekassa kappaleessa
 %tässä voi olla joku concrete esimerkki siitä mitä tehtiin ja mitä tehdään
@@ -408,8 +415,12 @@ Seurantajakson aikana opin minulle uusista teknologioista ja web alustojen kehit
 
 
 % tätä ennen tulee jotain tekstiä itse tavoite sanotaan tiivistelmässä vissiinkin
-Opinnäytettyön tavoitteena on seurata kehitymistä ja teknologoiden oppimista 13 Viikon seurantajakson aikana, jolloin kirjoitettiin oppimispäiväkirja.
-Oppimispäiväkirja on kirjoitettu teemoittain teknologioista mitä käytin tai opin sen viikon aikana.
+Opinnäytettyön tavoitteena on seurata kehitymistä ja teknologoiden oppimista seurantajakson aikana,
+jolloin kirjoitettiin oppimispäiväkirja.
+% kirjoitetaanko lisää itse pvkirjasta tähän?
+Oppimispäiväkirja on kirjoitettu teemoittain teknologioista mitä käytin ja opiskelin seurantajakson aikana.
+Teemat voivat kattaa useamman viikon ja niissä kerrotaan itse teknologiasta, miten käytin kyseistä teknologiaa viikon tehtävien toteuttamiseen ja
+ongelmiin joihin törmäsin niitä käyttäen.
 %more text
 \medskip
 
@@ -424,7 +435,8 @@ Startupin pää tavoitteena on vähentää sairaslomia saamalla työntekijät no
 Yrityksen pää myyntituote on web-alusta, jonka kehityksen mukana olin.
 %
 Alustan kehittämisessä sain mahdollisuuden työskennellä tuotantoympäristössä ja minulle uusien teknologioiden kanssa.
-Olin mukana suunnittelussa, ominaisuuksien lisäämisessä ja ohjelmoinnissa. sain myös kokemusta ilmeentyvien ongelmien korjaamisesta.
+Olin mukana suunnittelussa, ominaisuuksien lisäämisessä ja ohjelmoinnissa. 
+Sain myös kokemusta ilmeentyvien ongelmien korjaamisesta.
 
 %more
 \medskip
@@ -449,7 +461,7 @@ Olin mukana suunnittelussa, ominaisuuksien lisäämisessä ja ohjelmoinnissa. sa
 
 Ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista olin opiskellut LAB ammattikorkeakoulussa 7 lukukautta ja
 olin opinnäytetyön kirjoituksen aikana neljännen vuoden tieto- ja viestintätekniikkan opiskelia.
-Vaikka minulla ei ollut aijempaa aijempaa työkokemusta tieto- ja viestintätekniikkan alalta ennen harjoituksen alkamista,
+Vaikka minulla ei ollut aijempaa työkokemusta tieto- ja viestintätekniikkan alalta ennen harjoituksen alkamista,
 olin koulutuksen aikana saanut laajan pohjan ohjelmoinnista,
 sen perusteista ja muista tieto- ja viestintätekniikan alan taidoista esim. versionhallinnasta, tietokannoista sekä web suunnittelusta.
 Teoriapohja ei kuitenkaan aina riitä työelämässä, joten uusiin olosuhteisiin soveltuminen ja uusien asioiden oppiminen on oleellista.
@@ -535,7 +547,8 @@ Hidas sovelluskehitys voi haitata itse yrityksen mahdollisuuksia selvitä markki
 
 
 
-Teknologia pino pohjautuu MeteorJs kehykseen, joka on suunniteltu nopeaan kehittämiseen ja käyttöönottoon.
+Projektin teknologia pino pohjautuu MeteorJs kehykseen, joka on suunniteltu nopeaan kehittämiseen ja käyttöönottoon.
+%jotenkin scuff
 Meteor helpottaa kommunikointia käyttöliittymän, palvelimen ja tietokannan kanssa, 
 mutta silti antaen vapauden valita muut käytettävät teknologiat, eikä lukitse käyttämään valmiiksi valittuja teknologioita.
 Meteor ei määritä käytettyä käyttöliittymä kirjastoa mutta se silti tukee monia suosituimpia kehyksiä ja antaa helpon integraation niihin.
@@ -1060,7 +1073,8 @@ Kuva \getImgCount {}. Kielen vaihto laskuvalikko
 \newpage
 \section{Yhteenveto}             % ------------------------------- YHTEENVETO ------------------------------- %
 
-sehän meni ihan hyvin 
+sehän meni ihan hyvin... 
+lorem ipsum
 
 opin käyttämään projektissa käytettyjä teknologioita
 opin tekemään töitä ammatillisessa työympäristössä
@@ -1074,6 +1088,7 @@ lokalisaatio meni hyvin ja sovellus on nyt parempi
 uusi ominaisuus toimii ja siitä ei tullut ognemlia sen käyttöönotossa
 \medskip
 
+\lipsum[1]
 
 
 
