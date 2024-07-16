@@ -24,8 +24,8 @@ MeteorJS on avoimeen lähdekoodiin perustuva full-stack JavaScript web-framework
 suunniteltu nopeaan käyttöönottoon ja kehittämiseen eri laitteille \labciteend{meteor24b}
 Meteor mahdollistaa isomorphiseen koodin kirjoittamisen, eli koodiin, joka on samanlaista palvelimella kuten clientillä.\labcite{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
 % outo aloittaa taas meteorilla
-Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular \labciteend{meteor24a}{}
-Tämä antaa lisä joustoa Meteorille sillä se antaa mahdollisuuden monelle sovelluskehittäjälle joilla ei ole kokemusta tietystä front-end teknologiasta.
+Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen front-end framework:kiin, kuten Vue, React, Svelte tai Angular \labciteend{meteor24a}{}
+Tämä antaa lisä joustoa Meteorille sillä se antaa mahdollisuuden monelle sovelluskehittäjälle, joilla ei ole kokemusta tietystä front-end teknologiasta.\\
 \medskip
 
 
@@ -46,8 +46,8 @@ Lisäksi Meteor tukee monta ominaisuutta \labcite{meteor24a}:
 
 
 Meteorin nopea käyttöönotto on osa johtuen sen paketti järjestelmästä ja valmiiksi paketoiduista paketeista, kuten Meteorin käyttäjät paketti. 
-Käyttäjä paketin avusta kehitäjä voi nopeasti luoda authentikaatio järjestelmän,
-joka antaa helpon integraation muiden kirjautumis palvelujen kanssa kuten facebook, github, google ym.
+Käyttäjä paketin avusta kehittäjä voi nopeasti luoda todennus (eng authentication) järjestelmän,
+joka antaa helpon integraation muiden todennus palvelujen kanssa kuten Facebook, GitHub, Google ym.
 Käyttäjä paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten metodeihin. \labcite{meteor24c}
 
 
@@ -67,19 +67,16 @@ Meteorin metodit ominaisuus toimii Etäkäsittelykutsu rajapintana clientin ja p
 \medskip
 
 
-% metodit tekee koodista yksinkertaisempaa... jotenkin outo
 
 Meteor metodit ovat palvelimella määriteltyjä funktioita, joita pystytään kutsumaan Meteorin kautta clientiltä tai palvelimelta. 
 Kuvassa \nextImageCount{} on esimerkki Meteor metodin määritelmästä.
-%
-%selitä yksinkertaisemman eri tavalla
+%selitä yksinkertaisemman eri tavalla, 
 Metodit tekee myös käyttöliittymä koodista yksinkertaisemman, 
 sillä metodien rpc malli poistaa käyttöliittymä koodista tarpeen tehdä GET tai POST requesteja palvelimelle.
-%
 Metodi funktio käyttää JavaScriptin "this"{} ominaisuutta. 
 Sitä käyttäen metodiin voidaan antaa kontekstia kutsujasta.
 Tässä kontekstissa voi nähdä esimerkiksi onko kutsuja kirjautunut sisään, tai onko kutsujalla oikeat oikeudet kutsua metodia, 
-helpottaen turvallisuuden lisäämista rajapintaan.
+helpottaen turvallisuuden lisäämistä rajapintaan.
 \bigskip
 
 \includegraphics[width=15cm]{src/public/methodexample.png}\\
@@ -89,7 +86,7 @@ Kuva \getImgCount {}. Meteor metodin määritelmä
 Kuvassa on Meteor metodin määritelmä. "exampleMethod"{} metodi katsoo, onko "this"{} ominaisuudessa käyttäjä tunnusta, 
 näin metodi voi tietää onko kutsuja kirjautunut sisään,
 jos käyttäjä ei ole kirjautunut sisään funktio heittää virheen, joka välitetään kutsujalle.
-Jos käyttäjä on kirjautunut sisään tulostetaan argumentit objekti. 
+Jos käyttäjä on kirjautunut sisään, metodi tulostaa argumentit objektin. 
 \medskip
 
 
@@ -102,7 +99,7 @@ Jos käyttäjä on kirjautunut sisään tulostetaan argumentit objekti.
 % sdelitetäänkö build system vai.... vaihdetaanko sana johonkin toiseen vaa
 
 
-Meteor ylläpitää omaa paketointi ecosysteemiään, nämä
+Meteor ylläpitää omaa paketointi ekosysteemiään, nämä
 paketit ovat isomorphisia, eli ne toimivat palvelimella ja clientillä \labciteend{pranav17}{}
 Meteorilla on ensimmäisen osapuolen paketteja, joita itse Meteor tiimi ylläpitää ja kolmannen osapuolen paketteja,
 joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin paketti palvelimelle Athmosphere:lle. \labcite{sanders15}
@@ -110,7 +107,6 @@ joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteo
 
 
 Athmosphere on Meteorin ylläpitämä paketti palvelin, johon käyttäjät voivat ladata paketteja tai kirjastoja, jotka ovat suunnattu toimimaan meteorin kanssa.
-NPM paketit (eng Node package manager) ovat suunnattu toimimaan Node ympäristössä, ja vaikka ratkaisuja on käyttää NPM paketteja selaimella, 
-%build system
-Athmosphere paketit voi hyötykäyttää Meteorin build systeemiä, jonka avulla paketin kehittäjä voi määritellä mitkä osat ladataan selain puolelle ja mitkä palvelimelle.\labcite{meteor24d}
+NPM paketit (eng Node package manager) ovat suunnattu toimimaan NodeJS ympäristössä, ja vaikka ratkaisuja on käyttää NPM paketteja selaimella, 
+Athmosphere paketit voi hyöty käyttää Meteorin käännösjärjestelmää (eng build system), jonka avulla paketin kehittäjä voi määritellä mitkä osat ladataan selain puolelle ja mitkä palvelimelle.\labcite{meteor24d}
 
