@@ -30,14 +30,24 @@
 % 5.6
 
 
-%sources are cited above
-MongoDB on NoSQL (eng "non sql"{} tai "not only sql"{}) dokumenttipohjainen tietokannan hallintaohjelma, joka on MongoDB Inc:in valmistama ja ylläpitämä.
-Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa, ja se tarjoaa suuren suorituskyvyn, korkean käytettävyyden ja helpon skaalautuvuuden\labciteend{alexander23}
+
+
+MongoDB on NoSQL (eng "non sql"{} tai "not only sql"{}) dokumenttipohjainen tietokannan hallintaohjelma,
+joka on MongoDB Inc:in valmistama ja ylläpitämä.
+Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa,
+ja se tarjoaa suuren suorituskyvyn, korkean käytettävyyden ja helpon skaalautuvuuden\labciteend{alexander23}
 \medskip
 
-MongoDB tallentaa tiedot joustaviin, JSON-tyyppisiin dokumentteihin, mikä tarkoittaa, että kentät voivat vaihdella dokumentista toiseen ja tietorakennetta voidaan muuttaa ajan myötä. \labcite{mongodb24a}
-Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksissa, koska se pystyy hallitsemaan erityyppisiä tietoja ilman kiinteää skeemaa\labciteend{mongodb24b}
+
+
+
+MongoDB tallentaa tiedot joustaviin, JSON-tyyppisiin dokumentteihin, 
+joka tarkoittaa, että kentät voivat vaihdella dokumentista toiseen ja tietorakennetta voidaan muuttaa ajan myötä. \labcite{mongodb24a}
+Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksissa, 
+sillä se pystyy hallitsemaan erityyppisiä tietoja ilman kiinteää skeemaa\labciteend{mongodb24b}
 \medskip
+
+
 
 
 
@@ -55,18 +65,18 @@ Tätä tietokantajärjestelmää käytetään laajalti nykyaikaisissa sovelluksi
 Skaalautumisella tarkoitetaan sovelluksen, järjestelmän tai infrastruktuurin
 mahdollisuutta hallita kasvavaa määrää dataa, käyttäjiä tai stressiä ilman että se kompormisoisi suorituskykyä tai vakautta.
 Skaalautuminen on tärkeää sillä kuin sovellus kasvaa sen pitää pystyä käsittelemään kasvavaa kuormaa.
-%joku on off
 Ilman skaalautumista järjestelmästä voi tulla hidas tai se voi johtaa seisokkiaikaan.\labcite{lenovo}
 \medskip
 
 Vertikaalisella skaalautumisella tarkoitetaan yksittäisen palvelimen tai järjestelmän olemassa olevien resurssien kehittämistä, 
-kuten keskusmuistin tai prosessorin päivitystä, kasvataen järjestelmän kuorman hallintaa.\labcite{lenovo}
+kuten keskusmuistin tai prosessorin päivitystä, kasvattaen järjestelmän kuorman hallintaa.\labcite{lenovo}
+%mtextPP
 \medskip
 
-Horisonttaali skaalaus käsittää koneiden ja järjestelmien lisäämistä, jotka pystyy jakamaan kuorman usean palvelimen välillä.
-Tämä tuo myös lisä turvaa sillä jos järjestelmä tai sovellus kaatuaa palvelinvian takia, 
+Horisontaali skaalaus käsittää koneiden ja järjestelmien lisäämistä, jotka pystyvät jakamaan kuorman usean palvelimen välillä.
+Tämä tuo myös lisä turvaa sillä, jos järjestelmä tai sovellus kaatua palvelinvian takia, 
 toinen palvelin voi tuurata sitä. \labcite{lenovo}
-Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuskiin, jotka toimivat horisonttaalisella skaalautumisella.\labcite{mongodb24j} 
+Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuksiin, jotka toimivat horisontaalisella skaalautumisella.\labcite{mongodb24j} 
 \medskip
 
 
@@ -74,15 +84,12 @@ Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuskiin, jotka to
 
 
 
-%viittaa allaolevaan kuvaan 
-%tässä on vamraankin tarpeeksi tekstiä sitten kun se on uudelleen kirjoitettu
 MongoDB replikointi antaa mahdollisuuden tehdä varmuuskopioita tietokannasta ja säilyttää niitä eri palvelimilla, 
-varmuuskopiot voidaan käyttöön ottaa jos pää tietokanta kaatuu. 
-%
-Kaaviossa 1 näkyy esimerkki replikoinnin toiminnasta, asiakassovellus(eng client application) lähettää kaikki kirjoitus ja luku operaatiot pää (eng primäry) tietokannalle, 
-pää tietokanta jakaa kaikki kirjoitus ohjeet muille toissiaisille kopioille pitäen ne ajan tasalla.
-Jos pää tietokanta kaatuu tai sammuu, jostain toissiaisesta kopio tietokannasta tulee uusi pää tietokanta.
-Tämä kasvattaa luotettavuutta sillä jos olisi vain yksi tietokanta, sen kaatuaminen lakkauttaisi sovelluksen toiminnan. \labcite{mongodb24c}
+nämä varmuuskopiot voidaan käyttöön ottaa, jos pää tietokanta kaatuu. 
+Kaaviossa 1 näkyy esimerkki replikoinnin toiminnasta, asiakassovellus (eng client application) lähettää kaikki kirjoitus ja luku operaatiot pää (eng primäry) tietokannalle, 
+pää tietokanta jakaa kaikki kirjoitus ohjeet muille toissijaisille kopioille pitäen ne ajan tasalla.
+Jos pää tietokanta kaatuu tai sammuu, jostain toissijaisesta kopio tietokannasta tulee uusi pää tietokanta.
+Tämä kasvattaa luotettavuutta sillä, jos olisi vain yksi tietokanta, sen kaatuminen lakkauttaisi sovelluksen toiminnan. \labcite{mongodb24c}
 \medskip
 \bigskip
 
@@ -92,18 +99,16 @@ Kaavio\getChartCount{}. Kaavio replikointi mallista \labimgcite{mongodb24c}
 
 
 
-MongoDB sharding antaa mahdollisuuden jakaa itse tietokanta useaan palaan ja jakaa jokainen palanen erikseen eri palvelimellle.
+MongoDB sharding antaa mahdollisuuden jakaa itse tietokanta useaan palaan ja jakaa jokainen palanen erikseen eri palvelimelle.
 nämä pienemmät palat ovat "shardeja"{} ja ovat itsenäisiä osia kokonaisesta tietokannasta.\labcite{kinsta23}
-%
-Tämä on hyödyllinen kun yhdellä palvelimella tulee ongelmia suuren tiedon käsittelyn kanssa.
+Tämä on hyödyllinen, kun yhdellä palvelimella tulee ongelmia suuren tiedon käsittelyn kanssa.
 Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponentit. \labcite{mongodb24d}
 \medskip
-\bigskip
-
 
 
 % onko tämä kaavio vai kuva ja mitä väliä tai eroa
 
+\bigskip
 \includesvg[width = 10 cm]{./src/public/oppar/mongosharding.svg}\\
 Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24e}
 \medskip
@@ -113,9 +118,8 @@ Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24e}
 
 
 %operaatiot parempi selitys
-Kaavion 2 Mongos tai reitittimen pää funktio on reitiittää tietokanta operaatiot oikeille shardeille käyttäen configuraatio palvelimelta saatua metadataa.
-Asiakassovellus on yhteydessä mongos:siin ja se toimii rapapintaja käyttäjän ja shardien välillä. 
-%
+Kaavion 2 Mongos tai reitittimen pää funktio on reitittää tietokanta operaatiot oikeille shardeille käyttäen konfiguraatio palvelimelta saatua metadataa.
+Asiakassovellus on yhteydessä mongos:siin ja se toimii rapapintana käyttäjän ja shardien välillä. 
 Kun asiakassovellus lähettää kyselyn tietokantaan, reititin kysyy konfigurointipalvelimelta (eng config server) millä shardeilla on kyseinen data. 
 Jonka jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen asiakassovellukselle.\labcite{mongodb24f}
 \medskip
@@ -123,7 +127,7 @@ Jonka jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen 
 %asiakieli
 Shard on tietokanta palvelin, joka sisältää osan klusterin koko tietokannasta.
 Itse shardejen pitää olla replika settejä, 
-tämä tuo lisä turvaa datan hakuun sillä jos shardin pää kanta kaatuaa voi toissijainen kopio ottaa sen paikan. \labcite{mongodb24g}
+tämä tuo lisä turvaa datan hakuun, sillä jos shardin pää kanta kaatuu voi toissijainen kopio ottaa sen paikan. \labcite{mongodb24g}
 \medskip
 
 
@@ -131,15 +135,15 @@ tämä tuo lisä turvaa datan hakuun sillä jos shardin pää kanta kaatuaa voi 
 Konfigurointipalvelin sisältää asetuksia ja metadataa klusterista, 
 kuten tietoja mitkä shardit ovat olemassa, mikä on shardin tila,
 yksityiskohtia siitä mitkä osat tietokannasta on tallennettu mihinkin shardeihin
-%osien pitää olla joku sana mitä käytetään uselammin. chunk enkuks
 ja tietoja osien tasapainottamisesta shardien välillä tietojen tasaisen jakautumisen varmistamiseksi.\labcite{mongodb24h}
 
 
-\iffalse
 
+% 
+% not in use of things
+\iffalse
 \subsubsection{Nosql Dokumentti}
 %tätä ei olla kirjoitettu melkein yhtään eteempoäin ja se vaatii lisää tekstiä jos siitä kirjoitetaan
-
 
 % tämä saatetaan poistaa ehkä
 

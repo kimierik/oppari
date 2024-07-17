@@ -659,19 +659,15 @@ Mediaqueryt mahdollistaa selain tai käyttölaite arvojen kyselyn ja testailun, 
 
 
 %yritä kirjoittaa tää tohon ylempään 
-% asiakieli ja uusiks kirjoitus 
+
 CSS Media Query antaa mahdollisuuden CSS-säännöksen asettamiselle vain silloin kun selain- ja laiteympäristö vastaa määritettyjä sääntöjä. 
-%tämä ainakin uusiks
-Säännökset voivat olla esimerkiksi "jos näytön koko on pienempi kuin X".\labcite{mozilla24b}
-%tämä kanssqa jotenkin paremmin
-Media Queryt ovat tärkeä osa repsonsiivista suunittelua ja se antaa mahdollisuuden luoda erilaisia layouttteja riippuen käyttölaitteesta,
+Media Queryt ovat tärkeä osa repsonsiivista suunnittelua ja se antaa mahdollisuuden luoda erilaisia asetteluja riippuen käyttölaitteesta,
 sen näytön koosta tai kuvasuhteesta.\labcite{mozilla24b}
 
 
 
 %esimerkkejä mediaqueryista tai jotain vastaavaa
 
-%jotain vähän lisää mediaqueryistä
 
 
 
@@ -686,40 +682,37 @@ sen näytön koosta tai kuvasuhteesta.\labcite{mozilla24b}
 
 
 
+%fine?
 
-
-
-%complete rewrite
-On eri tapoja suunnitella sivu elementtien asetteluja jne. kolme näistä on fixed, fluid ja adaptiivinen.\labcite{ksenia23}
+sivujen elementtien asettelu ja niiden käytäntö eri olosuhteissa on tärkeä osa responsiivista suunnittelua.
+Kolme suosittua asettelu vaihtoehtoa on fixed, fluid ja adaptiivinen\labciteend{ksenia23}
+Nämä vaihtoehdot (selittävät) miten elementit toimivat eri käyttöolosuhteissa kuten mobiili laitteilla.
 \medskip
 
 
 
 Kiinteä asettelussa elementit pysyvät samana näyttökoosta huolimatta. 
-Kiinteässä asettelussa tulee ongelmia jos näytön koko on pienempi kun sivustolle suunniteltu asettelu, 
-sillä joitain elementtejä jäisi näytöstä ulkopuolelle tai saatavissa sivu scrollaamisella.\labcite{ksenia23}
+Kiinteässä asettelussa tulee ongelmia, jos näytön koko on pienempi, kun sivustolle suunniteltu asettelu, 
+sillä joitain elementtejä jäisi näytöstä ulkopuolelle tai saatavissa sivu skrollaamisella.\labcite{ksenia23}
 \medskip
 
 
-Nestämmäisessä asettelussa elementtien koot vaihtuu näytön koon mukaan. 
+Nestemäisessä asettelussa elementtien koot vaihtuvat näytön koon mukaan. 
 Verrattuna kiinteään asetteluun elementit eivät jää näytöstä ulkopuolelle sillä elementit skaalautuvat näytönkoon mukaan.
 %selitä vähän paremmin
-Nestemmäisessä asettelussa tulee silti ongelmia sillä jos elementti on liian pieni sille annetulle tekstille.\labcite{ksenia23}
+Nestemäisessä asettelussa tulee silti ongelmia sillä, jos elementti on liian pieni sille annetulle tekstille.\labcite{ksenia23}
 \medskip
 
 
 Adaptiivisessä asettelussa elementtien koot ja sijainnit muuttuvat riippuen näytönkoosta.\labcite{ksenia23}
-% parempi aloitus ei aloiiteta adaptiivisella
 Adaptiivisen asettelun ideana on mukauttaa sivuston elementtien asettelu sopivaksi käytetylle laitteelle.
-Kuvassa \nextImageCount {} on esimerrki sivuston asettelustosta, kuvassa {\the\numexpr \theimgCounter + 2 } on esimerkki miltä sivusto voisi näyttää jos käytössä olisi adaptiivinen asettelu.
-% sopimaan uusiks
-Käyttöliittymän elementit ovat siirtyneet vierekkäisestä asettelusta päällekkäiseen sopimaan pienempään näytönkokoon
+Kuvassa \nextImageCount {} on esimerkki sivuston asettelusta, kuvassa {\the\numexpr \theimgCounter + 2 } on esimerkki miltä sivusto voisi näyttää, jos käytössä olisi adaptiivinen asettelu.
+Käyttöliittymän elementit ovat siirtyneet vierekkäisestä asettelusta päällekkäiseen sopimaan pienempään näytönkokoon.
 %more
 \medskip
 
-\bigskip
-%kuva adaptiivisesta jotain
 
+\bigskip
 %kuvat medium artikkelin giffistä
 \includegraphics[width = 15cm]{src/public/oppar/adaptiveBig.png}\\
 Kuva \getImgCount {}. esimerkki adaptiivisesta asettelusta isommalla näytöllä \labimgcite{ksenia23}
@@ -778,8 +771,7 @@ Kuva \getImgCount {}. esimerkki adaptiivisesta asettelusta pienemmällä näytö
 
 
 Kielimuuri on merkittävä haaste, kun tuotteita ja verkkosivustoja laajennetaan uusille markkinoille.
-%tämä citaatti on väärä ja pitää korjata
-CSA Rechearching mukaan 65\% verkkokäyttäjistä suosii sisällön esittämistä omalla äidinkielellään \labciteend{csa20}
+65\% verkkokäyttäjistä suosii sisällön esittämistä omalla äidinkielellään \labciteend{csa20}
 Sisällön tarjoaminen useilla kielellä on loistava tapa kasvaa eri markkinoille. 
 Kun ihmiset voivat lukea sivustoasi omalla äidinkielellään, heillä on todennäköisemmin miellyttävä käyttökokemus.
 Tutkimukset myös osoittavat, että tuotteiden lokalisointi on hyvä sijoitus kohde.\labcite{austin18}
@@ -818,7 +810,7 @@ jotka pyrkivät saavuttamaan maailmanlaajuista menestystä ja maksimoimaan tavoi
 
 
 On useita eri tapoja web sivustojen kääntämiselle.
-Mutta, koska monet kielet ovat hyvin erillaisia konteksti ja nuanssit voivat hävitä jos käännetään sana sanaan.
+Mutta, koska monet kielet ovat hyvin erilaisia konteksti ja nyanssit voivat hävitä, jos käännetään sana sanaan.
 Monia lauseita ja ilmaisuja ei voi kääntää suoraan kielestä toiseen menettämättä niiden alkuperäistä merkitystä.
 Esimerkiksi idiomit, metaforat ja puhekieliset ilmaisut edellyttävät usein luovaa mukauttamista eikä niinkään kirjaimellista kääntämistä. 
 Lisäksi tietyt termit ja käsitteet voivat olla olemassa yhdessä kulttuurissa, 
@@ -827,10 +819,10 @@ mutta eivät toisessa, jolloin tarvitaan harkittuja selityksiä tai korvauksia, 
 
 
 
-Käännös tekstin luonnin voi yleisesti tehdä kahdellla tavalla. henkilökäännös tai tekoälykäännös.
+Käännös tekstin luonnin voi yleisesti tehdä kahdella tavalla. henkilökäännös tai tekoälykäännös.
 Henkilökäännöksellä voi olla hyvä tarkkuus ja lopputulos tulee kuulostamaan luonnolliselta.
 Tämä ratkaisu tulee olemaan kalliimpi tekoälykäännökseen verrattuna sillä oikea kääntäjä pitää palkata.
-tekoaly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.\labcite{Habash23}
+tekoäly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.\labcite{Habash23}
 \medskip
 
 
@@ -859,6 +851,7 @@ tekoaly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikk
 % ellei sitä poisteta
 
 
+
 %https://www.motionpoint.com/platform/what-are-the-best-technologies-for-website-translation/
 % 11.6
 
@@ -870,29 +863,25 @@ tekoaly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikk
 
 
 
-
-
-On eri tapoja toteuttaa käännösten tekeminen web alustoilla. 
-% tämä uusiks
-Suora kopio verrkosivuista, johon tekstit on käännetty oli vaihtoehto alkuajoilla
-%tämä kanssa uusiks
-ylläpitää monta eri versiota nettisivuista, kaikilla eri käännökset.
-Tämä ei vaadi erikoista teknologiaa, vaan jonkun tavan kääntää itse sisältö sivulta,
-olise sitten henkilökäännös tai tekoälykäännös.
-Useamman verkkosivun ylläpitäminen käännösten takia on hyvin kallis ja aikaavievä, 
-sillä muutoksen tekeminen tai ominaisuuden lisääminen pitää synkronisoida kaikkille sivuille.\citemissing
+Kopio verkkosivusta jossa sisältö on käännettynä, on vaihtoehto, joka ei vaadi erikoista teknologiaa itse sisällön kääntöä lukuunottamatta.
+Tällä tavalla jokainen erikielinen sivusto voidaan muokata sopimaan juuri siihen kulttuuriin mihin se on kohdistettu.
+Mutta monen eri version samasta verkkosivusta ylläpitäminen on työlästä, sillä muutoksien tekeminen pitäisi päivittää joka kopioon erikseen.
 \medskip
+
 
 
 % etsi joku src tähän. ei pitäisi olla vaikeaa
 
-%sama sivusto vaihda tekstit alta
-%hotswap sana pitää vaihtaa
+
+
+% more text or rewrite
+
 Tekstin dynaaminen kääntäminen on toinen ja vähemmän työläämpi tapa kääntää verkkosivustoja.
-Dynaamisessa kääntämisessä sivuston sisältö kääntyy paikallaan toiseen riippuen käyttäjän valitusta kielestä.
-Käännökset ja niiden tarjoitus on tallennettuna, johonkin käännöstiedostoon, 
+Dynaamisessa kääntämisessä sivuston sisältö kääntyy paikallaan toiseen, riippuen käyttäjän valitusta kielestä.
+Käännökset ja niiden tarkoitus on tallennettuna käännöstiedostoon, 
 josta käyttöliittymä etsii halutut käännökset.\citemissing
-%more?
+Uuden testin lisääminen vaatii vain käännöksien lisäämisen käännöstiedostoon.
+Tällä tavalla on helpompi lisätä uutta sisältöä, mutta eri kielisiä sivustoja ei voi mukauttaa.
 \medskip
 
 
