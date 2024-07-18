@@ -388,7 +388,7 @@ client = asiakasohjelma
 Teknologia ala on nopeasti liikkuva, uusien teknologioiden kehittyessä vanhat teknologiat poistuvat käytöstä.
 Alan-ammattilaisen pitää pysyä valppaana, ja aktiivisesti opiskella uusia teknologioita, 
 että hän pystyisi pysymään ajantasalla nykyisistä alan suuntauksista.
-Uudet työkalut ohjelmointikiele 
+Uudet työkalut, ohjelmointikielet ja toimintatavat muuttavat (miten tehdään ja mitä tehdään).
 %needs more
 \medskip
 
@@ -932,7 +932,7 @@ Tällä tavalla on helpompi lisätä uutta sisältöä, mutta eri kielisiä sivu
 % käyttöliitymä kohtaan tarvii pari tai yksi lause lisää 
 
 
-\subsection{wip title tehtävä}
+\subsection{Tehtävänanto}
 
 
 Starttaamo on hakenut nopeaa kehitystä web alustalle, joten kehityksen alkuvaiheessa 
@@ -942,7 +942,7 @@ Sivustojen julkisesti näkyvällä tekstillä ei ollut keskitettyä arkistoa vaa
 \medskip
 
 Sain työnaiheeksi rakentaa käännös järjestelmä, jonka avulla sivustot voitaisiin kääntää useammalle kielelle.
-Käännös järjestelmmän pitäisi olla laajennettavissa siten että sivustojen päivittäminen ja uusien kielien lisääminen olisi 
+Käännös järjestelmän pitäisi olla laajennettavissa siten että sivustojen päivittäminen ja uusien kielien lisääminen olisi 
 olisi mahdollisimman nopeaa ja helppoa.\\
 \medskip
 
@@ -972,8 +972,8 @@ Tekstin etsiminen koodipohjasta ei ollut monimutkaista nykyisien tekstimuokkaust
 Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
 Kirjasto hakee käännökset käännöstiedostosta käännös funktion avulla.
 Kuvassa \nextImageCount{} on esimerkki käännös funktiosta.
-Kuvassa luodaan HTML paragraafi elementti, jossa kutsutaan käännösfunktiota. 
-funktio hakee käännöstiedoston progress sivulta progress arvon.\\
+Kuvassa luodaan HTML paragrafi elementti, jossa kutsutaan käännösfunktiota. 
+funktio hakee käännöstiedoston Progress sivulta Progress arvon.\\
 \medskip
 
 \bigskip
@@ -984,13 +984,12 @@ Kuva \getImgCount. {} i18n käännösfunktiokutsu (ehkä uusi kuva)
 
 % emt onko incoherent
 
-I18n kirjasto tukee montaa käännöstiedosto formaattia mutta päätin kirjoittaa ne JSON muotoon.
+I18n kirjasto tukee montaa käännöstiedosto formaattia mutta päätin kirjoittaa ne JSON muotoon. %nececary??
 Kuvassa \nextImageCount{} on progressio sivun suomenkieliset käännökset ja kuvassa {\the\numexpr \theimgCounter + 2 } on saman sivun englannin kieliset käännökset.
 Jokaisella sovelluksen sivulla on oma objekti, joka sisältää sen sivun julkisen tekstin. 
-% en tiedä onko järkevän kuuloista
-Avaimet tekstille on valmiiksi päätetyt muuttuja nimet, jotka kuvaavat käännöksen tarkoitusta.
-Kun käyttäjä vaihtaa halutun kielen i18n osoittaa toiseen käännös tiedostoon, 
-jossa on samat avaimet käännöksille mutta arvot ovat vaihtuneet kyseisen kielen käännöksiin.
+Avaimet tekstille on valmiiksi päätetyt merkkijonot, jotka kuvaavat käännöksen tarkoitusta.
+Kun käyttäjä vaihtaa halutun kielen i18n osoittaa toiseen käännöstiedostoon, 
+jossa on samat avaimet käännöksille, mutta arvot ovat vaihtuneet kyseisen kielen käännöksiin.
 \medskip
 
 
@@ -1057,28 +1056,33 @@ Kuva \getImgCount {}. Kielen vaihto laskuvalikko
 \newpage
 \section{Yhteenveto}             % ------------------------------- YHTEENVETO ------------------------------- %
 
-sehän meni ihan hyvin... 
-lorem ipsum
+
+
+käännökset/lokalisaatio meni hyvin ja sovellus on nyt parempi.
+Käännöksien käyttöönotto meni ongelmitta.
+itse sisällön käännös oli tehty henkilö käännöksellä joten se on hyvänlaatuinen.
+\medskip
+
+
+Uusi ominaisuus toimi käyttöönoton jälkeen ja kaikki käyttäjät saivat ominaisuuden käyttöön.
+Käyttäjät pystyi tallentamaan useamman mitattavan arvon ja näkemään tulokset kaaviossa.
+Viikko ominaisuuden käyttöönoton jälkeen testiryhmältä ei tullut palautetta, että ominaisuus ei olisi toiminut.
+käyttöliittymästän toiminnasta tai sen ulkonäöstä ei myöskään tullut palautetta sen käyttöönoton jälkeen.
+Käyttäjä profiilin skeeman migratointi meni onglemitta.
+Riskit käyttäjien skeeman migraation epäonnistummisessa olisi voinut välttää ottamalla varmuuskopio tietokannasta ennen migraatiota.
+\medskip
+
+
 
 opin käyttämään projektissa käytettyjä teknologioita
 opin tekemään töitä ammatillisessa työympäristössä
+opin lisää web alustoista ja niiden kanssa töiden tekemisestä
 \medskip
-
-
-lokalisaatio meni hyvin ja sovellus on nyt parempi
-\medskip
-
-
-uusi ominaisuus toimii ja siitä ei tullut ognemlia sen käyttöönotossa
-\medskip
-
-\lipsum[1]
 
 
 
 
 \newpage
-
 % we need some way to manually override an item when it looks like shit
 
 % i thin we need to make our own @ thing then use that for htings that look like shit
@@ -1100,7 +1104,7 @@ uusi ominaisuus toimii ja siitä ei tullut ognemlia sen käyttöönotossa
 
 \section{Liitteet}               % ------------------------------- Liitteet ------------------------------- %
 
-miten laitan liitteen päiväkirjasta ja millainen se pitäisi olla
+päiväkirja liite
 
 
 

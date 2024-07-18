@@ -61,7 +61,7 @@ Kuva \getImgCount {}. Käyttäjä profiilin skeema
 
 
 
-Käyttänän mitattavan arvon vaihtaminen listaan vaatii käyttäjän skeeman muutoksen.
+Käyttäjän mitattavan arvon vaihtaminen listaan vaatii käyttäjän skeeman muutoksen.
 MongoDB:n NoSql dokumentti ei määritä tiukkaa skeemaa, joten käyttäjien skeemat voivat olla eriävät.
 Skeeman muutos vaatii jokaisen käyttäjän profiilin muokkaamista haluttuun muotoon.
 Käyttäjä profiilin skeeman muutos pitää tehdä kaikille aktiivisille käyttäjille, käyttäjän luontia pitää myös muokata siten, 
@@ -75,12 +75,11 @@ Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeema
 \medskip
 
 Migraatio tehdään kuvan \nextImageCount {} migraatio funktiolla. 
-Funktio käy läpi kaikki käyttäjät jolla measurableThing ominaisuus on olemassa ja päivittää sen measurableThings listaan.
-%mnnm
-Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkroonisesti palvelimella. 
-Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen sen ajaksi kun käyttäjä profiileja päivitettäisiin.
-Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkroonisesti, 
-jolloin käyttäjiä migraoitaisiin pikkuhiljaa.
+Funktio käy läpi kaikki käyttäjät, jolla measurableThing ominaisuus on olemassa ja päivittää sen measurableThings listaan.
+Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkronisesti palvelimella. 
+Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen sen ajaksi, kun käyttäjä profiileja päivitettäisiin.
+Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
+jolloin migraatio tapahtuisi pikkuhiljaa.
 \medskip
 
 
@@ -117,7 +116,7 @@ että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mih
 \medskip
 
 Kuvassa \nextImageCount{} on käyttäjäpuolen käyttöliittymä muutoksien jälkeen.
-Käyttöliittymässä käyttäjällä on mahdollisuus valita mihin mitattavaan suurteeseen hän haluaa tallettaa arvoja kuvan {\the\numexpr \theimgCounter + 2 } laskuvalikolla.
+Käyttöliittymässä käyttäjällä on mahdollisuus valita mihin mitattavaan suureeseen hän haluaa tallettaa arvoja kuvan {\the\numexpr \theimgCounter + 2 } laskuvalikolla.
 % more words or fix something
 Sivun kaavioon on myös lisätty mahdollisuus seurata monta mitattavaa arvoa.
 \medskip
@@ -134,7 +133,7 @@ Kuva \getImgCount {}. käyttöliittymän laskkuvalikosta
 
 
 
-Kuvassa \nextImageCount {} on päivitetty käyttäjän luomis ja päivitys käyttöliittymä.
+Kuvassa \nextImageCount {} on päivitetty käyttäjän luomis- ja päivitys käyttöliittymä.
 Käyttöliittymään on lisätty nappi, josta voi lisätä, nimetä ja poistaa mitattavia suureita käyttäjälle.
 %selitä paremmin että voi uudelleen käyttää komponenttia. tarviin jonkun sanan tolle yhdistelmälle
 Tekstikenttä ja poisto nappi on sisällytetty kuvan {\the\numexpr \theimgCounter + 2 } React komponenttiin "MeasurableThingElement". 
@@ -151,9 +150,9 @@ Kuva \getImgCount {}. käyttäjä luomis käyttöliittymä (cencor roles?)
 Kuva \getImgCount {}. Mitattava elementti komponentti
 \medskip
 
-Komponentti on tilaton funktiokomponentti johon annetaan mitattavan suurteen nimi ja poista funktio proppeina.
-Poinsto funktiota kutsutaan kun painetaan punaista X nappia ja se poistaa mitattavan suurteen käyttäjän profiilista ja elementin käyttöliittymästä.
-%{\the\numexpr \theimgCounter + 2 }
+Komponentti on tilaton funktiokomponentti, johon annetaan mitattavan suurteen nimi ja poista funktio proppeina.
+Poisto funktiota kutsutaan, kun painetaan punaista X nappia ja se poistaa mitattavan suurteen käyttäjän profiilista ja elementin käyttöliittymästä.
+%{\the\numexpr \theimgCou:nter + 2 }
 \medskip
 
 
@@ -179,19 +178,4 @@ Kuva \getImgCount {}. Käyttäjän luomis käyttöliittymä ennen muutoksia (cen
 
 
 
-\subsection{Ominaisuuden lopputulos ja käyttöönotto}
-
-% vaatii vähän lisää tekstiä
-
-
-Käyttäjä profiilin skeeman migratointi meni onglemitta.
-Riskit käyttäjien skeeman migraation epäonnistummisessa olisi voinut välttää ottamalla varmuuskopio tietokannasta ennen migraatiota.
-%more 
-\medskip
-
-Ominaisuus toimi käyttöönoton jälkeen ja kaikki käyttäjät saivat ominaisuuden käyttöön.
-Käyttäjät pystyi tallentamaan useamman mitattavan arvon ja näkemään tulokset kaaviossa.
-Viikko ominaisuuden käyttöönoton jälkeen testiryhmältä ei tullut palautetta, että ominaisuus ei olisi toiminut.
-käyttöliittymästän toiminnasta tai sen ulkonäöstä ei myöskään tullut palautetta sen käyttöönoton jälkeen.
-\medskip
 
