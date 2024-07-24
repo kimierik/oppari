@@ -197,89 +197,7 @@ Kimi Malkamäki
 
 
 %------------------------------ FIRST PAGE OF ABSTRACT ------------------------------ %
-\begin{tabular}{ | l | }
-
-    %hack for the tiivistelmä line
-    \multicolumn{1}{l}{
-        \begin{minipage}{6cm}
-            \hspace{1mm}
-            
-        \end{minipage}
-        \begin{minipage}{4.25cm}
-            \hspace{1mm}
-        \end{minipage}
-        \begin{minipage}[t][1.95cm][t]{3.62cm}
-            \large
-            \textbf{ Tiivistelmä }
-        \end{minipage}
-    }\\
-
-    \hline
-    \begin{minipage}[b]{6cm}
-        tekijä(t)
-        \newline
-        kimi malkamäki 
-    \end{minipage}%
-    % 2x2
-    \begin{minipage}{8.5cm}
-        \begin{tabular}{ | l | c | }
-            \begin{minipage}[t][1cm][t]{4.25cm}
-                julkaisun laji
-                \newline
-                Opinnäytetyö, AMK
-            \end{minipage} & %
-            %
-            \begin{minipage}{3.62cm}
-                valmistusaika
-                \newline
-                2024
-            \end{minipage} \\ \hline%
-            %
-            \begin{minipage}[t][1cm][t]{4.25cm}
-                sivumäärä
-                \newline 
-                xx+xx
-            \end{minipage}
-            &  \\ \hline
-        \end{tabular}
-    \end{minipage}%
-    % end of 2x2
-      \\ \hline
-
-    \begin{minipage}[t][2cm][t]{8cm}
-    Työn nimi 
-        \newline 
-    ammatissa kasvaminen 
-        \newline 
-    oppimispäiväkirja  
-    \end{minipage}\\ \hline
-
-    \begin{minipage}[t][1.5cm][t]{10cm}
-    tutkinto ja koulutusala.\newline  tietoviestintätekniikka insinööri amk  
-
-    \end{minipage}\\ \hline
-
-    \begin{minipage}[t][7cm][t]{5cm}
-    tiivistelmä: \newline lorem ipsim
-    \end{minipage}\\ \hline
-
-    \begin{minipage}[t][2cm][t]{5cm}
-    avain sanat
-    \end{minipage}\\ \hline
-
-\end{tabular}
-
-\newpage
-
-
-
-% ------------------------------ SECOND PAGE OF ABSTRACT ------------------------------ %
-
-tiivistelmä
-
-
-
-
+\input{src/op/tiivistelma.tex}
 
 
 
@@ -1064,49 +982,60 @@ Kuva \getImgCount {}. Kielen vaihto laskuvalikko
 % pvopparimalli sanoo että tiivistelmään kuuluu
 % kehityksen arviointi
 % jatkotoimenpiteet
+%
 % itse tässä ei mainita että pitäisi tiivistää mitään mitä on itse käytännössä tehnyt
 % mutta voisi kuitenkin mainita jutuista esim db backup jne
 
 
-% nämä tarvitsevat ihan vitusti lisää tekstiä
-% mutta ensiksi tee näistä lauseita jotka sanovat jotain
 
 
-Opinnäytettyössä seurattiin kehittymistä seurantajakson ainaka.
-Päiväkirja antaa silmäyksen alan-ammattilaisen työhön ja sen haastaisiin.
-%
-Päiväkirja antoi syvällisemmän tavan opiskella käytettyjä teknologioita, 
-%
-% selitä paremmin että itse kirjoitettu teksti on syvällisempi tapa oppia jotain kun vaan sen käyttäminen
-sillä niistä tietojen etsiminen ja niiden kirjaaminen ei olisi muuten tapahtunut??..
+Opinnäytetyössä seurattiin tarkasti projektin etenemistä koko seurantajakson ajan,
+jolloin saatiin kattava yleiskuva projektin kehityksestä ja tuloksista.
+Lisäksi päiväkirja tarjoaa hyvän näkemyksen ammattilaisen päivittäisestä työstä ja tuo esiin sekä rutiininomaiset että monimutkaiset haasteet. 
+Päiväkirja oli olennainen väline käytettyjen teknologioiden opiskeluun,
+ja sen avulla voin ymmärtää perusteellisemmin niiden soveltamista, vahvuuksia ja rajoituksia. 
+Päiväkirja dokumentoi päivittäiset kokemukset ja pohdinnat,
+joten se mahdollisti yksityiskohtaisen ja vivahteikkaan analyysin, joka rikastutti merkittävästi oppimisprosessiani.
 \medskip
 
 
-% tuntuu jotenkin huonolta kappaleelta
-%
-opin käyttämään projektissa käytettyjä teknologioita.
-% mitä voi sanoa näiden teknologioiden oppimisesta.....
-% miten liittyy opparin tarkoitukseen ja juttuihin
-Projektissa käytettyjen teknologioiden oppimisessa ja oppimis prosessin kirjaamisessa......(jotaqin lisää)
-%
+
+
+
+Työskentely uusien teknologioiden parissa on antanut minulle mahdollisuuden syventyä omaan oppimisprosessiini, 
+mikä on parantanut teknisiä taitojani.
+Lisäksi olen parantanut sosiaalisia taitojani kommunikoidessani muiden projektin jäsenten kanssa.
+Vuorovaikutus on parantanut kykyäni tehdä tehokasta yhteistyötä,
+ilmaista ajatukseni selkeästi ja rakentaa vahvoja ammatillisia suhteita,
+jotka kaikki ovat välttämättömiä menestyksen kannalta. \\
 \medskip
 
 
-sain kokemusta ammatti työstä.
-itsenäistä tekemistä, ominaisuuksien toteuttamisen suunnittelemista ja niiden lisäämistä sovellukseen.
-projektin sisäinen kommunikaatio ja sosiaaliset taidot. palaverit ym
+% sanoja itsenäisestä työskentelystä ja sosiaalisista taidoista.
+
+Ammattilaisympäristössä työskentelystä saatu kokemus on antanut minulle useita taitoja ja näkemyksiä, 
+joista on hyötyä tulevaisuudessa.
+Ominaisuuksien toteuttamisprosessi on antanut minulle käytännön kokemusta ohjelmistosuunnittelusta. 
+Lisäksi olen oppinut selviytymään monimutkaisista teknisistä haasteista,
+optimoimaan suorituskykyä ja varmistamaan ohjelmiston skaalautuvuuden ja ylläpidettävyyden.
+Tämä kokemus ei ole ainoastaan lisännyt teknisiä taitojani vaan myös parantanut ongelmanratkaisukykyäni ja yksityiskohtien huomioimista, 
+mikä valmistaa minua tuleviin tehtäviin ohjelmistokehityksen ja -tekniikan alalla.
+
 \medskip
+
 
 
 % miten käytän tätä mitä opin
 
-
-tämä kokemus auttaa tulevaisuudessa. 
-Työkokemus tulee auttamaan tulevaisuudessa, teknisten taitojen ja sosiaalisten taitojen kanssa.
-teknisten taitojen myöksi opin sosiaalisia taitoja.
 %
-Kollaboratiivisissa projekteissa pitää osata kommunikoida muiden projektin jäsenien kanssa.
-Omat mielipiteet toteutus toiveista pitää osata ilmaista teknisesti, ja palavereissa pitää osata kertoa mitä on tehnyt asiakielella.
+Työharjoittelusta ja oppimispäiväkirjan kirjoittamisesta saamani kokemus tulee auttamaan minua tulevaisuudessa.
+Työharjoittelu tarjosi käytännön kokemusta todellisista ammatillisista ympäristöistä,
+minkä ansiosta pystyin soveltamaan koulussa opittuja teoriatietoa todellisiin projekteihin ja kehittämään kriittisiä taitoja 
+ongelmanratkaisussa ja tiimityössä.
+Samalla oppimispäiväkirjan pitäminen helpotti kokemusteni jatkuvaa pohdintaa,
+minkä ansiosta pystyin seuraamaan edistymistäni,
+tunnistamaan parannuskohteita ja syventämään ymmärrystäni käytetyistä tekniikoista ja menetelmistä.
+Yhdessä nämä kokemukset ovat rikastuttaneet merkittävästi ammatillista kehitystäni ja toimivat vankkana perustana tuleville urapyrkimyksilleni.
 \medskip
 
 
