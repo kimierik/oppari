@@ -6,6 +6,8 @@
 \usepackage{geometry}
 \usepackage{svg}
 
+\usepackage{setspace}
+
 \usepackage{hyperref} %links
 \usepackage{xurl}
 
@@ -117,33 +119,9 @@
 \def\testmode{1}
 
 
-
-
 \input{./src/pv/macros.tex}
 
 \usepackage[finnish]{babel}
-
-
-
-
-\iffalse
-
-random shit that we need to do
-
-change words
-
-Client => asiakasohjelma
-    jotenkin tuntuu oudolta sanoo frontendiä asiakasohjelmaksi
-    vissii selainohjelma??
-
-Server => palvelinohjelma
-
-
-
-
-\fi
-
-
 
 
 
@@ -182,7 +160,7 @@ Server => palvelinohjelma
 
 LAB-ammattikorkeakoulu \newline
 \vspace{2mm}
-Tieto-ja tietolikenadsfklj, Insinööri (AMK) \newline
+Tieto-ja viestintätekniikka, Insinööri (AMK) \newline
 \vspace{2mm}
 2024 \newline
 \vspace{2mm}
@@ -190,15 +168,16 @@ Kimi Malkamäki
 
 \newpage
 
-%reset thing
-\renewcommand{\baselinestretch}{1.5} 
-\setlength{\parskip}{0.1cm}
 
 
 
-%------------------------------ FIRST PAGE OF ABSTRACT ------------------------------ %
-\input{src/op/tiivistelma.tex}
+%------------------------------ ABSTRACT PAGES ------------------------------ %
 
+
+\begin{spacing}{1} %\baselinestretch
+    \setlength{\parskip}{0.5cm} 
+    \input{src/op/tiivistelma.tex}
+\end{spacing}
 
 
 
@@ -308,8 +287,6 @@ NoSql = eng "non sql" tai "not only sql". Ei relatiivi tietokantajärjestelmä.
 Teknologia ala on nopeasti liikkuva, uusien teknologioiden kehittyessä vanhat teknologiat poistuvat käytöstä.
 Alan-ammattilaisen pitää pysyä valppaana, ja aktiivisesti opiskella uusia teknologioita, 
 että hän pystyisi pysymään ajantasalla nykyisistä alan suuntauksista.
-Uudet työkalut, ohjelmointikielet ja toimintatavat muuttavat (miten tehdään ja mitä tehdään).
-%needs more
 \medskip
 
 
