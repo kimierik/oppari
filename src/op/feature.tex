@@ -22,7 +22,7 @@ Kuva \getImgCount {}. Progressio sivu (tarvitsee paremman kuvan)
 
 % pitää muokata sanoitusta että se olisi järkevä
 
-Kuvassa \theimgCounter {} mitattava arvo on paino. 
+Kuvassa \theimgCounter {} mitattavan arvon suure on paino. 
 % 
 Tällä hetkellä käyttäjälle voi määrittää vain yhden mitattavan arvon, jota seurata.
 Sain tehtäväksi laajentaa ominaisuutta siten että käyttäjälle voi määrittää useamman mitattavan arvon.
@@ -30,24 +30,16 @@ Sain tehtäväksi laajentaa ominaisuutta siten että käyttäjälle voi määrit
 
 
 Käyttäjän mitattavan arvon suure säilytetään käyttäjän profiilissa merkkijonona. 
-Kuvassa \nextImageCount {} on esimerkki käyttäjä profiilin skeemasta JSON muodossa.
 Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattavan arvon seurantaan, joten se pitäisi vaihtaa.
+%
 %mainitse paremmin mongo nosql dokumentti
-Koska käytössä on nosql dokumentti voimme vaihtaa "measurableThing"{} merkkijonon, "measurableThings"{} merkkijono listaan.
+% elä aloita koska sanalla
+%Koska käytössä on NoSql dokumentti, voimme vaihtaa 
+NoSql dokumentti tietokannan avusta voimme vaihtaa "measurableThing"{} merkkijonon, "measurableThings"{} merkkijono listaan.
+% voi vaihtaa merkkijono listaan ilman että pitää päivittää tietokanta pohjaa
+% voidaan vaihtaa huoletta
+% voidaan vaihtaa helposti
 \medskip
-
-
-\bigskip
-imageofthething\\
-Kuva \getImgCount {}. Käyttäjä profiilin skeema
-\medskip
-
-
-
-
-
-
-
 
 
 
@@ -75,25 +67,17 @@ Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeema
 \medskip
 
 Migraatio tehdään kuvan \nextImageCount {} migraatio funktiolla. 
-Funktio käy läpi kaikki käyttäjät, jolla measurableThing ominaisuus on olemassa ja päivittää sen measurableThings listaan.
+Funktio käy läpi kaikki käyttäjät, jolla on olemassa measurableThing ominaisuus ja päivittää sen measurableThings listaan.
 Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkronisesti palvelimella. 
 Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen sen ajaksi, kun käyttäjä profiileja päivitettäisiin.
 Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
-jolloin migraatio tapahtuisi pikkuhiljaa.
+jolloin migraatio tapahtuisi pikkuhiljaa. 
 \medskip
 
-
 \bigskip
+\includegraphics[width =15cm]{src/public/oppar/migrationfunction.png}\\
 Kuva \getImgCount{}. Migraatio funktio
 \medskip
-
-
-% en tiedä tarvitaanko tätä kuvaa. siihen pitäisi refrensoida ennen
-\bigskip
-Kuva \getImgCount{}. Uusi käyttäjä skeema
-\medskip
-
-
 
 
 
@@ -154,6 +138,14 @@ Komponentti on tilaton funktiokomponentti, johon annetaan mitattavan suurteen ni
 Poisto funktiota kutsutaan, kun painetaan punaista X nappia ja se poistaa mitattavan suurteen käyttäjän profiilista ja elementin käyttöliittymästä.
 %{\the\numexpr \theimgCou:nter + 2 }
 \medskip
+
+
+
+
+
+
+
+
 
 
 \iffalse
