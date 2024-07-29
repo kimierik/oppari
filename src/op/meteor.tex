@@ -71,10 +71,10 @@ Meteorin metodit ominaisuus toimii Etäkäsittelykutsu rajapintana clientin ja p
 Meteor metodit ovat palvelimella määriteltyjä funktioita, joita pystytään kutsumaan Meteorin kautta clientiltä tai palvelimelta. 
 Kuvassa \nextImageCount{} on esimerkki Meteor metodin määritelmästä.
 %selitä yksinkertaisemman eri tavalla, 
-Metodit tekee myös käyttöliittymä koodista yksinkertaisemman, 
-sillä metodien rpc malli poistaa käyttöliittymä koodista tarpeen tehdä GET tai POST requesteja palvelimelle.
-Metodi funktio käyttää JavaScriptin "this"{} ominaisuutta. 
-Sitä käyttäen metodiin voidaan antaa kontekstia kutsujasta.
+Metodit tekevät myös käyttöliittymäkoodista yksinkertaisemman, 
+sillä metodien etäkäsittelukutsumalli poistaa käyttöliittymä koodista tarpeen tehdä GET tai POST requesteja palvelimelle.
+Metodi funktio käyttää JavaScriptin "this"{} ominaisuutta, jonka
+avulla metodiin voidaan antaa kontekstia kutsujasta.
 Tässä kontekstissa voi nähdä esimerkiksi onko kutsuja kirjautunut sisään, tai onko kutsujalla oikeat oikeudet kutsua metodia, 
 helpottaen turvallisuuden lisäämistä rajapintaan.
 \bigskip

@@ -37,7 +37,7 @@ Komponenteista voidaan sitten koota monimutkaisia käyttöliittymiä.
 \medskip
 
 
-Komponentit voidaan kirjoittaa JSX syntaksilla, joka mahdollistaa HTML tyylisen kirjoituksen JavaScriptin sekaan.
+Komponentit voidaan kirjoittaa JSX (eng JavaScript XML) syntaksilla, joka mahdollistaa HTML tyylisen kirjoituksen JavaScriptin sekaan.
 Tämä tekee React:ista helppo luettavan, ymmärrettävän ja opittavan,
 joka on auttanut nostamaan Reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.\labcite{statista23a}
 \medskip
@@ -74,8 +74,8 @@ joka on auttanut nostamaan Reactin suosiota yhteen maailman käytetyimmistä kä
 
 
 
-JSX (eng javascript XML) on syntaksi jatke JavaScriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä syntaksia JavaScriptin sekaan,
-joka tekee koodista yksinkertaisempaa ja helpompaa ymmärtää\labciteend{Stephen21}
+JSX on syntaksi jatke JavaScriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä syntaksia JavaScriptin sekaan,
+tehden koodista yksinkertaisempaa ja helpompaa ymmärtää\labciteend{Stephen21}
 JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä,
 vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle\labciteend{Facebook22}
 \medskip
@@ -108,7 +108,7 @@ Kuva \getImgCount {}. Esimerki JSX syntaxista
 %  voisi mainita uudelleen että selain ei voi suorittaa jsx joten asialle pitää tehdä jotain jos halutaan että toimii
 % sitten mainita seuraavasta kuvasta ja jne
 
-Sillä selaimet eivät voi tulkita JSX syntaksia, se pitää transpiloida natiiviin JavaScriptiin.
+Selaimet eivät voi tulkita JSX syntaksia, joten se pitää transpiloida natiiviin JavaScriptiin.
 Kuvassa \nextImageCount{} on kuvan \theimgCounter{} helloworld muuttuja, joka on transpiloitu natiiviksi JavaScriptiksi Babel kääntäjää käyttäen. \labcite{babel24}
 Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjoitettu JSX syntaksilla.
 \medskip
@@ -138,6 +138,9 @@ Kuva \getImgCount {}. Kuvan \prevImageCount{} JSX transpiloitu JavaScriptiin
 
 
 %tarvitsee korjailua
+
+% åitää selittää mikä itse se on. eli 
+% elementti joka joka sisältää oman jne jen
 
 Komponentti on oma pieni kokoonpano, joka sisältää sen ulkonäön ja käyttäytymisen.
 Komponentit ovat olennainen rakennusosa React sovelluksissa.
@@ -179,7 +182,7 @@ kuvassa \nextnextImageCount {} on sama laskukomponentti kuin kuva \nextImageCoun
 Kuva \getImgCount{}. kuvakaappaus React komponentista(KORJAA INDENTAATIO)
 \medskip
 
-Kuvaassa \theimgCounter{} määritetään funktio komponentti laskija, joka seuraa kuinka monta kertaa nappia on painettu.
+Kuvaassa \theimgCounter{} määritetään funktiokomponentti, jonka nimeksi on annettu laskija, joka seuraa kuinka monta kertaa nappia on painettu.
 Funktio palauttaa komponentin ulkonäön, joka on määritetty JSX syntaksilla.
 Komponentissa on myös useState "hook"{}, joka kuvastaa komponentin tilan,
 tätä käyttäen komponentti pystyy säilyttämään dataa ja päivittämään itsensä, kun sen sisäinen tila muuttuu.
@@ -200,8 +203,8 @@ Funktio uudelleen renderöi osat komponentista jotka, ovat riippuvaisia kyseises
 \medskip
 
 
-Funktio komponentissa tila hallinnoidaan "React hookeilla"{}. 
-"Hookit"{} antavat funktio komponenteille mahdollisuuden käyttää Reactin ominaisuuksia, 
+Funktiokomponentissa tila hallinnoidaan "React hookeilla"{}. 
+"Hookit"{} antavat funktiokomponenteille mahdollisuuden käyttää Reactin ominaisuuksia, 
 jotka luokkakomponentit saavat, kun ne jatkavat Reactin "Component"{} luokkaa.\labcite{react24b}
 Kuvan \prevImageCount{} ja \theimgCounter{} komponentit ovat tehty React 18.3.1 versiolla.
 \medskip
@@ -263,7 +266,7 @@ Kuva \getImgCount {}. DOM puu esimerkki HTML koodista \labimgcite{w3org}
 
 DOM toimii rajapintana HTML ja XML dokumentteihin.\labcite{w3org}
 Päivityksien tekeminen DOM rajapintaa käyttäen on helppoa, mutta se tulee suorituskyvyn hinnalla.
-Elementin päivittäminen DOM:issa päivittää kyseisen elementin kaikki lapsi elementit. 
+Elementin päivittäminen DOM:issa päivittää kyseisen elementin kaikki lapsielementit. 
 Tästä päivityksestä voi tulla hyvin kallis, jos elementtejä on paljon.\labcite{refine23}
 \bigskip
 
@@ -281,8 +284,8 @@ joten React tekee ensiksi kaikki päivitykset VDOM:iin, jonka jälkeen päivityk
 %
 \medskip
 
-Kun React tekee muutoksia VDOM:iin se luo uuden VDOM puun,
-React sitten määrittää mitkä osat käyttöliittymästä ovat muuttuneet, erottelu prosessilla (eng diffing).
+Kun React tekee muutoksia VDOM:iin se luo uuden VDOM puun, jonka jälkeen
+React määrittää mitkä osat käyttöliittymästä ovat muuttuneet erottelu prosessilla (eng diffing).
 Erottelu prosessin ansiosta React tietää mikä on pienin määrä muutoksia mitä pitää tehdä DOM:iin, 
 että käyttöliittymä pysyisi ajan tasalla.\labcite{refine23}
 \medskip
