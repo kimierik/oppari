@@ -22,7 +22,7 @@
 
 MeteorJS on avoimeen lähdekoodiin perustuva full-stack JavaScript web-framework, joka on 
 suunniteltu nopeaan käyttöönottoon ja kehittämiseen eri laitteille \labciteend{meteor24b}
-Meteor mahdollistaa isomorphiseen koodin kirjoittamisen, eli koodiin, joka on samanlaista palvelimella kuten clientillä\labciteend{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
+Meteor mahdollistaa isomorphiseen koodin kirjoittamisen, eli koodiin, joka on samanlaista palvelimella kuten selaimella\labciteend{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
 % outo aloittaa taas meteorilla
 Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen front-end framework:kiin, kuten Vue, React, Svelte tai Angular \labciteend{meteor24a}{}
 Tämä antaa lisä joustoa Meteorille sillä se antaa mahdollisuuden monelle sovelluskehittäjälle, joilla ei ole kokemusta tietystä front-end teknologiasta.\\
@@ -63,12 +63,12 @@ Käyttäjä paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten met
 Meteor käyttää Etäkäsittelykutsu (eng Remote procedure call) rajapintaa perinteisen RESTful rajapinnan sijasta \labciteend{meteor24a}
 Etäkäsittelykutsussa mallissa asiakasohjelma lähettää palvelinohjelmalle kutsuviestin.
 Palvelinohjelma käsittelee kutsuviestin ja suorittaa halutun toiminnon ja palauttaa vastaviestin asiakasohjelmalle.\labcite{ibm23}
-Meteorin metodit ominaisuus toimii Etäkäsittelykutsu rajapintana clientin ja palvelimen välillä. 
+Meteorin metodit ominaisuus toimii Etäkäsittelykutsu rajapintana selaimen ja palvelimen välillä. 
 \medskip
 
 
 
-Meteor metodit ovat palvelimella määriteltyjä funktioita, joita pystytään kutsumaan Meteorin kautta clientiltä tai palvelimelta. 
+Meteor metodit ovat palvelimella määriteltyjä funktioita, joita pystytään kutsumaan Meteorin kautta selaimelta tai palvelimelta. 
 Kuvassa \nextImageCount{} on esimerkki Meteor metodin määritelmästä.
 %selitä yksinkertaisemman eri tavalla, 
 Metodit tekevät myös käyttöliittymäkoodista yksinkertaisemman, 
@@ -99,8 +99,8 @@ Jos käyttäjä on kirjautunut sisään, metodi tulostaa argumentit objektin.
 % sdelitetäänkö build system vai.... vaihdetaanko sana johonkin toiseen vaa
 
 
-Meteor ylläpitää omaa paketointi ekosysteemiään, nämä
-paketit ovat isomorphisia, eli ne toimivat palvelimella ja clientillä \labciteend{pranav17}{}
+Meteor ylläpitää omaa paketointi ekosysteemiään, 
+nämä paketit ovat isomorphisia, eli ne toimivat palvelimella ja selaimella \labciteend{pranav17}{}
 Meteorilla on ensimmäisen osapuolen paketteja, joita itse Meteor tiimi ylläpitää ja kolmannen osapuolen paketteja,
 joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin paketti palvelimelle Athmosphere:lle. \labcite{sanders15}
 \medskip
