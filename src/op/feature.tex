@@ -8,8 +8,8 @@
 
 
 
-Sovelluksen  "Progressio"{} sivulla om ominaisuus, 
-joka antaa mahdollisuuden käyttäjälle seurata ja tellettaa hänelle annettua "mitattavaa"{} arvoa.
+Sovelluksen "Progressio"{} sivulla on ominaisuus, 
+joka antaa mahdollisuuden käyttäjälle seurata ja tallettaa hänelle annettua "mitattavaa"{} arvoa.
 Kuvassa \nextImageCount {} näkyy on progressio sivu, 
 ja siitä Käyttäjä pystyy valitsemaan miltä päivältä arvo on otettu ja mikä itse arvo on.
 \medskip
@@ -35,7 +35,7 @@ Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattava
 %mainitse paremmin mongo nosql dokumentti
 % elä aloita koska sanalla
 %Koska käytössä on NoSql dokumentti, voimme vaihtaa 
-NoSql dokumentti tietokannan avusta voimme vaihtaa "measurableThing"{} merkkijonon, "measurableThings"{} merkkijono listaan.
+NoSql dokumentti tietokannan avusta "measurableThing"{} merkkijonon voi vaihtaa, "measurableThings"{} merkkijono listaan.
 % voi vaihtaa merkkijono listaan ilman että pitää päivittää tietokanta pohjaa
 % voidaan vaihtaa huoletta
 % voidaan vaihtaa helposti
@@ -69,7 +69,7 @@ Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeema
 Migraatio tehdään kuvan \nextImageCount {} migraatio funktiolla. 
 Funktio käy läpi kaikki käyttäjät, jolla on olemassa measurableThing ominaisuus ja päivittää sen measurableThings listaan.
 Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkronisesti palvelimella. 
-Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen sen ajaksi, kun käyttäjä profiileja päivitettäisiin.
+Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen migraation ajaksi, kun käyttäjä profiileja päivitettäisiin.
 Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
 jolloin migraatio tapahtuisi pikkuhiljaa. 
 \medskip
