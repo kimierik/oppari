@@ -530,7 +530,7 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 % selitä enemmillä sanoilla ja paremmin eri laitteiden käyttö
 Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän mobiili laitteita verkkosivujen selaamiseen \labcite{statista23b}
 Kehittäjien pitää ottaa huomioon eri laitteiden muuttujat kuten, näytönkoot, kuvasuhde ja näytön resoluutio.
-Uusien verkkosivujen luominen mobiili selaimille ei ole aina käytännöllistä, sillä niitä pitäisi ylläpitää erikseen työpöytäsivuista.
+Erillisten verkkosivujen luominen mobiili selaimille ei ole aina käytännöllistä, sillä niitä pitäisi ylläpitää erikseen työpöytäsivuista.
 Saman verkkosivun käytön toiminta useammalla eri laitteella vaatii eri lähestymistapaa verkkosuunnitteluun. 
 Sivuston asettelu pitää pystyä muuttumaan sopivaksi laitteelle.
 Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi. \labciteend{marcotte10}
@@ -592,14 +592,14 @@ sen näytön koosta tai kuvasuhteesta.\labcite{mozilla24b}
 
 %fine?
 
-sivujen elementtien asettelu ja niiden käytäntö eri olosuhteissa on tärkeä osa responsiivista suunnittelua.
-Kolme suosittua asettelu vaihtoehtoa on fixed, fluid ja adaptiivinen\labciteend{ksenia23}
-Nämä vaihtoehdot (selittävät) miten elementit toimivat eri käyttöolosuhteissa kuten mobiili laitteilla.
+Sivujen elementtien asettelu ja niiden käytäntö eri olosuhteissa on tärkeä osa responsiivista suunnittelua.
+Kolme suosittua asettelu vaihtoehtoa on kiinteä, nestemäinen ja adaptiivinen\labciteend{ksenia23}
+Nämä vaihtoehdot määräävät miten elementit toimivat eri käyttöolosuhteissa kuten mobiili laitteilla.
 \medskip
 
 
 
-Kiinteä asettelussa elementit pysyvät samana näyttökoosta huolimatta. 
+Kiinteässä asettelussa elementit pysyvät samana näyttökoosta huolimatta. 
 Kiinteässä asettelussa tulee ongelmia, jos näytön koko on pienempi, kun sivustolle suunniteltu asettelu, 
 sillä joitain elementtejä jäisi näytöstä ulkopuolelle tai saatavissa sivu skrollaamisella.\labcite{ksenia23}
 \medskip
@@ -789,7 +789,7 @@ Tekstin dynaaminen kääntäminen on toinen ja vähemmän työläämpi tapa kä�
 Dynaamisessa kääntämisessä sivuston sisältö kääntyy paikallaan toiseen, riippuen käyttäjän valitusta kielestä.
 Käännökset ja niiden tarkoitus on tallennettuna käännöstiedostoon, 
 josta käyttöliittymä etsii halutut käännökset.\citemissing
-Uuden testin lisääminen vaatii vain käännöksien lisäämisen käännöstiedostoon.
+Uuden tekstin lisääminen vaatii vain käännöksien lisäämisen käännöstiedostoon.
 Tällä tavalla on helpompi lisätä uutta sisältöä, mutta eri kielisiä sivustoja ei voi mukauttaa.
 \medskip
 
@@ -844,7 +844,7 @@ Tällä tavalla on helpompi lisätä uutta sisältöä, mutta eri kielisiä sivu
 \subsection{Tehtävänanto}
 
 
-Starttaamo on hakenut nopeaa kehitystä web alustalle, joten kehityksen alkuvaiheessa 
+Starttaamo Oy on hakenut nopeaa kehitystä web alustalle, joten kehityksen alkuvaiheessa 
 ei olla huomioitu mahdollista tarvetta käännöksille. 
 Tämä tarkoittaa sitä, että kaikki sivuston tekstit ovat kovakoodattu suomeksi.
 Sivustojen julkisesti näkyvällä tekstillä ei ollut keskitettyä arkistoa vaan tekstit olivat sijoitettu komponentteihin.
@@ -882,7 +882,7 @@ Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei 
 Kirjasto hakee käännökset käännöstiedostosta käännös funktion avulla.
 Kuvassa \nextImageCount{} on esimerkki käännös funktiosta.
 Kuvassa luodaan HTML paragrafi elementti, jossa kutsutaan käännösfunktiota. 
-funktio hakee käännöstiedoston Progress sivulta Progress arvon.\\
+Funktio hakee käännöstiedoston Progress sivulta Progress arvon.\\
 \medskip
 
 \bigskip
@@ -910,7 +910,7 @@ Kuva \getImgCount. {} Progressiosivun suomenkielinen käännöstiedosto
 
 \bigskip
 \includegraphics[width = 15cm]{src/public/oppar/translationfileEng.png}\\
-Kuva \getImgCount {}. Progressiosivun englanninkielinen käännöstiedostosta
+Kuva \getImgCount {}. Progressiosivun englanninkielinen käännöstiedosto
 \medskip
 
 
