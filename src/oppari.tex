@@ -8,6 +8,8 @@
 
 \usepackage{setspace}
 
+\usepackage{titlesec} % skip after \section
+
 \usepackage{hyperref} %links
 \usepackage{xurl}
 
@@ -20,6 +22,8 @@
 \usepackage{listings}
 
 \usepackage{array}
+
+\usepackage{pdfpages}
 
 
 % citaitons
@@ -113,12 +117,17 @@
 
 \setlength{\headheight}{13.6pt}
 
+%space after the sections
+% ?, before, after
+\titlespacing{\subsection}{0pt}{0.5cm}{0.5cm}
 
 \def\filename{src/oppari.tex}
 
 
 
-\def\testmode{1}
+
+
+%\def\testmode{1}
 
 
 \input{./src/pv/macros.tex}
@@ -207,8 +216,6 @@ Kimi Malkamäki
 % ------------------------------- TERMISTÖ ------------------------------- %
 
 \textbf{ TERMISTÖ }\\
-%(merkitse oikeat termit, dom, css, html, json, node, front, full stack, rest )\\
-%laita myös oikeaan järkestykseen\\
 \bigskip
 
 \begin{tabular}{ p{3.7cm} b{12cm} }
@@ -216,17 +223,15 @@ ECMAscript\bigskip & Skriptaus-kieli standardi \\
 Client\bigskip & Asiakasohjelma\\
 DOM\bigskip & Document Object Model\\
 VDOM\bigskip & Virtual DOM\\
-%Puu\bigskip & datastruktuuri(selitä paremmin)\\
 Transpilaatio\bigskip & Ohjelmointikielen kääntäminen toiseen ohjelmointikieleen\\
-CSS\bigskip & Cascading Style Sheets, tyylisivukieli verkkosivuille\\
+CSS\bigskip & Cascading Style Sheets\\
 HTML\bigskip & Hypertext Markup Language\\
 JSX\bigskip & Javascript syntaksi jatke\\
-JSON\bigskip & Javascript Object Notation tiedostoformaatti\\
-NoSql\bigskip & eng "non sql" tai "not only sql". Ei relatiivi tietokantajärjestelmä. \\
-Solmu\bigskip & Node\\
+JSON\bigskip & Javascript Object Notation\\
+NoSql\bigskip & Ei relatiivinen tietokantajärjestelmä\\
 Front-end\bigskip & Sovelluksen ulkonäköä määritävä koodi\\
 Full-stack\bigskip & Koko sovellusta kattava koodi\\
-RPC\bigskip & Etäkäsittelykutsu\\
+RPC\bigskip & Remote Procedure Call\\
 REST\bigskip & Representional state transfer\\
 \end{tabular}
 
@@ -284,11 +289,13 @@ Uusia teknologioita ja innovaatioita syntyy jatkuvasti, kun taas vanhat poistuva
 Alan ammattilaisten on pysyttävä valppaana ja osallistuttava jatkuvasti aktiiviseen oppimiseen ja taitojen kehittämiseen,
 jotta he pysyvät mukana alan uusimmista edistysaskelista ja suuntauksista.
 % nämä on vähän toistoa mutta en tiedä onko väliä
+\iffalse
 Tämä jatkuva oppimisen ja sopeutumisen sykli on tärkeää,
 jotta voidaan säilyttää relevanssi ja kilpailukyky nopeasti kehittyvässä ympäristössä.
 %
 Pysymällä teknologisen kehityksen tahdissa ammattilaiset pystyvät paremmin hyödyntämään uusia mahdollisuuksia ja selviytymään haasteista,
 joita tässä jatkuvasti muuttuvassa ympäristössä syntyy.
+\fi
 \medskip
 
 
@@ -383,7 +390,7 @@ web sovelluksen päivityksen saanti käyttäjille on nopeaa ja kaikki käyttäj�
 Harjoituksen aika työskentelin Startupin web alustan kanssa. 
 Olin mukana sen kehityksessä, suunnittelussa, ominaisuuksien lisäämisessä ja sivustojen ylläpidossa.
 Alusta oli käyttöönotettu ennen harjoituksen alkamista ja siellä oli aktiivisia käyttäjiä.
-Alusta on ollut käytössä X vuotta ennen harjoituksen alkamista ja sitä ennen 2 vuotta suunnittelussa.
+%Alusta on ollut käytössä X vuotta ennen harjoituksen alkamista ja sitä ennen 2 vuotta suunnittelussa.
 Alustan kehityksessä, oli tehostettu kehitysnopeuteen,
 joten alustalta puuttui monia ominaisuuksia, joita odotetaan web sovelluksesta, 
 kuten web sivustojen kääntäminen ja sivustojen toimiminen mobiililaitteilla.
@@ -508,12 +515,12 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 
 
 % selitä enemmillä sanoilla ja paremmin eri laitteiden käyttö
-Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän mobiili laitteita verkkosivujen selaamiseen \labcite{statista23b}
+Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän mobiili laitteita verkkosivujen selaamiseen\labcite{statista23b}
 Kehittäjien pitää ottaa huomioon eri laitteiden muuttujat kuten, näytönkoot, kuvasuhde ja näytön resoluutio.
 Erillisten verkkosivujen luominen mobiili selaimille ei ole aina käytännöllistä, sillä niitä pitäisi ylläpitää erikseen työpöytäsivuista.
 Saman verkkosivun käytön toiminta useammalla eri laitteella vaatii eri lähestymistapaa verkkosuunnitteluun. 
 Sivuston asettelu pitää pystyä muuttumaan sopivaksi laitteelle.
-Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi. \labciteend{marcotte10}
+Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi.\labciteend{marcotte10}
 \medskip
 
 
@@ -640,7 +647,7 @@ Kuva \getImgCount {}. Esimerkki adaptiivisesta asettelusta pienemmällä näytö
 % https://www.linkedin.com/pulse/website-translation-how-to-guide-louise-souter
 
 
-\subsubsection{motivaatio verkkosivustojen kääntämiseen}
+\subsubsection{Motivaatio verkkosivustojen kääntämiseen}
 
 %miksi kääntää sivustot------------------------------------
 
@@ -660,7 +667,7 @@ Kuva \getImgCount {}. Esimerkki adaptiivisesta asettelusta pienemmällä näytö
 
 
 Kielimuuri on merkittävä haaste, kun tuotteita ja verkkosivustoja laajennetaan uusille markkinoille.
-65\% verkkokäyttäjistä suosii sisällön esittämistä omalla äidinkielellään \labciteend{csa20}
+65\% verkkokäyttäjistä suosii sisällön esittämistä omalla äidinkielellään\labciteend{csa20}
 Sisällön tarjoaminen useilla kielellä on loistava tapa kasvaa eri markkinoille. 
 Kun ihmiset voivat lukea sivustoasi omalla äidinkielellään, heillä on todennäköisemmin miellyttävä käyttökokemus.
 Tutkimukset myös osoittavat, että tuotteiden lokalisointi on hyvä sijoitus kohde.\labcite{austin18}
@@ -935,7 +942,7 @@ Kuva \getImgCount {}. Kielen vaihto laskuvalikko
 
 
 \newpage
-\addPage{src/op/feature.tex}{Uuden ominaisuuden lisäys} % ------------------------------- FEATURE ------------------------------- %
+\addPageOp{src/op/feature.tex}{Uuden ominaisuuden lisäys} % ------------------------------- FEATURE ------------------------------- %
 
 
 
@@ -1098,12 +1105,12 @@ isomman koodi pohjan kanssa työskentely jossa muut ihmiset ovat olleet mukana o
 
 \section{Liitteet}               % ------------------------------- Liitteet ------------------------------- %
 
-päiväkirja liite
+Oppimispäiväkirja
 
 
 
-
-
+% if we compiled the pv at the same time it would take too long
+\includepdf[pages=-]{output/paivakirja.pdf}
 
 
 

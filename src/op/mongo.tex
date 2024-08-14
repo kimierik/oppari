@@ -11,7 +11,6 @@
 %   TODO   TARKISTA KAIKKI VIITTEET ETTÄ NE OIKEESTI ON OIKEESTA PAIKASTA
 
 
-\subsubsection{MongoDB yleisesti}
 
 
 %mongo website and repo
@@ -139,62 +138,46 @@ ja tietoja osien tasapainottamisesta shardien välillä, tietojen tasaisen jakau
 
 
 
-% 
-% not in use of things
-\iffalse
-\subsubsection{Nosql Dokumentti}
-%tätä ei olla kirjoitettu melkein yhtään eteempoäin ja se vaatii lisää tekstiä jos siitä kirjoitetaan
 
-% tämä saatetaan poistaa ehkä
 
-jotain nosql yleisesti, jotain dokumentti vs sql
-jotain dokumenteista yleisesti
 
+\subsubsection{Nosql Dokumentti tietokannnan rakenne}
+
+
+
+
+Relaatiotietokannat järjestävät tiedot taulukoihin,
+joissa kukin taulukko koostuu riveistä, jotka sisältävät useita sarakkeita.
+Kukin rivi edustaa yhtä kokonaisuutta tai tietuetta, ja sarakkeet määrittelevät kyseisen kokonaisuuden eri attribuutit.
+Nämä taulukot on usein yhdistetty toisiinsa ensisijaisilla ja ulkoisilla avaimilla,
+jotka varmistavat suhteet ja ylläpitävät tietojen eheyttä koko tietokannassa.\labciteend{mongodb24k}
 \medskip
 
-NoSql tietokannoilla on monta tapaa säilyttää dataa, jotain relatiivisesta kannasta. 
+Sen sijaan MongoDB jäsentää tiedot kokoelmiksi.
+Kukin kokoelma on samanlainen kuin relaatiotietokannan taulukko,
+mutta rivien sijasta MongoDB käyttää dokumentteja tietojen tallentamiseen.
+% vertailee kuulostaa jotenkin oudolta
+Kuvassa \nextImageCount{} on kaavio, joka vertailee dokumenttikannan ja relatiivikannan termejä.
+Nämä dokumentit ovat joustavia ja sisältävät objekteja.
+Toisin kuin relaatiotietokannat, MongoDB ei vaadi kiinteää skeemaa, mikä tarkoittaa, 
+että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labciteend{mongodb24k}
+\medskip
 
-dokumentti pohjainen tietokanta, jota mongodb käyttää, tallettaa tiedot jossain avain arvo tiedosto formaatissa kuten xml, yaml ja json. \citemissing
+\bigskip
+\includegraphics{src/public/oppar/mongodb-structure.jpg} \\
+Kuva \getImgCount. Kaavio dokumentti- ja relaatio kanta mallin termejen eroista\labimgcite{lamba18}
 \medskip
 
 
-MongoDB tallettaa tiedont BSON muodossa, joka on binaari edustus JSON formaatista.\labcite{mongodb24a}
-tietokannasta dokumentteja voi hakea niiden uniikkien tunnisteiden tai sisällön arvojen perusteella
+Dokumentti sisältää datan, jossain standardisoidussa formaatissa kuten XML, YAML, JSON ym.
+Dokumentit vastaavat karkeasti objektia, eikä niitten pidä sitoutua mihinkään standardi skeemaan, 
+eikä niillä tarvitse olla samoja kenttiä.\labciteend{mongodb24k}
 \medskip
-\fi
 
 
+MongoDB tallettaa tiedot BSON muodossa, joka on binaari edustus JSON formaatista.
+tietokannasta dokumentteja voi hakea niiden uniikkien tunnisteiden tai sisällön arvojen perusteella.\labciteend{mongodb24a}
+\medskip
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% if we want to add stuff about finding document 
-% though it seemed kinda difficult to find anything usefull 
-%so probably not gonna write about this unless we need more content in here
-    
-%https://www.mongodb.com/docs/manual/indexes/
-%https://www.mongodb.com/docs/v5.3/indexes/
-
-% all sitated at 31.5
-
-%incase i cannot read
-%https://www.youtube.com/watch?v=nkSjhL40CTs
-%https://www.youtube.com/watch?v=D14wWW9EEx8
-
-% all sitated at 31.5
-
-%https://www.mongodb.com/docs/manual/reference/method/cursor.explain/#mongodb-method-cursor.explain
-% sitated at 5.6
 
