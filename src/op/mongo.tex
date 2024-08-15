@@ -75,7 +75,7 @@ kuten keskusmuistin tai prosessorin päivitystä, kasvattaen järjestelmän kuor
 Horisontaali skaalaus käsittää koneiden ja järjestelmien lisäämistä, jotka pystyvät jakamaan kuorman usean palvelimen välillä.
 Tämä tuo myös lisä turvaa sillä, jos järjestelmä tai sovellus kaatua palvelinvian takia, 
 toinen palvelin voi tuurata sitä. \labcite{lenovo}
-Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuksiin, jotka toimivat horisontaalisella skaalautumisella.\labcite{mongodb24j} 
+Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuksiin, jotka toimivat horisontaalisella skaalautumisella.\labcite{mongodb24c} 
 \medskip
 
 
@@ -88,12 +88,12 @@ nämä varmuuskopiot voidaan käyttöön ottaa, jos pää tietokanta kaatuu.
 Kaaviossa 1 näkyy esimerkki replikoinnin toiminnasta, asiakassovellus (eng client application) lähettää kaikki kirjoitus ja luku operaatiot pää (eng primäry) tietokannalle, 
 pää tietokanta jakaa kaikki kirjoitus ohjeet muille toissijaisille kopioille pitäen ne ajan tasalla.
 Jos pää tietokanta kaatuu tai sammuu, jostain toissijaisesta kopio tietokannasta tulee uusi pää tietokanta.
-Tämä kasvattaa luotettavuutta sillä, jos olisi vain yksi tietokanta, sen kaatuminen lakkauttaisi sovelluksen toiminnan. \labcite{mongodb24c}
+Tämä kasvattaa luotettavuutta sillä, jos olisi vain yksi tietokanta, sen kaatuminen lakkauttaisi sovelluksen toiminnan. \labcite{mongodb24d}
 \medskip
 \bigskip
 
 \includesvg[width = 10cm]{./src/public/oppar/mongoreplication.svg}\\
-Kaavio\getChartCount{}. Kaavio replikointi mallista \labimgcite{mongodb24c}
+Kaavio\getChartCount{}. Kaavio replikointi mallista \labimgcite{mongodb24d}
 \medskip
 
 
@@ -101,7 +101,7 @@ Kaavio\getChartCount{}. Kaavio replikointi mallista \labimgcite{mongodb24c}
 MongoDB sharding antaa mahdollisuuden jakaa itse tietokanta useaan palaan ja jakaa jokainen palanen erikseen eri palvelimelle.
 Nämä pienemmät palat ovat "shardeja"{} ja ovat itsenäisiä osia kokonaisesta tietokannasta.\labcite{kinsta23}
 Tämä on hyödyllinen, kun yhdellä palvelimella tulee ongelmia suuren tiedon käsittelyn kanssa.
-Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponentit. \labcite{mongodb24d}
+Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponentit. \labcite{mongodb24e}
 \medskip
 
 
@@ -109,7 +109,7 @@ Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponent
 
 \bigskip
 \includesvg[width = 10 cm]{./src/public/oppar/mongosharding.svg}\\
-Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24e}
+Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24f}
 \medskip
 
 
@@ -120,13 +120,13 @@ Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24e}
 Kaavion 2 Mongos tai reitittimen pää funktio on reitittää tietokanta operaatiot oikeille shardeille käyttäen konfiguraatio palvelimelta saatua metadataa.
 Asiakassovellus on yhteydessä mongos:siin ja se toimii rapapintana käyttäjän ja shardien välillä. 
 Kun asiakassovellus lähettää kyselyn tietokantaan, reititin kysyy konfigurointipalvelimelta (eng config server) millä shardeilla on kyseinen data. 
-Jonka jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen asiakassovellukselle.\labcite{mongodb24f}
+Jonka jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen asiakassovellukselle.\labcite{mongodb24g}
 \medskip
 
 %asiakieli
 Shard on tietokanta palvelin, joka sisältää osan klusterin koko tietokannasta.
 Itse shardejen pitää olla replika settejä, 
-tämä tuo lisä turvaa datan hakuun, sillä jos shardin pää kanta kaatuu voi toissijainen kopio ottaa sen paikan. \labcite{mongodb24g}
+tämä tuo lisä turvaa datan hakuun, sillä jos shardin pää kanta kaatuu voi toissijainen kopio ottaa sen paikan. \labcite{mongodb24h}
 \medskip
 
 
@@ -134,7 +134,7 @@ tämä tuo lisä turvaa datan hakuun, sillä jos shardin pää kanta kaatuu voi 
 Konfigurointipalvelin sisältää asetuksia ja metadataa klusterista, 
 kuten tietoja mitkä shardit ovat olemassa, mikä on shardin tila,
 yksityiskohtia siitä mitkä osat tietokannasta on tallennettu mihinkin shardeihin
-ja tietoja osien tasapainottamisesta shardien välillä, tietojen tasaisen jakautumisen varmistamiseksi.\labcite{mongodb24h}
+ja tietoja osien tasapainottamisesta shardien välillä, tietojen tasaisen jakautumisen varmistamiseksi.\labcite{mongodb24i}
 
 
 
@@ -150,28 +150,28 @@ Relaatiotietokannat järjestävät tiedot taulukoihin,
 joissa kukin taulukko koostuu riveistä, jotka sisältävät useita sarakkeita.
 Kukin rivi edustaa yhtä kokonaisuutta tai tietuetta, ja sarakkeet määrittelevät kyseisen kokonaisuuden eri attribuutit.
 Nämä taulukot on usein yhdistetty toisiinsa ensisijaisilla ja ulkoisilla avaimilla,
-jotka varmistavat suhteet ja ylläpitävät tietojen eheyttä koko tietokannassa.\labciteend{mongodb24k}
+jotka varmistavat suhteet ja ylläpitävät tietojen eheyttä koko tietokannassa.\labciteend{mongodb24j}
 \medskip
 
 Sen sijaan MongoDB jäsentää tiedot kokoelmiksi.
 Kukin kokoelma on samanlainen kuin relaatiotietokannan taulukko,
 mutta rivien sijasta MongoDB käyttää dokumentteja tietojen tallentamiseen.
 % vertailee kuulostaa jotenkin oudolta
-Kuvassa \nextImageCount{} on kaavio, joka vertailee dokumenttikannan ja relatiivikannan termejä.
+Kuvassa \nextImageCount{} on kaavio MongoDB:n struktuurista. 
 Nämä dokumentit ovat joustavia ja sisältävät objekteja.
 Toisin kuin relaatiotietokannat, MongoDB ei vaadi kiinteää skeemaa, mikä tarkoittaa, 
-että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labciteend{mongodb24k}
+että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labciteend{mongodb24j}
 \medskip
 
 \bigskip
 \includegraphics{src/public/oppar/mongodb-structure.jpg} \\
-Kuva \getImgCount. Kaavio dokumentti- ja relaatio kanta mallin termejen eroista\labimgcite{lamba18}
+Kuva \getImgCount. Kaavio MongoDB:n struktuurista\labimgcite{lamba18}
 \medskip
 
 
 Dokumentti sisältää datan, jossain standardisoidussa formaatissa kuten XML, YAML, JSON ym.
 Dokumentit vastaavat karkeasti objektia, eikä niitten pidä sitoutua mihinkään standardi skeemaan, 
-eikä niillä tarvitse olla samoja kenttiä.\labciteend{mongodb24k}
+eikä niillä tarvitse olla samoja kenttiä.\labciteend{mongodb24j}
 \medskip
 
 
