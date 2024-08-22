@@ -233,6 +233,7 @@ Front-end\bigskip & Sovelluksen ulkonäköä määritävä koodi\\
 Full-stack\bigskip & Koko sovellusta kattava koodi\\
 RPC\bigskip & Remote Procedure Call\\
 REST\bigskip & Representional state transfer\\
+NPM\bigskip & Node package manager\\
 \end{tabular}
 
 
@@ -277,25 +278,13 @@ REST\bigskip & Representional state transfer\\
 \section{Johdanto}              % ------------------------------- JOHDANTO ------------------------------- %
 
 
-% vaatii uudelleen kirjoittelua 
-% ainakin toinen kappale
 
-%Teknologia ala on nopeasti liikkuva, uusien teknologioiden kehittyessä vanhat teknologiat poistuvat käytöstä.
-%Alan-ammattilaisen pitää pysyä valppaana, ja aktiivisesti opiskella uusia teknologioita, 
-%että hän pystyisi pysymään ajantasalla nykyisistä alan suuntauksista.
+% jotain joko lähde tai muukkaa sanoitus ettei se ole väite
 
 Teknologia-ala on nopealiikkeinen ja dynaaminen. 
 Uusia teknologioita ja innovaatioita syntyy jatkuvasti, kun taas vanhat poistuvat nopeasti käytöstä.
 Alan ammattilaisten on pysyttävä valppaana ja osallistuttava jatkuvasti aktiiviseen oppimiseen ja taitojen kehittämiseen,
-jotta he pysyvät mukana alan uusimmista edistysaskelista ja suuntauksista.
-% nämä on vähän toistoa mutta en tiedä onko väliä
-\iffalse
-Tämä jatkuva oppimisen ja sopeutumisen sykli on tärkeää,
-jotta voidaan säilyttää relevanssi ja kilpailukyky nopeasti kehittyvässä ympäristössä.
-%
-Pysymällä teknologisen kehityksen tahdissa ammattilaiset pystyvät paremmin hyödyntämään uusia mahdollisuuksia ja selviytymään haasteista,
-joita tässä jatkuvasti muuttuvassa ympäristössä syntyy.
-\fi
+jotta he pysyvät mukana alan uusimmista edistysaskelista ja suuntauksista.\labcite{vitaly18}
 \medskip
 
 
@@ -319,8 +308,7 @@ jolloin kirjoitettiin oppimispäiväkirja.
 % 
 Oppimispäiväkirja on kirjoitettu teemoittain teknologioista mitä käytin ja opiskelin seurantajakson aikana.
 Teemat voivat kattaa useamman viikon ja niissä kerrotaan itse teknologiasta, miten käytin kyseistä teknologiaa viikon tehtävien toteuttamiseen ja
-ongelmiin joihin törmäsin niitä käyttäen.
-%more text
+ongelmiin, joihin törmäsin niitä käyttäen.
 \medskip
 
 
@@ -357,38 +345,42 @@ Sain myös kokemusta ilmeentyvien ongelmien korjaamisesta.
 
 \newpage
 \section{Lähtötilanne}         % ------------------------------- LÄHTÖTILANNE ------------------------------- %
-% Tämä on suurimmaksi osaksi fine
-% johannalta pitää kysyä kauan on ollut käynnissä ennen kun tulin ja kauan suunnittelussa
-% mahdollisesti sanan vaihto frontend ja backend
 
 
 
 
 Ennen opinnäytetyön kirjoittamista ja seurantajakson alkamista olin opiskellut LAB ammattikorkeakoulussa 7 lukukautta ja
-olin opinnäytetyön kirjoituksen aikana neljännen vuoden tieto- ja viestintätekniikan opiskelija.
-Vaikka minulla ei ollut aiempaa työkokemusta tieto- ja viestintätekniikan alalta ennen harjoituksen alkamista,
+olin opinnäytetyön kirjoituksen aikana neljännen vuoden Tieto- ja viestintätekniikan opiskelija.
+Vaikka minulla ei ollut aiempaa työkokemusta Tieto- ja viestintätekniikan alalta ennen harjoituksen alkamista,
 olin koulutuksen aikana saanut laajan pohjan ohjelmoinnista,
-sen perusteista ja muista tieto- ja viestintätekniikan alan taidoista esim. versionhallinnasta, tietokannoista sekä web suunnittelusta.
+sen perusteista ja muista Tieto- ja viestintätekniikan alan taidoista esim. versionhallinnasta, tietokannoista sekä web suunnittelusta.
 Teoriapohja ei kuitenkaan aina riitä työelämässä, joten uusiin olosuhteisiin soveltuminen ja uusien asioiden oppiminen on oleellista.
 \medskip
 
 
 
-Harjoituksen aikana halusin oppia web alustojen kanssa työskentelystä ja projektissa käytetyistä teknologioista.
+
+Harjoittelun aikana halusin oppia web alustojen kanssa työskentelystä ja projektissa käytetyistä teknologioista.
 Halusin myös kokemusta työskennellä isommassa koodipohjassa, jota muutkin henkilöt ovat olleet suunnittelemassa.
 Isommat projektit vaativat palavereita ja yhteenvetoja, että kaikki kehittäjät pysyvät ajan tasalla.
-Sosiaaliset taidot ja kyky selittää teknisiä asioita asiakielellä on myös taito, 
-jota en ollut ennen harjoittelua tarvinnut, mutta huomasin sen olevan oleellinen osa työelämää.
-Viikoittaisten palavereihin osallistuminen ja viikon aikana tehtyjen töiden esittely ja selittäminen on oleellinen osa isommassa projektissa työskentelemistä.
+Työkokemuksen puutteessa minulta puuttuu myös ammattimaiset sosiaaliset taidot.
+Viikoittaisten palavereihin osallistuminen ja viikon aikana tehtyjen töiden esittely 
+ja selittäminen on oleellinen taito ammatillisessa työelämässä, jonka halusin oppia.
+%Sosiaaliset taidot ja kyky selittää teknisiä asioita asiakielellä on myös taito, 
+%jota en ollut ennen harjoittelua tarvinnut, mutta huomasin sen olevan oleellinen osa työelämää.
+%Viikoittaisten palavereihin osallistuminen ja viikon aikana tehtyjen töiden esittely 
+%ja selittäminen on oleellinen osa isommassa projektissa työskentelemistä.
 \medskip
 
-% front back en tiedä jos suomenkielinen olisi hyvä
 
 Web sovelluksen kehittämisessä tulee esiin haasteita, joita ei tule muussa sovelluskehityksessä.
 Sovellukset koostuvat useimmiten monesta osasta, kuten front-end, back-end ja tietokanta.
-Nämä osat pitää olla jatkuvasti toiminnassa ja yhteyksissä toisiinsa sovelluksien toimimiseen ja niiden katkeaminen voi
-johtaa sovelluksen toimimattomuuteen.
-Myös palvelin- tai muut sovellus virheet voivat kaataa koko sovelluksen kaikille käyttäjille. 
+% 
+Sovelluksen toiminnan kannalta kaikki nämä osat pitää olla jatkuvasti yhteyksissä toisiinsa, ja niiden katkeaminen 
+voi johtaa sovelluksen toimimattomuuteen.
+%Nämä osat pitää olla jatkuvasti toiminnassa ja yhteyksissä toisiinsa sovelluksien toimintaan ja niiden katkeaminen voi
+%johtaa sovelluksen toimimattomuuteen.
+Myös palvelin- tai muut sovellus virheet voivat kaataa sovelluksen kaikilta käyttäjiltä. 
 Web sovelluksien kehittämisessä on myös etuja tavalliseen sovelluskehitykseen verrattuna, kuten 
 web sovelluksen päivityksen saanti käyttäjille on nopeaa ja kaikki käyttäjät saavat päivityksen samanaikaisesti.
 \medskip
@@ -396,8 +388,7 @@ web sovelluksen päivityksen saanti käyttäjille on nopeaa ja kaikki käyttäj�
 Harjoituksen aika työskentelin Startupin web alustan kanssa. 
 Olin mukana sen kehityksessä, suunnittelussa, ominaisuuksien lisäämisessä ja sivustojen ylläpidossa.
 Alusta oli käyttöönotettu ennen harjoituksen alkamista ja siellä oli aktiivisia käyttäjiä.
-%Alusta on ollut käytössä X vuotta ennen harjoituksen alkamista ja sitä ennen 2 vuotta suunnittelussa.
-Alustan kehityksessä, oli tehostettu kehitysnopeuteen,
+Alustan kehityksessä oli tehostettu kehitysnopeuteen,
 joten alustalta puuttui monia ominaisuuksia, joita odotetaan web sovelluksesta, 
 kuten web sivustojen kääntäminen ja sivustojen toimiminen mobiililaitteilla.
 \medskip
@@ -427,43 +418,41 @@ kuten web sivustojen kääntäminen ja sivustojen toimiminen mobiililaitteilla.
 
 
 \newpage
-\section{Teoria}                % ------------------------------- TEORIA ------------------------------- %
+\section{Käytettyjen teknologioiden perusteet}                % ------------------------------- TEORIA ------------------------------- %
+% parempi title teorialle
 
 
 
-\subsection{Kehitys ympäristö / Teknologia pino}
-% tä on suurimmaks osaks hyvä ehkä pitää selittää markkinoilla pärjääminen en tiedä
+\subsection{Kehitysympäristö / Teknologia pino}
 
 
 
-
-% vähän paremmin selitys markkinoille pääsemisenn
-Startup- ja muut kasvuyritykset hakevat nopeaa ja ketterää kehitystä markkinoilla pärjäämiseen.
+Startup- ja muut kasvuyritykset hakevat nopeaa ja ketterää kehitystä markkinoilla pärjäämiseen.\labcite{fikrahub}
 Kehityksen nopeus voi myös riippua teknologioista, sillä jollain teknologioilla on helpompi ja nopeampi toteuttaa joitain ominaisuuksia.
-Tämä pitää ottaa huomioon, kun valitaan mitä teknologioita käytetään sovelluksessa.
+Tämä pitää ottaa huomioon, kun valitaan, mitä teknologioita käytetään sovelluksessa.
 Pohjalla käytettyjen teknologioiden vaihtaminen on erittäin työlästä jälkikäteen,
-joten päätös käytetyistä teknologioista tulee vaikuttamaan yhtiön kehityksen nopeuden.
+joten päätös käytetyistä teknologioista tulee vaikuttamaan koko yrityksen kehityksen nopeuteen.
 Hidas sovelluskehitys voi haitata itse yrityksen mahdollisuuksia selvitä markkinoilla.
 \medskip
 
 
 
-Projektin teknologia pino pohjautuu MeteorJs kehykseen, joka on suunniteltu nopeaan kehittämiseen ja käyttöönottoon.
+Projektin teknologia pino pohjautuu MeteorJs kehykseen, joka on suunniteltu nopeaan kehittämiseen ja käyttöönottoon.\labcite{meteor24b}
 % tosi huono selitys meteorista
 Meteor helpottaa kommunikointia käyttöliittymän, palvelimen ja tietokannan kanssa, 
-mutta silti antaen vapauden valita muut käytettävät teknologiat, eikä lukitse käyttämään valmiiksi valittuja teknologioita.
-Meteor ei määritä käytettyä käyttöliittymä kirjastoa mutta se silti tukee monia suosituimpia kehyksiä ja antaa helpon integraation niihin.
+mutta säilyttää vapauden valita muut käytettävät teknologiat, eikä lukitse käyttämään valmiiksi valittuja teknologioita.
+Meteor ei määritä käytettyä käyttöliittymäirjastoa, mutta se silti tukee monia suosituimpia kehyksiä ja antaa helpon integraation niihin.
 Projektiin on valittu ReactJs kirjasto käyttöliittymän toteutukseen.
-Reactin komponentti pohjainen rakenne tekee käyttöliittymä koodista helposti uudelleen käytettävän, nopeuttaen käyttöliittymän rakentamista. 
-Myös sen sisään rakennettu reaktiivisuus tilallisilla komponenteilla tuo helpon käyttöliittymä päivityksen.
-Meteor integroituu React kirjaston kanssa suoraan laatikosta.
-Tämä on nähtävillä, kun Meteor pystyy päivittää React komponentteja automaattisesti esimerkiksi Tietokantamuutoksien tapahduttua. 
+Reactin komponenttipohjainen rakenne tekee käyttöliittymä koodista helposti uudelleen käytettävän nopeuttaen käyttöliittymän rakentamista. 
+Myös sen sisään rakennettu komponenttirakenne tuo helpon käyttöliittymä päivityksen.
+Meteor integroituu React kirjaston kanssa.
+Tämä on nähtävillä, kun Meteor kykenee päivittämään React komponentteja automaattisesti esimerkiksi tietokantamuutoksien tapahduttua. 
 Projektissa käytössä oleva tietokanta MongoDB on myös hyvin integroitu Meteoriin.
-MongoDBn skeematon dokumentti rakenne, tuo helpon tavan päivittää skeemoja tarpeiden tullen.
+%MongoDBn skeematon dokumenttirakenne, tuo helpon tavan päivittää skeemoja tarpeiden tullen.
 \medskip
 
 
-MeteorJs, MongoDB ja ReactJs ovat alustan pohjalla käytetyt teknologiat, jonka päälle projekti on rakennettu.
+MeteorJs, MongoDB ja ReactJs ovat teknologiat, joiden avulla projekti on rakennettu.
 Yhdessä näitä kolmea teknologiaa käyttäen voi luoda monenlaisia nopeita ja skaalautuvia nettisivuja ja sovelluksia pienistä projekteista suuriin.
 Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee niistä hyvän valinnan kasvavalle startup yritykselle.
 \medskip
@@ -521,11 +510,11 @@ Nämä teknologiat ovat myös suunniteltu nopeaan kehittämiseen, joka tekee nii
 
 
 % selitä enemmillä sanoilla ja paremmin eri laitteiden käyttö
-Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän mobiili laitteita verkkosivujen selaamiseen\labcite{statista23b}
-Kehittäjien pitää ottaa huomioon eri laitteiden muuttujat kuten, näytönkoot, kuvasuhde ja näytön resoluutio.
-Erillisten verkkosivujen luominen mobiili selaimille ei ole aina käytännöllistä, sillä niitä pitäisi ylläpitää erikseen työpöytäsivuista.
-Saman verkkosivun käytön toiminta useammalla eri laitteella vaatii eri lähestymistapaa verkkosuunnitteluun. 
-Sivuston asettelu pitää pystyä muuttumaan sopivaksi laitteelle.
+Tekniikan parantuessa verkkolaitteiden määrä on kasvanut, ja ihmiset käyttävät enemmän ja enemmän mobiililaitteita verkkosivujen selaamiseen\labcite{statista23b}
+Kehittäjien pitää ottaa huomioon eri laitteiden ympäristötekijät kuten, näytönkoot, kuvasuhde ja näytön resoluutio.
+Erillisten verkkosivujen luominen mobiili selaimille ei ole aina käytännöllistä, sillä niitä pitäisi ylläpitää erikseen työpöytäsovelluksista.
+Saman verkkosivun käyttö useammalla eri laitteella vaatii eri lähestymistapaa verkkosivusuunnitteluun. 
+Sivuston asettelu pitää mukautua sopivaksi laitteelle.
 Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi suunnitteluksi.\labciteend{marcotte10}
 \medskip
 
@@ -533,14 +522,14 @@ Verkkosivujen suunnittelussa tätä lähestymistapaa kutsutaan responsiiviseksi 
 
 Responsiivinen verkkosuunnittelu on lähestymistapa verkkosivustojen rakentamiseen,
 jolla varmistetaan niiden optimaalinen ulkoasu ja toimivuus eri laitteilla näytön koosta huolimatta. 
-Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne voisi tarjota yhdenmukaisen käyttökokemuksen käyttölaitteesta riippumatta.\labcite{mozilla24a}
+Responsiiviset verkkosivut mukautuvat käyttölaitteeseen, siten että ne tarjoavat yhdenmukaisen käyttökokemuksen käyttölaitteesta riippumatta.\labcite{mozilla24a}
 \medskip
 
 
 
 
 
-\subsubsection{CSS Media query}
+\subsubsection{CSS Mediakyselyt}
 
 
 % eka kappale ei selitä kunnolla mikä on media query imo
@@ -560,10 +549,10 @@ Dokumenteille voidaan CSS:ssää käyttäen määritellä tyyliohjeita, jonka mu
 
 
 
-Mediaqueryt mahdollistaa selain tai käyttölaite arvojen kyselyn ja testailun,
+Mediakyselyt (eng Media Query )mahdollistaa selain tai käyttölaite arvojen kyselyn ja testailun,
 ja mahdollistaa ehdollisen CSS tyylien asettelun.\labcite{mozilla24c}
-Ne antavat mahdollisuuden CSS-säännöksen asettamiselle vain silloin kun selain- ja laiteympäristö vastaa määritettyjä sääntöjä. 
-Media Queryt ovat tärkeä osa repsonsiivista suunnittelua ja se antaa mahdollisuuden luoda erilaisia asetteluja riippuen käyttölaitteesta,
+Ne antavat mahdollisuuden määritellä eri CSS-sääntöjä eri kokoisille näytöille. 
+Mediakyselyt ovat tärkeä osa repsonsiivista suunnittelua ja se antaa mahdollisuuden luoda erilaisia asetteluja riippuen käyttölaitteesta,
 sen näytön koosta tai kuvasuhteesta.\labcite{mozilla24c}
 
 
@@ -585,31 +574,31 @@ sen näytön koosta tai kuvasuhteesta.\labcite{mozilla24c}
 
 %fine?
 
-Sivujen elementtien asettelu ja niiden käytäntö eri olosuhteissa on tärkeä osa responsiivista suunnittelua.
+Sivujen elementtien asettelu ja niiden mukautuminen eri eri olosuhteissa on tärkeä osa responsiivista suunnittelua.
 Kolme suosittua asettelu vaihtoehtoa on kiinteä, nestemäinen ja adaptiivinen\labciteend{ksenia23}
-Nämä vaihtoehdot määräävät miten elementit toimivat eri käyttöolosuhteissa kuten mobiili laitteilla.
+Nämä vaihtoehdot määräävät miten elementit toimivat eri käyttöympäristöissä kuten mobiili laitteilla.
 \medskip
 
 
 
 Kiinteässä asettelussa elementit pysyvät samana näyttökoosta huolimatta. 
 Kiinteässä asettelussa tulee ongelmia, jos näytön koko on pienempi, kun sivustolle suunniteltu asettelu, 
-sillä joitain elementtejä jäisi näytöstä ulkopuolelle tai saatavissa sivu skrollaamisella.\labcite{ksenia23}
+sillä joitain elementtejä jää näytön ulkopuolelle tai on vain nähtävissä sivusuuntaisella skrollaamisella.\labcite{ksenia23}
 \medskip
 
 
 Nestemäisessä asettelussa elementtien koot vaihtuvat näytön koon mukaan. 
 Verrattuna kiinteään asetteluun elementit eivät jää näytöstä ulkopuolelle sillä elementit skaalautuvat näytönkoon mukaan.
 %selitä vähän paremmin
-Nestemäisessä asettelussa tulee silti ongelmia sillä, jos elementti on liian pieni sille annetulle tekstille.\labcite{ksenia23}
+Nestemäisessä asettelussa tulee silti ongelmia sillä, jos elementti on liian pieni suhteessa sille varattuun tilaan.\labcite{ksenia23}
 \medskip
 
 
 Adaptiivisessä asettelussa elementtien koot ja sijainnit muuttuvat riippuen näytönkoosta.\labcite{ksenia23}
 Adaptiivisen asettelun ideana on mukauttaa sivuston elementtien asettelu sopivaksi käytetylle laitteelle.
 Kuvassa \nextImageCount {} on esimerkki sivuston asettelusta ja
-kuvassa \nextnextImageCount{} on esimerkki miltä sivusto voisi näyttää pienemmällä näytöllä, jos käytössä olisi adaptiivinen asettelu.
-Käyttöliittymän elementit ovat siirtyneet vierekkäisestä asettelusta päällekkäiseen sopimaan pienempään näytönkokoon.
+kuvassa \nextnextImageCount{} on esimerkki, miltä sivusto voisi näyttää pienemmällä näytöllä, jos käytössä olisi adaptiivinen asettelu.
+Käyttöliittymän elementit ovat siirtyneet vierekkäisestä asettelusta päällekkäiseen sopimaan paremmin pienempään näytönkokoon.
 %more
 \medskip
 
@@ -674,14 +663,15 @@ Kuva \getImgCount {}. Esimerkki adaptiivisesta asettelusta pienemmällä näytö
 
 Kielimuuri on merkittävä haaste, kun tuotteita ja verkkosivustoja laajennetaan uusille markkinoille.
 65\% verkkokäyttäjistä suosii sisällön esittämistä omalla äidinkielellään\labciteend{csa20}
-Sisällön tarjoaminen useilla kielellä on loistava tapa kasvaa eri markkinoille. 
-Kun ihmiset voivat lukea sivustoasi omalla äidinkielellään, heillä on todennäköisemmin miellyttävä käyttökokemus.
-Tutkimukset myös osoittavat, että tuotteiden lokalisointi on hyvä sijoitus kohde.\labcite{austin18}
+Sisällön tarjoaminen useilla kielellä on tapa kasvattaa yritystä eri markkinoille. 
+Kun ihmiset voivat lukea sivuja omalla äidinkielellään, heillä on todennäköisemmin miellyttävä käyttökokemus.
+Tutkimukset myös osoittavat, että tuotteiden lokalisointi kasvattaa sivustojen käyttäjämääriä.\labcite{austin18}
 \medskip
 
 
 
-Käyttäjien suosimus omakieliselle sisällölle korostaa tarkkojen käännösten tarjoamisen ratkaisevaa merkitystä.
+Omakielinen sisältö on käyttäjille tärkeää.
+%Käyttäjien suosimus omakieliselle sisällölle korostaa tarkkojen käännösten tarjoamisen ratkaisevaa merkitystä.
 Jos käännökset laiminlyödään, huomattava osa potentiaalisista käyttäjistä ei välttämättä pysty käyttämään tuotetta tehokkaasti.
 Näin ollen yritykset ovat vaarassa vieraannuttaa suuren osan mahdollisista käyttäjistä.
 % 
@@ -697,7 +687,7 @@ jotka pyrkivät saavuttamaan maailmanlaajuista menestystä ja maksimoimaan tavoi
 
 
 
-\subsubsection{Käännös tavat ja haasteet}
+\subsubsection{Käännöstavat ja haasteet}
 
 
 %https://www.transifex.com/blog/2024/website-translation-methods/
@@ -712,7 +702,7 @@ jotka pyrkivät saavuttamaan maailmanlaajuista menestystä ja maksimoimaan tavoi
 
 
 On useita eri tapoja web sivustojen kääntämiselle.
-Mutta, koska monet kielet ovat hyvin erilaisia konteksti ja nyanssit voivat hävitä, jos käännetään sana sanaan.
+Mutta, koska monet kielet ovat hyvin erilaisia konteksti ja nyanssit voivat hävitä, jos käännetään suoraan sanasta sanaan.
 Monia lauseita ja ilmaisuja ei voi kääntää suoraan kielestä toiseen menettämättä niiden alkuperäistä merkitystä.
 Esimerkiksi idiomit, metaforat ja puhekieliset ilmaisut edellyttävät usein luovaa mukauttamista eikä niinkään kirjaimellista kääntämistä. 
 Lisäksi tietyt termit ja käsitteet voivat olla olemassa yhdessä kulttuurissa, 
@@ -721,10 +711,10 @@ mutta eivät toisessa, jolloin tarvitaan harkittuja selityksiä tai korvauksia, 
 
 
 
-Käännös tekstin luonnin voi yleisesti tehdä kahdella tavalla. henkilökäännös tai tekoälykäännös.
+Käännöstekstin luonnin voi yleisesti tehdä kahdella tavalla. Henkilökäännös tai tekoälykäännös.
 Henkilökäännöksellä voi olla hyvä tarkkuus ja lopputulos tulee kuulostamaan luonnolliselta.
 Tämä ratkaisu tulee olemaan kalliimpi tekoälykäännökseen verrattuna sillä oikea kääntäjä pitää palkata.
-tekoäly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.\labcite{Habash23}
+Tekoälyllä tehty käännös on nopea ja halpa, mutta se ei vielä ole tarpeeksi tarkka kaikkiin käyttötarkoituksiin.\labcite{Habash23}
 \medskip
 
 
@@ -735,22 +725,8 @@ tekoäly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaik
 
 
 
-% miten käännökset tehdään nettisivuille teknisesti ------------------------------------
-% jotain vaihtoehtoja ja eri tapoja tehdä käännöksiä
 \subsubsection{Käännökset teknisesti}
 
-% eka kappale pitää uudelleen kirjoittaa
-% toinenkin kappale pitää siirtää
-
-
-% vaihda sanan valinta siihen että joskus ollaan tehty uusia kopioita joka käännetylle sivulle
-% pitää vain uudelleen kirjoittaa
-
-%sitaatti on olemassa siihen että on kopioitu joskus
-%
-
-% jos ei löydy mitään tähän niin on mahdollisuuis että pitää uudelleen kirjoittaa koko käänn sectio
-% ellei sitä poisteta
 
 
 
@@ -765,7 +741,9 @@ tekoäly käännös on nopea ja halpa, mutta ei vielä ole tarpeeksi tarkka kaik
 
 
 
-Kopio verkkosivusta jossa sisältö on käännettynä, on vaihtoehto, joka ei vaadi erikoista teknologiaa itse sisällön kääntöä lukuunottamatta.
+Suora kopio verkkosivuista, joka on käännetty tietylle kielelle
+%Kopio verkkosivusta jossa sisältö on käännettynä, 
+on vaihtoehto, joka ei vaadi erikoista teknologiaa itse sisällön kääntöä lukuunottamatta.
 Tällä tavalla jokainen erikielinen sivusto voidaan muokata sopimaan juuri siihen kulttuuriin mihin se on kohdistettu.
 Mutta monen eri version samasta verkkosivusta ylläpitäminen on työlästä, sillä muutoksien tekeminen pitäisi päivittää joka kopioon erikseen.
 \medskip
@@ -784,10 +762,12 @@ Avainpohjainen kääntäminen on toinen ja vähemmän työläämpi tapa käänt�
 Avainpohjaisessa kääntämisessä käyttöliittymässä käytetään avaimia, joita käyttäen sivuston sisältö kääntyy paikallaan toiseen, 
 riippuen käyttäjän valitusta kielestä.
 %
-Käännökset ja niiden tarkoitus on tallennettuna johonkin avain-arvo tietokantaan tai tiedostoon,
+Eri käännökset ovat tallennettuna 
+%Käännökset ja niiden tarkoitus on tallennettuna johonkin 
+avain-arvo tietokantaan tai tiedostoon,
 josta käyttöliittymä etsii halutut käännökset.\labciteend{wong24}
 Uuden tekstin lisääminen vaatii vain käännöksien lisäämisen avain-arvo kantaan.
-Tällä tavalla on helpompi lisätä uutta sisältöä, mutta eri kielisiä sivustoja ei voi mukauttaa.
+Tällä tavalla on helpompi lisätä uutta sisältöä.
 \medskip
 
 
@@ -843,18 +823,15 @@ Tällä tavalla on helpompi lisätä uutta sisältöä, mutta eri kielisiä sivu
 
 Starttaamo Oy on hakenut nopeaa kehitystä web alustalle, joten kehityksen alkuvaiheessa 
 ei olla huomioitu mahdollista tarvetta käännöksille. 
-Tämä tarkoittaa sitä, että kaikki sivuston tekstit ovat kovakoodattu suomeksi.
+Tämä tarkoittaa sitä, että kaikki sivuston tekstit oli kovakoodattu suomeksi.
 Sivustojen julkisesti näkyvällä tekstillä ei ollut keskitettyä arkistoa vaan tekstit olivat sijoitettu komponentteihin.
 \medskip
 
-Sain työnaiheeksi rakentaa käännös järjestelmä, jonka avulla sivustot voitaisiin kääntää useammalle kielelle.
-Käännös järjestelmän pitäisi olla laajennettavissa siten että sivustojen päivittäminen ja uusien kielien lisääminen olisi 
-olisi mahdollisimman nopeaa ja helppoa.\\
-\medskip
-
+Sain tehtäväksi rakentaa käännösjärjestelmä, jonka avulla sivustot voitaisiin kääntää useammalle kielelle.
+Käännös järjestelmän pitäisi olla laajennettavissa siten että sivustojen päivittäminen ja uusien kielien lisääminen 
+olisi mahdollisimman nopeaa ja helppoa.
 Keskitetty arkisto missä kaikki sivuston julkinen teksti auttaisi käännösten tekemistä tulevaisuudessa,
 sillä uusien kielien lisääminen ei vaatisi käyttöliittymä koodin muokkaamista.
-Tekstin etsiminen koodipohjasta ei ollut monimutkaista nykyisien tekstimuokkaustyökalujen haku ominaisuuksilla.
 
 
 
@@ -875,10 +852,10 @@ Tekstin etsiminen koodipohjasta ei ollut monimutkaista nykyisien tekstimuokkaust
 
 % uusiks melkein kokonaan
 
-Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti ei ole monimutkaista.
+Meteorin kanssa yhteensopiva i18n kirjastoa käyttäen käännöksien luonti on tehokasta.
 Kirjasto hakee käännökset käännöstiedostosta käännös funktion avulla.
 Kuvassa \nextImageCount{} on esimerkki käännös funktiosta.
-Kuvassa luodaan HTML paragrafi elementti, jossa kutsutaan käännösfunktiota. 
+Kuvassa luodaan HTML p-elementti, jossa kutsutaan käännösfunktiota. 
 Funktio hakee käännöstiedoston Progress sivulta Progress arvon.\\
 \medskip
 
@@ -890,10 +867,10 @@ Kuva \getImgCount. {} I18n käännösfunktiokutsu
 
 % emt onko incoherent
 
-I18n kirjasto tukee montaa käännöstiedosto formaattia mutta päätin kirjoittaa ne JSON muotoon. %nececary??
+I18n kirjasto tukee montaa käännöstiedosto formaattia, mutta sovellukseen valittiin JSON tiedostomuoto.
 Kuvassa \nextImageCount{} on progressio sivun suomenkieliset käännökset ja kuvassa {\the\numexpr \theimgCounter + 2 } on saman sivun englannin kieliset käännökset.
 Jokaisella sovelluksen sivulla on oma objekti, joka sisältää sen sivun julkisen tekstin. 
-Avaimet tekstille on valmiiksi päätetyt merkkijonot, jotka kuvaavat käännöksen tarkoitusta.
+Avaimet tekstille on valmiiksi määritellyt merkkijonot, jotka kuvaavat käännöksen tarkoitusta.
 Kun käyttäjä vaihtaa halutun kielen i18n osoittaa toiseen käännöstiedostoon, 
 jossa on samat avaimet käännöksille, mutta arvot ovat vaihtuneet kyseisen kielen käännöksiin.
 \medskip
@@ -913,7 +890,7 @@ Kuva \getImgCount {}. Progressiosivun englanninkielinen käännöstiedosto
 
 
 
-\subsection{käyttöliittymä kielenvaihamiselle}
+\subsection{Käyttöliittymä kielenvaihamiselle}
 
 %lisäsin sivulle, tosin kun sivulle on lisätty
 
@@ -925,7 +902,7 @@ Laskuvalikko on näkyvissä sovelluksen kaikilla sivuilla, joten se on aina saat
 
 
 
-Laskuvalikon komponentti päivittää sovelluksen korkeamman React root komponentin kun käyttäjä on vaihtanut kielen.
+Laskuvalikon komponentti päivittää sovelluksen React root komponentin kun käyttäjä on vaihtanut kielen.
 Tällöin varmistetaan että kaikki sivuilla oleva teksti vaihtuu oikeaan kieleen.
 %jotain pikkusen lisää
 \medskip
@@ -975,7 +952,7 @@ Kuva \getImgCount {}. Kielen vaihto laskuvalikko
 
 
 
-Opinnäytetyössä seurattiin projektin etenemistä seurantajakson ajan,
+Opinnäytetyössä seurattiin projektin etenemistä ja kehittäjän oppimista seurantajakson ajan,
 jolloin saatiin kattava yleiskuva projektin kehityksestä.
 Lisäksi päiväkirja tarjoaa hyvän näkemyksen ammattilaisen päivittäisestä työstä ja tuo esiin rutiininomaiset ja monimutkaiset haasteet. 
 Päiväkirja oli olennainen väline käytettyjen teknologioiden opiskeluun,

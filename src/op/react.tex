@@ -28,16 +28,16 @@
 
 
 
-React on Metan ylläpitämä avoimeen lähdekoodiin perustuva javascript kirjasto,
-joka on suunniteltu reaktiivisien käyttöliittymien kehittämiseen\labcite{react24a}
-React kannustaa kehittäjiä rakentamaan sovelluksia uudelleenkäytettävien komponenttien avulla.
+React on Metan ylläpitämä avoimeen lähdekoodiin perustuva JavaScript kirjasto,
+joka on suunniteltu reaktiivisten käyttöliittymien kehittämiseen\labcite{react24a}
+React suosittelee kehittäjiä rakentamaan sovelluksia uudelleenkäytettävien komponenttien avulla.
 Jokainen komponentti sisältää oman rakenteensa, tyylinsä ja käyttäytymisensä, joka tekee niistä helposti siirrettävän ja uudelleenkäytettävän.\labcite{react24a}
 Komponenteista voidaan sitten koota monimutkaisia käyttöliittymiä. 
 \medskip
 
 
 Komponentit voidaan kirjoittaa JSX (eng JavaScript XML) syntaksilla, joka mahdollistaa HTML tyylisen kirjoituksen JavaScriptin sekaan.
-Tämä tekee React:ista helppo luettavan, ymmärrettävän ja opittavan,
+Tämä tekee React:ista helposti luettavan, ymmärrettävän ja opittavan,
 joka on auttanut nostamaan Reactin suosiota yhteen maailman käytetyimmistä käyttöliittymä työkaluista.\labcite{statista23a}
 \medskip
 
@@ -73,10 +73,10 @@ joka on auttanut nostamaan Reactin suosiota yhteen maailman käytetyimmistä kä
 
 
 
-JSX on syntaksi jatke JavaScriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä syntaksia JavaScriptin sekaan,
+JSX on laajennus JavaScriptille, joka antaa kehittäjän kirjoittaa HTML tyylistä syntaksia JavaScriptin sekaan
 tehden koodista yksinkertaisempaa ja helpompaa ymmärtää\labciteend{Stephen21}
 JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä,
-vaan JSX se on suunniteltu transpiloitavaksi johonkin ECMAscript standardia toteuttavalle kielelle.\labciteend{Facebook22}
+vaan JSX se on suunniteltu käännettäväksi (eng transpile) johonkin ECMAscript standardia toteuttavalle kielelle.\labciteend{Facebook22}
 \medskip
 
 
@@ -115,7 +115,7 @@ Tämä antaa selaimille mahdollisuuden suorittaa koodia, joka on alkuperin kirjo
 
 \bigskip
 \includegraphics[width=15cm]{src/public/oppar/transpiled_jsx_example.png}\\
-Kuva \getImgCount {}. Kuvan \prevImageCount{} JSX transpiloitu JavaScriptiin
+Kuva \getImgCount {}. Kuvan \prevImageCount{} JSX-lähdekkoodi käännettynä JavaScriptiin
 \medskip
 
 
@@ -141,7 +141,7 @@ Kuva \getImgCount {}. Kuvan \prevImageCount{} JSX transpiloitu JavaScriptiin
 % åitää selittää mikä itse se on. eli 
 % elementti joka joka sisältää oman jne jen
 
-Komponentti on oma pieni kokoonpano, joka sisältää sen ulkonäön ja käyttäytymisen.
+Komponentti on oma pieni kokonaisuus, joka sisältää määrittelyt ulkonäölle ja käyttäytymiselle.
 Komponentit ovat olennainen rakennusosa React sovelluksissa.
 Reactissa Komponentit voivat olla tilallisia tai tilattomia.\labcite{react24b} 
 \medskip
@@ -149,14 +149,14 @@ Reactissa Komponentit voivat olla tilallisia tai tilattomia.\labcite{react24b}
 
 
 Tilaton komponentti ei sisällä omaa tilaa. 
-Niiden pää tarkoitus on renderöidä käyttöliittymää niille annettujen propertyjen perusteella.
+Niiden pää tarkoitus on renderöidä käyttöliittymää niille annettujen ominaisuuksien perusteella.
 Tilattomat komponentit on helpompi kirjoittaa ja testata verrattuna tilalliseen komponenttiin, 
-sillä niissä ei ole sivu efektejä eikä niiden käytäntö tai ulkonäkö vaihdu sisäisen tilan takia.\labcite{Phuoc23}
+sillä niissä ei saa olla sivuvaikutuksia eikä niiden toiminta tai ulkonäkö muutu sisäisen tilan takia.\labcite{Phuoc23}
 \medskip
 
 
 Tilallinen komponentti tarkoittaa komponenttia, 
-joka sisältää oman tilan ja on vastuussa sen hallinnoinnista ja päivittämisestä.
+joka sisältää oman tilan ja se on vastuussa sen hallinnoinnista ja päivittämisestä.
 Tilalliset komponentit ovat tarkoitettu käyttää, kun käyttöliittymässä tarvitsee säilyttää dataa ajanmyötä 
 kuten lomake tietoja.\labcite{Phuoc23}\\
 \medskip
@@ -170,7 +170,7 @@ kuten lomake tietoja.\labcite{Phuoc23}\\
 
 
 React tukee kahta tapaa luoda komponentteja. Luokkakomponentti ja funktiokomponentti.\labciteend{react24c}
-Molemmilla komponentti tyyleillä voidaan toteuttaa samanlaisia komponentteja, mutta React on kehottaa käyttää funktiokomponentteja tulevaisuudessa. \labcite{react24c}
+Molemmilla komponentti tavoilla voidaan toteuttaa samanlaisia komponentteja, mutta React on suosittelee käyttää funktiokomponentteja tulevaisuudessa. \labcite{react24c}
 Kuvassa \nextImageCount {} on esimerkki tilallisesta funktiokomponentista ja
 kuvassa \nextnextImageCount {} on sama laskukomponentti kuin kuva \nextImageCount{} mutta kirjoitettu luokkakomponentti tyylillä. 
 \medskip
@@ -183,8 +183,8 @@ Kuva \getImgCount{}. React funktiokomponentti
 
 Kuvaassa \theimgCounter{} määritetään funktiokomponentti, jonka nimeksi on annettu laskija, joka seuraa kuinka monta kertaa nappia on painettu.
 Funktio palauttaa komponentin ulkonäön, joka on määritetty JSX syntaksilla.
-Komponentissa on myös useState "hook"{}, joka kuvastaa komponentin tilan,
-tätä käyttäen komponentti pystyy säilyttämään dataa ja päivittämään itsensä, kun sen sisäinen tila muuttuu.
+Komponentissa on myös useState koukku (eng hook), joka tallettaa komponentin tilan.
+Tätä käyttäen komponentti pystyy säilyttämään dataa ja päivittämään itsensä, kun sen sisäinen tila muuttuu.
 \medskip
 
 
@@ -197,14 +197,14 @@ Kuva \getImgCount{}. React luokkakomponentti
 
 
 
-Luokkakomponentissa komponentin tilaa säilytetään this.state ominaisuudessa, ja sitä voi muuttaa tai päivittää käyttämällä this.setState funktiolla. 
+Luokkakomponentissa komponentin tilaa säilytetään this.state ominaisuudessa, ja sitä voi muuttaa tai päivittää käyttämällä this.setState funktiota. 
 Funktio uudelleen renderöi osat komponentista jotka, ovat riippuvaisia kyseisestä tilasta.\labciteend{react24c}
 \medskip
 
 
 Funktiokomponentissa tila hallinnoidaan "React hookeilla"{}. 
 "Hookit"{} antavat funktiokomponenteille mahdollisuuden käyttää Reactin ominaisuuksia, 
-jotka luokkakomponentit saavat, kun ne jatkavat Reactin "Component"{} luokkaa.\labcite{react24d}
+jotka luokkakomponentit saavat, kun ne perivät Reactin "Component"{} luokkaa.\labcite{react24d}
 Kuvan \prevImageCount{} ja \theimgCounter{} komponentit ovat tehty React 18.3.1 versiolla.
 \medskip
 
@@ -224,9 +224,9 @@ Kuvan \prevImageCount{} ja \theimgCounter{} komponentit ovat tehty React 18.3.1 
 
 
 DOM (eng Document object model) on rajapinta HTML ja XML dokumenteille. 
-se määrittää loogisen struktuurin dokumenteista ja määrittää tavan miten dokumenttia hallinnoidaan.
-Dom mallissa dokumentit esitetään puu struktuurilla, mutta DOM ei määritä että dokumentit toteutetaan puu struktuurilla.
-Struktuurissa jokainen solmu on objekti, joka esittää osaa dokumentista. 
+Se määrittää loogisen rakenteen dokumenteista ja määrittää tavan miten dokumenttia hallinnoidaan.
+Dom mallissa dokumentit esitetään puu rakenteella, mutta DOM ei määritä että dokumentit toteutetaan puu rakenteella.
+Rakenteessa jokainen solmu on objekti, joka esittää osaa dokumentista. 
 Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa muihin solmuihin.\labcite{w3org}
 \bigskip
 
@@ -252,12 +252,12 @@ Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa 
 \end{tcolorbox}
 %this is not propper need to cite this propperly
 % idk how
-Koodi 1. html koodista\labimgcite{w3org}
+Kuva \getImgCount. html koodista\labimgcite{w3org}
 \medskip
 
 
-Esimerkki HTML koodissa luomme pöydän, jossa tehdään kaksi riviä ROWS elementin alle. 
-Joka riviin tulee kaksi "table data"{} elementtiä, jotka sisältävät datan tekstinä.
+Esimerkki HTML koodissa luodaan taulukko, jossa tehdään kaksi riviä ROWS elementin alle. 
+Joka riviin tulee sarake, jossa on kaksi "table data"{} elementtiä, jotka sisältävät tekstiä.
 Kuvassa \nextImageCount {} koodi 1 on muotoiltu DOM puuhun.
 %something here???
 
@@ -269,31 +269,29 @@ Kuva \getImgCount {}. DOM puu esimerkki HTML koodista \labimgcite{w3org}
 \medskip
 
 
-% en tiedä puuttuuko jotain kappaleesta
 
-DOM toimii rajapintana HTML ja XML dokumentteihin.\labcite{w3org}
-Päivityksien tekeminen DOM rajapintaa käyttäen on helppoa, mutta se tulee suorituskyvyn hinnalla.
+%DOM toimii rajapintana HTML ja XML dokumentteihin.\labcite{w3org}
+Päivityksien tekeminen DOM rajapintaa käyttäen on helppoa, mutta hidasta.
 Elementin päivittäminen DOM:issa päivittää kyseisen elementin kaikki lapsielementit. 
 Tästä päivityksestä voi tulla hyvin kallis, jos elementtejä on paljon.\labcite{refine23}
 \bigskip
-
 
 
 % bharathkumar23 on ehkä huono source joten kokeile kokonaan refine jos on fine
 % en tiedä miks ei oo off
 
 
-Käyttöliittymä päivityksien nopeuttamiseksi React on ottanut käyttöön VDOM:in (eng virtual DOM).
+Käyttöliittymä päivityksien nopeuttamiseksi React on ottanut käyttöön virtuaalisen DOM:in ( VDOM ).
 VDOM on virtuaalinen esitys DOM:ista, jonka React pitää muistissaan koko suorituksen ajan\labciteend{refine23}
-Elementtien päivittely yksi kerrallaan DOM:iin jokaisen päivityksen ohessa olisi hidasta,
-joten React tekee ensiksi kaikki päivitykset VDOM:iin, jonka jälkeen päivityksen DOM:iin voidaan tehdä samanaikaisesti.
+Elementtien päivitys yksi kerrallaan DOM:iin jokaisen päivityksen ohessa olisi hidasta,
+joten React tekee ensin kaikki päivitykset VDOM:iin, jonka jälkeen DOM:in päivitys voidaan tehdä yhdelläkerralla.
 %
 %
 \medskip
 
 Kun React tekee muutoksia VDOM:iin se luo uuden VDOM puun, jonka jälkeen
-React määrittää mitkä osat käyttöliittymästä ovat muuttuneet erottelu prosessilla (eng diffing).
-Erottelu prosessin ansiosta React tietää mikä on pienin määrä muutoksia mitä pitää tehdä DOM:iin, 
+React määrittää mitkä osat käyttöliittymästä ovat muuttuneet vertailu prosessilla (eng diffing).
+Vertailu prosessin ansiosta React tietää mikä on pienin määrä muutoksia mitä pitää tehdä DOM:iin, 
 että käyttöliittymä pysyisi ajan tasalla.\labcite{refine23}
 \medskip
 

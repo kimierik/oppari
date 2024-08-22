@@ -11,7 +11,7 @@
 Sovelluksen "Progressio"{} sivulla on ominaisuus, 
 joka antaa mahdollisuuden käyttäjälle seurata ja tallettaa hänelle annettua "mitattavaa"{} arvoa.
 Kuvassa \nextImageCount {} näkyy on progressio sivu, 
-ja siitä Käyttäjä pystyy valitsemaan miltä päivältä arvo on otettu ja mikä itse arvo on.
+ja siitä käyttäjä pystyy valitsemaan, miltä päivältä arvo on otettu ja mikä itse arvo on.
 \medskip
 
 \bigskip
@@ -25,7 +25,7 @@ Kuva \getImgCount {}. Progressio sivun käyttöliittymä
 Kuvassa \theimgCounter {} mitattavan arvon suure on paino. 
 % 
 Tällä hetkellä käyttäjälle voi määrittää vain yhden mitattavan arvon, jota seurata.
-Sain tehtäväksi laajentaa ominaisuutta siten että käyttäjälle voi määrittää useamman mitattavan arvon.
+Sain tehtäväksi laajentaa ominaisuutta siten, että käyttäjälle voi määrittää useamman mitattavan arvon.
 \medskip
 
 
@@ -69,7 +69,7 @@ Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeema
 Migraatio tehdään kuvan \nextImageCount {} migraatio funktiolla. 
 Funktio käy läpi kaikki käyttäjät, jolla on olemassa measurableThing ominaisuus ja päivittää sen measurableThings listaan.
 Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkronisesti palvelimella. 
-Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen migraation ajaksi, kun käyttäjä profiileja päivitettäisiin.
+Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen migraation ajaksi, kun käyttäjäprofiileja päivitettäisiin.
 Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
 jolloin migraatio tapahtuisi pikkuhiljaa. 
 \medskip
@@ -93,7 +93,7 @@ Kuva \getImgCount{}. Migraatio funktio
 
 
 Käyttöliittymiä pitää muokata tukemaan ominaisuutta.
-Käyttäjän luonti ja päivitys sivua pitää muokata siten, että käyttäjille voidaan antaa useita mitattavia arvoja.
+Käyttäjän luonti ja päivityssivua pitää muokata siten, että käyttäjille voidaan antaa useita mitattavia arvoja.
 Käyttäjän käyttöliittymää pitää muokata siten,
 että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mihin mitattavaan arvoon hän haluaa tallentaa lukemia.
 %more
@@ -134,33 +134,11 @@ Kuva \getImgCount {}. Käyttäjien luomis käyttöliittymä
 Kuva \getImgCount {}. Mitattava elementti komponentti
 \medskip
 
-Komponentti on tilaton funktiokomponentti, johon annetaan mitattavan suurteen nimi ja poista funktio proppeina.
+Komponentti on tilaton funktiokomponentti, johon annetaan mitattavan suurteen nimi ja poista funktio ominaisuuksina.
 Poisto funktiota kutsutaan, kun painetaan punaista X nappia ja se poistaa mitattavan suurteen käyttäjän profiilista ja elementin käyttöliittymästä.
-%{\the\numexpr \theimgCou:nter + 2 }
 \medskip
 
 
-
-
-
-
-
-
-
-
-\iffalse
-% tämä on väärässä paikassa.  tai poistetaan kokonaan
-Entisessä käyttöliittymässä kuvassa \nextImageCount {} on vain yksi teksti kenttä, josta pystyi muuttamaan measurableThing ominaisuuden nimeä.
-
-%toinen paragraafi
-\bigskip
-
-
-\includegraphics[width = 10cm]{src/public/oppar/adminUserProfilePre.png}\\
-Kuva \getImgCount {}. Käyttäjän luomis käyttöliittymä ennen muutoksia (cencor roles?)
-\medskip
-
-\fi
 
 
 
