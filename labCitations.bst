@@ -1138,7 +1138,6 @@ FUNCTION {mastersthesis}
 }
 
 FUNCTION{lol.hf}{
-    "\hfill{}" write$
 }
 
 FUNCTION {misc}
@@ -1520,7 +1519,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "  \def\url#1{{\tt #1}}\fi"
   write$ newline$
-  "\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{Saatavilla \hfill{}}\fi"
+  "\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{Saatavilla }\fi"
   write$ newline$
   "\expandafter\ifx\csname selectlanguage\endcsname\relax"
   write$ newline$

@@ -52,7 +52,7 @@ Relaatiotietokannat järjestävät tiedot taulukoihin,
 joissa kukin taulukko koostuu riveistä, jotka sisältävät useita sarakkeita.
 Kukin rivi edustaa yhtä kokonaisuutta tai tietuetta, ja sarakkeet määrittelevät kyseisen kokonaisuuden eri attribuutit.
 Nämä taulukot on usein yhdistetty toisiinsa pääavain ja vierasavain avaimilla,
-jotka varmistavat suhteet ja ylläpitävät tietojen eheyttä koko tietokannassa.\labciteend{mongodb24j}
+jotka varmistavat suhteet ja ylläpitävät tietojen eheyttä koko tietokannassa.\labciteend{mongodb24c}
 \medskip
 
 Sen sijaan MongoDB jäsentää tiedot kokoelmiksi.
@@ -62,7 +62,7 @@ mutta rivien sijasta MongoDB käyttää dokumentteja tietojen tallentamiseen.
 Kuvassa \nextImageCount{} on kaavio MongoDB:n rakenteesta. 
 Nämä dokumentit ovat joustavia ja sisältävät objekteja.
 Toisin kuin relaatiotietokannat, MongoDB ei vaadi kiinteää skeemaa, mikä tarkoittaa, 
-että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labciteend{mongodb24j}
+että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labciteend{mongodb24c}
 \medskip
 
 \bigskip
@@ -73,7 +73,7 @@ Kuva \getImgCount. Kaavio MongoDB:n struktuurista\labimgcite{lamba18}
 
 Dokumentti tietokannat sisältvät datan, jossain standardisoidussa formaatissa kuten XML, YAML, JSON ym.
 Dokumentit vastaavat karkeasti objektia, eikä niitten pidä sitoutua mihinkään standardi skeemaan, 
-eikä niillä tarvitse olla samoja kenttiä.\labciteend{mongodb24j}
+eikä niillä tarvitse olla samoja kenttiä.\labciteend{mongodb24c}
 \medskip
 
 
@@ -108,7 +108,7 @@ kuten keskusmuistin tai prosessorin päivitystä, parantaen järjestelmän suori
 Horisontaaliskaalaus käsittää koneiden ja järjestelmien lisäämistä, niin että ne pystyvät jakamaan kuorman usean palvelimen välillä.
 Tämä tuo myös lisäturvaa sillä, jos järjestelmä tai sovellus kaatua palvelinvian takia, 
 toissiainen palvelin voi siirtyä ensisisijaiseksi palvelimeksi. \labcite{lenovo}
-Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuksiin, jotka toimivat horisontaalisella skaalaus periaatteella.\labcite{mongodb24c} 
+Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuksiin, jotka toimivat horisontaalisella skaalaus periaatteella.\labcite{mongodb24d} 
 \medskip
 
 
@@ -120,12 +120,12 @@ Kaaviossa 1 näkyy esimerkki replikoinnin toiminnasta.
 Asiakassovellus (eng client application) lähettää kaikki kirjoitus ja luku operaatiot ensisijaiselle tietokannalle, 
 Ensisijainen tietokanta jakaa kaikki kirjoitus ohjeet muille toissijaisille kopioille pitäen ne ajan tasalla.
 Jos ensisijainen tietokanta kaatuu tai sammuu, jostain toissijaisesta kopio tietokannasta tulee uusi ensisijainen tietokanta.
-Tämä kasvattaa luotettavuutta sillä, jos olisi vain yksi tietokanta, sen kaatuminen lakkauttaisi sovelluksen toiminnan. \labcite{mongodb24d}
+Tämä kasvattaa luotettavuutta sillä, jos olisi vain yksi tietokanta, sen kaatuminen lakkauttaisi sovelluksen toiminnan. \labcite{mongodb24e}
 \medskip
 \bigskip
 
 \includesvg[width = 10cm]{./src/public/oppar/mongoreplication.svg}\\
-Kaavio\getChartCount{}. Replikointi malli \labimgcite{mongodb24d}
+Kaavio\getChartCount{}. Replikointi malli \labimgcite{mongodb24e}
 \medskip
 
 
@@ -133,7 +133,7 @@ Kaavio\getChartCount{}. Replikointi malli \labimgcite{mongodb24d}
 MongoDB sharding antaa mahdollisuuden jakaa itse tietokanta useaan osaan ja jakaa jokainen palanen erikseen eri palvelimelle.
 Nämä pienemmät palat ovat "shardeja"{} ja ovat itsenäisiä osia kokonaisesta tietokannasta.\labcite{kinsta23}
 Tämä on hyödyllinen, kun yhdellä palvelimella tulee ongelmia suuren tietomäärän kanssa.
-Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponentit. \labcite{mongodb24e}
+Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponentit. \labcite{mongodb24f}
 \medskip
 
 
@@ -141,7 +141,7 @@ Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponent
 
 \bigskip
 \includesvg[width = 10 cm]{./src/public/oppar/mongosharding.svg}\\
-Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24f}
+Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24g}
 \medskip
 
 
@@ -152,13 +152,13 @@ Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24f}
 Kaavion 2 reitittimen (eng Router) tehtävänä on reitittää tietokanta operaatiot oikeille shardeille käyttäen konfiguraatio palvelimelta saatua metadataa.
 Asiakassovellus on yhteydessä mongos:siin ja se toimii rapapintana käyttäjän ja shardien välillä. 
 Kun asiakassovellus lähettää kyselyn tietokantaan, reititin kysyy konfigurointipalvelimelta (eng config server) millä shardeilla on kyseinen data. 
-Tämän jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen asiakassovellukselle.\labcite{mongodb24g}
+Tämän jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen asiakassovellukselle.\labcite{mongodb24h}
 \medskip
 
 %asiakieli
 Shard on tietokantapalvelin, joka sisältää osan koko tietokannasta.
 Itse shardejen pitää olla replika settejä.
-Tämä tuo lisä turvaa datan hakuun, sillä jos shardin ensisijainen kanta kaatuaa voi toissijainen kopio ottaa sen roolin. \labcite{mongodb24h}
+Tämä tuo lisä turvaa datan hakuun, sillä jos shardin ensisijainen kanta kaatuaa voi toissijainen kopio ottaa sen roolin. \labcite{mongodb24i}
 \medskip
 
 
@@ -167,7 +167,7 @@ Konfigurointipalvelin sisältää asetuksia ja metadataa klusterista,
 kuten tietoja mitkä shardit ovat olemassa, mikä on shardin tila,
 yksityiskohtia siitä mitkä osat tietokannasta on tallennettu mihinkin shardeihin
 ja tietoja osien tasapainottamisesta shardien välillä.
-Konfigurointipalvelin on myös vastuussa shardien kuorman tasapainottamisesta ja se varmistaa jakautumisen.\labcite{mongodb24i}
+Konfigurointipalvelin on myös vastuussa shardien kuorman tasapainottamisesta ja se varmistaa jakautumisen.\labcite{mongodb24j}
 
 
 
