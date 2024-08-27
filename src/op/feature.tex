@@ -10,7 +10,7 @@
 
 Sovelluksen "Progressio"{} sivulla on ominaisuus, 
 joka antaa mahdollisuuden käyttäjälle seurata ja tallettaa hänelle annettua "mitattavaa"{} arvoa.
-Kuvassa \nextImageCount {} näkyy on progressio sivu, 
+Kuvassa \nextImageCount {} näkyy on progressiosivu, 
 ja siitä käyttäjä pystyy valitsemaan, miltä päivältä arvo on otettu ja mikä itse arvo on.
 \medskip
 
@@ -35,7 +35,7 @@ Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattava
 %mainitse paremmin mongo nosql dokumentti
 % elä aloita koska sanalla
 %Koska käytössä on NoSql dokumentti, voimme vaihtaa 
-NoSql dokumentti tietokannan avusta "measurableThing"{} merkkijonon voi vaihtaa, "measurableThings"{} merkkijono listaan.
+NoSql dokumenttitietokannan avusta "measurableThing"{} merkkijonon voi vaihtaa, "measurableThings"{} merkkijonolistaan.
 % voi vaihtaa merkkijono listaan ilman että pitää päivittää tietokanta pohjaa
 % voidaan vaihtaa huoletta
 % voidaan vaihtaa helposti
@@ -56,21 +56,21 @@ NoSql dokumentti tietokannan avusta "measurableThing"{} merkkijonon voi vaihtaa,
 Käyttäjän mitattavan arvon vaihtaminen listaan vaatii käyttäjän skeeman muutoksen.
 MongoDB:n NoSql dokumentti ei määritä tiukkaa skeemaa, joten käyttäjien skeemat voivat olla eriävät.
 Skeeman muutos vaatii jokaisen käyttäjän profiilin muokkaamista haluttuun muotoon.
-Käyttäjä profiilin skeeman muutos pitää tehdä kaikille aktiivisille käyttäjille, käyttäjän luontia pitää myös muokata siten, 
-että uudet käyttäjän alkaisivat käyttämään uutta skeemaa.
+Käyttäjäprofiilin skeeman muutos pitää tehdä kaikille aktiivisille käyttäjille, käyttäjän luontia pitää myös muokata siten, 
+että uudet käyttäjät alkaisivat käyttämään uutta skeemaa.
 \medskip
 
 MongoDB antaa tallettaa mitä tahansa sen tietokantaan, joten projektissa on omat tyyppitarkastukset MongoDB rajapinnoissa, 
-ettei virheelliset kirjoitus ohjeet talleta mitään tietokantaa.
+ettei virheelliset kirjoitusohjeet talleta mitään tietokantaan.
 %api muutos 
 Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeemaan.
 \medskip
 
-Migraatio tehdään kuvan \nextImageCount {} migraatio funktiolla. 
+Migraatio tehdään kuvan \nextImageCount {} migraatiofunktiolla. 
 Funktio käy läpi kaikki käyttäjät, jolla on olemassa measurableThing ominaisuus ja päivittää sen measurableThings listaan.
 Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkronisesti palvelimella. 
 Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen migraation ajaksi, kun käyttäjäprofiileja päivitettäisiin.
-Isoimmilla käyttäjä määrillä tämä operaatio tehtäisiin huolto aikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
+Isoimmilla käyttäjämäärillä tämä operaatio tehtäisiin huoltoaikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
 jolloin migraatio tapahtuisi pikkuhiljaa. 
 \medskip
 
@@ -93,7 +93,7 @@ Kuva \getImgCount{}. Migraatio funktio
 
 
 Käyttöliittymiä pitää muokata tukemaan ominaisuutta.
-Käyttäjän luonti ja päivityssivua pitää muokata siten, että käyttäjille voidaan antaa useita mitattavia arvoja.
+Käyttäjän luonti- ja päivityssivua pitää muokata siten, että käyttäjille voidaan antaa useita mitattavia arvoja.
 Käyttäjän käyttöliittymää pitää muokata siten,
 että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mihin mitattavaan arvoon hän haluaa tallentaa lukemia.
 %more
@@ -117,14 +117,14 @@ Kuva \getImgCount {}. käyttöliittymän laskkuvalikosta
 
 
 
-Kuvassa \nextImageCount {} on päivitetty käyttäjän luomis- ja päivitys käyttöliittymä.
+Kuvassa \nextImageCount {} on päivitetty käyttäjän luomis- ja päivityskäyttöliittymä.
 Käyttöliittymään on lisätty nappi, josta voi lisätä, nimetä ja poistaa mitattavia suureita käyttäjälle.
 %selitä paremmin että voi uudelleen käyttää komponenttia. tarviin jonkun sanan tolle yhdistelmälle
 %
 
 \bigskip
 \includegraphics[width = 10cm]{src/public/oppar/adminUserProfilePostcencoredroles.png}\\
-Kuva \getImgCount {}. Käyttäjien luomis käyttöliittymä 
+Kuva \getImgCount {}. Käyttäjien luomiskäyttöliittymä 
 \bigskip
 
 Tekstikenttä ja poistonappi on sisällytetty kuvan {\the\numexpr \theimgCounter + 1 } React-komponenttiin "MeasurableThingElement". 
@@ -134,8 +134,8 @@ Tämä antaa mahdollisuuden lisätä uusia kenttiä, tekemällä uuden instanssi
 Kuva \getImgCount {}. Mitattava elementti komponentti
 \medskip
 
-Komponentti on tilaton funktiokomponentti, johon annetaan mitattavan suurteen nimi ja poista funktio ominaisuuksina.
-Poisto funktiota kutsutaan, kun painetaan punaista X nappia ja se poistaa mitattavan suurteen käyttäjän profiilista ja elementin käyttöliittymästä.
+Komponentti on tilaton funktiokomponentti, johon annetaan mitattavan suurteen nimi ja poistofunktio ominaisuuksina.
+Poistofunktiota kutsutaan, kun painetaan punaista X nappia ja se poistaa mitattavan suurteen käyttäjän profiilista ja elementin käyttöliittymästä.
 \medskip
 
 

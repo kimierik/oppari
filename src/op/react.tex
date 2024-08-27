@@ -149,7 +149,7 @@ Reactissa Komponentit voivat olla tilallisia tai tilattomia.\labcite{react24b}
 
 
 Tilaton komponentti ei sisällä omaa tilaa. 
-Niiden pää tarkoitus on renderöidä käyttöliittymää niille annettujen ominaisuuksien perusteella.
+Niiden päätarkoitus on renderöidä käyttöliittymää niille annettujen ominaisuuksien perusteella.
 Tilattomat komponentit on helpompi kirjoittaa ja testata verrattuna tilalliseen komponenttiin, 
 sillä niissä ei saa olla sivuvaikutuksia eikä niiden toiminta tai ulkonäkö muutu sisäisen tilan takia.\labcite{Phuoc23}
 \medskip
@@ -157,8 +157,8 @@ sillä niissä ei saa olla sivuvaikutuksia eikä niiden toiminta tai ulkonäkö 
 
 Tilallinen komponentti tarkoittaa komponenttia, 
 joka sisältää oman tilan ja se on vastuussa sen hallinnoinnista ja päivittämisestä.
-Tilalliset komponentit ovat tarkoitettu käyttää, kun käyttöliittymässä tarvitsee säilyttää dataa ajanmyötä 
-kuten lomake tietoja.\labcite{Phuoc23}\\
+Tilallisia komponentteja käytetään, kun käyttöliittymässä tarvitsee säilyttää dataa ajanmyötä 
+kuten lomaketietoja.\labcite{Phuoc23}\\
 \medskip
 
 
@@ -170,7 +170,7 @@ kuten lomake tietoja.\labcite{Phuoc23}\\
 
 
 React tukee kahta tapaa luoda komponentteja. Luokkakomponentti ja funktiokomponentti.\labciteend{react24c}
-Molemmilla komponentti tavoilla voidaan toteuttaa samanlaisia komponentteja, mutta React on suosittelee käyttää funktiokomponentteja tulevaisuudessa. \labcite{react24c}
+Molemmilla komponenttitavoilla voidaan toteuttaa samanlaisia komponentteja, mutta React on suosittelee käyttää funktiokomponentteja tulevaisuudessa. \labcite{react24c}
 Kuvassa \nextImageCount {} on esimerkki tilallisesta funktiokomponentista ja
 kuvassa \nextnextImageCount {} on sama laskukomponentti kuin kuva \nextImageCount{} mutta kirjoitettu luokkakomponentti tyylillä. 
 \medskip
@@ -181,7 +181,7 @@ kuvassa \nextnextImageCount {} on sama laskukomponentti kuin kuva \nextImageCoun
 Kuva \getImgCount{}. React funktiokomponentti
 \medskip
 
-Kuvaassa \theimgCounter{} määritetään funktiokomponentti, jonka nimeksi on annettu laskija, joka seuraa kuinka monta kertaa nappia on painettu.
+Kuvassa \theimgCounter{} määritetään funktiokomponentti, jonka nimeksi on annettu laskija, joka seuraa kuinka monta kertaa nappia on painettu.
 Funktio palauttaa komponentin ulkonäön, joka on määritetty JSX syntaksilla.
 Komponentissa on myös useState koukku (eng hook), joka tallettaa komponentin tilan.
 Tätä käyttäen komponentti pystyy säilyttämään dataa ja päivittämään itsensä, kun sen sisäinen tila muuttuu.
@@ -223,9 +223,9 @@ Kuvan \prevImageCount{} ja \theimgCounter{} komponentit ovat tehty React 18.3.1 
 %Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa muihin solmuihin.\labcite{w3org}
 
 
-DOM (eng Document object model) on rajapinta HTML ja XML dokumenteille. 
+DOM (eng Document object model) on rajapinta HTML- ja XML-dokumenteille. 
 Se määrittää loogisen rakenteen dokumenteista ja määrittää tavan miten dokumenttia hallinnoidaan.
-Dom mallissa dokumentit esitetään puu rakenteella, mutta DOM ei määritä että dokumentit toteutetaan puu rakenteella.
+DOM-mallissa dokumentit esitetään puurakenteella, mutta DOM ei määritä että dokumentit toteutetaan puurakenteella.
 Rakenteessa jokainen solmu on objekti, joka esittää osaa dokumentista. 
 Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa muihin solmuihin.\labcite{w3org}
 \bigskip
@@ -252,7 +252,7 @@ Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa 
 \end{tcolorbox}
 %this is not propper need to cite this propperly
 % idk how
-Kuva \getImgCount. Esimerkki HTML koodi\labimgcite{w3org}
+Kuva \getImgCount. Esimerkki HTML-koodi\labimgcite{w3org}
 \medskip
 
 
@@ -281,15 +281,15 @@ Tästä päivityksestä voi tulla hyvin kallis, jos elementtejä on paljon.\labc
 % en tiedä miks ei oo off
 
 
-Käyttöliittymä päivityksien nopeuttamiseksi React on ottanut käyttöön virtuaalisen DOM:in ( VDOM ).
+Käyttöliittymän päivityksien nopeuttamiseksi React on ottanut käyttöön virtuaalisen DOM:in (VDOM).
 VDOM on virtuaalinen esitys DOM:ista, jonka React pitää muistissaan koko suorituksen ajan\labciteend{refine23}
 Elementtien päivitys yksi kerrallaan DOM:iin jokaisen päivityksen ohessa olisi hidasta,
-joten React tekee ensin kaikki päivitykset VDOM:iin, jonka jälkeen DOM:in päivitys voidaan tehdä yhdelläkerralla.
+joten React tekee ensin kaikki päivitykset VDOM:iin, jonka jälkeen DOM:in päivitys voidaan tehdä yhdellä kerralla.
 %
 %
 \medskip
 
-Kun React tekee muutoksia VDOM:iin se luo uuden VDOM puun, jonka jälkeen
+Kun React tekee muutoksia VDOM:iin se luo uuden VDOM-puun, jonka jälkeen
 React määrittää mitkä osat käyttöliittymästä ovat muuttuneet vertailu prosessilla (eng diffing).
 Vertailu prosessin ansiosta React tietää mikä on pienin määrä muutoksia mitä pitää tehdä DOM:iin, 
 että käyttöliittymä pysyisi ajan tasalla.\labcite{refine23}

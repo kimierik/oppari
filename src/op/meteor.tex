@@ -69,7 +69,7 @@ Tässä kontekstissa voi nähdä esimerkiksi onko kutsuja kirjautunut sisään, 
 Kuva \getImgCount {}. Meteor-metodin määritelmä
 \medskip
 
-Kuvassa on Meteor metodin määritelmä "exampleMethod"{}, joka katsoo, onko "this"{} ominaisuudessa käyttäjä tunnusta, 
+Kuvassa on Meteor metodin määritelmä "exampleMethod"{}, joka katsoo, onko "this"{} ominaisuudessa käyttäjätunnusta, 
 näin metodi voi tietää onko kutsuja kirjautunut sisään,
 jos käyttäjä ei ole kirjautunut sisään funktio aiheuttaa poikkeuksen, joka välitetään kutsujalle.
 Jos käyttäjä on kirjautunut sisään, metodi tulostaa argumentit objektin. 
@@ -88,7 +88,7 @@ Jos käyttäjä on kirjautunut sisään, metodi tulostaa argumentit objektin.
 Meteor ylläpitää omaa paketointi ekosysteemiään, 
 %nämä paketit ovat isomorphisia, eli ne toimivat palvelimella ja selaimella\labciteend{pranav17}{}
 Meteorilla on itse Meteor tiimin ylläpitämiä paketteja ja kolmannen osapuolen paketteja,
-joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin paketti palvelimelle Athmosphere:lle.\labcite{sanders15}
+joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin pakettipalvelimelle Athmosphere:lle.\labcite{sanders15}\\
 \medskip
 
 
@@ -97,5 +97,5 @@ jotka ovat suunniteltu toimimaan Meteorin kanssa.
 NPM paketit (eng Node package manager) ovat suunniteltu toimimaan NodeJS ympäristössä, joten ne ei välttämättä toimi selaimella.
 On ratkaisuja, jossa käytetään NPM paketteja selaimella, mutta
 Athmosphere paketit voi hyötykäyttää Meteorin käännösjärjestelmää (eng build system),
-jonka avulla paketin kehittäjä voi määritellä, mitkä osat ladataan selain puolelle ja mitkä palvelimelle.\labcite{meteor24d}
+jonka avulla paketin kehittäjä voi määritellä, mitkä osat ladataan selaimelle ja mitkä palvelimelle.\labcite{meteor24d}
 
