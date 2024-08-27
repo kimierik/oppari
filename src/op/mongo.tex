@@ -43,7 +43,7 @@ sillä se pystyy hallitsemaan erityyppisiä tietoja ilman kiinteää skeemaa\lab
 
 
 
-\subsubsection{Nosql Dokumentti tietokannnan rakenne}
+\subsubsection{NoSql dokumentti -tietokannnan rakenne}
 
 
 
@@ -52,7 +52,7 @@ Relaatiotietokannat järjestävät tiedot taulukoihin,
 joissa kukin taulukko koostuu riveistä, jotka sisältävät useita sarakkeita.
 Kukin rivi edustaa yhtä kokonaisuutta tai tietuetta, ja sarakkeet määrittelevät kyseisen kokonaisuuden eri attribuutit.
 Nämä taulukot on usein yhdistetty toisiinsa pääavain ja vierasavain avaimilla,
-jotka varmistavat suhteet ja ylläpitävät tietojen eheyttä koko tietokannassa.\labciteend{mongodb24c}
+jotka varmistavat suhteet ja ylläpitävät tietojen eheyttä koko tietokannassa.\labcite{mongodb24c}
 \medskip
 
 Sen sijaan MongoDB jäsentää tiedot kokoelmiksi.
@@ -62,23 +62,23 @@ mutta rivien sijasta MongoDB käyttää dokumentteja tietojen tallentamiseen.
 Kuvassa \nextImageCount{} on kaavio MongoDB:n rakenteesta. 
 Nämä dokumentit ovat joustavia ja sisältävät objekteja.
 Toisin kuin relaatiotietokannat, MongoDB ei vaadi kiinteää skeemaa, mikä tarkoittaa, 
-että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labciteend{mongodb24c}
+että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labcite{mongodb24c}
 \medskip
 
 \bigskip
 \includegraphics{src/public/oppar/mongodb-structure.jpg} \\
-Kuva \getImgCount. Kaavio MongoDB:n struktuurista\labimgcite{lamba18}
+Kuva \getImgCount. MongoDB:n rakenne\labimgcite{lamba18}
 \medskip
 
 
 Dokumentti tietokannat sisältvät datan, jossain standardisoidussa formaatissa kuten XML, YAML, JSON ym.
 Dokumentit vastaavat karkeasti objektia, eikä niitten pidä sitoutua mihinkään standardi skeemaan, 
-eikä niillä tarvitse olla samoja kenttiä.\labciteend{mongodb24c}
+eikä niillä tarvitse olla samoja kenttiä.\labcite{mongodb24c}
 \medskip
 
 
 MongoDB tallettaa tiedot BSON muodossa, joka on binäärinen JSON formaatista.
-Tietokannasta dokumentteja voi hakea niiden uniikkien tunnisteiden tai sisällön arvojen perusteella.\labciteend{mongodb24a}
+Tietokannasta dokumentteja voi hakea niiden uniikkien tunnisteiden tai sisällön arvojen perusteella.\labcite{mongodb24a}
 \medskip
 
 
@@ -108,7 +108,7 @@ kuten keskusmuistin tai prosessorin päivitystä, parantaen järjestelmän suori
 Horisontaaliskaalaus käsittää koneiden ja järjestelmien lisäämistä, niin että ne pystyvät jakamaan kuorman usean palvelimen välillä.
 Tämä tuo myös lisäturvaa sillä, jos järjestelmä tai sovellus kaatua palvelinvian takia, 
 toissiainen palvelin voi siirtyä ensisisijaiseksi palvelimeksi. \labcite{lenovo}
-Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuksiin, jotka toimivat horisontaalisella skaalaus periaatteella.\labcite{mongodb24d} 
+Mongodb skaalautuminen perustuu replikointi ja shardaus ominaisuuksiin, jotka toimivat horisontaalisella skaalaus periaatteella\labciteend{mongodb24d} 
 \medskip
 
 
@@ -125,7 +125,7 @@ Tämä kasvattaa luotettavuutta sillä, jos olisi vain yksi tietokanta, sen kaat
 \bigskip
 
 \includesvg[width = 10cm]{./src/public/oppar/mongoreplication.svg}\\
-Kaavio\getChartCount{}. Replikointi malli \labimgcite{mongodb24e}
+Kaavio\getChartCount{}. Replikointi-malli \labimgcite{mongodb24e}
 \medskip
 
 
@@ -141,7 +141,7 @@ Kaaviossa 2 näkyy shard klusterin toimintaperiaate ja siihen kuuluvat komponent
 
 \bigskip
 \includesvg[width = 10 cm]{./src/public/oppar/mongosharding.svg}\\
-Kaavio\getChartCount{}. Kaavio sharding mallista \labcite{mongodb24g}
+Kaavio\getChartCount{}. Sharding-malli \labimgcite{mongodb24g}
 \medskip
 
 

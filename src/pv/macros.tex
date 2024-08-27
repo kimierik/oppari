@@ -22,6 +22,7 @@
 
 
 \newcommand{\pagesection}[1]{\istest{\section{#1}  }{\section*{#1}}}
+\newcommand{\pagesectionop}[1]{\istest{\section{#1}  }{\section{#1}}}
 \newcommand{\pagesubsection}[1]{\istest{\subsection{#1}  }{\subsection*{#1}}}
 \newcommand{\oppagesubsection}[1]{\istest{\subsection{#1}  }{\subsection{#1}}}
 
@@ -45,8 +46,16 @@
     \input{#1}
 }
 
+% feature page
+\newcommand{\addPageOpfeat}[2]{
+    \def\filename{#1}
+    \pagesectionop{#2}
+    \istest{ \filewcount \medskip }{}
+    \input{#1}
+}
+
 %jos pitää päivittää viitattu sanaa myöhemmin vaikka lisätä . tai : tai jotain
-\def\viitattu{viitattu}
+\def\viitattu{Viitattu}
 
 %lab citation style
 \newcommand{\labcite}[1]{\setcitestyle{aysep={},open={(},close={.)}}\citep{#1}{}}
