@@ -2,9 +2,7 @@
 
 \subsection{Alkuperäinen ominaisuus ja parannuskohteet}
 
-%toinen kappale pitää muokata
 
-% ominaisuuden yhteenveto pitää lisätä tekstiä ellei se siirretä kokonaan koko yhteenvetoon
 
 
 
@@ -20,7 +18,6 @@ Kuva \getImgCount {}. Progressio sivun käyttöliittymä
 \medskip
 
 
-% pitää muokata sanoitusta että se olisi järkevä
 
 Kuvassa \theimgCounter {} mitattavan arvon suure on paino. 
 % 
@@ -31,14 +28,7 @@ Sain tehtäväksi laajentaa ominaisuutta siten, että käyttäjälle voi määri
 
 Käyttäjän mitattavan arvon suure säilytetään käyttäjän profiilissa merkkijonona. 
 Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattavan arvon seurantaan, joten se pitäisi vaihtaa.
-%
-%mainitse paremmin mongo nosql dokumentti
-% elä aloita koska sanalla
-%Koska käytössä on NoSql dokumentti, voimme vaihtaa 
 NoSql dokumenttitietokannan avusta "measurableThing"{} merkkijonon voi vaihtaa "measurableThings"{} merkkijonolistaan.
-% voi vaihtaa merkkijono listaan ilman että pitää päivittää tietokanta pohjaa
-% voidaan vaihtaa huoletta
-% voidaan vaihtaa helposti
 \medskip
 
 
@@ -62,7 +52,6 @@ että uudet käyttäjät alkaisivat käyttämään uutta skeemaa.
 
 MongoDB antaa tallettaa mitä tahansa sen tietokantaan, joten projektissa on omat tyyppitarkastukset MongoDB rajapinnoissa, 
 ettei virheelliset kirjoitusohjeet talleta mitään tietokantaan.
-%api muutos 
 Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeemaan.
 \medskip
 
@@ -87,8 +76,6 @@ Kuva \getImgCount{}. Migraatio funktio
 
 \subsubsection{Käyttöliittymä}
 
-%kappaleisiin voisi lisätä pari lausetta lisää
-
 
 
 
@@ -96,12 +83,10 @@ Käyttöliittymä pitää muokata tukemaan ominaisuutta.
 Käyttäjän luonti- ja päivityssivua pitää muokata siten, että käyttäjille voidaan antaa useita mitattavia arvoja.
 Käyttäjän käyttöliittymää pitää muokata siten,
 että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mihin mitattavaan arvoon hän haluaa tallentaa lukemia.
-%more
 \medskip
 
 Kuvassa \nextImageCount{} on käyttäjäpuolen käyttöliittymä muutoksien jälkeen.
 Käyttöliittymässä käyttäjällä on mahdollisuus valita mihin mitattavaan suureeseen hän haluaa tallettaa arvoja kuvan {\the\numexpr \theimgCounter + 2 } laskuvalikolla.
-% more words or fix something
 Sivun kaavioon on myös lisätty mahdollisuus seurata monta mitattavaa arvoa.
 \medskip
 
@@ -119,8 +104,6 @@ Kuva \getImgCount {}. käyttöliittymän laskkuvalikosta
 
 Kuvassa \nextImageCount {} on päivitetty käyttäjän luomis- ja päivityskäyttöliittymä.
 Käyttöliittymään on lisätty nappi, josta voi lisätä, nimetä ja poistaa mitattavia suureita käyttäjälle.
-%selitä paremmin että voi uudelleen käyttää komponenttia. tarviin jonkun sanan tolle yhdistelmälle
-%
 
 \bigskip
 \includegraphics[width = 10cm]{src/public/oppar/adminUserProfilePostcencoredroles.png}\\

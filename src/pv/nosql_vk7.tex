@@ -7,7 +7,6 @@ tietokannat niiden eri tyypit ja käytetty mongodb tietokanta ja miten projekti 
 
 \subsection*{Relaationainen tietokanta}
 
-%https://www.ibm.com/topics/relational-databases
 
 Relationaalinen tietokanta on tietokanta malli, joka organisoi tiedot riveihin ja sarakkeisiin, jotka muodostavat pöydän. 
 Pöydän sarakkeet määrittävät sen skeeman ja rivit jokaisen tietueen.
@@ -33,7 +32,6 @@ Ei relationaaliset tietokannat voivat käyttää erilaisia tiedon haku ja tallen
 
 Graafin tietokannan tiedot on organisoitu solmuihin (eng node) ja suhteisiin (eng relation).
 Solmu on tietopiste, johon voi tallettaa dataa skeematta. 
-%https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/
 Suhde on yhteys kahden solmun välillä. Suhteissa voi myös olla tallennettuna ominaisuuksia, joiden avulla voi etsiä solmuja,
 esimerkiksi jos solmut:t esittävät ihmisiä, niissä voisi olla ominaisuudet, jotka kuvaavat heidän nimeänsä ja syntymäaikaa.
 Suhteet olisivat yhteyksiä ihmisten välillä, ja ne voivat kuvata henkilöiden suhteita.
@@ -59,7 +57,6 @@ Mongodb on nosql tietokanta, joka käyttää dokumenttimaista tietomallia, johon
 
 Projektissa mongodb:tä käytetään kaiken muun kuin tiedostojen tallentamiseen. Tiedostot projektissa on AWS S3 ämpärissä
 Koska relatiivinen dokumenttimalli ei määritä tarkkaa skeemaa, mongodb antaisi mahdollisuuden tallentaa mitä tahansa dataa tietokantaa.
-%suomenna wrapper... do we need to?
 Turvallisuus syistä projektin käyttöliittymä ja palvelin koodissa ei kutsuta suoraan mongodb rapapinta funktioita vaan niille on tehty omat "wrapper"{} funktiot.
 Funktiot katsovat ja varmistavat datan mitä yritetään kysyä tai tallentaa tietokantaan, ettei sieltä saa tai sinne voi tallentaa mitään ylimääräistä.
 Näin voimme luoda lisä turvallisuutta tietojenhallinnassa.
@@ -69,7 +66,6 @@ Näin voimme luoda lisä turvallisuutta tietojenhallinnassa.
 
 \subsection*{Yhteenveto}
 
-%Projekti ei vaadi käyttää relatiivistä tietokantaa mutta se tekee joistakin operaatioista helpompia, sillä skeema on dynaamisempi ja voimme tallentaa listoja dokumentteihin.
 
 Projekti ei itsessään vaadi ei relationaalista tietokantaa vaan sen pystyisi yhtä hyvin toteuttamaan relationaalisella tietokannalla, 
 mutta ei relationaalinen kanta auttaa joissakin operaatioissa.

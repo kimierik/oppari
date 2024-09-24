@@ -3,7 +3,6 @@ Ennen ensimmäisen viikon aloittamista keskustelimme projektin seniori-insinöö
 Projekti käytti MeteorJS frameworkkia, jota en ole ennen käyttänyt, joten päädyimme aloittamaan yksinkertaisesti MeteorJS Tutorialeista ja projektin käynnistämisestä paikalliseen kehitysympäristöön.\medskip
 
 \subsection*{Meteor}
-% this is garbage rewrite everything or atleast moset
 
 MeteorJS:ssän kotisivuilla on helposti seurattava opetusohjelma, joka käy läpi sen pääpiirteet ja ominaisuudet harjoitusprojektien parissa. 
 Meteor ei määritä käyttöliittymässä käytettäviä teknologioita. Ja, koska Starttaamo käyttää ReactJs:ssää käyttöliittymässään tein opetusohjelmat Reactia käyttäen.
@@ -11,7 +10,6 @@ Meteorin opetusohjelmat kävivät yksitellen läpi eri meteorin ominaisuuksia k�
 
 
 
-% tässä voisi myös selittää miten meteor käyttäytyy projektissa mutta todennäköissesti se on vasta tulevaisuudessa
 
 \subsection*{Kehitysympäristön käynnistäminen}
 
@@ -24,11 +22,8 @@ Repositorion Cloonaaminen GitHubista meni helposti, sillä minulla on jo kokemus
 meteor npm install
 \end{tcolorbox}
 \medskip
-% meteor npm install highligh paremmin. ei ollut 
 
 
-
-%error notes tiedostossa on joku ramble kun olin ratkaisemassa tätä
 Sain seuraavan virheviestin:
 
 
@@ -37,14 +32,11 @@ ValueError: invalid mode: 'rU' while trying to load binding.gyp
 \end{tcolorbox}\medskip
 
 
-%this is fine. pitäisi olla teksti pitäisi olla tylsää ja asiallista pitää vielä korjata mutta asia on oikea 
 Node-gyp on kääntäjä natiiveille paketeille ja se käyttää Pythonia.
 Python 3.11 on esitellyt ongelman node-gyp:in kanssa sillä Python 3.11 on poistanut "{}-U"{} flagin tiedoston avaamisessa.
 "{}-U", "universal newline"{} moodi on poistettu käytöstä Python 3.3 versiossa, mutta node-gyp versio mitä projekti käyttää vaatii sen.\medskip
 
-% https://docs.python.org/3/whatsnew/3.11.html#porting-to-python-3-11 
 
-% anaconda ei ole versionhallinta työkalu. tein virtuaali ympäristön jolla sitten suoritin komennon uudelleen
 
 Pythonin version alentaminen python 3.10 versioon anacondan virtuaaliympäristöä käyttäen ja 'meteor npm install' komennon uudelleen suorittaminen latasi kaikki projektin riippuvuudet huoletta.
 Node-gyp on vain kääntäjä, joka suoriutuu, kun riippuvuuksia ladataan. Ainoastaan tällöin natiivipaketteja käännetään, joten python 3.10 versiota tarvitaan vain ensimmäisen käynnistyksen ohessa.

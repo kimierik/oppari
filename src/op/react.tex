@@ -1,28 +1,4 @@
 
-% viimeinen kappale tarvitsee uudelleen kirjoituksen
-% jsx kohta tarpii vähän uudelleen kirjoittamista
-
-
-
-
-
-
-
-% https://github.com/facebook/react/blob/main/README.md
-% https://github.com/facebook/react/blob/f74c5ccf9469d3389ce3a1ee3b54988049e235f7/README.md
-% https://www.infoq.com/news/2013/06/facebook-react/
-% molemmat siteerattu 27.5.24
-
-%https://opensource.fb.com/projects/react/
-% 12.6
-
-% https://react.dev/
-% 30.5
-
-
-%https://www.statista.com/statistics/1124699/worldwide-developer-survey-most-used-frameworks-web/
-%yksi käytetyimmistä työkaluista 
-% 30.5
 
 
 
@@ -55,21 +31,6 @@ joka on auttanut nostamaan Reactin suosiota yhteen maailman käytetyimmistä kä
 
 
 
-%https://react.dev/learn/writing-markup-with-jsx
-%https://facebook.github.io/jsx/ 
-
-% jsx = js xml
-% https://medium.com/@sjarancio/what-is-jsx-e3dda0af3490
-
-%transpilation
-% https://www.scholarhat.com/tutorial/react/getting-started-with-jsx
-% https://www.typescriptlang.org/docs/handbook/jsx.html
-
-% kaikki viitattu 27.5
-
-
-
-
 
 
 
@@ -79,13 +40,6 @@ JSX ei ole ECMAscript standardissa, joten selaimet eivät osaa tulkita sitä,
 vaan JSX se on suunniteltu käännettäväksi (eng transpile) johonkin ECMAscript standardia toteuttavalle kielelle.\labcite{Facebook22}
 \medskip
 
-
-
-% tämä on jotenkin scuffed. se pitäisi kirjoittaa kokonaan eri tavalla%
-% en tykkää että tehdään muuttuja. (se on muutenkin const)
-%  en kyllä tiedä mikä muu se voisi olla
-
-% muutenkin pitäisi varmaan liimata jsx paremmin tähän paragraafiin
 
 
 Kuvassa \nextImageCount{} luodaan muuttuja helloWorld, jolle annetaan arvoksi HTML "p"{} elementti, jossa teksti on "Hello, World!"{}.
@@ -102,10 +56,6 @@ Kuva \getImgCount {}. Esimerki JSX syntaxista
 
 
 
-% tämäkin on vähän scuffed sillä kuvan alla puhutaan jo seuraavasta kuvasta eikä mainita muuttaa
-% en tiedä onko tämä oiikeaa tyyliä
-%  voisi mainita uudelleen että selain ei voi suorittaa jsx joten asialle pitää tehdä jotain jos halutaan että toimii
-% sitten mainita seuraavasta kuvasta ja jne
 
 Selaimet eivät voi tulkita JSX syntaksia, joten se pitää kääntää natiiviin JavaScriptiin.
 Kuvassa \nextImageCount{} on kuvan \theimgCounter{} helloworld muuttuja, joka on käännetty natiiviksi JavaScriptiksi Babel kääntäjää käyttäen.\labcite{babel24}
@@ -127,19 +77,6 @@ Kuva \getImgCount {}. Kuvan \prevImageCount{} JSX-lähdekkoodi käännettynä Ja
 
 
 
-% kolmas kappale pitää korjata 
-% kapale ennen kuvaa tarvitsee lisää sanaa
-
-
-% komponentti joka voi renderöidä toisen komponentin. tämä jatkuu siihen asti että päästään natiiveihin html elementteihin jotka selain osaa tulkita
-%https://react.dev/learn/your-first-component
-
-
-
-%tarvitsee korjailua
-
-% åitää selittää mikä itse se on. eli 
-% elementti joka joka sisältää oman jne jen
 
 Komponentti on oma pieni kokonaisuus, joka sisältää määrittelyt ulkonäölle ja käyttäytymiselle.
 Komponentit ovat olennainen rakennusosa React sovelluksissa.
@@ -163,9 +100,6 @@ kuten lomaketietoja.\labcite{Phuoc23}\\
 
 
 
-
-%tähän voisi periaatteessa liimata sen preamblen tosta luokkakomponentti kohdasta
-% sitten olisi tarpeeksi tekstiä tässä ja se voisi olla vähän tiivimmän näköinen
 
 
 
@@ -214,14 +148,6 @@ Kuvan \prevImageCount{} ja \theimgCounter{} komponentit on tehty React 18.3.1 ve
 
 
 
-%psychotic
-% dom ei ole pakko olla puu formaatti se pitää mainita
-% eli kirjoita tämä koko shid uudellee
-%DOM (eng Document object model) on puu-struktuurinen representaatio HTML dokumentista.
-%Tätä struktuuria käytetään rajapintana JavaScriptin ja HTML:län välillä. 
-%Struktuurissa jokainen solmu on objekti, joka esittää osaa dokumentista. 
-%Soulmuissa voi olla yksi tai useampi objekti ja nämä objektit voivat osoittaa muihin solmuihin.\labcite{w3org}
-
 
 DOM (eng Document object model) on rajapinta HTML- ja XML-dokumenteille. 
 Se määrittää loogisen rakenteen dokumenteista ja määrittää tavan miten dokumenttia hallinnoidaan.
@@ -234,7 +160,6 @@ Kuvassa \nextImageCount{} on esimerkki HTML koodi ja kuvassa \nextnextImageCount
 
 
     
-%pitää viitata jotenkin
 \begin{tcolorbox}
 \begin{lstlisting}[language=html]
 <TABLE>
@@ -251,34 +176,27 @@ Kuvassa \nextImageCount{} on esimerkki HTML koodi ja kuvassa \nextnextImageCount
 </TABLE>
 \end{lstlisting}
 \end{tcolorbox}
-%this is not propper need to cite this propperly
-% idk how
 Kuva \getImgCount. Esimerkki HTML-koodi\labimgcite{w3org}
 \medskip
 
 
 Esimerkki HTML koodissa luodaan taulukko, jossa tehdään kaksi riviä ROWS elementin alle. 
 Joka riviin tulee sarake, jossa on kaksi "table data"{} elementtiä, jotka sisältävät tekstiä.
-%something here???
 
 
 \bigskip
-%kuva html domista
 \includegraphics{./src/public/oppar/dom.png}\\
 Kuva \getImgCount {}. DOM-puu esimerkki HTML-koodista \labimgcite{w3org}
 \medskip
 
 
 
-%DOM toimii rajapintana HTML ja XML dokumentteihin.\labcite{w3org}
 Päivityksien tekeminen DOM-rajapintaa käyttäen on helppoa, mutta hidasta.
 Elementin päivittäminen DOM:issa päivittää kyseisen elementin kaikki lapsielementit. 
 Tästä päivityksestä voi tulla hyvin hidas, jos elementtejä on paljon.\labcite{refine23}
 \bigskip
 
 
-% bharathkumar23 on ehkä huono source joten kokeile kokonaan refine jos on fine
-% en tiedä miks ei oo off
 
 
 Käyttöliittymän päivityksien nopeuttamiseksi React on ottanut käyttöön virtuaalisen DOM:in (VDOM).

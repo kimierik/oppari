@@ -1,13 +1,9 @@
 
-% en oikein tykkää tästä kappaleesta en tiedä pitäisikö se kirjoittaa aluista loppuun uudelleen.
-% tässä pitäisi varmaan olla reilusti enemmän casea ja tarinamaisuutta nyt tämä on vain asiaa joka tulee oppariin
-% tämä viikko on aikalailla huono imo mutta pitää katsoa sitten paliksessa mihin suuntaan
 
 Startupin nopean kehityksen ohella mobiili-käyttöystävällisyyttä ei ollut otettu huomioon, 
 joten kehitysympäristön käynnistettyä sain aiheeksi muuttaa sovelluksen käyttöliittymän mobiiliystävälliseksi.
 Projektiin ei haluttu lisätä erillistä mobiilisovellusta, vaan samaa nettisivua pitäisi pystyä käyttämään mobiili- ja työpöytälaitteilla, joten sivu oli tehtävä responsiiviseksi.\medskip
 
-%toinen paragraafi
 
 
 
@@ -15,7 +11,6 @@ Projektiin ei haluttu lisätä erillistä mobiilisovellusta, vaan samaa nettisiv
 \subsection*{Responsiivinen käyttöliittymä}
 
 
-% tosi asia asiaa en tiedä pitäisikö tämä olla itse opparissa mutta katotaan miten menee sitten oppari paliksessa
 
 
 % fine? i think
@@ -26,7 +21,6 @@ Käyttämällä responsiivisia verkkosuunnittelua verkkosivustot voivat tarjota 
 
 Web-käyttöliittymissä elementtien koot voivat olla absoluuttiset tai suhteelliset niiden ylempään elementtiin verrattuna. Absoluuttiset arvot tarkoittavat, että elementti olisi aina tietyn kokoinen pikseleissä. 
 Tämä voi luoda tilanteita, jossa pienempikokoisemman näytöllä joku elementti on liian iso, tai ei sovi enää käyttöliittymään, joten absoluuttisia ei voi käyttää responsiivisessa käyttöliitymässä.
-%relatiivinen
 Relatiiviset elementtikoot eivät kuitenkaan ratkaise kaikkia ongelmia. Mobiili- ja työpöytälaitteiden kuvasuhteet eroavat. Käyttöliittymän pitää olla erilainen jos pituutta on enemmän, kun leveyttä. 
 Ja, koska työpöytälaitteita käytetään hiirellä, joka antaa tarkan osoittimen käyttäjälle, toisin kuin mobiilissa, jota käytetään sormilla. 
 Pitää ottaa huomioon linkkien, nappien ja kuvakkeiden koko, jotta itse sovelluksen käyttäminen olisi huoletonta.\medskip
@@ -36,13 +30,6 @@ Pitää ottaa huomioon linkkien, nappien ja kuvakkeiden koko, jotta itse sovellu
 
 
 
-\iffalse
-\begin{verbatim}
- https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
-\end{verbatim}
-\fi
-
-% ? fine ?
 CSS Media Query antaa mahdollisuuden CSS-säännöksen asettamiselle vain silloin kun selain- ja laiteympäristö vastaa määritettyjä sääntöjä. 
 Säännökset voivat olla esimerkiksi "jos näytön koko on pienempi kuin X".
 Media Queryt ovat tärkeä osa repsonsiivista suunittelua ja se antaa mahdollisuuden luoda erilaisia layouttteja riippuen käyttölaitteesta, sen näytön koosta tai kuvasuhteesta.
@@ -56,37 +43,6 @@ Media Queryt ovat tärkeä osa repsonsiivista suunittelua ja se antaa mahdollisu
 
 
 
-
-\iffalse
-
-\subsection*{Responsiivinen käyttöliittymän toteutus}
-
-% tähän voi sitten laittaa screenshotin alkuperäisesta login ruudusta ja mitettiä miltä se näyttää
-% siihen voi sitten laittaa jotain tekstiä siitä miten sitä voisi parannella ja sitten kuva nykyisestä ja muutoksista mitä tein jne
-% kaikkille sivuille tätä ei voi tehdä sillä se olisi liian paljon hommaa
-
-
-tässä voisi olle esimerkki yhdestä mobiili muutoksesta esim juuri login sivulle
-voisiko tähän laittaa kuvia siihen miltä se näytti ja miltä se näyttää nyt mobiili laitteilla
-tai ainakin miltä se näytti mobiili muutoksien jälkeen. 
-
-
-%hmmm esimerkki kuvat ovat tois tyhmän nököisiä dokumentissa
-% pärjäämmeköhän ilman niitä sillä tämä on aika vitun scuffed
-
-\includegraphics[width=10cm, height=20cm]{src/public/loginnormal.jpg} \\
-\medskip
-
-kuva login sivusta ennen muutoksia
-\medskip
-
-\includegraphics[width=10cm, height=20cm]{src/public/loginresponsive.jpg} \\
-\medskip
-
-kuva login sivusta muutoksien jälkeen
-\medskip
-
-\fi
 
 
 

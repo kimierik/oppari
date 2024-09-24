@@ -4,9 +4,6 @@
 
 
 
-%iso morphic src jos ei käy niin käytä tätä
-%https://web.archive.org/web/20221206181248/https://old.gigaom.com/2014/12/27/meteor-wants-to-be-the-warp-drive-for-building-real-time-apps/
-% Jonathan Vanian
 
 
 
@@ -15,7 +12,6 @@ MeteorJS on avoimeen lähdekoodiin perustuva full-stack JavaScript web-kehys, jo
 suunniteltu nopeaan käyttöönottoon ja kehittämiseen eri laitteille\labciteend{meteor24b}
 Meteor mahdollistaa isomorphisen koodin kirjoittamisen, eli koodiin, joka on samanlaista palvelimella sekä selaimella\labciteend{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
 Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen front-end framework:kiin, kuten Vue, React, Svelte tai Angular\labciteend{meteor24a}{}
-%Tämä antaa lisäjoustoa Meteorille, sillä se antaa mahdollisuuden monelle sovelluskehittäjälle, joilla ei ole kokemusta tietystä front-end teknologiasta.\\
 \medskip
 
 
@@ -33,7 +29,6 @@ Lisäksi Meteor \labcite{meteor24a}:
 
 
 Meteorin nopea käyttöönotto johtuu sen pakettijärjestelmästä ja valmiiksi asennetuista paketeista, kuten Meteorin käyttäjät-paketti. 
-%Meteorin nopea käyttöönotto on osa johtuen sen paketti järjestelmästä ja valmiiksi paketoiduista paketeista, kuten Meteorin käyttäjät paketti. 
 Käyttäjät-paketin avulla kehittäjä voi nopeasti luoda todennusjärjestelmän (eng authentication system),
 joka antaa helpon integraation muiden palveluntarjoajien todennuspalvelujen kanssa kuten Facebook, GitHub, Google ym.
 Käyttäjät-paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten metodeihin.\labcite{meteor24c}
@@ -42,10 +37,6 @@ Käyttäjät-paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten me
 
 \subsubsection{Meteor-metodit}
 
-% toinen kappale
-% metodi tekee koodista yksinkertaisemman. metodi tekee rajapinnasta helpomman lukea sillä
-
-% mahdollinen kappale rike kolmannessa kappaleessa
 
 
 Meteor käyttää etäkäsittelykutsu-rajapintaa (eng Remote procedure call) perinteisen RESTful rajapinnan sijasta\labciteend{meteor24a}
@@ -76,17 +67,13 @@ Jos käyttäjä on kirjautunut sisään, metodi tulostaa argumentit objektin.
 \medskip
 
 
-%voidaan myös laittaa kuva metodi kutsusta jos halutaan
 
 
 \subsubsection{Meteor-ecosysteemi}
 
-%build system pitää vissii vähä paremmin selittää...
-% sdelitetäänkö build system vai.... vaihdetaanko sana johonkin toiseen vaa
 
 
 Meteor ylläpitää omaa paketointi ekosysteemiään. 
-%nämä paketit ovat isomorphisia, eli ne toimivat palvelimella ja selaimella\labciteend{pranav17}{}
 Meteorilla on itse Meteor tiimin ylläpitämiä paketteja ja kolmannen osapuolen paketteja,
 joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin pakettipalvelimelle Athmosphere:lle.\labcite{sanders15}\\
 \medskip

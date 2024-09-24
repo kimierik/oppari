@@ -10,7 +10,6 @@ Tämä vaatii kommunikaatiota clientin, palvelimen ja tietokannan välillä.
 \subsection*{Meteor}
 
 
-%Meteor on, mongoDB tietokantaa lukuunottamatta, avoimeen lähdekoodiin perustuva full-stack web-framework. 
 Meteor on avoimeen lähdekoodiin perustuva full-stack web-framework, mongodb tietokantaa lukuun ottamatta, jonka meteor paketoi mukanaan.
 Meteorilla on integraatio moneen yleiseen frontend-framework:kiin, kuten Vue, React, Svelte tai Angular.
 \medskip
@@ -31,7 +30,6 @@ subscriber-publisher auttaa käyttöliittymän päivittämisessä tietokannan mu
 
 
 
-%https://www.leviathansecurity.com/blog/websockets-and-meteor-a-penetration-testers-guide-to-meteor
 
 
 
@@ -49,12 +47,6 @@ Palvelin voi julkaista osia tietokannasta meteor.publish-funktiolla ja asiakas v
 Tällä tavalla tiedetään mitä tietoa client haluaa ja mitkä osat päivittyvät, joten palvelimen ei tarvitse lähettää kaikkea tietokanta muutoksia clientille, vaan ne mitkä client on tilannut.
 Meteor voi sitten päivittää käyttöliittymän osia, jotka ovat riippuvaisia kyseisistä tiedoista. 
 
-% kuvia vaikka publish ja subscribe kutsuista
-% esimerkki kuva publishista mongodb käytössä
-%esimerkki client subscirbestä 
-%https://docs.meteor.com/api/pubsub#Meteor-subscribe
-%tästä tehdään esimerkki koodi ja siitä screenshot
-% kuva on hyvä jos  muutetaan raporttinluonti omalle viikolle
 
 
 \medskip
@@ -75,7 +67,6 @@ Näin voi helposti katsoa onko kutsujalla tai käyttäjällä oikeuksia metodin 
 \medskip
 
 
-% kuva methodi määritelmästä ja seloitus mitä tapahtuu
 
 \includegraphics[width=15cm]{src/public/methodexample.png}\\
 Meteor metodin määritelmä
@@ -90,14 +81,12 @@ Jos käyttäjä on kirjautunut sisään tulostetaan argumentit. Argumentit tulos
 
 \subsection*{Raportin luonti}
 
-%selostus raportin specista ja mitä sen pitää tehdä
 
 Raporttiluonti ominaisuuden määritelmänä oli, saada ulos exelissä avattava tiedosto, jossa näkyisi käyttäjän nimi, treenikertojen määrä ja progressio ominaisuuden ensimmäinen ja viimeinen arvo.
 Raportin luonti pitää olla laajennettava. Raportissa olevan datan formaatti ja ulostulevan tiedosto formaatin pitää olla muutettavissa.
 \medskip
 
 
-% selostus miten raportti toimii käytännössä. kirjoita kirjakielellä
 
 Raportin luonti toimii käytännössä näin.
 Client kutsuu getReportData metodia ja antaa sille objektin argumenttina, jossa on tietoa mitä dataa halutaan lisätä raporttiin ja missä muodossa.
@@ -105,12 +94,10 @@ Metodi varmistaa onko kutsuja kirjautunut sisään, ja onko hänellä tarvittava
 Palvelin käy läpi asetukset mitä raporttiin halutaan ja lähettää datan takaisin clientille, josta client muodostaa tiedoston.
 \medskip
 
-% selitys siitä miksi tiedosto tehdään clientillä
 
 Tiedosto luodaan clientillä eikä palvelimella, koska jos sen tekisi normaalisti palvelimella se on estävä funktio,
 jolloin palvelin voisi jäätyä silloin kun tehdään isoa dokumentti, ja 
 vaikka tiedoston tekemisen voi tehdä asynkroniseksi se silti hidastaisi palvelinta. 
-%teknisesti väärää tietoa ei tule ylimääräisiä kustannuksia sillä heroku veroittaa tunnilta. 
 Kun client tekee tiedostoon työn niin vältetään ylimääräisiltä palvelin kustannuksilla.
 Tiedoston valmistuttua käyttäjä voi ladata sen.
 \medskip
@@ -123,7 +110,6 @@ Kun käyttää subscriber-publisher niin kehittäjän ei tarvitse kirjoittaa kä
 Methodit on nopea tapa tehdä rajapinta ja se on helposti yksikkö testattavissa. metodit myös luovat helpon tavan tietää onko kutsujalla oikeuksia metodiin, joka luo lisä turvallisuutta.
 \medskip
 
-% kirjota hyvin
 Raportin luonti ominaisuus toimii määritelmien mukaan.
 %
 Uusien tiedosto -formaattien tai -ulkoasujen lisääminen on helppoa. 

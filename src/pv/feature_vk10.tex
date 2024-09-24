@@ -1,9 +1,6 @@
 
 
 
-%kerrotaan mikä on progressio ominaisuus. ja sitten kerrotaan minkälaiseksi se ominaisuus halutaan
-
-%ominaisuus nimeltä tuntuu oudolta
 Sovelluksessa on ominaisuus nimeltä Progressio. Ominaisuus antaa käyttäjälle mahdollisuuden seurata jotain mitattavaa arvoa, ja nähdä sen seurantaa kaavasta.
 Arvoja voidaan myös käyttää raportissa.
 %
@@ -19,7 +16,6 @@ Tämän tekeminen vaatii käyttäjän skeeman muuntamista ja progressio sivun k�
 
 \subsection*{Kättäjä skeeman päivitys}
 
-%schema skeema?=?
 
 käyttäjän skeemassa on kenttä measurableThing joka on merkkijono mitattavan asian nimestä.
 Tämän muuntaminen listaksi, johon voidaan lisätä useampi mitattava arvoja tuo ongelmia, sillä aktiiviset käyttäjät pitää migratoida käyttämään uutta käyttäjä skeemaa. 
@@ -27,7 +23,6 @@ Lisäksi pitää muokata rajapintoja ja käyttäjien muokkaamis- ja luomis- työ
 \medskip
 
 
-% jotain enemmän schemasta
 
 Käyttäjän skeeman päivitys yksittäisestä measurableThing merkkijonosta measurableThings listaan vaatii töitä.
 Käyttäjä mutaatio funktioiden toimintaa pitää muokata, sillä luodaan uusi kenttä ja poistetaan vanha.
@@ -36,7 +31,6 @@ käyttäjien muokkausta ja luontia pitää muokata siten että voimme lisätä j
 Rajapinnat ovat myös tyypitetty, joten niiden muuntaminen yhteensopivaksi on oleellista.
 \medskip
 
-% vähän jotain user migraatio funktiosta
 
 Kaikki aktiiviset käyttäjät pitää myös muuttaa käyttämään uutta käyttäjä skeemaa.
 Tämän voi toteuttaa funktiolla, joka käy kaikki käyttäjät läpi, luo niille measurableThings kentän ja siirtää alkuperäisen "measurableThing"{} mitattavan arvon listaan.
@@ -49,22 +43,17 @@ Funktion pitää olla luotettava ja sellainen että se toimii ensimmäisellä ke
 
 \subsection*{Käyttöliittymä}
 
-%pitäskö olla tekstiä ennen kuvaa. ainakaan opparissa näin ei saa olla.
-
-%mahdollisesti ota pienemmästä browser ikkunasta kun nyt on liian scuffed
 
 \includegraphics[width= 15cm]{src/public/progressiosingle.png} \\
 starttaamo progressio sivu alussa
 \medskip
 
-%jotain tekstiä kuvasta 
 Kuvassa näkyy nykyinen progressio ominaisuus. Käyttäjä voi valita päivän ja tallentaa arvon sille päivälle
 vasemmassa reunassa näkyy "kehitys: paino(kg)"{} tämä on seuranta arvo, joka on annettu käyttäjälle, kun se on luotu.
 Alempana on kaavio, josta käyttäjä voi nähdä seurattavan arvon kehittymistä. 
 \medskip
 
 
-% uusiks
 Liittymästä käyttäjä voi tallentaa vain yhden seurattavan arvon. 
 Kaavaa pitää muokata siten, että siitä voi nähdä kaikki seurattavat arvot.
 Kaava käyttää React-apex-charts kirjastoa, joka tukee useamman viivan kaavion lisäämisen.
@@ -94,7 +83,6 @@ laskuvalikon avautua käyttäjä voi valita mitä mitattavaa hän haluaa päivit
 
 
 \subsection*{Yhteenveto}
-%lisää jotain tekstiä
 
 React-apex-charts kirjastolla oli helpot työkalut kaavan muokkaamiseen, joten uuden datan lisääminen kaavioon oli helppoa.
 User migraatio funktio oli toiminut oikein ja kaikki käyttäjät olivat saaneet ominaisuuden sen käyttöön ottamisen jälkeen.
