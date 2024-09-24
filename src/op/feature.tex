@@ -10,7 +10,7 @@
 
 Sovelluksen "Progressio"{} sivulla on ominaisuus, 
 joka antaa mahdollisuuden käyttäjälle seurata ja tallettaa hänelle annettua "mitattavaa"{} arvoa.
-Kuvassa \nextImageCount {} näkyy on progressiosivu, 
+Kuvassa \nextImageCount {} progressiosivu, 
 ja siitä käyttäjä pystyy valitsemaan, miltä päivältä arvo on otettu ja mikä itse arvo on.
 \medskip
 
@@ -35,7 +35,7 @@ Yksittäinen "measurableThing"{} ominaisuus ei ole riittävä useamman mitattava
 %mainitse paremmin mongo nosql dokumentti
 % elä aloita koska sanalla
 %Koska käytössä on NoSql dokumentti, voimme vaihtaa 
-NoSql dokumenttitietokannan avusta "measurableThing"{} merkkijonon voi vaihtaa, "measurableThings"{} merkkijonolistaan.
+NoSql dokumenttitietokannan avusta "measurableThing"{} merkkijonon voi vaihtaa "measurableThings"{} merkkijonolistaan.
 % voi vaihtaa merkkijono listaan ilman että pitää päivittää tietokanta pohjaa
 % voidaan vaihtaa huoletta
 % voidaan vaihtaa helposti
@@ -67,10 +67,10 @@ Nämä rajapinta tyyppitarkastukset pitää myös muokata sopimaan uuteen skeema
 \medskip
 
 Migraatio tehdään kuvan \nextImageCount {} migraatiofunktiolla. 
-Funktio käy läpi kaikki käyttäjät, jolla on olemassa measurableThing ominaisuus ja päivittää sen measurableThings listaan.
+Funktio käy läpi kaikki käyttäjät, joilla on olemassa measurableThing ominaisuus ja päivittää sen measurableThings listaan.
 Projektissa on tarpeeksi vähän käyttäjiä, joten migraatio tehdään synkronisesti palvelimella. 
-Jos projektissa olisi isompi määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen migraation ajaksi, kun käyttäjäprofiileja päivitettäisiin.
-Isoimmilla käyttäjämäärillä tämä operaatio tehtäisiin huoltoaikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
+Jos projektissa olisi suuri määrä käyttäjiä tämä operaatio pysäyttäisi palvelimen migraation ajaksi, kun käyttäjäprofiileja päivitettäisiin.
+Tällöin operaatio tehtäisiin huoltoaikana, jolloin sovellus ei olisi käytössä tai asynkronisesti, 
 jolloin migraatio tapahtuisi pikkuhiljaa. 
 \medskip
 
@@ -92,7 +92,7 @@ Kuva \getImgCount{}. Migraatio funktio
 
 
 
-Käyttöliittymiä pitää muokata tukemaan ominaisuutta.
+Käyttöliittymä pitää muokata tukemaan ominaisuutta.
 Käyttäjän luonti- ja päivityssivua pitää muokata siten, että käyttäjille voidaan antaa useita mitattavia arvoja.
 Käyttäjän käyttöliittymää pitää muokata siten,
 että käyttäjä voi vaihtaa mitä mitattavaa arvoa hän haluaa seurata tai mihin mitattavaan arvoon hän haluaa tallentaa lukemia.
@@ -134,7 +134,7 @@ Tämä antaa mahdollisuuden lisätä uusia kenttiä, tekemällä uuden instanssi
 Kuva \getImgCount {}. Mitattava elementti komponentti
 \medskip
 
-Komponentti on tilaton funktiokomponentti, johon annetaan mitattavan suurteen nimi ja poistofunktio ominaisuuksina.
+Komponentti on tilaton funktiokomponentti, joka saa mitattavan suurteen nimen ja poistofunktion input-parametreina.
 Poistofunktiota kutsutaan, kun painetaan punaista X nappia ja se poistaa mitattavan suurteen käyttäjän profiilista ja elementin käyttöliittymästä.
 \medskip
 

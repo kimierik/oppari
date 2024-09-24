@@ -11,9 +11,9 @@
 
 
 
-MeteorJS on avoimeen lähdekoodiin perustuva full-stack JavaScript web-framework, joka on 
+MeteorJS on avoimeen lähdekoodiin perustuva full-stack JavaScript web-kehys, joka on 
 suunniteltu nopeaan käyttöönottoon ja kehittämiseen eri laitteille\labciteend{meteor24b}
-Meteor mahdollistaa isomorphiseen koodin kirjoittamisen, eli koodiin, joka on samanlaista palvelimella sekä selaimella\labciteend{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
+Meteor mahdollistaa isomorphisen koodin kirjoittamisen, eli koodiin, joka on samanlaista palvelimella sekä selaimella\labciteend{Kuster23} % en tiedä onko hyvä src mutta on totta joten pitäis löytää jokue
 Meteor ei määritä käytettyä front-end teknologiaa vaan sillä on integraatio moneen yleiseen front-end framework:kiin, kuten Vue, React, Svelte tai Angular\labciteend{meteor24a}{}
 %Tämä antaa lisäjoustoa Meteorille, sillä se antaa mahdollisuuden monelle sovelluskehittäjälle, joilla ei ole kokemusta tietystä front-end teknologiasta.\\
 \medskip
@@ -32,10 +32,10 @@ Lisäksi Meteor \labcite{meteor24a}:
 \medskip
 
 
-Meteorin nopea käyttöönotto johtuu sen paketti järjestelmästä ja valmiiksi asennetuista paketeista, kuten Meteorin käyttäjät-paketti. 
+Meteorin nopea käyttöönotto johtuu sen pakettijärjestelmästä ja valmiiksi asennetuista paketeista, kuten Meteorin käyttäjät-paketti. 
 %Meteorin nopea käyttöönotto on osa johtuen sen paketti järjestelmästä ja valmiiksi paketoiduista paketeista, kuten Meteorin käyttäjät paketti. 
 Käyttäjät-paketin avulla kehittäjä voi nopeasti luoda todennusjärjestelmän (eng authentication system),
-joka antaa helpon integraation muiden todennuspalvelujen kanssa kuten Facebook, GitHub, Google ym.
+joka antaa helpon integraation muiden palveluntarjoajien todennuspalvelujen kanssa kuten Facebook, GitHub, Google ym.
 Käyttäjät-paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten metodeihin.\labcite{meteor24c}
 
 
@@ -48,10 +48,10 @@ Käyttäjät-paketti on myös integroitu muihin Meteorin ominaisuuksiin kuten me
 % mahdollinen kappale rike kolmannessa kappaleessa
 
 
-Meteor käyttää etäkäsittelykutsu (eng Remote procedure call) rajapintaa perinteisen RESTful rajapinnan sijasta\labciteend{meteor24a}
+Meteor käyttää etäkäsittelykutsu-rajapintaa (eng Remote procedure call) perinteisen RESTful rajapinnan sijasta\labciteend{meteor24a}
 Etäkäsittelykutsumallissa asiakasohjelma lähettää palvelinohjelmalle kutsuviestin.
 Palvelinohjelma käsittelee kutsuviestin ja suorittaa halutun toiminnon ja palauttaa vastausviestin asiakasohjelmalle.\labcite{ibm23}
-Meteorin metodit kokonaisuus toimii etäkäsittelykutsu rajapintana selaimen ja palvelimen välillä. 
+Meteorin metodit kokonaisuus toimii etäkäsittelykutsu-rajapintana selaimen ja palvelimen välillä. 
 \medskip
 
 
@@ -62,14 +62,14 @@ Metodit tekevät myös käyttöliittymäkoodista yksinkertaisemman,
 sillä metodien etäkäsittelukutsumalli poistaa käyttöliittymä koodista tarpeen tehdä GET tai POST pyyntöjä palvelimelle.
 Metodi funktio käyttää JavaScriptin "this"{} ominaisuutta, jonka
 avulla metodiin voidaan antaa kontekstia kutsujasta.
-Tässä kontekstissa voi nähdä esimerkiksi onko kutsuja kirjautunut sisään, tai onko kutsujalla oikeat oikeudet kutsua metodia helpottaen turvallisuuden lisäämistä rajapintaan.
+Tässä kontekstissa voi selvittää esimerkiksi onko kutsuja kirjautunut sisään, tai onko kutsujalla oikeat oikeudet kutsua metodia helpottaen turvallisuuden lisäämistä rajapintaan.
 \bigskip
 
 \includegraphics[width=15cm]{src/public/methodexample.png}\\
 Kuva \getImgCount {}. Meteor-metodin määritelmä
 \medskip
 
-Kuvassa on Meteor metodin määritelmä "exampleMethod"{}, joka katsoo, onko "this"{} ominaisuudessa käyttäjätunnusta, 
+Kuvassa on Meteor metodin määritelmä "exampleMethod"{}, joka selvittää, onko "this"{} objektissa käyttäjätunnus ominaisuutta, 
 näin metodi voi tietää onko kutsuja kirjautunut sisään,
 jos käyttäjä ei ole kirjautunut sisään funktio aiheuttaa poikkeuksen, joka välitetään kutsujalle.
 Jos käyttäjä on kirjautunut sisään, metodi tulostaa argumentit objektin. 
@@ -85,7 +85,7 @@ Jos käyttäjä on kirjautunut sisään, metodi tulostaa argumentit objektin.
 % sdelitetäänkö build system vai.... vaihdetaanko sana johonkin toiseen vaa
 
 
-Meteor ylläpitää omaa paketointi ekosysteemiään, 
+Meteor ylläpitää omaa paketointi ekosysteemiään. 
 %nämä paketit ovat isomorphisia, eli ne toimivat palvelimella ja selaimella\labciteend{pranav17}{}
 Meteorilla on itse Meteor tiimin ylläpitämiä paketteja ja kolmannen osapuolen paketteja,
 joita yhteisö ylläpitää. Nämä kolmannen osapuolen paketit voi ladata Meteorin pakettipalvelimelle Athmosphere:lle.\labcite{sanders15}\\

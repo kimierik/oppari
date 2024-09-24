@@ -29,7 +29,7 @@
 MongoDB on NoSQL (eng "non sql"{} tai "not only sql"{}) dokumenttipohjainen tietokannan hallintaohjelma,
 joka on MongoDB Inc:in valmistama ja ylläpitämä.
 Se on suunniteltu käsittelemään suuria määriä strukturoimatonta dataa,
-ja se tarjoaa suorituskykyisen, käytettävän ja skaalautuvan\labciteend{alexander23}
+ja se tarjoaa suorituskykyisen, käytettävän ja skaalautuvan tietokannan\labciteend{alexander23}
 \medskip
 
 
@@ -59,7 +59,7 @@ Sen sijaan MongoDB jäsentää tiedot kokoelmiksi.
 Kukin kokoelma on samanlainen kuin relaatiotietokannan taulukko,
 mutta rivien sijasta MongoDB käyttää dokumentteja tietojen tallentamiseen.
 % vertailee kuulostaa jotenkin oudolta
-Kuvassa \nextImageCount{} on kaavio MongoDB:n rakenteesta. 
+Kuvassa \nextImageCount{} on kaavio MongoDB:n rakenteesta verrattuna perinteiseen relaatiotietokantaan. 
 Nämä dokumentit ovat joustavia ja sisältävät objekteja.
 Toisin kuin relaatiotietokannat, MongoDB ei vaadi kiinteää skeemaa, mikä tarkoittaa, 
 että jokaisella kokoelman asiakirjalla voi olla erilainen rakenne.\labcite{mongodb24c}
@@ -77,7 +77,7 @@ eikä niillä tarvitse olla samoja kenttiä.\labcite{mongodb24c}
 \medskip
 
 
-MongoDB tallettaa tiedot BSON muodossa, joka on binäärinen JSON formaatista.
+MongoDB tallettaa tiedot BSON muodossa, joka on binäärinen JSON formaatti.
 Tietokannasta dokumentteja voi hakea niiden uniikkien tunnisteiden tai sisällön arvojen perusteella.\labcite{mongodb24a}
 \medskip
 
@@ -117,7 +117,7 @@ Mongodb skaalautuminen perustuu replikointi- ja shardausominaisuuksiin, jotka to
 MongoDB replikointi antaa mahdollisuuden tehdä varmuuskopioita tietokannasta ja säilyttää niitä eri palvelimilla.
 Nämä varmuuskopiot voidaan käyttöönottaa, jos ensisijainen tietokanta kaatuu. 
 Kaaviossa 1 näkyy esimerkki replikoinnin toiminnasta. 
-Asiakassovellus (eng client application) lähettää kaikki kirjoitus- ja lukuoperaatiot ensisijaiselle tietokannalle, 
+Asiakassovellus (eng client application) lähettää kaikki kirjoitus- ja lukuoperaatiot ensisijaiselle tietokannalle. 
 Ensisijainen tietokanta jakaa kaikki kirjoitusohjeet muille toissijaisille kopioille pitäen ne ajan tasalla.
 Jos ensisijainen tietokanta kaatuu tai sammuu, jostain toissijaisesta kopiotietokannasta tulee uusi ensisijainen tietokanta.
 Tämä kasvattaa luotettavuutta sillä, jos olisi vain yksi tietokanta, sen kaatuminen lakkauttaisi sovelluksen toiminnan. \labcite{mongodb24e}
@@ -145,19 +145,15 @@ Kaavio\getChartCount{}. Sharding-malli \labimgcite{mongodb24g}
 \medskip
 
 
-%mongos tai reitittimen pitää vaihtaa sillä se ei ole mongos tai se on sama asia
 
-
-%operaatiot parempi selitys
 Kaavion 2 reitittimen (eng Router) tehtävänä on reitittää tietokantaoperaatiot oikeille shardeille käyttäen konfiguraatiopalvelimelta saatua metadataa.
-Asiakassovellus on yhteydessä mongos:siin ja se toimii rapapintana käyttäjän ja shardien välillä. 
+Asiakassovellus on yhteydessä mongos:siin ja se toimii rajapintana käyttäjän ja shardien välillä. 
 Kun asiakassovellus lähettää kyselyn tietokantaan, reititin kysyy konfigurointipalvelimelta (eng config server) millä shardeilla on kyseinen data. 
 Tämän jälkeen mongos voi reitittää kyselyn shardille ja palauttaa vastauksen asiakassovellukselle.\labcite{mongodb24h}
 \medskip
 
-%asiakieli
 Shard on tietokantapalvelin, joka sisältää osan koko tietokannasta.
-Itse shardejen pitää olla replikasettejä.
+Itse shardijen pitää olla replikasettejä.
 Tämä tuo lisäturvaa datan hakuun, sillä jos shardin ensisijainen kanta kaatuu voi toissijainen kopio ottaa sen roolin. \labcite{mongodb24i}
 \medskip
 
