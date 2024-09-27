@@ -24,3 +24,5 @@ build.sh -op
 
 Jos pdf ei rakennu, kokeile itse ratkoa ongelma.
 
+# link
+https://www.theseus.fi/handle/10024/866633
